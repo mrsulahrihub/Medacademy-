@@ -1,0 +1,899 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MedAcademy | Medical Student Study Platform</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f8fb;
+    color:#222;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:#0d6efd;
+    color:white;
+    padding:16px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:22px;
+}
+
+nav a{
+    color:white;
+    font-size:16px;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:480px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:60px 20px;
+    background:white;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#0d6efd;
+    margin-bottom:15px;
+}
+
+.hero h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#666;
+    margin-bottom:30px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+    display:inline-block;
+    padding:13px 24px;
+    border-radius:9px;
+    margin:5px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.primary-btn{
+    background:#0d6efd;
+    color:white;
+}
+
+.primary-btn:hover{
+    background:#084298;
+}
+
+.secondary-btn{
+    border:2px solid #0d6efd;
+    color:#0d6efd;
+    background:white;
+}
+
+.secondary-btn:hover{
+    background:#0d6efd;
+    color:white;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    padding:60px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:32px;
+    color:#0d6efd;
+}
+
+.section-title p{
+    color:#666;
+}
+
+
+/* =========================
+   QUICK ACCESS
+========================= */
+
+.quick-container{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.quick-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.quick-card:hover{
+    transform:translateY(-5px);
+}
+
+.quick-card .icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.quick-card h3{
+    color:#0d6efd;
+    margin-bottom:8px;
+}
+
+.quick-card p{
+    color:#666;
+    margin-bottom:15px;
+}
+
+
+/* =========================
+   SUBJECTS
+========================= */
+
+.subject-container{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.subject-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.subject-card:hover{
+    transform:translateY(-6px);
+}
+
+.subject-icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.subject-card h3{
+    color:#0d6efd;
+    margin-bottom:10px;
+}
+
+.subject-card p{
+    color:#666;
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-area{
+    background:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.search-area h2{
+    color:#0d6efd;
+    margin-bottom:20px;
+}
+
+.search-box{
+    width:90%;
+    max-width:600px;
+    padding:15px;
+    border:2px solid #0d6efd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+}
+
+.search-result{
+    max-width:600px;
+    margin:15px auto;
+    text-align:left;
+}
+
+.result{
+    background:#f4f8fb;
+    padding:15px;
+    margin:10px 0;
+    border-radius:10px;
+}
+
+.result a{
+    color:#0d6efd;
+    font-weight:bold;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.about p{
+    color:#555;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+footer p{
+    margin:5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav{
+        gap:12px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero h2{
+        font-size:23px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="logo">
+🩺 MedAcademy
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="#subjects">Subjects</a>
+
+<a href="notes.html">Notes</a>
+
+<a href="quiz.html">Quiz</a>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>🩺 MedAcademy</h1>
+
+<h2>Your Medical Student Study Platform</h2>
+
+<p>
+Study medical subjects, read concise notes,
+practice MCQs and improve your knowledge.
+</p>
+
+<a href="notes.html"
+class="btn primary-btn">
+📚 Explore Notes
+</a>
+
+<a href="quiz.html"
+class="btn secondary-btn">
+📝 Take Medical Quiz
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     QUICK ACCESS
+========================= -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>⚡ Quick Access</h2>
+
+<p>
+Start your medical study quickly.
+</p>
+
+</div>
+
+
+<div class="quick-container">
+
+
+<div class="quick-card">
+
+<div class="icon">📚</div>
+
+<h3>Medical Notes</h3>
+
+<p>
+Quick and easy medical study notes.
+</p>
+
+<a href="notes.html"
+class="btn primary-btn">
+Open Notes
+</a>
+
+</div>
+
+
+<div class="quick-card">
+
+<div class="icon">📝</div>
+
+<h3>Medical Quiz</h3>
+
+<p>
+Test your knowledge with medical MCQs.
+</p>
+
+<a href="quiz.html"
+class="btn primary-btn">
+Start Quiz
+</a>
+
+</div>
+
+
+<div class="quick-card">
+
+<div class="icon">❤️</div>
+
+<h3>Heart</h3>
+
+<p>
+Study heart anatomy and blood flow.
+</p>
+
+<a href="heart.html"
+class="btn primary-btn">
+Study Heart
+</a>
+
+</div>
+
+
+<div class="quick-card">
+
+<div class="icon">🧠</div>
+
+<h3>Brain</h3>
+
+<p>
+Learn major parts and functions of the brain.
+</p>
+
+<a href="brain.html"
+class="btn primary-btn">
+Study Brain
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<section class="search-area">
+
+<h2>🔎 Search Medical Topics</h2>
+
+<input
+type="text"
+class="search-box"
+id="searchBox"
+placeholder="Search Heart, Brain, Kidney, Liver..."
+onkeyup="searchTopics()"
+>
+
+<div
+id="searchResults"
+class="search-result">
+</div>
+
+</section>
+
+
+<!-- =========================
+     SUBJECTS
+========================= -->
+
+<section
+class="section"
+id="subjects">
+
+<div class="section-title">
+
+<h2>📚 Medical Subjects</h2>
+
+<p>
+Choose a subject and start studying.
+</p>
+
+</div>
+
+
+<div class="subject-container">
+
+
+<!-- ANATOMY -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+🦴
+</div>
+
+<h3>Anatomy</h3>
+
+<p>
+Study the structure of the human body.
+</p>
+
+<a href="anatomy.html"
+class="btn primary-btn">
+Study Anatomy
+</a>
+
+</div>
+
+
+<!-- PHYSIOLOGY -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+🫀
+</div>
+
+<h3>Physiology</h3>
+
+<p>
+Learn how the human body functions.
+</p>
+
+<a href="physiology.html"
+class="btn primary-btn">
+Study Physiology
+</a>
+
+</div>
+
+
+<!-- PHARMACOLOGY -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+💊
+</div>
+
+<h3>Pharmacology</h3>
+
+<p>
+Learn drugs, actions and adverse effects.
+</p>
+
+<a href="pharmacology.html"
+class="btn primary-btn">
+Study Pharmacology
+</a>
+
+</div>
+
+
+<!-- PATHOLOGY -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+🔬
+</div>
+
+<h3>Pathology</h3>
+
+<p>
+Study diseases and pathological changes.
+</p>
+
+<a href="pathology.html"
+class="btn primary-btn">
+Study Pathology
+</a>
+
+</div>
+
+
+<!-- MICROBIOLOGY -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+🦠
+</div>
+
+<h3>Microbiology</h3>
+
+<p>
+Study bacteria, viruses and microorganisms.
+</p>
+
+<a href="microbiology.html"
+class="btn primary-btn">
+Study Microbiology
+</a>
+
+</div>
+
+
+<!-- MEDICINE -->
+
+<div class="subject-card">
+
+<div class="subject-icon">
+🩺
+</div>
+
+<h3>Medicine</h3>
+
+<p>
+Explore common clinical medical topics.
+</p>
+
+<a href="notes.html"
+class="btn primary-btn">
+Explore Medicine
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>ℹ️ About MedAcademy</h2>
+
+</div>
+
+
+<div class="about">
+
+<p>
+MedAcademy is a simple medical study website
+designed to help medical students access
+subjects, notes and quizzes in one place.
+</p>
+
+<br>
+
+<p>
+Our goal is to make medical learning
+simple, organized and easy to revise.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+🩺 <strong>MedAcademy</strong>
+</p>
+
+<p>
+Medical Student Study Platform
+</p>
+
+<p>
+© 2026 MedAcademy. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+const topics = [
+
+{
+name:"Heart",
+link:"heart.html"
+},
+
+{
+name:"Kidney",
+link:"kidney.html"
+},
+
+{
+name:"Liver",
+link:"liver.html"
+},
+
+{
+name:"Brain",
+link:"brain.html"
+},
+
+{
+name:"Cranial Nerves",
+link:"cranial-nerves.html"
+},
+
+{
+name:"Anatomy",
+link:"anatomy.html"
+},
+
+{
+name:"Physiology",
+link:"physiology.html"
+},
+
+{
+name:"Pharmacology",
+link:"pharmacology.html"
+},
+
+{
+name:"Pathology",
+link:"pathology.html"
+},
+
+{
+name:"Microbiology",
+link:"microbiology.html"
+},
+
+{
+name:"Medical Quiz",
+link:"quiz.html"
+}
+
+];
+
+
+function searchTopics(){
+
+const searchBox =
+document.getElementById("searchBox");
+
+const searchResults =
+document.getElementById("searchResults");
+
+const searchText =
+searchBox.value.toLowerCase().trim();
+
+
+searchResults.innerHTML = "";
+
+
+if(searchText === ""){
+    return;
+}
+
+
+const filteredTopics =
+topics.filter(function(topic){
+
+return topic.name
+.toLowerCase()
+.includes(searchText);
+
+});
+
+
+if(filteredTopics.length === 0){
+
+searchResults.innerHTML =
+
+`
+<div class="result">
+❌ No topic found.
+</div>
+`;
+
+return;
+
+}
+
+
+filteredTopics.forEach(function(topic){
+
+searchResults.innerHTML +=
+
+`
+<div class="result">
+
+📖 <strong>${topic.name}</strong>
+
+<br><br>
+
+<a href="${topic.link}">
+Study Now →
+</a>
+
+</div>
+`;
+
+});
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```

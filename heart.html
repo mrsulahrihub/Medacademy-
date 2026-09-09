@@ -1,0 +1,524 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Heart Anatomy - MedAcademy</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f8fb;
+            color: #222;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #0b7285;
+            color: white;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            font-size: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .hero h1 {
+            color: #0b7285;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        /* CONTENT */
+
+        .content {
+            max-width: 950px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            color: #0b7285;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .card ul,
+        .card ol {
+            padding-left: 25px;
+        }
+
+        .card li {
+            line-height: 1.8;
+            margin-bottom: 5px;
+        }
+
+        /* TABLE */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #0b7285;
+            color: white;
+        }
+
+        /* QUICK REVISION */
+
+        .revision {
+            background: #e7f5f7;
+            border-left: 5px solid #0b7285;
+        }
+
+        .revision li {
+            font-weight: bold;
+        }
+
+        /* EXAM POINT */
+
+        .exam {
+            background: #fff8e1;
+            border-left: 5px solid #f0a500;
+        }
+
+        .exam h2 {
+            color: #b06b00;
+        }
+
+        /* BUTTON */
+
+        .back {
+            text-align: center;
+            margin: 40px 0 55px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0b7285;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #095c6b;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <h2>🩺 MedAcademy</h2>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="notes.html">Notes</a>
+
+        <a href="quiz.html">Quiz</a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>❤️ Heart Anatomy</h1>
+
+    <p>
+        Important anatomy notes for medical students
+    </p>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<div class="content">
+
+
+    <!-- INTRODUCTION -->
+
+    <div class="card">
+
+        <h2>📖 Introduction</h2>
+
+        <p>
+
+            The heart is a muscular organ that pumps blood
+            throughout the body. It is located in the thoracic
+            cavity between the lungs.
+
+        </p>
+
+    </div>
+
+
+    <!-- LOCATION -->
+
+    <div class="card">
+
+        <h2>📍 Location</h2>
+
+        <ul>
+
+            <li>Located in the thoracic cavity.</li>
+
+            <li>Situated between the two lungs.</li>
+
+            <li>Present in the middle mediastinum.</li>
+
+            <li>The apex is directed downward and to the left.</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- CHAMBERS -->
+
+    <div class="card">
+
+        <h2>🏛️ Chambers of the Heart</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Chamber</th>
+
+                <th>Main Role</th>
+
+            </tr>
+
+            <tr>
+
+                <td>Right Atrium</td>
+
+                <td>Receives deoxygenated blood.</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Right Ventricle</td>
+
+                <td>Pumps blood toward the lungs.</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Left Atrium</td>
+
+                <td>Receives oxygenated blood.</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Left Ventricle</td>
+
+                <td>Pumps blood to the body.</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- VALVES -->
+
+    <div class="card">
+
+        <h2>🚪 Heart Valves</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Valve</th>
+
+                <th>Location</th>
+
+            </tr>
+
+            <tr>
+
+                <td>Tricuspid Valve</td>
+
+                <td>Right atrium → right ventricle</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Pulmonary Valve</td>
+
+                <td>Right ventricle → pulmonary artery</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Mitral Valve</td>
+
+                <td>Left atrium → left ventricle</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Aortic Valve</td>
+
+                <td>Left ventricle → aorta</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- BLOOD VESSELS -->
+
+    <div class="card">
+
+        <h2>🩸 Major Blood Vessels</h2>
+
+        <ul>
+
+            <li>Aorta</li>
+
+            <li>Superior Vena Cava</li>
+
+            <li>Inferior Vena Cava</li>
+
+            <li>Pulmonary Artery</li>
+
+            <li>Pulmonary Veins</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- BLOOD FLOW -->
+
+    <div class="card">
+
+        <h2>🔄 Blood Flow Through Heart</h2>
+
+        <p>
+
+            Body → Superior/Inferior Vena Cava
+            → Right Atrium → Right Ventricle
+            → Pulmonary Artery → Lungs
+            → Pulmonary Veins → Left Atrium
+            → Left Ventricle → Aorta → Body
+
+        </p>
+
+    </div>
+
+
+    <!-- QUICK REVISION -->
+
+    <div class="card revision">
+
+        <h2>⚡ Quick Revision</h2>
+
+        <ul>
+
+            <li>Heart has 4 chambers.</li>
+
+            <li>Right side receives and pumps deoxygenated blood.</li>
+
+            <li>Left side receives and pumps oxygenated blood.</li>
+
+            <li>There are 4 main heart valves.</li>
+
+            <li>Left ventricle pumps blood into the aorta.</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- EXAM POINTS -->
+
+    <div class="card exam">
+
+        <h2>🎯 Important Exam Points</h2>
+
+        <ul>
+
+            <li>
+                How many chambers does the heart have?
+                → Four
+            </li>
+
+            <li>
+                Which chamber pumps blood into the aorta?
+                → Left ventricle
+            </li>
+
+            <li>
+                Which valve is between the left atrium
+                and left ventricle?
+                → Mitral valve
+            </li>
+
+            <li>
+                Which valve is between the right atrium
+                and right ventricle?
+                → Tricuspid valve
+            </li>
+
+        </ul>
+
+    </div>
+
+
+</div>
+
+
+<!-- BACK BUTTON -->
+
+<div class="back">
+
+    <a href="notes.html" class="btn">
+        ← Back to Medical Notes
+    </a>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 MedAcademy | Medical Study Website
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```

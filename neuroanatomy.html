@@ -1,0 +1,637 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Neuroanatomy - MedAcademy</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #0b5ed7;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h2 {
+            color: #0b5ed7;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #0b5ed7;
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .card h4 {
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 7px;
+        }
+
+        .exam {
+            background: #fff3cd;
+            border-left: 6px solid #ffc107;
+        }
+
+        .revision {
+            background: #e8f5e9;
+            border-left: 6px solid #28a745;
+        }
+
+        .brain {
+            background: #f3e5f5;
+            border-left: 6px solid #8e44ad;
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0b5ed7;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #084298;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                text-align: center;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px 8px;
+                display: inline-block;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>🩺 MedAcademy</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="notes.html">Notes</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="anatomy.html">Anatomy</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <h2>🧠 Neuroanatomy</h2>
+
+        <p>
+            Brain, spinal cord, meninges, ventricles and CSF
+        </p>
+
+    </section>
+
+
+    <main class="container">
+
+
+        <div class="card">
+
+            <h3>📚 Introduction to Neuroanatomy</h3>
+
+            <p>
+                Neuroanatomy is the study of the structure and organization
+                of the nervous system.
+            </p>
+
+            <h4>Major divisions:</h4>
+
+            <ul>
+                <li>Central Nervous System (CNS)</li>
+                <li>Peripheral Nervous System (PNS)</li>
+            </ul>
+
+            <h4>Central Nervous System includes:</h4>
+
+            <ul>
+                <li>Brain</li>
+                <li>Spinal cord</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card brain">
+
+            <h3>🧠 Brain</h3>
+
+            <p>
+                The brain is the major organ of the central nervous system.
+                It is located inside the cranial cavity.
+            </p>
+
+            <h4>Main divisions:</h4>
+
+            <ul>
+                <li>Cerebrum</li>
+                <li>Diencephalon</li>
+                <li>Brainstem</li>
+                <li>Cerebellum</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🧠 Cerebrum</h3>
+
+            <p>
+                The cerebrum is the largest part of the brain and is
+                responsible for many higher functions.
+            </p>
+
+            <h4>Two cerebral hemispheres:</h4>
+
+            <ul>
+                <li>Right cerebral hemisphere</li>
+                <li>Left cerebral hemisphere</li>
+            </ul>
+
+            <h4>Major lobes:</h4>
+
+            <ul>
+                <li>Frontal lobe</li>
+                <li>Parietal lobe</li>
+                <li>Temporal lobe</li>
+                <li>Occipital lobe</li>
+                <li>Insula</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🎯 Major Functions of Cerebral Lobes</h3>
+
+            <h4>Frontal Lobe</h4>
+
+            <ul>
+                <li>Voluntary motor control</li>
+                <li>Planning and decision-making</li>
+                <li>Behavior and personality</li>
+                <li>Speech production through the dominant hemisphere's Broca area</li>
+            </ul>
+
+            <h4>Parietal Lobe</h4>
+
+            <ul>
+                <li>Processes somatic sensory information</li>
+                <li>Helps with spatial awareness</li>
+            </ul>
+
+            <h4>Temporal Lobe</h4>
+
+            <ul>
+                <li>Hearing</li>
+                <li>Memory</li>
+                <li>Language comprehension in the dominant hemisphere</li>
+            </ul>
+
+            <h4>Occipital Lobe</h4>
+
+            <ul>
+                <li>Mainly associated with visual processing</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🌉 Brainstem</h3>
+
+            <p>
+                The brainstem connects the cerebrum with the spinal cord
+                and contains important pathways and nuclei.
+            </p>
+
+            <h4>Three parts:</h4>
+
+            <ol>
+                <li>Midbrain</li>
+                <li>Pons</li>
+                <li>Medulla oblongata</li>
+            </ol>
+
+            <p>
+                The brainstem is also important for maintaining vital
+                functions such as respiration and cardiovascular control.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>⚖️ Cerebellum</h3>
+
+            <p>
+                The cerebellum is located posterior to the brainstem.
+                It plays an important role in coordination and balance.
+            </p>
+
+            <h4>Important functions:</h4>
+
+            <ul>
+                <li>Coordination of movement</li>
+                <li>Balance</li>
+                <li>Posture</li>
+                <li>Motor learning</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🧬 Spinal Cord</h3>
+
+            <p>
+                The spinal cord is a long part of the central nervous
+                system extending from the brainstem through the vertebral
+                canal.
+            </p>
+
+            <h4>Main functions:</h4>
+
+            <ul>
+                <li>Carries sensory information toward the brain</li>
+                <li>Carries motor information from the brain</li>
+                <li>Acts as a center for many reflexes</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🧠 Spinal Cord Segments</h3>
+
+            <p>
+                The spinal cord is divided into segments associated with
+                pairs of spinal nerves.
+            </p>
+
+            <ul>
+                <li>8 cervical segments</li>
+                <li>12 thoracic segments</li>
+                <li>5 lumbar segments</li>
+                <li>5 sacral segments</li>
+                <li>1 coccygeal segment</li>
+            </ul>
+
+            <p>
+                In adults, the spinal cord usually ends around the
+                L1–L2 vertebral level as the conus medullaris.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🛡️ Meninges</h3>
+
+            <p>
+                The meninges are protective membranes surrounding the
+                brain and spinal cord.
+            </p>
+
+            <h4>Three layers:</h4>
+
+            <ol>
+                <li>Dura mater</li>
+                <li>Arachnoid mater</li>
+                <li>Pia mater</li>
+            </ol>
+
+            <h4>Easy order:</h4>
+
+            <p>
+                <strong>Dura → Arachnoid → Pia</strong>
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>💧 Cerebrospinal Fluid (CSF)</h3>
+
+            <p>
+                Cerebrospinal fluid surrounds the brain and spinal cord
+                and circulates through the ventricular system and
+                subarachnoid space.
+            </p>
+
+            <h4>Functions:</h4>
+
+            <ul>
+                <li>Provides mechanical protection</li>
+                <li>Provides buoyancy to the brain</li>
+                <li>Helps maintain a stable environment for the CNS</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🕳️ Brain Ventricles</h3>
+
+            <p>
+                The ventricular system consists of interconnected
+                cavities within the brain that contain CSF.
+            </p>
+
+            <h4>Main ventricles:</h4>
+
+            <ul>
+                <li>Right lateral ventricle</li>
+                <li>Left lateral ventricle</li>
+                <li>Third ventricle</li>
+                <li>Fourth ventricle</li>
+            </ul>
+
+            <h4>Important pathway:</h4>
+
+            <p>
+                Lateral ventricles → Third ventricle →
+                Cerebral aqueduct → Fourth ventricle
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🩸 Blood Supply of the Brain</h3>
+
+            <p>
+                The brain receives arterial blood mainly through the
+                internal carotid and vertebral arteries.
+            </p>
+
+            <h4>Major arterial systems:</h4>
+
+            <ul>
+                <li>Internal carotid artery system</li>
+                <li>Vertebrobasilar system</li>
+            </ul>
+
+            <p>
+                These vessels contribute to the arterial circulation
+                around the base of the brain.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🔄 Circle of Willis</h3>
+
+            <p>
+                The Circle of Willis is an arterial network located at
+                the base of the brain that provides connections between
+                major cerebral arteries.
+            </p>
+
+            <h4>Important components include:</h4>
+
+            <ul>
+                <li>Anterior cerebral arteries</li>
+                <li>Anterior communicating artery</li>
+                <li>Internal carotid arteries</li>
+                <li>Posterior communicating arteries</li>
+                <li>Posterior cerebral arteries</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>⚡ Neuron</h3>
+
+            <p>
+                A neuron is a specialized cell responsible for
+                transmitting electrical and chemical signals.
+            </p>
+
+            <h4>Main parts:</h4>
+
+            <ul>
+                <li>Cell body (soma)</li>
+                <li>Dendrites</li>
+                <li>Axon</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🔌 Synapse</h3>
+
+            <p>
+                A synapse is a specialized junction through which a
+                neuron communicates with another neuron or target cell.
+            </p>
+
+            <h4>Common neurotransmitters include:</h4>
+
+            <ul>
+                <li>Acetylcholine</li>
+                <li>Dopamine</li>
+                <li>Serotonin</li>
+                <li>Glutamate</li>
+                <li>GABA</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card exam">
+
+            <h3>⭐ Important Exam Points</h3>
+
+            <ul>
+                <li>CNS consists of brain and spinal cord.</li>
+                <li>Cerebrum is the largest part of the brain.</li>
+                <li>Major cerebral lobes are frontal, parietal, temporal and occipital.</li>
+                <li>Brainstem consists of midbrain, pons and medulla.</li>
+                <li>Cerebellum is important for coordination and balance.</li>
+                <li>Meninges are dura mater, arachnoid mater and pia mater.</li>
+                <li>CSF circulates through the ventricular system and subarachnoid space.</li>
+                <li>There are two lateral ventricles, a third ventricle and a fourth ventricle.</li>
+                <li>Brain blood supply mainly comes from internal carotid and vertebral arteries.</li>
+                <li>Circle of Willis is located at the base of the brain.</li>
+                <li>The spinal cord usually ends around L1–L2 in adults.</li>
+                <li>A neuron consists of a cell body, dendrites and an axon.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card revision">
+
+            <h3>⚡ Quick Revision</h3>
+
+            <ul>
+                <li><strong>CNS:</strong> Brain + spinal cord</li>
+                <li><strong>Cerebrum:</strong> Higher brain functions</li>
+                <li><strong>Frontal lobe:</strong> Motor, planning and behavior</li>
+                <li><strong>Parietal lobe:</strong> Somatic sensation</li>
+                <li><strong>Temporal lobe:</strong> Hearing and memory</li>
+                <li><strong>Occipital lobe:</strong> Vision</li>
+                <li><strong>Brainstem:</strong> Midbrain + pons + medulla</li>
+                <li><strong>Cerebellum:</strong> Coordination and balance</li>
+                <li><strong>Meninges:</strong> Dura + arachnoid + pia</li>
+                <li><strong>CSF:</strong> Protection and buoyancy</li>
+                <li><strong>Ventricles:</strong> CSF-containing cavities</li>
+                <li><strong>Neuron:</strong> Basic functional cell of nervous tissue</li>
+            </ul>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a href="brain.html" class="btn">
+                🧠 Brain Notes
+            </a>
+
+            <a href="cranial-nerves.html" class="btn">
+                🧠 Cranial Nerves
+            </a>
+
+            <a href="anatomy.html" class="btn">
+                ← Back to Anatomy
+            </a>
+
+            <a href="notes.html" class="btn">
+                📖 All Notes
+            </a>
+
+            <a href="index.html" class="btn">
+                🏠 Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 MedAcademy | Medical Students Study Platform</p>
+    </footer>
+
+</body>
+</html>
+```

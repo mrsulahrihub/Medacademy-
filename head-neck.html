@@ -1,0 +1,571 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Head & Neck Anatomy - MedAcademy</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #0b5ed7;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h2 {
+            color: #0b5ed7;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #0b5ed7;
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .card h4 {
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 7px;
+        }
+
+        .exam {
+            background: #fff3cd;
+            border-left: 6px solid #ffc107;
+        }
+
+        .revision {
+            background: #e8f5e9;
+            border-left: 6px solid #28a745;
+        }
+
+        .nerve {
+            background: #f3e5f5;
+            border-left: 6px solid #8e44ad;
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0b5ed7;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #084298;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                text-align: center;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px 8px;
+                display: inline-block;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🩺 MedAcademy</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="notes.html">Notes</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="anatomy.html">Anatomy</a>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+        <h2>🧠 Head & Neck Anatomy</h2>
+        <p>Important structures, muscles, vessels and nerves</p>
+    </section>
+
+
+    <main class="container">
+
+        <div class="card">
+            <h3>📚 Introduction</h3>
+
+            <p>
+                The head and neck contain important structures related to
+                the brain, special senses, respiration, digestion and
+                communication.
+            </p>
+
+            <h4>Major structures include:</h4>
+
+            <ul>
+                <li>Skull and facial bones</li>
+                <li>Brain</li>
+                <li>Face and scalp</li>
+                <li>Neck muscles</li>
+                <li>Major arteries and veins</li>
+                <li>Cranial nerves</li>
+                <li>Pharynx and larynx</li>
+                <li>Thyroid gland</li>
+            </ul>
+        </div>
+
+
+        <div class="card">
+            <h3>💀 Skull</h3>
+
+            <p>
+                The skull forms the bony framework of the head and protects
+                the brain.
+            </p>
+
+            <h4>Major bones of the skull:</h4>
+
+            <ul>
+                <li>Frontal bone</li>
+                <li>Parietal bones</li>
+                <li>Temporal bones</li>
+                <li>Occipital bone</li>
+                <li>Sphenoid bone</li>
+                <li>Ethmoid bone</li>
+            </ul>
+
+            <h4>Important facial bones:</h4>
+
+            <ul>
+                <li>Maxilla</li>
+                <li>Mandible</li>
+                <li>Zygomatic bone</li>
+                <li>Nasal bones</li>
+            </ul>
+        </div>
+
+
+        <div class="card">
+            <h3>👤 Face</h3>
+
+            <p>
+                The muscles of facial expression are mainly supplied by
+                the facial nerve.
+            </p>
+
+            <h4>Important muscles:</h4>
+
+            <ul>
+                <li>Orbicularis oculi</li>
+                <li>Orbicularis oris</li>
+                <li>Buccinator</li>
+                <li>Frontalis</li>
+                <li>Zygomaticus major</li>
+            </ul>
+
+            <p>
+                These muscles are involved in facial expressions such as
+                smiling, closing the eyes and moving the lips.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>💪 Muscles of the Neck</h3>
+
+            <h4>Sternocleidomastoid</h4>
+
+            <p>
+                The sternocleidomastoid is an important superficial muscle
+                of the neck. It helps with movements of the head and neck.
+            </p>
+
+            <h4>Trapezius</h4>
+
+            <p>
+                The trapezius contributes to movements of the shoulder and
+                neck.
+            </p>
+
+            <h4>Suprahyoid muscles</h4>
+
+            <p>
+                These muscles are associated with movements of the hyoid
+                bone and swallowing.
+            </p>
+
+            <h4>Infrahyoid muscles</h4>
+
+            <p>
+                These muscles help in movements of the hyoid bone and
+                larynx.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>🫁 Pharynx</h3>
+
+            <p>
+                The pharynx is a muscular tube shared by the respiratory
+                and digestive pathways.
+            </p>
+
+            <h4>Three parts:</h4>
+
+            <ul>
+                <li>Nasopharynx</li>
+                <li>Oropharynx</li>
+                <li>Laryngopharynx</li>
+            </ul>
+        </div>
+
+
+        <div class="card">
+            <h3>🗣️ Larynx</h3>
+
+            <p>
+                The larynx is an organ of the respiratory tract located
+                in the neck. It is important for voice production and
+                protection of the lower airway.
+            </p>
+
+            <h4>Important structures:</h4>
+
+            <ul>
+                <li>Thyroid cartilage</li>
+                <li>Cricoid cartilage</li>
+                <li>Epiglottis</li>
+                <li>Vocal folds</li>
+            </ul>
+        </div>
+
+
+        <div class="card">
+            <h3>🦋 Thyroid Gland</h3>
+
+            <p>
+                The thyroid gland is located in the anterior neck,
+                adjacent to the larynx and upper trachea.
+            </p>
+
+            <h4>Main parts:</h4>
+
+            <ul>
+                <li>Right lobe</li>
+                <li>Left lobe</li>
+                <li>Isthmus</li>
+            </ul>
+
+            <p>
+                The thyroid produces hormones that have important effects
+                on metabolism and growth.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>🩸 Major Arteries</h3>
+
+            <h4>Common Carotid Arteries</h4>
+
+            <p>
+                The common carotid arteries supply blood to the head and
+                neck through their branches.
+            </p>
+
+            <h4>Internal Carotid Artery</h4>
+
+            <p>
+                The internal carotid artery contributes significantly to
+                the blood supply of the brain.
+            </p>
+
+            <h4>External Carotid Artery</h4>
+
+            <p>
+                The external carotid artery supplies many structures of
+                the face, scalp and neck.
+            </p>
+
+            <h4>Vertebral Arteries</h4>
+
+            <p>
+                The vertebral arteries ascend through the neck and
+                contribute to the blood supply of the brain.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>🩸 Major Veins</h3>
+
+            <ul>
+                <li>Internal jugular vein</li>
+                <li>External jugular vein</li>
+                <li>Anterior jugular vein</li>
+            </ul>
+
+            <p>
+                The internal jugular vein is an important venous drainage
+                pathway from the brain, face and neck.
+            </p>
+        </div>
+
+
+        <div class="card nerve">
+            <h3>🧠 Cranial Nerves</h3>
+
+            <p>
+                There are 12 pairs of cranial nerves. They are involved
+                in sensory, motor and autonomic functions of the head
+                and neck, with some also extending beyond the neck.
+            </p>
+
+            <ol>
+                <li>Olfactory (I)</li>
+                <li>Optic (II)</li>
+                <li>Oculomotor (III)</li>
+                <li>Trochlear (IV)</li>
+                <li>Trigeminal (V)</li>
+                <li>Abducens (VI)</li>
+                <li>Facial (VII)</li>
+                <li>Vestibulocochlear (VIII)</li>
+                <li>Glossopharyngeal (IX)</li>
+                <li>Vagus (X)</li>
+                <li>Accessory (XI)</li>
+                <li>Hypoglossal (XII)</li>
+            </ol>
+
+            <p>
+                For detailed cranial nerve study, visit the dedicated
+                Cranial Nerves notes.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>👁️ Special Senses</h3>
+
+            <ul>
+                <li>Eye — vision</li>
+                <li>Ear — hearing and balance</li>
+                <li>Nose — smell</li>
+                <li>Tongue — taste</li>
+            </ul>
+
+            <p>
+                Several cranial nerves are responsible for special sensory
+                functions.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>🧠 Trigeminal Nerve (CN V)</h3>
+
+            <p>
+                The trigeminal nerve is the major sensory nerve of the face
+                and also supplies the muscles of mastication.
+            </p>
+
+            <h4>Three major divisions:</h4>
+
+            <ul>
+                <li>Ophthalmic division (V1)</li>
+                <li>Maxillary division (V2)</li>
+                <li>Mandibular division (V3)</li>
+            </ul>
+        </div>
+
+
+        <div class="card">
+            <h3>🙂 Facial Nerve (CN VII)</h3>
+
+            <p>
+                The facial nerve supplies the muscles of facial expression.
+                It also carries taste sensation from part of the tongue
+                and has other functions.
+            </p>
+
+            <h4>Important exam point:</h4>
+
+            <p>
+                Facial nerve = major motor nerve of facial expression.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>👅 Hypoglossal Nerve (CN XII)</h3>
+
+            <p>
+                The hypoglossal nerve mainly supplies the muscles involved
+                in movements of the tongue.
+            </p>
+
+            <h4>Important exam point:</h4>
+
+            <p>
+                Hypoglossal nerve is the major motor nerve of the tongue.
+            </p>
+        </div>
+
+
+        <div class="card exam">
+            <h3>⭐ Important Exam Points</h3>
+
+            <ul>
+                <li>Skull protects the brain.</li>
+                <li>Mandible is the major movable bone of the face.</li>
+                <li>Facial nerve (CN VII) supplies muscles of facial expression.</li>
+                <li>Trigeminal nerve (CN V) is the major sensory nerve of the face.</li>
+                <li>Trigeminal nerve has V1, V2 and V3 divisions.</li>
+                <li>Hypoglossal nerve (CN XII) supplies tongue muscles.</li>
+                <li>Internal carotid artery contributes to brain blood supply.</li>
+                <li>External carotid artery supplies many structures of the face and scalp.</li>
+                <li>Internal jugular vein is an important venous drainage pathway.</li>
+                <li>Pharynx has nasopharynx, oropharynx and laryngopharynx.</li>
+                <li>Larynx is important for voice production and airway protection.</li>
+                <li>Thyroid gland has right and left lobes connected by an isthmus.</li>
+            </ul>
+        </div>
+
+
+        <div class="card revision">
+            <h3>⚡ Quick Revision</h3>
+
+            <ul>
+                <li><strong>Skull:</strong> Protects the brain</li>
+                <li><strong>Face:</strong> Facial expression and sensory structures</li>
+                <li><strong>CN V:</strong> Trigeminal — facial sensation and mastication</li>
+                <li><strong>CN VII:</strong> Facial — facial expression</li>
+                <li><strong>CN XII:</strong> Hypoglossal — tongue movement</li>
+                <li><strong>Pharynx:</strong> Common pathway for respiratory and digestive systems</li>
+                <li><strong>Larynx:</strong> Voice and airway protection</li>
+                <li><strong>Thyroid:</strong> Endocrine gland of the neck</li>
+                <li><strong>Carotid arteries:</strong> Major arterial supply to head and neck</li>
+                <li><strong>Jugular veins:</strong> Major venous drainage of head and neck</li>
+            </ul>
+        </div>
+
+
+        <div class="buttons">
+
+            <a href="cranial-nerves.html" class="btn">
+                🧠 Cranial Nerves
+            </a>
+
+            <a href="anatomy.html" class="btn">
+                ← Back to Anatomy
+            </a>
+
+            <a href="notes.html" class="btn">
+                📖 All Notes
+            </a>
+
+            <a href="index.html" class="btn">
+                🏠 Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 MedAcademy | Medical Students Study Platform</p>
+    </footer>
+
+</body>
+</html>
+```

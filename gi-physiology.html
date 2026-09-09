@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GI Physiology | MedAcademy</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fb;
+            color: #1f2937;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #7c3aed;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #ede9fe, #faf5ff);
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #6d28d9;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #475569;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            color: #6d28d9;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #4c1d95;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        .card ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        .card li {
+            margin-bottom: 6px;
+        }
+
+        .highlight {
+            background: #f5f3ff;
+            border-left: 5px solid #7c3aed;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+
+        .formula {
+            background: #faf5ff;
+            padding: 18px;
+            margin-top: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #6d28d9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #ede9fe;
+            color: #4c1d95;
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #7c3aed;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            margin: 6px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #6d28d9;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">🩺 MedAcademy</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="notes.html">Notes</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="physiology.html">Physiology</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>🍽️ GI Physiology</h1>
+
+    <p>
+        Complete high-yield notes about gastrointestinal
+        motility, secretion, digestion and absorption.
+    </p>
+
+</section>
+
+
+<div class="container">
+
+
+    <!-- INTRODUCTION -->
+
+    <div class="card">
+
+        <h2>1. Introduction to GI Physiology</h2>
+
+        <p>
+            Gastrointestinal physiology deals with the functions
+            of the digestive system, including movement of food,
+            secretion of digestive juices, digestion, absorption
+            and elimination.
+        </p>
+
+        <div class="highlight">
+
+            <strong>Main functions:</strong>
+            Motility → Secretion → Digestion → Absorption → Defecation
+
+        </div>
+
+    </div>
+
+
+    <!-- GI TRACT -->
+
+    <div class="card">
+
+        <h2>2. Gastrointestinal Tract</h2>
+
+        <p>
+            The gastrointestinal tract is a continuous muscular
+            tube extending from the mouth to the anus.
+        </p>
+
+        <ul>
+
+            <li>Mouth</li>
+
+            <li>Pharynx</li>
+
+            <li>Esophagus</li>
+
+            <li>Stomach</li>
+
+            <li>Small intestine</li>
+
+            <li>Large intestine</li>
+
+            <li>Rectum</li>
+
+            <li>Anus</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- FUNCTIONS -->
+
+    <div class="card">
+
+        <h2>3. Major Functions of the GI System</h2>
+
+        <ul>
+
+            <li>Ingestion of food</li>
+
+            <li>Propulsion of food</li>
+
+            <li>Mechanical digestion</li>
+
+            <li>Chemical digestion</li>
+
+            <li>Secretion of digestive substances</li>
+
+            <li>Absorption of nutrients</li>
+
+            <li>Absorption of water and electrolytes</li>
+
+            <li>Defecation</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- SALIVA -->
+
+    <div class="card">
+
+        <h2>4. Salivary Secretion</h2>
+
+        <p>
+            Saliva is produced mainly by the parotid,
+            submandibular and sublingual glands.
+        </p>
+
+        <h3>Functions of Saliva</h3>
+
+        <ul>
+
+            <li>Lubricates food</li>
+
+            <li>Helps swallowing</li>
+
+            <li>Begins carbohydrate digestion</li>
+
+            <li>Helps maintain oral hygiene</li>
+
+            <li>Contributes to taste</li>
+
+        </ul>
+
+        <div class="highlight">
+
+            <strong>Important enzyme:</strong>
+            Salivary amylase begins starch digestion.
+
+        </div>
+
+    </div>
+
+
+    <!-- SWALLOWING -->
+
+    <div class="card">
+
+        <h2>5. Swallowing (Deglutition)</h2>
+
+        <p>
+            Swallowing moves food from the mouth to the stomach.
+        </p>
+
+        <h3>Three Phases</h3>
+
+        <ol>
+
+            <li>Oral phase</li>
+
+            <li>Pharyngeal phase</li>
+
+            <li>Esophageal phase</li>
+
+        </ol>
+
+        <div class="highlight">
+
+            The oral phase is mainly voluntary, while the
+            pharyngeal and esophageal phases are largely reflexive.
+
+        </div>
+
+    </div>
+
+
+    <!-- STOMACH -->
+
+    <div class="card">
+
+        <h2>6. Gastric Physiology</h2>
+
+        <p>
+            The stomach stores food, mixes it and begins
+            important aspects of digestion.
+        </p>
+
+        <h3>Major Gastric Cells</h3>
+
+        <table>
+
+            <tr>
+                <th>Cell</th>
+                <th>Main Secretion</th>
+            </tr>
+
+            <tr>
+                <td>Parietal cells</td>
+                <td>HCl and intrinsic factor</td>
+            </tr>
+
+            <tr>
+                <td>Chief cells</td>
+                <td>Pepsinogen</td>
+            </tr>
+
+            <tr>
+                <td>G cells</td>
+                <td>Gastrin</td>
+            </tr>
+
+            <tr>
+                <td>Mucous cells</td>
+                <td>Mucus</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- HCL -->
+
+    <div class="card">
+
+        <h2>7. Hydrochloric Acid (HCl)</h2>
+
+        <p>
+            Gastric HCl is secreted by parietal cells.
+        </p>
+
+        <h3>Functions</h3>
+
+        <ul>
+
+            <li>Activates pepsinogen to pepsin</li>
+
+            <li>Provides acidic environment for digestion</li>
+
+            <li>Helps destroy many microorganisms</li>
+
+            <li>Facilitates protein digestion</li>
+
+        </ul>
+
+        <div class="highlight">
+
+            <strong>Parietal cell → HCl + Intrinsic Factor</strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- GASTRIN -->
+
+    <div class="card">
+
+        <h2>8. Gastrin</h2>
+
+        <p>
+            Gastrin is produced mainly by G cells of the stomach.
+        </p>
+
+        <h3>Actions of Gastrin</h3>
+
+        <ul>
+
+            <li>Stimulates gastric acid secretion</li>
+
+            <li>Promotes gastric mucosal growth</li>
+
+            <li>Increases gastric motility</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- PANCREAS -->
+
+    <div class="card">
+
+        <h2>9. Pancreatic Secretion</h2>
+
+        <p>
+            The pancreas releases digestive enzymes and
+            bicarbonate into the small intestine.
+        </p>
+
+        <h3>Important Components</h3>
+
+        <ul>
+
+            <li>Pancreatic amylase</li>
+
+            <li>Pancreatic lipase</li>
+
+            <li>Proteolytic enzymes</li>
+
+            <li>Bicarbonate</li>
+
+        </ul>
+
+        <div class="highlight">
+
+            Pancreatic bicarbonate helps neutralize acidic
+            chyme entering the duodenum.
+
+        </div>
+
+    </div>
+
+
+    <!-- BILE -->
+
+    <div class="card">
+
+        <h2>10. Bile</h2>
+
+        <p>
+            Bile is produced by the liver and stored and
+            concentrated in the gallbladder.
+        </p>
+
+        <h3>Functions</h3>
+
+        <ul>
+
+            <li>Emulsification of dietary fats</li>
+
+            <li>Facilitates fat digestion</li>
+
+            <li>Helps absorption of fat-soluble vitamins</li>
+
+            <li>Provides a route for excretion of bilirubin</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- SMALL INTESTINE -->
+
+    <div class="card">
+
+        <h2>11. Small Intestine</h2>
+
+        <p>
+            The small intestine is the major site of digestion
+            and nutrient absorption.
+        </p>
+
+        <h3>Parts</h3>
+
+        <ul>
+
+            <li>Duodenum</li>
+
+            <li>Jejunum</li>
+
+            <li>Ileum</li>
+
+        </ul>
+
+        <div class="highlight">
+
+            Most nutrient absorption occurs in the small intestine.
+
+        </div>
+
+    </div>
+
+
+    <!-- VILLI -->
+
+    <div class="card">
+
+        <h2>12. Intestinal Villi and Microvilli</h2>
+
+        <p>
+            Villi and microvilli greatly increase the surface area
+            available for absorption.
+        </p>
+
+        <ul>
+
+            <li>Villi contain blood capillaries.</li>
+
+            <li>Villi also contain lymphatic vessels called lacteals.</li>
+
+            <li>Microvilli form the brush border.</li>
+
+        </ul>
+
+        <div class="highlight">
+
+            <strong>Lacteals</strong> are important for absorption
+            of dietary lipids.
+
+        </div>
+
+    </div>
+
+
+    <!-- CARBOHYDRATES -->
+
+    <div class="card">
+
+        <h2>13. Carbohydrate Digestion and Absorption</h2>
+
+        <p>
+            Carbohydrates are ultimately broken down into
+            monosaccharides.
+        </p>
+
+        <ul>
+
+            <li>Starch digestion begins with salivary amylase.</li>
+
+            <li>Pancreatic amylase continues carbohydrate digestion.</li>
+
+            <li>Brush-border enzymes complete digestion.</li>
+
+            <li>Glucose and galactose are absorbed mainly through sodium-dependent transport.</li>
+
+            <li>Fructose is absorbed by facilitated diffusion.</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- PROTEINS -->
+
+    <div class="card">
+
+        <h2>14. Protein Digestion and Absorption</h2>
+
+        <p>
+            Protein digestion begins in the stomach and continues
+            in the small intestine.
+        </p>
+
+        <ul>
+
+            <li>Pepsin begins protein digestion in the stomach.</li>
+
+            <li>Pancreatic proteases digest proteins in the small intestine.</li>
+
+            <li>Peptidases complete digestion at the intestinal brush border.</li>
+
+            <li>Amino acids and small peptides are absorbed by intestinal cells.</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- FAT -->
+
+    <div class="card">
+
+        <h2>15. Fat Digestion and Absorption</h2>
+
+        <p>
+            Fat digestion depends on bile salts and pancreatic
+            digestive enzymes.
+        </p>
+
+        <ul>
+
+            <li>Bile salts emulsify fats.</li>
+
+            <li>Pancreatic lipase breaks down triglycerides.</li>
+
+            <li>Micelles help deliver lipid products to enterocytes.</li>
+
+            <li>Long-chain fatty acids are reassembled into triglycerides.</li>
+
+            <li>They are packaged into chylomicrons.</li>
+
+            <li>Chylomicrons enter lymphatic vessels.</li>
+
+        </ul>
+
+        <div class="highlight">
+
+            <strong>Fat → Micelles → Enterocytes → Chylomicrons → Lymph</strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- GI HORMONES -->
+
+    <div class="card">
+
+        <h2>16. Important GI Hormones</h2>
+
+        <table>
+
+            <tr>
+                <th>Hormone</th>
+                <th>Main Action</th>
+            </tr>
+
+            <tr>
+                <td>Gastrin</td>
+                <td>Increases gastric acid secretion and motility</td>
+            </tr>
+
+            <tr>
+                <td>Secretin</td>
+                <td>Stimulates pancreatic bicarbonate secretion</td>
+            </tr>
+
+            <tr>
+                <td>CCK</td>
+                <td>Stimulates pancreatic enzyme secretion and gallbladder contraction</td>
+            </tr>
+
+            <tr>
+                <td>GIP</td>
+                <td>Promotes insulin secretion and reduces gastric activity</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- MOTILITY -->
+
+    <div class="card">
+
+        <h2>17. Gastrointestinal Motility</h2>
+
+        <p>
+            GI motility moves food through the digestive tract
+            and mixes it with digestive secretions.
+        </p>
+
+        <h3>Important Types</h3>
+
+        <ul>
+
+            <li>Peristalsis</li>
+
+            <li>Segmentation</li>
+
+            <li>Gastric mixing</li>
+
+            <li>Colonic movements</li>
+
+        </ul>
+
+        <div class="highlight">
+
+            <strong>Peristalsis</strong> mainly propels intestinal
+            contents forward.
+
+        </div>
+
+    </div>
+
+
+    <!-- ENTERIC NERVOUS SYSTEM -->
+
+    <div class="card">
+
+        <h2>18. Enteric Nervous System</h2>
+
+        <p>
+            The enteric nervous system helps control gastrointestinal
+            motility, secretion and blood flow.
+        </p>
+
+        <h3>Main Plexuses</h3>
+
+        <ul>
+
+            <li>Myenteric plexus</li>
+
+            <li>Submucosal plexus</li>
+
+        </ul>
+
+        <div class="highlight">
+
+            <strong>Myenteric plexus</strong> is particularly important
+            for gastrointestinal motility.
+
+        </div>
+
+    </div>
+
+
+    <!-- LARGE INTESTINE -->
+
+    <div class="card">
+
+        <h2>19. Large Intestine</h2>
+
+        <p>
+            The large intestine is mainly involved in absorption
+            of water and electrolytes and formation of feces.
+        </p>
+
+        <ul>
+
+            <li>Absorption of water</li>
+
+            <li>Absorption of electrolytes</li>
+
+            <li>Storage of fecal material</li>
+
+            <li>Formation and propulsion of feces</li>
+
+            <li>Interaction with intestinal bacteria</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- DEFECATION -->
+
+    <div class="card">
+
+        <h2>20. Defecation</h2>
+
+        <p>
+            Defecation is the process of eliminating fecal material
+            from the rectum through the anus.
+        </p>
+
+        <ul>
+
+            <li>Rectal distension initiates defecation reflexes.</li>
+
+            <li>Internal anal sphincter is smooth muscle.</li>
+
+            <li>External anal sphincter is skeletal muscle.</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- IMPORTANT EXAM -->
+
+    <div class="card">
+
+        <h2>⭐ Important Exam Points</h2>
+
+        <ul>
+
+            <li>Parietal cells secrete HCl and intrinsic factor.</li>
+
+            <li>Chief cells secrete pepsinogen.</li>
+
+            <li>G cells secrete gastrin.</li>
+
+            <li>Salivary amylase begins carbohydrate digestion.</li>
+
+            <li>Pepsin begins protein digestion in the stomach.</li>
+
+            <li>Pancreas provides digestive enzymes and bicarbonate.</li>
+
+            <li>Bile salts help in fat digestion and absorption.</li>
+
+            <li>Small intestine is the major site of nutrient absorption.</li>
+
+            <li>Lacteals absorb dietary lipids.</li>
+
+            <li>Secretin stimulates pancreatic bicarbonate secretion.</li>
+
+            <li>CCK stimulates pancreatic enzyme secretion and gallbladder contraction.</li>
+
+            <li>Myenteric plexus is important for GI motility.</li>
+
+            <li>Large intestine absorbs water and electrolytes.</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- QUICK REVISION -->
+
+    <div class="card">
+
+        <h2>⚡ Quick Revision</h2>
+
+        <div class="highlight">
+
+            <strong>Parietal cell</strong> → HCl + Intrinsic Factor
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>Chief cell</strong> → Pepsinogen
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>G cell</strong> → Gastrin
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>Secretin</strong> → Pancreatic bicarbonate
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>CCK</strong> → Pancreatic enzymes + Gallbladder contraction
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>Small intestine</strong> → Major site of nutrient absorption
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>Lacteals</strong> → Absorption of dietary lipids
+
+        </div>
+
+        <div class="highlight">
+
+            <strong>Large intestine</strong> → Water and electrolyte absorption
+
+        </div>
+
+    </div>
+
+
+    <!-- BUTTONS -->
+
+    <div class="buttons">
+
+        <a href="physiology.html" class="btn">
+            ← Physiology
+        </a>
+
+        <a href="quiz.html" class="btn">
+            📝 Medical Quiz
+        </a>
+
+        <a href="notes.html" class="btn">
+            📚 All Notes
+        </a>
+
+        <a href="index.html" class="btn">
+            🏠 Home
+        </a>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>© 2026 MedAcademy | Medical Students Study Portal</p>
+
+</footer>
+
+</body>
+</html>

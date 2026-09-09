@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Physiology | MedAcademy</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #0b3954;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0b3954, #087e8b);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .section {
+            background: white;
+            padding: 28px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            color: #0b3954;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
+        }
+
+        .section h3 {
+            color: #087e8b;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            margin-left: 25px;
+        }
+
+        li {
+            margin-bottom: 7px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e9f3f7;
+            color: #0b3954;
+        }
+
+        .highlight {
+            background: #eef8f9;
+            border-left: 5px solid #087e8b;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 6px;
+        }
+
+        .exam {
+            background: #fff8e6;
+            border-left: 5px solid #e0a800;
+            padding: 18px;
+            border-radius: 6px;
+        }
+
+        .revision {
+            background: #eef7ee;
+            border-left: 5px solid #3c8d40;
+            padding: 18px;
+            border-radius: 6px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0b3954;
+            color: white;
+            padding: 12px 20px;
+            margin: 6px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #087e8b;
+        }
+
+        footer {
+            background: #0b3954;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">🩺 MedAcademy</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="notes.html">Notes</a>
+        <a href="physiology.html">Physiology</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>🩸 Blood Physiology</h1>
+
+    <p>
+        Complete high-yield notes for medical students
+    </p>
+
+</section>
+
+
+<div class="container">
+
+
+    <!-- Introduction -->
+
+    <div class="section">
+
+        <h2>1. Introduction to Blood</h2>
+
+        <p>
+            Blood is a specialized connective tissue that circulates
+            through the cardiovascular system.
+        </p>
+
+        <p>
+            It transports oxygen, nutrients, hormones and metabolic
+            waste products throughout the body.
+        </p>
+
+        <div class="highlight">
+
+            <strong>Main components of blood:</strong>
+
+            <ul>
+                <li>Plasma</li>
+                <li>Red Blood Cells (RBCs)</li>
+                <li>White Blood Cells (WBCs)</li>
+                <li>Platelets</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Plasma -->
+
+    <div class="section">
+
+        <h2>2. Plasma</h2>
+
+        <p>
+            Plasma is the liquid component of blood in which blood
+            cells and other substances are suspended.
+        </p>
+
+        <h3>Main Components</h3>
+
+        <ul>
+            <li>Water</li>
+            <li>Plasma proteins</li>
+            <li>Electrolytes</li>
+            <li>Nutrients</li>
+            <li>Hormones</li>
+            <li>Metabolic waste products</li>
+        </ul>
+
+        <h3>Major Plasma Proteins</h3>
+
+        <table>
+
+            <tr>
+                <th>Protein</th>
+                <th>Main Function</th>
+            </tr>
+
+            <tr>
+                <td>Albumin</td>
+                <td>Maintains plasma oncotic pressure and transports substances</td>
+            </tr>
+
+            <tr>
+                <td>Globulins</td>
+                <td>Transport and immune functions</td>
+            </tr>
+
+            <tr>
+                <td>Fibrinogen</td>
+                <td>Important for blood clot formation</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- RBC -->
+
+    <div class="section">
+
+        <h2>3. Red Blood Cells (RBCs)</h2>
+
+        <p>
+            Red blood cells, also called erythrocytes, are specialized
+            cells responsible mainly for the transport of oxygen.
+        </p>
+
+        <h3>Characteristics</h3>
+
+        <ul>
+            <li>Biconcave disc-shaped cells</li>
+            <li>Mature RBCs lack a nucleus</li>
+            <li>Contain hemoglobin</li>
+            <li>Highly flexible</li>
+            <li>Designed for efficient gas transport</li>
+        </ul>
+
+        <h3>Functions of RBCs</h3>
+
+        <ul>
+            <li>Transport oxygen</li>
+            <li>Help transport carbon dioxide</li>
+            <li>Contribute to acid-base balance</li>
+        </ul>
+
+    </div>
+
+
+    <!-- Hemoglobin -->
+
+    <div class="section">
+
+        <h2>4. Hemoglobin</h2>
+
+        <p>
+            Hemoglobin is an iron-containing protein present inside
+            red blood cells.
+        </p>
+
+        <p>
+            Its major function is to bind and transport oxygen.
+        </p>
+
+        <div class="highlight">
+
+            <strong>Important:</strong>
+
+            One hemoglobin molecule can bind up to
+            <strong>4 oxygen molecules</strong>.
+
+        </div>
+
+    </div>
+
+
+    <!-- RBC lifespan -->
+
+    <div class="section">
+
+        <h2>5. RBC Lifespan</h2>
+
+        <p>
+            The average lifespan of a red blood cell is approximately
+            <strong>120 days</strong>.
+        </p>
+
+        <p>
+            Old or damaged RBCs are mainly removed by macrophages,
+            particularly in the spleen and liver.
+        </p>
+
+        <h3>Important RBC Facts</h3>
+
+        <ul>
+            <li>RBCs are produced in red bone marrow.</li>
+            <li>They contain hemoglobin.</li>
+            <li>Mature RBCs do not have a nucleus.</li>
+            <li>Average lifespan ≈ 120 days.</li>
+        </ul>
+
+    </div>
+
+
+    <!-- Erythropoiesis -->
+
+    <div class="section">
+
+        <h2>6. Erythropoiesis</h2>
+
+        <p>
+            Erythropoiesis is the process of formation of red blood
+            cells.
+        </p>
+
+        <p>
+            In adults, erythropoiesis mainly occurs in the
+            <strong>red bone marrow</strong>.
+        </p>
+
+        <h3>Erythropoietin</h3>
+
+        <p>
+            Erythropoietin (EPO) is the major hormone that stimulates
+            RBC production.
+        </p>
+
+        <p>
+            The kidneys are the major source of erythropoietin in adults.
+        </p>
+
+        <div class="highlight">
+
+            <strong>Low oxygen → increased EPO → increased RBC production</strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- WBC -->
+
+    <div class="section">
+
+        <h2>7. White Blood Cells (WBCs)</h2>
+
+        <p>
+            White blood cells, or leukocytes, are important components
+            of the immune system.
+        </p>
+
+        <h3>Main Types of WBCs</h3>
+
+        <table>
+
+            <tr>
+                <th>WBC</th>
+                <th>Main Function</th>
+            </tr>
+
+            <tr>
+                <td>Neutrophils</td>
+                <td>Important in acute bacterial infections and phagocytosis</td>
+            </tr>
+
+            <tr>
+                <td>Lymphocytes</td>
+                <td>Adaptive and immune responses</td>
+            </tr>
+
+            <tr>
+                <td>Monocytes</td>
+                <td>Become macrophages in tissues and perform phagocytosis</td>
+            </tr>
+
+            <tr>
+                <td>Eosinophils</td>
+                <td>Important in parasitic infections and allergic responses</td>
+            </tr>
+
+            <tr>
+                <td>Basophils</td>
+                <td>Release mediators involved in inflammatory and allergic responses</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- WBC classification -->
+
+    <div class="section">
+
+        <h2>8. WBC Classification</h2>
+
+        <h3>Granulocytes</h3>
+
+        <ul>
+            <li>Neutrophils</li>
+            <li>Eosinophils</li>
+            <li>Basophils</li>
+        </ul>
+
+        <h3>Agranulocytes</h3>
+
+        <ul>
+            <li>Lymphocytes</li>
+            <li>Monocytes</li>
+        </ul>
+
+        <div class="highlight">
+
+            <strong>Mnemonic:</strong>
+
+            <br>
+
+            Granulocytes =
+            <strong>Neutrophils + Eosinophils + Basophils</strong>
+
+            <br><br>
+
+            Agranulocytes =
+            <strong>Lymphocytes + Monocytes</strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- Platelets -->
+
+    <div class="section">
+
+        <h2>9. Platelets</h2>
+
+        <p>
+            Platelets, also called thrombocytes, are small cellular
+            fragments derived from megakaryocytes in the bone marrow.
+        </p>
+
+        <h3>Functions</h3>
+
+        <ul>
+            <li>Help stop bleeding</li>
+            <li>Form the platelet plug</li>
+            <li>Participate in coagulation</li>
+            <li>Release substances involved in vessel repair</li>
+        </ul>
+
+    </div>
+
+
+    <!-- Hemostasis -->
+
+    <div class="section">
+
+        <h2>10. Hemostasis</h2>
+
+        <p>
+            Hemostasis is the physiological process that prevents
+            excessive blood loss after vascular injury.
+        </p>
+
+        <h3>Main Steps of Hemostasis</h3>
+
+        <ol>
+
+            <li>
+                <strong>Vasoconstriction</strong> —
+                narrowing of the injured blood vessel.
+            </li>
+
+            <li>
+                <strong>Platelet Plug Formation</strong> —
+                platelets adhere to the injured area and aggregate.
+            </li>
+
+            <li>
+                <strong>Coagulation</strong> —
+                formation of a fibrin clot stabilizes the platelet plug.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- Blood Groups -->
+
+    <div class="section">
+
+        <h2>11. ABO Blood Group System</h2>
+
+        <p>
+            The ABO system classifies blood according to the presence
+            or absence of A and B antigens on red blood cells.
+        </p>
+
+        <table>
+
+            <tr>
+                <th>Blood Group</th>
+                <th>RBC Antigen</th>
+                <th>Plasma Antibodies</th>
+            </tr>
+
+            <tr>
+                <td>A</td>
+                <td>A</td>
+                <td>Anti-B</td>
+            </tr>
+
+            <tr>
+                <td>B</td>
+                <td>B</td>
+                <td>Anti-A</td>
+            </tr>
+
+            <tr>
+                <td>AB</td>
+                <td>A and B</td>
+                <td>None against A/B</td>
+            </tr>
+
+            <tr>
+                <td>O</td>
+                <td>None</td>
+                <td>Anti-A and Anti-B</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- Rh -->
+
+    <div class="section">
+
+        <h2>12. Rh Blood Group System</h2>
+
+        <p>
+            The Rh system is another important blood group system.
+            The D antigen is the most clinically important Rh antigen.
+        </p>
+
+        <ul>
+            <li>Rh positive → D antigen is present.</li>
+            <li>Rh negative → D antigen is absent.</li>
+        </ul>
+
+        <div class="highlight">
+
+            <strong>Clinical importance:</strong>
+
+            Rh incompatibility can be important during pregnancy,
+            particularly when an Rh-negative mother carries an
+            Rh-positive fetus.
+
+        </div>
+
+    </div>
+
+
+    <!-- Exam Points -->
+
+    <div class="section">
+
+        <h2>⭐ Important Exam Points</h2>
+
+        <div class="exam">
+
+            <ul>
+
+                <li>Average RBC lifespan = <strong>120 days</strong>.</li>
+
+                <li>
+                    Main function of RBCs =
+                    <strong>oxygen transport</strong>.
+                </li>
+
+                <li>
+                    Hemoglobin contains
+                    <strong>iron</strong>.
+                </li>
+
+                <li>
+                    Main site of adult erythropoiesis =
+                    <strong>red bone marrow</strong>.
+                </li>
+
+                <li>
+                    Major hormone stimulating RBC production =
+                    <strong>erythropoietin</strong>.
+                </li>
+
+                <li>
+                    Major source of EPO in adults =
+                    <strong>kidneys</strong>.
+                </li>
+
+                <li>
+                    Granulocytes =
+                    <strong>neutrophils, eosinophils, basophils</strong>.
+                </li>
+
+                <li>
+                    Agranulocytes =
+                    <strong>lymphocytes, monocytes</strong>.
+                </li>
+
+                <li>
+                    Platelets are important for
+                    <strong>hemostasis</strong>.
+                </li>
+
+                <li>
+                    Hemostasis includes vasoconstriction,
+                    platelet plug formation and coagulation.
+                </li>
+
+                <li>
+                    Rh-positive blood has the
+                    <strong>D antigen</strong>.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Quick Revision -->
+
+    <div class="section">
+
+        <h2>📝 Quick Revision</h2>
+
+        <div class="revision">
+
+            <p><strong>Blood →</strong> Plasma + Formed elements</p>
+
+            <p><strong>RBC →</strong> Oxygen transport</p>
+
+            <p><strong>Hemoglobin →</strong> Oxygen-carrying protein</p>
+
+            <p><strong>RBC lifespan →</strong> Approximately 120 days</p>
+
+            <p><strong>EPO →</strong> Stimulates RBC production</p>
+
+            <p><strong>WBC →</strong> Immune defense</p>
+
+            <p><strong>Platelets →</strong> Hemostasis</p>
+
+            <p><strong>ABO →</strong> A and B antigens</p>
+
+            <p><strong>Rh →</strong> D antigen</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <div class="buttons">
+
+        <a href="physiology.html" class="btn">
+            ← Physiology
+        </a>
+
+        <a href="quiz.html" class="btn">
+            🧠 Medical Quiz
+        </a>
+
+        <a href="notes.html" class="btn">
+            📚 All Notes
+        </a>
+
+        <a href="index.html" class="btn">
+            🏠 Home
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<footer>
+
+    <p>© 2026 MedAcademy | Medical Students Study Platform</p>
+
+</footer>
+
+</body>
+</html>

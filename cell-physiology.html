@@ -1,0 +1,627 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cell Physiology - MedAcademy</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #0b5ed7;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .hero h2 {
+            color: #0b5ed7;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #0b5ed7;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .card h4 {
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 7px;
+        }
+
+        .exam {
+            background: #fff3cd;
+            border-left: 6px solid #ffc107;
+        }
+
+        .revision {
+            background: #e8f5e9;
+            border-left: 6px solid #28a745;
+        }
+
+        .formula {
+            background: #e8f0ff;
+            border-left: 6px solid #0b5ed7;
+            padding: 18px;
+            margin-top: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0b5ed7;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #084298;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                justify-content: center;
+                text-align: center;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px 8px;
+                display: inline-block;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>🩺 MedAcademy</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="notes.html">Notes</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="physiology.html">Physiology</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <h2>🧬 Cell Physiology</h2>
+
+        <p>
+            Cell membrane, transport mechanisms and membrane potentials
+        </p>
+
+    </section>
+
+
+    <main class="container">
+
+
+        <div class="card">
+
+            <h3>📚 Introduction</h3>
+
+            <p>
+                Cell physiology deals with the normal functions of cells
+                and how cells maintain their internal environment.
+            </p>
+
+            <p>
+                The cell membrane plays a major role in controlling the
+                movement of substances into and out of the cell.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🧱 Cell Membrane</h3>
+
+            <p>
+                The cell membrane is a selectively permeable membrane
+                surrounding the cell.
+            </p>
+
+            <h4>Major components:</h4>
+
+            <ul>
+                <li>Phospholipids</li>
+                <li>Membrane proteins</li>
+                <li>Cholesterol</li>
+                <li>Carbohydrate-containing molecules</li>
+            </ul>
+
+            <h4>Important functions:</h4>
+
+            <ul>
+                <li>Separates intracellular and extracellular environments</li>
+                <li>Controls movement of substances</li>
+                <li>Receives signals through receptors</li>
+                <li>Helps maintain membrane potential</li>
+                <li>Participates in cell communication</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>💧 Diffusion</h3>
+
+            <p>
+                Diffusion is the passive movement of particles from an area
+                of higher concentration toward an area of lower concentration.
+            </p>
+
+            <h4>Important points:</h4>
+
+            <ul>
+                <li>Does not directly require cellular energy (ATP).</li>
+                <li>Movement occurs down a concentration gradient.</li>
+                <li>Small lipid-soluble molecules can cross the membrane by simple diffusion.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🚪 Facilitated Diffusion</h3>
+
+            <p>
+                Facilitated diffusion is passive transport through specific
+                membrane proteins.
+            </p>
+
+            <h4>Features:</h4>
+
+            <ul>
+                <li>Does not directly use ATP.</li>
+                <li>Uses carrier proteins or channels.</li>
+                <li>Moves substances down their electrochemical gradient.</li>
+                <li>Can be selective and saturable.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>💦 Osmosis</h3>
+
+            <p>
+                Osmosis is the movement of water across a selectively
+                permeable membrane toward the side with higher effective
+                solute concentration.
+            </p>
+
+            <h4>Important terms:</h4>
+
+            <ul>
+                <li><strong>Hypotonic:</strong> Lower effective osmolarity than the reference solution.</li>
+                <li><strong>Isotonic:</strong> Similar effective osmolarity.</li>
+                <li><strong>Hypertonic:</strong> Higher effective osmolarity.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>⚡ Active Transport</h3>
+
+            <p>
+                Active transport moves substances against their
+                electrochemical gradient and requires energy.
+            </p>
+
+            <h4>Primary active transport:</h4>
+
+            <p>
+                Uses ATP directly to transport ions or other substances.
+            </p>
+
+            <h4>Example:</h4>
+
+            <ul>
+                <li>Na⁺/K⁺ ATPase</li>
+            </ul>
+
+            <h4>Na⁺/K⁺ ATPase:</h4>
+
+            <ul>
+                <li>Moves 3 Na⁺ out of the cell.</li>
+                <li>Moves 2 K⁺ into the cell.</li>
+                <li>Uses ATP.</li>
+                <li>Helps maintain Na⁺ and K⁺ gradients.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🔄 Secondary Active Transport</h3>
+
+            <p>
+                Secondary active transport uses the energy stored in an
+                ion gradient, usually the Na⁺ gradient, rather than
+                directly hydrolyzing ATP at the transporter.
+            </p>
+
+            <h4>Two common types:</h4>
+
+            <ul>
+                <li><strong>Cotransport (symport):</strong> substances move in the same direction.</li>
+                <li><strong>Countertransport (antiport):</strong> substances move in opposite directions.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>📦 Endocytosis & Exocytosis</h3>
+
+            <h4>Endocytosis</h4>
+
+            <p>
+                Endocytosis brings substances into the cell by forming
+                membrane vesicles.
+            </p>
+
+            <h4>Types include:</h4>
+
+            <ul>
+                <li>Phagocytosis</li>
+                <li>Pinocytosis</li>
+                <li>Receptor-mediated endocytosis</li>
+            </ul>
+
+            <h4>Exocytosis</h4>
+
+            <p>
+                Exocytosis releases substances from the cell when
+                intracellular vesicles fuse with the plasma membrane.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>⚡ Resting Membrane Potential</h3>
+
+            <p>
+                Resting membrane potential is the electrical potential
+                difference across the cell membrane when the cell is
+                at rest.
+            </p>
+
+            <p>
+                In many neurons, the resting membrane potential is
+                approximately <strong>-70 mV</strong>, although the exact
+                value varies by cell type.
+            </p>
+
+            <h4>Major contributing factors:</h4>
+
+            <ul>
+                <li>Unequal distribution of ions across the membrane</li>
+                <li>Selective permeability of the membrane</li>
+                <li>K⁺ leak channels</li>
+                <li>Na⁺/K⁺ ATPase</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>⚡ Action Potential</h3>
+
+            <p>
+                An action potential is a rapid, temporary change in
+                membrane potential that allows certain excitable cells
+                to transmit signals.
+            </p>
+
+            <h4>Main phases:</h4>
+
+            <ol>
+                <li>Resting state</li>
+                <li>Depolarization</li>
+                <li>Repolarization</li>
+                <li>After-hyperpolarization</li>
+                <li>Return toward resting potential</li>
+            </ol>
+
+            <h4>Depolarization:</h4>
+
+            <p>
+                In a typical neuronal action potential, voltage-gated
+                Na⁺ channels open rapidly, allowing Na⁺ influx.
+            </p>
+
+            <h4>Repolarization:</h4>
+
+            <p>
+                Voltage-gated Na⁺ channels inactivate and voltage-gated
+                K⁺ channels contribute to K⁺ efflux, moving the membrane
+                potential back toward negative values.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🚦 Threshold</h3>
+
+            <p>
+                Threshold is the membrane potential at which an adequate
+                depolarizing stimulus triggers an action potential in an
+                excitable cell.
+            </p>
+
+            <p>
+                Once threshold is reached, the action potential follows
+                the <strong>all-or-none principle</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>⏱️ Refractory Period</h3>
+
+            <p>
+                The refractory period is the period after an action
+                potential during which another action potential is
+                difficult or impossible to generate.
+            </p>
+
+            <h4>Two phases:</h4>
+
+            <ul>
+                <li><strong>Absolute refractory period:</strong> another action potential cannot normally be triggered.</li>
+                <li><strong>Relative refractory period:</strong> a stronger-than-usual stimulus may trigger another action potential.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🔌 Ion Channels</h3>
+
+            <p>
+                Ion channels are membrane proteins that allow specific
+                ions to cross the membrane.
+            </p>
+
+            <h4>Important types:</h4>
+
+            <ul>
+                <li>Leak channels</li>
+                <li>Voltage-gated channels</li>
+                <li>Ligand-gated channels</li>
+                <li>Mechanically gated channels</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🧪 Electrochemical Gradient</h3>
+
+            <p>
+                The electrochemical gradient is determined by both the
+                concentration gradient and the electrical gradient acting
+                on an ion.
+            </p>
+
+            <p>
+                Ion movement across a membrane depends on these forces
+                and the membrane's permeability to that ion.
+            </p>
+
+        </div>
+
+
+        <div class="card exam">
+
+            <h3>⭐ Important Exam Points</h3>
+
+            <ul>
+                <li>Cell membrane is selectively permeable.</li>
+                <li>Simple diffusion is passive and moves down a gradient.</li>
+                <li>Facilitated diffusion uses membrane proteins but does not directly use ATP.</li>
+                <li>Osmosis refers to movement of water across a selectively permeable membrane.</li>
+                <li>Primary active transport directly uses ATP.</li>
+                <li>Na⁺/K⁺ ATPase moves 3 Na⁺ out and 2 K⁺ into the cell per ATP cycle.</li>
+                <li>Secondary active transport uses energy stored in an ion gradient.</li>
+                <li>Resting membrane potential is negative inside relative to outside in many cells.</li>
+                <li>Neuronal resting membrane potential is commonly around -70 mV.</li>
+                <li>Depolarization of a typical neuronal action potential involves Na⁺ influx.</li>
+                <li>Repolarization is strongly associated with K⁺ efflux.</li>
+                <li>Action potentials follow the all-or-none principle.</li>
+                <li>Absolute and relative refractory periods limit repeated action potentials.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="card formula">
+
+            <h3>🧮 High-Yield Formula</h3>
+
+            <p>
+                <strong>Osmotic pressure:</strong>
+                π = iCRT
+            </p>
+
+            <p>
+                Where:
+                i = van't Hoff factor,
+                C = concentration,
+                R = gas constant,
+                T = absolute temperature.
+            </p>
+
+        </div>
+
+
+        <div class="card revision">
+
+            <h3>⚡ Quick Revision</h3>
+
+            <ul>
+                <li><strong>Diffusion:</strong> High concentration → Low concentration</li>
+                <li><strong>Facilitated diffusion:</strong> Passive + membrane protein</li>
+                <li><strong>Osmosis:</strong> Movement of water across a selectively permeable membrane</li>
+                <li><strong>Primary active transport:</strong> Direct ATP use</li>
+                <li><strong>Na⁺/K⁺ pump:</strong> 3 Na⁺ out + 2 K⁺ in</li>
+                <li><strong>Resting potential:</strong> Negative inside relative to outside</li>
+                <li><strong>Depolarization:</strong> Na⁺ influx in a typical neuronal action potential</li>
+                <li><strong>Repolarization:</strong> K⁺ efflux contributes to restoring negativity</li>
+                <li><strong>Threshold:</strong> Trigger point for an action potential</li>
+                <li><strong>Refractory period:</strong> Limits immediate re-excitation</li>
+            </ul>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a href="physiology.html" class="btn">
+                ← Back to Physiology
+            </a>
+
+            <a href="quiz.html" class="btn">
+                📝 Medical Quiz
+            </a>
+
+            <a href="notes.html" class="btn">
+                📖 All Notes
+            </a>
+
+            <a href="index.html" class="btn">
+                🏠 Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 MedAcademy | Medical Students Study Platform
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```

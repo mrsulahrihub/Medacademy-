@@ -1,0 +1,444 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anatomy | MedAcademy</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f8fb;
+    color:#222;
+}
+
+/* HEADER */
+
+header{
+    background:#0d6efd;
+    color:white;
+    padding:16px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* HERO */
+
+.hero{
+    background:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+.hero h1{
+    font-size:40px;
+    color:#0d6efd;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#666;
+    font-size:18px;
+}
+
+/* CONTAINER */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+}
+
+/* TITLE */
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    color:#0d6efd;
+    font-size:30px;
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* TOPICS */
+
+.topic-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+/* CARD */
+
+.topic-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.topic-card:hover{
+    transform:translateY(-6px);
+}
+
+.topic-icon{
+    font-size:45px;
+    margin-bottom:12px;
+}
+
+.topic-card h3{
+    color:#0d6efd;
+    margin-bottom:10px;
+}
+
+.topic-card p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    background:#0d6efd;
+    color:white;
+    padding:11px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#084298;
+}
+
+/* BACK BUTTON */
+
+.back{
+    text-align:center;
+    margin-top:45px;
+}
+
+.back a{
+    display:inline-block;
+    border:2px solid #0d6efd;
+    color:#0d6efd;
+    padding:11px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.back a:hover{
+    background:#0d6efd;
+    color:white;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav{
+        gap:12px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+🩺 MedAcademy
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="notes.html">Notes</a>
+
+<a href="quiz.html">Quiz</a>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>🦴 Anatomy</h1>
+
+<p>
+Explore human anatomy chapter by chapter.
+</p>
+
+</section>
+
+
+<!-- TOPICS -->
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>📚 Anatomy Topics</h2>
+
+<p>
+Select a topic to start studying.
+</p>
+
+</div>
+
+
+<div class="topic-grid">
+
+
+<!-- UPPER LIMB -->
+
+<div class="topic-card">
+
+<div class="topic-icon">
+💪
+</div>
+
+<h3>Upper Limb</h3>
+
+<p>
+Bones, muscles, nerves, vessels and joints of the upper limb.
+</p>
+
+<a href="upper-limb.html" class="btn">
+Study Now →
+</a>
+
+</div>
+
+
+<!-- LOWER LIMB -->
+
+<div class="topic-card">
+
+<div class="topic-icon">
+🦵
+</div>
+
+<h3>Lower Limb</h3>
+
+<p>
+Study bones, muscles, nerves, vessels and joints of the lower limb.
+</p>
+
+<a href="lower-limb.html" class="btn">
+Study Now →
+</a>
+
+</div>
+
+
+<!-- THORAX -->
+
+<div class="topic-card">
+
+<div class="topic-icon">
+🫁
+</div>
+
+<h3>Thorax</h3>
+
+<p>
+Learn heart, lungs, mediastinum and thoracic structures.
+</p>
+
+<a href="thorax.html" class="btn">
+Study Now →
+</a>
+
+</div>
+
+
+<!-- ABDOMEN -->
+
+<div class="topic-card">
+
+<div class="topic-icon">
+🫃
+</div>
+
+<h3>Abdomen</h3>
+
+<p>
+Study abdominal organs, vessels and important anatomical relations.
+</p>
+
+<a href="abdomen.html" class="btn">
+Study Now →
+</a>
+
+</div>
+
+
+<!-- HEAD & NECK -->
+
+<div class="topic-card">
+
+<div class="topic-icon">
+🧠
+</div>
+
+<h3>Head & Neck</h3>
+
+<p>
+Explore skull, face, neck, vessels, nerves and important structures.
+</p>
+
+<a href="head-neck.html" class="btn">
+Study Now →
+</a>
+
+</div>
+
+
+<!-- NEUROANATOMY -->
+
+<div class="topic-card">
+
+<div class="topic-icon">
+🧠
+</div>
+
+<h3>Neuroanatomy</h3>
+
+<p>
+Learn brain, spinal cord, pathways and nervous system anatomy.
+</p>
+
+<a href="neuroanatomy.html" class="btn">
+Study Now →
+</a>
+
+</div>
+
+
+</div>
+<a href="abdomen.html">Abdomen</a>
+<a href="head-neck.html">Head & Neck</a>
+
+<!-- ANATOMY NOTES -->
+
+<div class="back">
+
+<a href="anatomy-notes.html">
+📖 Basic Anatomy Notes
+</a>
+
+</div>
+
+
+<!-- HOME -->
+
+<div class="back">
+
+<a href="index.html">
+← Back to Home
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+🩺 <strong>MedAcademy</strong>
+</p>
+
+<p>
+Anatomy Study Section
+</p>
+
+<p>
+© 2026 MedAcademy
+</p>
+
+</footer>
+
+
+</body>
+
+</html>
+```

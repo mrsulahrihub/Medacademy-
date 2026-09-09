@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedAcademy - Medical Quiz</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f9fb;
+            color: #222;
+        }
+
+        header {
+            background: #087f8c;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .quiz-container {
+            max-width: 750px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .quiz-box {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .quiz-title {
+            text-align: center;
+            color: #087f8c;
+            margin-bottom: 30px;
+        }
+
+        #question {
+            font-size: 22px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .option {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0;
+            background: #f4f9fb;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: left;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .option:hover {
+            border-color: #087f8c;
+        }
+
+        .correct {
+            background: #d4edda;
+            border-color: green;
+        }
+
+        .wrong {
+            background: #f8d7da;
+            border-color: red;
+        }
+
+        #nextBtn {
+            background: #087f8c;
+            color: white;
+            border: none;
+            padding: 13px 30px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        #nextBtn:hover {
+            background: #055f69;
+        }
+
+        #score {
+            text-align: center;
+            font-size: 28px;
+            color: #087f8c;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: #087f8c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        🩺 MedAcademy
+    </div>
+
+    <a href="index.html">
+        Home
+    </a>
+
+</header>
+
+
+<div class="quiz-container">
+
+    <div class="quiz-box">
+
+        <h1 class="quiz-title">
+            🧠 Medical MCQ Quiz
+        </h1>
+
+
+        <h2 id="question">
+            Question
+        </h2>
+
+
+        <div id="options"></div>
+
+
+        <button id="nextBtn" onclick="nextQuestion()">
+            Next Question →
+        </button>
+
+
+        <div id="score"></div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 MedAcademy. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+
+const questions = [
+
+    {
+        question: "Which organ pumps blood throughout the body?",
+
+        options: [
+            "Liver",
+            "Heart",
+            "Kidney",
+            "Lung"
+        ],
+
+        answer: 1
+    },
+
+
+    {
+        question: "Which organ is primarily responsible for filtering blood and forming urine?",
+
+        options: [
+            "Heart",
+            "Liver",
+            "Kidney",
+            "Stomach"
+        ],
+
+        answer: 2
+    },
+
+
+    {
+        question: "Which system is responsible for gas exchange in the body?",
+
+        options: [
+            "Digestive system",
+            "Respiratory system",
+            "Skeletal system",
+            "Endocrine system"
+        ],
+
+        answer: 1
+    },
+
+
+    {
+        question: "Which subject deals with the study of drugs?",
+
+        options: [
+            "Anatomy",
+            "Physiology",
+            "Pharmacology",
+            "Pathology"
+        ],
+
+        answer: 2
+    },
+
+
+    {
+        question: "Which subject studies the structure of the human body?",
+
+        options: [
+            "Anatomy",
+            "Microbiology",
+            "Pharmacology",
+            "Biochemistry"
+        ],
+
+        answer: 0
+    }
+
+];
+
+
+let currentQuestion = 0;
+
+let score = 0;
+
+let answered = false;
+
+
+function loadQuestion() {
+
+    answered = false;
+
+    const questionElement =
+        document.getElementById("question");
+
+    const optionsElement =
+        document.getElementById("options");
+
+    const nextButton =
+        document.getElementById("nextBtn");
+
+
+    questionElement.innerText =
+        (currentQuestion + 1) +
+        ". " +
+        questions[currentQuestion].question;
+
+
+    optionsElement.innerHTML = "";
+
+
+    questions[currentQuestion].options.forEach(
+        function(option, index) {
+
+            const button =
+                document.createElement("button");
+
+            button.className = "option";
+
+            button.innerText = option;
+
+            button.onclick =
+                function() {
+
+                    checkAnswer(index, button);
+
+                };
+
+
+            optionsElement.appendChild(button);
+
+        }
+    );
+
+
+    nextButton.innerText =
+        currentQuestion === questions.length - 1
+        ? "Finish Quiz"
+        : "Next Question →";
+
+}
+
+
+function checkAnswer(selected, button) {
+
+    if (answered) {
+        return;
+    }
+
+    answered = true;
+
+
+    const correct =
+        questions[currentQuestion].answer;
+
+
+    const allOptions =
+        document.querySelectorAll(".option");
+
+
+    if (selected === correct) {
+
+        button.classList.add("correct");
+
+        score++;
+
+    } else {
+
+        button.classList.add("wrong");
+
+        allOptions[correct].classList.add("correct");
+
+    }
+
+}
+
+
+function nextQuestion() {
+
+    if (!answered) {
+
+        alert("Please select an answer first.");
+
+        return;
+
+    }
+
+
+    currentQuestion++;
+
+
+    if (currentQuestion < questions.length) {
+
+        loadQuestion();
+
+    } else {
+
+        showResult();
+
+    }
+
+}
+
+
+function showResult() {
+
+    document.querySelector(".quiz-box").innerHTML = `
+
+        <h1 class="quiz-title">
+            🎉 Quiz Completed!
+        </h1>
+
+        <div id="score">
+
+            Your Score: ${score} / ${questions.length}
+
+        </div>
+
+        <br>
+
+        <p style="text-align:center;">
+
+            ${getMessage()}
+
+        </p>
+
+        <br>
+
+        <div style="text-align:center;">
+
+            <button id="nextBtn" onclick="location.reload()">
+
+                🔄 Try Again
+
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+function getMessage() {
+
+    const percentage =
+        (score / questions.length) * 100;
+
+
+    if (percentage === 100) {
+
+        return "Excellent! 🏆";
+
+    }
+
+    if (percentage >= 60) {
+
+        return "Good job! Keep studying. 📚";
+
+    }
+
+    return "Keep practicing! You can do better. 💪";
+
+}
+
+
+loadQuestion();
+
+
+</script>
+
+
+</body>
+
+</html>
