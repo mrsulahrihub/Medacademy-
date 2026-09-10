@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MedAcademy | Medical Student Study Platform</title>
 
 <style>
-
-/* =========================
-   GENERAL
-========================= */
 
 *{
     margin:0;
@@ -26,7 +20,7 @@ html{
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f4f8fb;
     color:#222;
     line-height:1.6;
@@ -36,10 +30,7 @@ a{
     text-decoration:none;
 }
 
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
     background:#0d6efd;
@@ -73,10 +64,7 @@ nav a:hover{
     text-decoration:underline;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     min-height:480px;
@@ -89,7 +77,7 @@ nav a:hover{
 }
 
 .hero-content{
-    max-width:800px;
+    max-width:850px;
 }
 
 .hero h1{
@@ -109,10 +97,7 @@ nav a:hover{
     margin-bottom:30px;
 }
 
-
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 
 .btn{
     display:inline-block;
@@ -120,7 +105,7 @@ nav a:hover{
     border-radius:9px;
     margin:5px;
     font-weight:bold;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .primary-btn{
@@ -143,10 +128,7 @@ nav a:hover{
     color:white;
 }
 
-
-/* =========================
-   SECTION
-========================= */
+/* SECTIONS */
 
 .section{
     padding:60px 7%;
@@ -166,16 +148,11 @@ nav a:hover{
     color:#666;
 }
 
-
-/* =========================
-   QUICK ACCESS
-========================= */
+/* QUICK ACCESS */
 
 .quick-container{
     display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
     max-width:1100px;
     margin:auto;
@@ -186,8 +163,8 @@ nav a:hover{
     padding:25px;
     border-radius:15px;
     text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    transition:0.3s;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transition:.3s;
 }
 
 .quick-card:hover{
@@ -209,16 +186,69 @@ nav a:hover{
     margin-bottom:15px;
 }
 
+/* SEARCH */
 
-/* =========================
-   SUBJECTS
-========================= */
+.search-area{
+    background:white;
+    padding:55px 20px;
+    text-align:center;
+}
+
+.search-area h2{
+    color:#0d6efd;
+    margin-bottom:10px;
+    font-size:30px;
+}
+
+.search-area p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.search-box{
+    width:90%;
+    max-width:700px;
+    padding:16px;
+    border:2px solid #0d6efd;
+    border-radius:12px;
+    font-size:17px;
+    outline:none;
+}
+
+.search-box:focus{
+    box-shadow:0 0 8px rgba(13,110,253,.25);
+}
+
+.search-results{
+    width:90%;
+    max-width:700px;
+    margin:15px auto;
+    text-align:left;
+}
+
+.search-result{
+    background:#f4f8fb;
+    padding:14px;
+    margin:8px 0;
+    border-radius:10px;
+    border-left:4px solid #0d6efd;
+}
+
+.search-result a{
+    color:#0d6efd;
+    font-weight:bold;
+}
+
+.no-result{
+    padding:15px;
+    color:#777;
+}
+
+/* SUBJECTS */
 
 .subject-container{
     display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:25px;
     max-width:1200px;
     margin:auto;
@@ -229,8 +259,8 @@ nav a:hover{
     padding:30px;
     border-radius:15px;
     text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    transition:0.3s;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transition:.3s;
 }
 
 .subject-card:hover{
@@ -252,16 +282,11 @@ nav a:hover{
     margin-bottom:18px;
 }
 
-
-/* =========================
-   MEDICAL TOPICS
-========================= */
+/* TOPICS */
 
 .topic-container{
     display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:18px;
     max-width:1200px;
     margin:auto;
@@ -272,13 +297,12 @@ nav a:hover{
     padding:22px;
     border-radius:14px;
     text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.07);
-    transition:0.3s;
+    box-shadow:0 4px 12px rgba(0,0,0,.07);
+    transition:.3s;
 }
 
 .topic-card:hover{
     transform:translateY(-5px);
-    box-shadow:0 7px 18px rgba(0,0,0,0.12);
 }
 
 .topic-card h3{
@@ -286,63 +310,224 @@ nav a:hover{
     margin-bottom:12px;
 }
 
-.topic-card .topic-icon{
+.topic-icon{
     font-size:35px;
     margin-bottom:8px;
 }
 
+/* SUGGESTIONS */
 
-/* =========================
-   SEARCH
-========================= */
-
-.search-area{
-    background:white;
-    text-align:center;
-    padding:50px 20px;
+.suggestion-section{
+    padding:60px 7%;
 }
 
-.search-area h2{
+.suggestion-box{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.suggestion-box h2{
     color:#0d6efd;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.suggestion-box p{
+    text-align:center;
+    color:#666;
     margin-bottom:20px;
 }
 
-.search-box{
-    width:90%;
-    max-width:600px;
-    padding:15px;
-    border:2px solid #0d6efd;
+.suggestion-input,
+.question-input{
+    width:100%;
+    padding:14px;
+    border:2px solid #ddd;
     border-radius:10px;
     font-size:16px;
     outline:none;
 }
 
-.search-box:focus{
-    box-shadow:0 0 5px rgba(13,110,253,0.3);
+.suggestion-input:focus,
+.question-input:focus{
+    border-color:#0d6efd;
 }
 
-.search-result{
-    max-width:600px;
-    margin:15px auto;
-    text-align:left;
+.suggestion-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:18px;
 }
 
-.result{
-    background:#f4f8fb;
-    padding:15px;
-    margin:10px 0;
+.suggestion{
+    background:#eef6ff;
+    color:#0d6efd;
+    border:1px solid #b9d7ff;
+    padding:9px 13px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.suggestion:hover{
+    background:#0d6efd;
+    color:white;
+}
+
+/* ASK QUESTION */
+
+.ask-section{
+    padding:60px 7%;
+    background:#eef7ff;
+}
+
+.ask-box{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.ask-box h2{
+    color:#0d6efd;
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.ask-box .intro{
+    text-align:center;
+    color:#666;
+    margin-bottom:20px;
+}
+
+.question-input{
+    min-height:130px;
+    resize:vertical;
+    font-family:Arial,sans-serif;
+}
+
+.ask-btn{
+    width:100%;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:9px;
+    margin-top:12px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.ask-btn:hover{
+    background:#084298;
+}
+
+.answer-box{
+    display:none;
+    margin-top:20px;
+    background:#f4f9ff;
+    border-left:5px solid #0d6efd;
+    padding:20px;
     border-radius:10px;
 }
 
-.result a{
+.answer-box h3{
     color:#0d6efd;
+    margin-bottom:10px;
+}
+
+.answer-text{
+    white-space:pre-line;
+}
+
+/* AI CHAT */
+
+.ai-section{
+    padding:60px 7%;
+}
+
+.ai-box{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.ai-header{
+    background:#0d6efd;
+    color:white;
+    padding:18px;
+    font-size:20px;
     font-weight:bold;
 }
 
+.chat-area{
+    height:360px;
+    overflow-y:auto;
+    padding:20px;
+    background:#f7fbff;
+}
 
-/* =========================
-   ABOUT
-========================= */
+.message{
+    max-width:80%;
+    padding:12px 15px;
+    border-radius:14px;
+    margin-bottom:12px;
+    white-space:pre-line;
+}
+
+.ai-message{
+    background:#e7f1ff;
+    border-bottom-left-radius:3px;
+}
+
+.user-message{
+    background:#0d6efd;
+    color:white;
+    margin-left:auto;
+    border-bottom-right-radius:3px;
+}
+
+.chat-input-area{
+    display:flex;
+    gap:8px;
+    padding:15px;
+    border-top:1px solid #ddd;
+}
+
+.chat-input{
+    flex:1;
+    padding:13px;
+    border:2px solid #ddd;
+    border-radius:9px;
+    outline:none;
+}
+
+.chat-send{
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:0 20px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.chat-send:hover{
+    background:#084298;
+}
+
+/* ABOUT */
 
 .about{
     max-width:900px;
@@ -350,7 +535,7 @@ nav a:hover{
     background:white;
     padding:35px;
     border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
     text-align:center;
 }
 
@@ -358,10 +543,7 @@ nav a:hover{
     color:#555;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     background:#0d6efd;
@@ -375,10 +557,7 @@ footer p{
     margin:5px;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:700px){
 
@@ -409,6 +588,18 @@ footer p{
         padding:45px 5%;
     }
 
+    .message{
+        max-width:90%;
+    }
+
+    .chat-input-area{
+        flex-direction:column;
+    }
+
+    .chat-send{
+        padding:12px;
+    }
+
 }
 
 </style>
@@ -419,9 +610,7 @@ footer p{
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
@@ -441,15 +630,14 @@ footer p{
 
 <a href="quiz.html">Quiz</a>
 
+<a href="#ask">Ask Question</a>
+
 </nav>
 
 </header>
 
 
-
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -461,17 +649,19 @@ footer p{
 
 <p>
 Study medical subjects, read concise notes,
-practice MCQs and improve your knowledge.
+practice MCQs and ask medical questions.
 </p>
 
-<a href="notes.html"
-class="btn primary-btn">
+<a href="notes.html" class="btn primary-btn">
 📚 Explore Notes
 </a>
 
-<a href="quiz.html"
-class="btn secondary-btn">
+<a href="quiz.html" class="btn secondary-btn">
 📝 Take Medical Quiz
+</a>
+
+<a href="#ai" class="btn secondary-btn">
+🤖 Ask AI
 </a>
 
 </div>
@@ -479,10 +669,7 @@ class="btn secondary-btn">
 </section>
 
 
-
-<!-- =========================
-     QUICK ACCESS
-========================= -->
+<!-- QUICK ACCESS -->
 
 <section class="section">
 
@@ -490,9 +677,7 @@ class="btn secondary-btn">
 
 <h2>⚡ Quick Access</h2>
 
-<p>
-Start your medical study quickly.
-</p>
+<p>Start your medical study quickly.</p>
 
 </div>
 
@@ -510,8 +695,7 @@ Start your medical study quickly.
 Quick and easy medical study notes.
 </p>
 
-<a href="notes.html"
-class="btn primary-btn">
+<a href="notes.html" class="btn primary-btn">
 Open Notes
 </a>
 
@@ -528,8 +712,7 @@ Open Notes
 Test your knowledge with medical MCQs.
 </p>
 
-<a href="quiz.html"
-class="btn primary-btn">
+<a href="quiz.html" class="btn primary-btn">
 Start Quiz
 </a>
 
@@ -546,8 +729,7 @@ Start Quiz
 Study heart anatomy and blood flow.
 </p>
 
-<a href="heart.html"
-class="btn primary-btn">
+<a href="heart.html" class="btn primary-btn">
 Study Heart
 </a>
 
@@ -564,8 +746,7 @@ Study Heart
 Learn major parts and functions of the brain.
 </p>
 
-<a href="brain.html"
-class="btn primary-btn">
+<a href="brain.html" class="btn primary-btn">
 Study Brain
 </a>
 
@@ -577,47 +758,38 @@ Study Brain
 </section>
 
 
-
-<!-- =========================
-     SEARCH
-========================= -->
+<!-- SEARCH ALL TOPICS -->
 
 <section class="search-area">
 
 <h2>🔎 Search Medical Topics</h2>
+
+<p>
+Search any topic available on MedAcademy.
+</p>
 
 <input
 type="text"
 class="search-box"
 id="searchBox"
 placeholder="Search Heart, Brain, Kidney, Drugs..."
-onkeyup="searchTopics()"
+oninput="searchTopics()"
 >
 
-<div
-id="searchResults"
-class="search-result">
-</div>
+<div id="searchResults" class="search-results"></div>
 
 </section>
 
 
+<!-- SUBJECTS -->
 
-<!-- =========================
-     SUBJECTS
-========================= -->
-
-<section
-class="section"
-id="subjects">
+<section class="section" id="subjects">
 
 <div class="section-title">
 
 <h2>📚 Medical Subjects</h2>
 
-<p>
-Choose a subject and start studying.
-</p>
+<p>Choose a subject and start studying.</p>
 
 </div>
 
@@ -625,13 +797,9 @@ Choose a subject and start studying.
 <div class="subject-container">
 
 
-<!-- ANATOMY -->
-
 <div class="subject-card">
 
-<div class="subject-icon">
-🦴
-</div>
+<div class="subject-icon">🦴</div>
 
 <h3>Anatomy</h3>
 
@@ -639,22 +807,16 @@ Choose a subject and start studying.
 Study the structure of the human body.
 </p>
 
-<a href="anatomy.html"
-class="btn primary-btn">
+<a href="anatomy.html" class="btn primary-btn">
 Study Anatomy
 </a>
 
 </div>
 
 
-
-<!-- PHYSIOLOGY -->
-
 <div class="subject-card">
 
-<div class="subject-icon">
-🫀
-</div>
+<div class="subject-icon">🫀</div>
 
 <h3>Physiology</h3>
 
@@ -662,22 +824,16 @@ Study Anatomy
 Learn how the human body functions.
 </p>
 
-<a href="physiology.html"
-class="btn primary-btn">
+<a href="physiology.html" class="btn primary-btn">
 Study Physiology
 </a>
 
 </div>
 
 
-
-<!-- PHARMACOLOGY -->
-
 <div class="subject-card">
 
-<div class="subject-icon">
-💊
-</div>
+<div class="subject-icon">💊</div>
 
 <h3>Pharmacology</h3>
 
@@ -685,22 +841,16 @@ Study Physiology
 Learn drugs, actions and adverse effects.
 </p>
 
-<a href="pharmacology.html"
-class="btn primary-btn">
+<a href="pharmacology.html" class="btn primary-btn">
 Study Pharmacology
 </a>
 
 </div>
 
 
-
-<!-- PATHOLOGY -->
-
 <div class="subject-card">
 
-<div class="subject-icon">
-🔬
-</div>
+<div class="subject-icon">🔬</div>
 
 <h3>Pathology</h3>
 
@@ -708,22 +858,16 @@ Study Pharmacology
 Study diseases and pathological changes.
 </p>
 
-<a href="pathology.html"
-class="btn primary-btn">
+<a href="pathology.html" class="btn primary-btn">
 Study Pathology
 </a>
 
 </div>
 
 
-
-<!-- MICROBIOLOGY -->
-
 <div class="subject-card">
 
-<div class="subject-icon">
-🦠
-</div>
+<div class="subject-icon">🦠</div>
 
 <h3>Microbiology</h3>
 
@@ -731,22 +875,16 @@ Study Pathology
 Study bacteria, viruses and microorganisms.
 </p>
 
-<a href="microbiology.html"
-class="btn primary-btn">
+<a href="microbiology.html" class="btn primary-btn">
 Study Microbiology
 </a>
 
 </div>
 
 
-
-<!-- MEDICINE -->
-
 <div class="subject-card">
 
-<div class="subject-icon">
-🩺
-</div>
+<div class="subject-icon">🩺</div>
 
 <h3>Medicine</h3>
 
@@ -754,8 +892,7 @@ Study Microbiology
 Explore common clinical medical topics.
 </p>
 
-<a href="notes.html"
-class="btn primary-btn">
+<a href="notes.html" class="btn primary-btn">
 Explore Medicine
 </a>
 
@@ -767,22 +904,15 @@ Explore Medicine
 </section>
 
 
+<!-- TOPICS -->
 
-<!-- =========================
-     NEW MEDICAL TOPICS
-========================= -->
-
-<section
-class="section"
-id="topics">
+<section class="section" id="topics">
 
 <div class="section-title">
 
 <h2>📖 Medical Topics</h2>
 
-<p>
-Explore the latest medical study topics.
-</p>
+<p>Explore medical study topics.</p>
 
 </div>
 
@@ -790,308 +920,129 @@ Explore the latest medical study topics.
 <div class="topic-container">
 
 
-<!-- ADRenergic BLOCKERS -->
-
 <div class="topic-card">
-
 <div class="topic-icon">💊</div>
-
 <h3>Adrenergic Blockers</h3>
-
-<a href="adrenergic-blockers.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="adrenergic-blockers.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- ADRenergic DRUGS -->
-
 <div class="topic-card">
-
 <div class="topic-icon">💊</div>
-
 <h3>Adrenergic Drugs</h3>
-
-<a href="adrenergic-drugs.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="adrenergic-drugs.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- ADVERSE DRUG REACTIONS -->
-
 <div class="topic-card">
-
 <div class="topic-icon">⚠️</div>
-
 <h3>Adverse Drug Reactions</h3>
-
-<a href="adverse-drug-reactions.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="adverse-drug-reactions.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- ANTIMICROBIAL -->
-
 <div class="topic-card">
-
 <div class="topic-icon">🦠</div>
-
 <h3>Antimicrobial Pharmacology</h3>
-
-<a href="antimicrobial-pharmacology.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="antimicrobial-pharmacology.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- AUTONOMIC -->
-
 <div class="topic-card">
-
 <div class="topic-icon">🧠</div>
-
 <h3>Autonomic Nervous System</h3>
-
-<a href="autonomic-nervous-system.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="autonomic-nervous-system.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- CARDIOVASCULAR PHARMACOLOGY -->
-
 <div class="topic-card">
-
 <div class="topic-icon">❤️</div>
-
 <h3>Cardiovascular Pharmacology</h3>
-
-<a href="cardiovascular-pharmacology.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="cardiovascular-pharmacology.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- CELL INJURY -->
-
 <div class="topic-card">
-
 <div class="topic-icon">🔬</div>
-
 <h3>Cell Injury</h3>
-
-<a href="cell-injury.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="cell-injury.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- CHOLINERGIC DRUGS -->
-
 <div class="topic-card">
-
 <div class="topic-icon">💊</div>
-
 <h3>Cholinergic Drugs</h3>
-
-<a href="cholinergic-drugs.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="cholinergic-drugs.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- CLINICAL PHARMACOLOGY -->
-
 <div class="topic-card">
-
 <div class="topic-icon">🩺</div>
-
 <h3>Clinical Pharmacology</h3>
-
-<a href="clinical-pharmacology.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="clinical-pharmacology.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- CNS PHARMACOLOGY -->
-
 <div class="topic-card">
-
 <div class="topic-icon">🧠</div>
-
 <h3>CNS Pharmacology</h3>
-
-<a href="cns-pharmacology.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="cns-pharmacology.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- DOSE RESPONSE -->
-
 <div class="topic-card">
-
 <div class="topic-icon">💊</div>
-
 <h3>Dose Response</h3>
-
-<a href="dose-response.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="dose-response.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- DRUG INTERACTIONS -->
-
 <div class="topic-card">
-
 <div class="topic-icon">⚕️</div>
-
 <h3>Drug Interactions</h3>
-
-<a href="drug-interactions.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="drug-interactions.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- DRUG RECEPTORS -->
-
 <div class="topic-card">
-
 <div class="topic-icon">🔬</div>
-
 <h3>Drug Receptors</h3>
-
-<a href="drug-receptors.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="drug-receptors.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- DRUGS AFFECTING BLOOD -->
-
 <div class="topic-card">
-
 <div class="topic-icon">🩸</div>
-
 <h3>Drugs Affecting Blood</h3>
-
-<a href="drugs-affecting-blood.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="drugs-affecting-blood.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- DRUGS AFFECTING UTERUS -->
-
 <div class="topic-card">
-
 <div class="topic-icon">💊</div>
-
 <h3>Drugs Affecting Uterus</h3>
-
-<a href="drugs-affecting-uterus.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="drugs-affecting-uterus.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- ENDOCRINE PHARMACOLOGY -->
-
 <div class="topic-card">
-
 <div class="topic-icon">🧪</div>
-
 <h3>Endocrine Pharmacology</h3>
-
-<a href="endocrine-pharmacology.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="endocrine-pharmacology.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- GASTROINTESTINAL -->
-
 <div class="topic-card">
-
 <div class="topic-icon">🫃</div>
-
 <h3>Gastrointestinal Pharmacology</h3>
-
-<a href="gastrointestinal-pharmacology.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="gastrointestinal-pharmacology.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
-
-<!-- INFLAMMATION -->
-
 <div class="topic-card">
-
 <div class="topic-icon">🔥</div>
-
 <h3>Inflammation</h3>
-
-<a href="inflammation.html"
-class="btn primary-btn">
-Study Now →
-</a>
-
+<a href="inflammation.html" class="btn primary-btn">Study Now →</a>
 </div>
 
 
@@ -1100,10 +1051,121 @@ Study Now →
 </section>
 
 
+<!-- SUGGESTIONS -->
 
-<!-- =========================
-     ABOUT
-========================= -->
+<section class="suggestion-section">
+
+<div class="suggestion-box">
+
+<h2>💡 Student Suggestions</h2>
+
+<p>
+Type a topic and get quick topic suggestions.
+</p>
+
+<input
+class="suggestion-input"
+id="suggestionInput"
+placeholder="Example: heart, kidney, diabetes..."
+oninput="showSuggestions()"
+>
+
+<div
+id="suggestionList"
+class="suggestion-list">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ASK NEW QUESTION -->
+
+<section class="ask-section" id="ask">
+
+<div class="ask-box">
+
+<h2>❓ Ask Your Question</h2>
+
+<p class="intro">
+Student apna medical question yahan type kar sakta hai.
+</p>
+
+<textarea
+id="studentQuestion"
+class="question-input"
+placeholder="Example: What is the function of the vagus nerve?"
+></textarea>
+
+<button
+class="ask-btn"
+onclick="answerStudentQuestion()">
+🔍 Get Answer
+</button>
+
+<div id="answerBox" class="answer-box">
+
+<h3>🩺 MedAcademy Answer</h3>
+
+<div
+id="answerText"
+class="answer-text">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SMALL AI -->
+
+<section class="ai-section" id="ai">
+
+<div class="ai-box">
+
+<div class="ai-header">
+🤖 MedAcademy Mini AI
+</div>
+
+<div
+class="chat-area"
+id="chatArea">
+
+<div class="message ai-message">
+👋 Hello! I am MedAcademy Mini AI.
+
+Ask me a basic medical study question about Anatomy, Physiology, Pharmacology, Pathology or common diseases.
+</div>
+
+</div>
+
+<div class="chat-input-area">
+
+<input
+type="text"
+id="chatInput"
+class="chat-input"
+placeholder="Ask a medical question..."
+onkeydown="if(event.key==='Enter') sendAI()"
+>
+
+<button
+class="chat-send"
+onclick="sendAI()">
+Send
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
 
 <section class="section">
 
@@ -1113,13 +1175,13 @@ Study Now →
 
 </div>
 
-
 <div class="about">
 
 <p>
 MedAcademy is a simple medical study website
 designed to help medical students access
-subjects, notes and quizzes in one place.
+subjects, notes, quizzes and medical questions
+in one place.
 </p>
 
 <br>
@@ -1134,255 +1196,608 @@ simple, organized and easy to revise.
 </section>
 
 
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
-<p>
-🩺 <strong>MedAcademy</strong>
-</p>
+<p>🩺 <strong>MedAcademy</strong></p>
 
-<p>
-Medical Student Study Platform
-</p>
+<p>Medical Student Study Platform</p>
 
-<p>
-© 2026 MedAcademy. All Rights Reserved.
-</p>
+<p>© 2026 MedAcademy. All Rights Reserved.</p>
 
 </footer>
 
 
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
+
+/* =====================================================
+   ALL MEDICAL TOPICS
+===================================================== */
 
 const topics = [
 
-{
-name:"Heart",
-link:"heart.html"
-},
+{name:"Heart",link:"heart.html"},
+{name:"Kidney",link:"kidney.html"},
+{name:"Liver",link:"liver.html"},
+{name:"Brain",link:"brain.html"},
+{name:"Cranial Nerves",link:"cranial-nerves.html"},
+{name:"Anatomy",link:"anatomy.html"},
+{name:"Physiology",link:"physiology.html"},
+{name:"Pharmacology",link:"pharmacology.html"},
+{name:"Pathology",link:"pathology.html"},
+{name:"Microbiology",link:"microbiology.html"},
+{name:"Medicine",link:"notes.html"},
 
-{
-name:"Kidney",
-link:"kidney.html"
-},
+{name:"Adrenergic Blockers",link:"adrenergic-blockers.html"},
+{name:"Adrenergic Drugs",link:"adrenergic-drugs.html"},
+{name:"Adverse Drug Reactions",link:"adverse-drug-reactions.html"},
+{name:"Antimicrobial Pharmacology",link:"antimicrobial-pharmacology.html"},
+{name:"Autonomic Nervous System",link:"autonomic-nervous-system.html"},
+{name:"Cardiovascular Pharmacology",link:"cardiovascular-pharmacology.html"},
+{name:"Cell Injury",link:"cell-injury.html"},
+{name:"Cholinergic Drugs",link:"cholinergic-drugs.html"},
+{name:"Clinical Pharmacology",link:"clinical-pharmacology.html"},
+{name:"CNS Pharmacology",link:"cns-pharmacology.html"},
+{name:"Dose Response",link:"dose-response.html"},
+{name:"Drug Interactions",link:"drug-interactions.html"},
+{name:"Drug Receptors",link:"drug-receptors.html"},
+{name:"Drugs Affecting Blood",link:"drugs-affecting-blood.html"},
+{name:"Drugs Affecting Uterus",link:"drugs-affecting-uterus.html"},
+{name:"Endocrine Pharmacology",link:"endocrine-pharmacology.html"},
+{name:"Gastrointestinal Pharmacology",link:"gastrointestinal-pharmacology.html"},
+{name:"Inflammation",link:"inflammation.html"},
 
-{
-name:"Liver",
-link:"liver.html"
-},
-
-{
-name:"Brain",
-link:"brain.html"
-},
-
-{
-name:"Cranial Nerves",
-link:"cranial-nerves.html"
-},
-
-{
-name:"Anatomy",
-link:"anatomy.html"
-},
-
-{
-name:"Physiology",
-link:"physiology.html"
-},
-
-{
-name:"Pharmacology",
-link:"pharmacology.html"
-},
-
-{
-name:"Pathology",
-link:"pathology.html"
-},
-
-{
-name:"Microbiology",
-link:"microbiology.html"
-},
-
-{
-name:"Adrenergic Blockers",
-link:"adrenergic-blockers.html"
-},
-
-{
-name:"Adrenergic Drugs",
-link:"adrenergic-drugs.html"
-},
-
-{
-name:"Adverse Drug Reactions",
-link:"adverse-drug-reactions.html"
-},
-
-{
-name:"Antimicrobial Pharmacology",
-link:"antimicrobial-pharmacology.html"
-},
-
-{
-name:"Autonomic Nervous System",
-link:"autonomic-nervous-system.html"
-},
-
-{
-name:"Cardiovascular Pharmacology",
-link:"cardiovascular-pharmacology.html"
-},
-
-{
-name:"Cell Injury",
-link:"cell-injury.html"
-},
-
-{
-name:"Cholinergic Drugs",
-link:"cholinergic-drugs.html"
-},
-
-{
-name:"Clinical Pharmacology",
-link:"clinical-pharmacology.html"
-},
-
-{
-name:"CNS Pharmacology",
-link:"cns-pharmacology.html"
-},
-
-{
-name:"Dose Response",
-link:"dose-response.html"
-},
-
-{
-name:"Drug Interactions",
-link:"drug-interactions.html"
-},
-
-{
-name:"Drug Receptors",
-link:"drug-receptors.html"
-},
-
-{
-name:"Drugs Affecting Blood",
-link:"drugs-affecting-blood.html"
-},
-
-{
-name:"Drugs Affecting Uterus",
-link:"drugs-affecting-uterus.html"
-},
-
-{
-name:"Endocrine Pharmacology",
-link:"endocrine-pharmacology.html"
-},
-
-{
-name:"Gastrointestinal Pharmacology",
-link:"gastrointestinal-pharmacology.html"
-},
-
-{
-name:"Inflammation",
-link:"inflammation.html"
-},
-
-{
-name:"Medical Quiz",
-link:"quiz.html"
-}
+{name:"Fever",link:"notes.html"},
+{name:"Common Cold",link:"notes.html"},
+{name:"Flu",link:"notes.html"},
+{name:"Cough",link:"notes.html"},
+{name:"Diabetes",link:"notes.html"},
+{name:"Headache",link:"notes.html"},
+{name:"Migraine",link:"notes.html"},
+{name:"Kidney Disease",link:"kidney.html"},
+{name:"Kidney Stones",link:"kidney.html"},
+{name:"UTI",link:"kidney.html"},
+{name:"Hypertension",link:"notes.html"},
+{name:"Asthma",link:"notes.html"},
+{name:"Anemia",link:"notes.html"},
+{name:"Tuberculosis",link:"notes.html"},
+{name:"Pneumonia",link:"notes.html"},
+{name:"Hepatitis",link:"notes.html"},
+{name:"Gastritis",link:"notes.html"},
+{name:"Gout",link:"notes.html"},
+{name:"Osteoporosis",link:"notes.html"},
+{name:"Thrombosis",link:"notes.html"},
+{name:"Stroke",link:"notes.html"},
+{name:"Heart Failure",link:"heart.html"},
+{name:"ECG",link:"heart.html"},
+{name:"Blood Pressure",link:"notes.html"},
+{name:"Respiratory System",link:"physiology.html"},
+{name:"Nervous System",link:"anatomy.html"},
+{name:"Endocrine System",link:"physiology.html"},
+{name:"Digestive System",link:"anatomy.html"},
+{name:"Urinary System",link:"kidney.html"}
 
 ];
 
 
+/* =====================================================
+   SEARCH BAR
+===================================================== */
+
 function searchTopics(){
 
-const searchBox =
-document.getElementById("searchBox");
+    const input =
+    document.getElementById("searchBox")
+    .value
+    .toLowerCase()
+    .trim();
 
-const searchResults =
-document.getElementById("searchResults");
+    const results =
+    document.getElementById("searchResults");
 
-const searchText =
-searchBox.value.toLowerCase().trim();
+    results.innerHTML="";
+
+    if(input===""){
+        return;
+    }
+
+    const matches=topics.filter(topic =>
+        topic.name.toLowerCase().includes(input)
+    );
+
+    if(matches.length===0){
+
+        results.innerHTML=
+        `<div class="search-result no-result">
+        ❌ No topic found.
+        </div>`;
+
+        return;
+    }
+
+    matches.forEach(topic=>{
+
+        results.innerHTML+=`
+
+        <div class="search-result">
+
+        📖 <strong>${topic.name}</strong>
+
+        <br>
+
+        <a href="${topic.link}">
+        Study ${topic.name} →
+        </a>
+
+        </div>
+
+        `;
+
+    });
+
+}
 
 
-searchResults.innerHTML = "";
+/* =====================================================
+   SUGGESTION BOX
+===================================================== */
 
+function showSuggestions(){
 
-if(searchText === ""){
-    return;
+    const input=
+    document.getElementById("suggestionInput")
+    .value
+    .toLowerCase()
+    .trim();
+
+    const list=
+    document.getElementById("suggestionList");
+
+    list.innerHTML="";
+
+    if(input===""){
+
+        const popular=[
+            "Heart",
+            "Brain",
+            "Kidney",
+            "Diabetes",
+            "Migraine",
+            "Anatomy",
+            "Pharmacology",
+            "Pathology"
+        ];
+
+        popular.forEach(name=>{
+            createSuggestion(name,list);
+        });
+
+        return;
+    }
+
+    const matches=topics.filter(topic=>
+        topic.name.toLowerCase().includes(input)
+    ).slice(0,10);
+
+    matches.forEach(topic=>{
+        createSuggestion(topic.name,list);
+    });
+
 }
 
 
-const filteredTopics =
-topics.filter(function(topic){
+function createSuggestion(name,list){
 
-return topic.name
-.toLowerCase()
-.includes(searchText);
+    const item=document.createElement("div");
 
-});
+    item.className="suggestion";
+
+    item.textContent="🔎 "+name;
+
+    item.onclick=function(){
+
+        document.getElementById("searchBox").value=name;
+
+        searchTopics();
+
+        document.getElementById("search-area");
+
+        window.scrollTo({
+            top:document.querySelector(".search-area").offsetTop-70,
+            behavior:"smooth"
+        });
+
+    };
+
+    list.appendChild(item);
+
+}
 
 
-if(filteredTopics.length === 0){
+/* =====================================================
+   STUDENT QUESTION ANSWER SYSTEM
+===================================================== */
 
-searchResults.innerHTML =
+const medicalAnswers={
 
-`
-<div class="result">
-❌ No topic found.
-</div>
-`;
+"heart":
+"❤️ Heart: The heart is a muscular organ that pumps blood through pulmonary and systemic circulation. It has four chambers: right atrium, right ventricle, left atrium and left ventricle.",
 
-return;
+"kidney":
+"🫘 Kidney: The kidneys maintain fluid, electrolyte and acid-base balance, remove metabolic wastes and produce urine. The nephron is the functional unit of the kidney.",
+
+"brain":
+"🧠 Brain: The brain is the main organ of the central nervous system. Major regions include the cerebrum, cerebellum and brainstem.",
+
+"diabetes":
+"🍬 Diabetes mellitus is a group of disorders characterized by chronic hyperglycemia. Type 2 diabetes commonly involves insulin resistance and progressive beta-cell dysfunction.",
+
+"fever":
+"🌡️ Fever is an elevation of body temperature caused by a regulated change in the hypothalamic set point, commonly due to infection or inflammation.",
+
+"cold":
+"🤧 The common cold is usually caused by viral infection. Common symptoms include runny nose, sneezing, sore throat and cough.",
+
+"flu":
+"🦠 Influenza is a viral respiratory infection that commonly causes fever, cough, myalgia, fatigue and headache.",
+
+"cough":
+"😷 Cough is a protective reflex that clears the airway. Causes include respiratory infections, asthma, allergies, smoking and gastroesophageal reflux.",
+
+"headache":
+"🤕 Headache has many causes. Common primary headaches include tension-type headache and migraine.",
+
+"migraine":
+"🧠 Migraine is a recurrent neurological disorder characterized by attacks of headache, often associated with nausea and sensitivity to light or sound.",
+
+"hypertension":
+"🩺 Hypertension means persistently elevated blood pressure. Long-term uncontrolled hypertension increases the risk of cardiovascular, cerebrovascular and kidney disease.",
+
+"anemia":
+"🩸 Anemia is a reduction in hemoglobin concentration or red-cell mass below normal. Causes include blood loss, decreased production and increased destruction of red cells.",
+
+"asthma":
+"🫁 Asthma is a chronic inflammatory airway disorder characterized by variable respiratory symptoms and variable airflow limitation. Wheezing and episodic breathlessness are common.",
+
+"thrombosis":
+"🩸 Thrombosis is formation of a blood clot within a blood vessel. Risk factors can be understood using Virchow's triad: endothelial injury, abnormal blood flow and hypercoagulability.",
+
+"osteoporosis":
+"🦴 Osteoporosis is characterized by reduced bone strength and increased fracture risk. Risk factors include aging, low bone mass and certain medications or diseases.",
+
+"pharmacology":
+"💊 Pharmacology is the study of drugs, including their mechanisms of action, pharmacokinetics, pharmacodynamics, therapeutic effects and adverse effects.",
+
+"anatomy":
+"🦴 Anatomy is the study of the structure of the human body. It includes gross anatomy, microscopic anatomy and developmental anatomy.",
+
+"physiology":
+"🫀 Physiology is the study of normal body functions, including cardiovascular, respiratory, renal, nervous and endocrine functions.",
+
+"pathology":
+"🔬 Pathology is the study of disease mechanisms and the structural and functional changes produced by disease.",
+
+"microbiology":
+"🦠 Microbiology studies microorganisms such as bacteria, viruses, fungi and parasites.",
+
+"cranial nerve":
+"🧠 There are 12 pairs of cranial nerves. They are numbered I-XII and perform sensory, motor or mixed functions.",
+
+"ecg":
+"❤️ ECG records the electrical activity of the heart. P wave represents atrial depolarization, QRS complex represents ventricular depolarization and T wave represents ventricular repolarization.",
+
+"kidney stone":
+"🪨 Kidney stones are solid crystal deposits that form in the urinary tract. Calcium oxalate is a common stone type. Severe flank pain and hematuria can occur.",
+
+"uti":
+"🚽 Urinary tract infection is usually caused by bacteria. Common symptoms include dysuria, urinary frequency and urgency.",
+
+"stroke":
+"⚠️ Stroke is a medical emergency caused by interruption of blood flow to part of the brain or bleeding in the brain. Sudden facial weakness, arm weakness or speech difficulty requires urgent assessment."
+
+};
+
+
+function answerStudentQuestion(){
+
+    const question=
+    document.getElementById("studentQuestion")
+    .value
+    .toLowerCase()
+    .trim();
+
+    const answerBox=
+    document.getElementById("answerBox");
+
+    const answerText=
+    document.getElementById("answerText");
+
+    if(question===""){
+
+        answerText.textContent=
+        "Please type your medical question first.";
+
+        answerBox.style.display="block";
+
+        return;
+    }
+
+    let answer=
+    "📚 I could not find a specific answer in my basic MedAcademy knowledge base.\n\nTry asking about Anatomy, Physiology, Pharmacology, Pathology, Heart, Brain, Kidney, Diabetes, Fever, Migraine or another medical topic.";
+
+    for(const key in medicalAnswers){
+
+        if(question.includes(key)){
+
+            answer=medicalAnswers[key];
+
+            break;
+
+        }
+
+    }
+
+    answerText.textContent=answer;
+
+    answerBox.style.display="block";
 
 }
 
 
-filteredTopics.forEach(function(topic){
+/* =====================================================
+   MINI AI
+===================================================== */
 
-searchResults.innerHTML +=
+function sendAI(){
 
-`
-<div class="result">
+    const input=
+    document.getElementById("chatInput");
 
-📖 <strong>${topic.name}</strong>
+    const text=input.value.trim();
 
-<br><br>
+    if(text==="") return;
 
-<a href="${topic.link}">
-Study Now →
-</a>
+    addMessage(text,"user-message");
 
-</div>
-`;
+    input.value="";
 
-});
+    setTimeout(function(){
+
+        const reply=getAIReply(text);
+
+        addMessage(reply,"ai-message");
+
+    },500);
 
 }
+
+
+function addMessage(text,className){
+
+    const chat=
+    document.getElementById("chatArea");
+
+    const message=
+    document.createElement("div");
+
+    message.className="message "+className;
+
+    message.textContent=text;
+
+    chat.appendChild(message);
+
+    chat.scrollTop=chat.scrollHeight;
+
+}
+
+
+/* =====================================================
+   MINI AI RESPONSE ENGINE
+===================================================== */
+
+function getAIReply(question){
+
+    const q=question.toLowerCase();
+
+    if(
+        q.includes("hello") ||
+        q.includes("hi") ||
+        q.includes("assalam")
+    ){
+
+        return "👋 Hello! Ask me any basic medical study question.";
+
+    }
+
+
+    if(q.includes("heart")){
+
+        return medicalAnswers.heart;
+
+    }
+
+
+    if(q.includes("kidney")){
+
+        return medicalAnswers.kidney;
+
+    }
+
+
+    if(q.includes("brain")){
+
+        return medicalAnswers.brain;
+
+    }
+
+
+    if(q.includes("diabetes")){
+
+        return medicalAnswers.diabetes;
+
+    }
+
+
+    if(q.includes("fever")){
+
+        return medicalAnswers.fever;
+
+    }
+
+
+    if(q.includes("cold")){
+
+        return medicalAnswers.cold;
+
+    }
+
+
+    if(q.includes("flu")){
+
+        return medicalAnswers.flu;
+
+    }
+
+
+    if(q.includes("cough")){
+
+        return medicalAnswers.cough;
+
+    }
+
+
+    if(q.includes("migraine")){
+
+        return medicalAnswers.migraine;
+
+    }
+
+
+    if(q.includes("headache")){
+
+        return medicalAnswers.headache;
+
+    }
+
+
+    if(q.includes("hypertension") || q.includes("blood pressure")){
+
+        return medicalAnswers.hypertension;
+
+    }
+
+
+    if(q.includes("anemia") || q.includes("anaemia")){
+
+        return medicalAnswers.anemia;
+
+    }
+
+
+    if(q.includes("asthma")){
+
+        return medicalAnswers.asthma;
+
+    }
+
+
+    if(q.includes("thrombosis")){
+
+        return medicalAnswers.thrombosis;
+
+    }
+
+
+    if(q.includes("osteoporosis")){
+
+        return medicalAnswers.osteoporosis;
+
+    }
+
+
+    if(q.includes("pharmacology")){
+
+        return medicalAnswers.pharmacology;
+
+    }
+
+
+    if(q.includes("anatomy")){
+
+        return medicalAnswers.anatomy;
+
+    }
+
+
+    if(q.includes("physiology")){
+
+        return medicalAnswers.physiology;
+
+    }
+
+
+    if(q.includes("pathology")){
+
+        return medicalAnswers.pathology;
+
+    }
+
+
+    if(q.includes("microbiology")){
+
+        return medicalAnswers.microbiology;
+
+    }
+
+
+    if(q.includes("cranial nerve")){
+
+        return medicalAnswers["cranial nerve"];
+
+    }
+
+
+    if(q.includes("ecg")){
+
+        return medicalAnswers.ecg;
+
+    }
+
+
+    if(q.includes("stone")){
+
+        return medicalAnswers["kidney stone"];
+
+    }
+
+
+    if(q.includes("uti") || q.includes("urinary infection")){
+
+        return medicalAnswers.uti;
+
+    }
+
+
+    if(q.includes("stroke")){
+
+        return medicalAnswers.stroke;
+
+    }
+
+
+    return "🤖 I am the MedAcademy Mini AI. I can currently answer common study questions about Anatomy, Physiology, Pharmacology, Pathology, Heart, Brain, Kidney, Diabetes, Fever, Flu, Cough, Migraine, Hypertension, Anemia, Asthma, Thrombosis and more.\n\n💡 For a wider AI that can answer new questions automatically, connect this box to an AI API/backend.";
+
+}
+
+
+/* =====================================================
+   LOAD POPULAR SUGGESTIONS
+===================================================== */
+
+showSuggestions();
 
 </script>
 
-
 </body>
-
 </html>
