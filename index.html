@@ -1,26 +1,8 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<a href="adrenergic-blockers.html">Adrenergic Blockers</a>
-<a href="adrenergic-drugs.html">Adrenergic Drugs</a>
-<a href="adverse-drug-reactions.html">Adverse Drug Reactions</a>
-<a href="antimicrobial-pharmacology.html">Antimicrobial Pharmacology</a>
-<a href="autonomic-nervous-system.html">Autonomic Nervous System</a>
-<a href="cardiovascular-pharmacology.html">Cardiovascular Pharmacology</a>
-<a href="cell-injury.html">Cell Injury</a>
-<a href="cholinergic-drugs.html">Cholinergic Drugs</a>
-<a href="clinical-pharmacology.html">Clinical Pharmacology</a>
-<a href="cns-pharmacology.html">CNS Pharmacology</a>
-<a href="dose-response.html">Dose Response</a>
-<a href="drug-interactions.html">Drug Interactions</a>
-<a href="drug-receptors.html">Drug Receptors</a>
-<a href="drugs-affecting-blood.html">Drugs Affecting Blood</a>
-<a href="drugs-affecting-uterus.html">Drugs Affecting Uterus</a>
-<a href="endocrine-pharmacology.html">Endocrine Pharmacology</a>
-<a href="gastrointestinal-pharmacology.html">Gastrointestinal Pharmacology</a>
-<a href="inflammation.html">Inflammation</a>
+
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,6 +19,10 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -80,6 +66,7 @@ nav{
 nav a{
     color:white;
     font-size:16px;
+    font-weight:500;
 }
 
 nav a:hover{
@@ -267,6 +254,45 @@ nav a:hover{
 
 
 /* =========================
+   MEDICAL TOPICS
+========================= */
+
+.topic-container{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.topic-card{
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.07);
+    transition:0.3s;
+}
+
+.topic-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 7px 18px rgba(0,0,0,0.12);
+}
+
+.topic-card h3{
+    color:#0d6efd;
+    margin-bottom:12px;
+}
+
+.topic-card .topic-icon{
+    font-size:35px;
+    margin-bottom:8px;
+}
+
+
+/* =========================
    SEARCH
 ========================= */
 
@@ -289,6 +315,10 @@ nav a:hover{
     border-radius:10px;
     font-size:16px;
     outline:none;
+}
+
+.search-box:focus{
+    box-shadow:0 0 5px rgba(13,110,253,0.3);
 }
 
 .search-result{
@@ -359,6 +389,8 @@ footer p{
 
     nav{
         gap:12px;
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
     .hero h1{
@@ -371,6 +403,10 @@ footer p{
 
     .hero p{
         font-size:16px;
+    }
+
+    .section{
+        padding:45px 5%;
     }
 
 }
@@ -399,6 +435,8 @@ footer p{
 
 <a href="#subjects">Subjects</a>
 
+<a href="#topics">Topics</a>
+
 <a href="notes.html">Notes</a>
 
 <a href="quiz.html">Quiz</a>
@@ -406,6 +444,7 @@ footer p{
 </nav>
 
 </header>
+
 
 
 <!-- =========================
@@ -438,6 +477,7 @@ class="btn secondary-btn">
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -537,6 +577,7 @@ Study Brain
 </section>
 
 
+
 <!-- =========================
      SEARCH
 ========================= -->
@@ -549,7 +590,7 @@ Study Brain
 type="text"
 class="search-box"
 id="searchBox"
-placeholder="Search Heart, Brain, Kidney, Liver..."
+placeholder="Search Heart, Brain, Kidney, Drugs..."
 onkeyup="searchTopics()"
 >
 
@@ -559,6 +600,7 @@ class="search-result">
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -605,6 +647,7 @@ Study Anatomy
 </div>
 
 
+
 <!-- PHYSIOLOGY -->
 
 <div class="subject-card">
@@ -625,6 +668,7 @@ Study Physiology
 </a>
 
 </div>
+
 
 
 <!-- PHARMACOLOGY -->
@@ -649,6 +693,7 @@ Study Pharmacology
 </div>
 
 
+
 <!-- PATHOLOGY -->
 
 <div class="subject-card">
@@ -671,6 +716,7 @@ Study Pathology
 </div>
 
 
+
 <!-- MICROBIOLOGY -->
 
 <div class="subject-card">
@@ -691,6 +737,7 @@ Study Microbiology
 </a>
 
 </div>
+
 
 
 <!-- MEDICINE -->
@@ -718,6 +765,340 @@ Explore Medicine
 </div>
 
 </section>
+
+
+
+<!-- =========================
+     NEW MEDICAL TOPICS
+========================= -->
+
+<section
+class="section"
+id="topics">
+
+<div class="section-title">
+
+<h2>📖 Medical Topics</h2>
+
+<p>
+Explore the latest medical study topics.
+</p>
+
+</div>
+
+
+<div class="topic-container">
+
+
+<!-- ADRenergic BLOCKERS -->
+
+<div class="topic-card">
+
+<div class="topic-icon">💊</div>
+
+<h3>Adrenergic Blockers</h3>
+
+<a href="adrenergic-blockers.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- ADRenergic DRUGS -->
+
+<div class="topic-card">
+
+<div class="topic-icon">💊</div>
+
+<h3>Adrenergic Drugs</h3>
+
+<a href="adrenergic-drugs.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- ADVERSE DRUG REACTIONS -->
+
+<div class="topic-card">
+
+<div class="topic-icon">⚠️</div>
+
+<h3>Adverse Drug Reactions</h3>
+
+<a href="adverse-drug-reactions.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- ANTIMICROBIAL -->
+
+<div class="topic-card">
+
+<div class="topic-icon">🦠</div>
+
+<h3>Antimicrobial Pharmacology</h3>
+
+<a href="antimicrobial-pharmacology.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- AUTONOMIC -->
+
+<div class="topic-card">
+
+<div class="topic-icon">🧠</div>
+
+<h3>Autonomic Nervous System</h3>
+
+<a href="autonomic-nervous-system.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- CARDIOVASCULAR PHARMACOLOGY -->
+
+<div class="topic-card">
+
+<div class="topic-icon">❤️</div>
+
+<h3>Cardiovascular Pharmacology</h3>
+
+<a href="cardiovascular-pharmacology.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- CELL INJURY -->
+
+<div class="topic-card">
+
+<div class="topic-icon">🔬</div>
+
+<h3>Cell Injury</h3>
+
+<a href="cell-injury.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- CHOLINERGIC DRUGS -->
+
+<div class="topic-card">
+
+<div class="topic-icon">💊</div>
+
+<h3>Cholinergic Drugs</h3>
+
+<a href="cholinergic-drugs.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- CLINICAL PHARMACOLOGY -->
+
+<div class="topic-card">
+
+<div class="topic-icon">🩺</div>
+
+<h3>Clinical Pharmacology</h3>
+
+<a href="clinical-pharmacology.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- CNS PHARMACOLOGY -->
+
+<div class="topic-card">
+
+<div class="topic-icon">🧠</div>
+
+<h3>CNS Pharmacology</h3>
+
+<a href="cns-pharmacology.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- DOSE RESPONSE -->
+
+<div class="topic-card">
+
+<div class="topic-icon">💊</div>
+
+<h3>Dose Response</h3>
+
+<a href="dose-response.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- DRUG INTERACTIONS -->
+
+<div class="topic-card">
+
+<div class="topic-icon">⚕️</div>
+
+<h3>Drug Interactions</h3>
+
+<a href="drug-interactions.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- DRUG RECEPTORS -->
+
+<div class="topic-card">
+
+<div class="topic-icon">🔬</div>
+
+<h3>Drug Receptors</h3>
+
+<a href="drug-receptors.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- DRUGS AFFECTING BLOOD -->
+
+<div class="topic-card">
+
+<div class="topic-icon">🩸</div>
+
+<h3>Drugs Affecting Blood</h3>
+
+<a href="drugs-affecting-blood.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- DRUGS AFFECTING UTERUS -->
+
+<div class="topic-card">
+
+<div class="topic-icon">💊</div>
+
+<h3>Drugs Affecting Uterus</h3>
+
+<a href="drugs-affecting-uterus.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- ENDOCRINE PHARMACOLOGY -->
+
+<div class="topic-card">
+
+<div class="topic-icon">🧪</div>
+
+<h3>Endocrine Pharmacology</h3>
+
+<a href="endocrine-pharmacology.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- GASTROINTESTINAL -->
+
+<div class="topic-card">
+
+<div class="topic-icon">🫃</div>
+
+<h3>Gastrointestinal Pharmacology</h3>
+
+<a href="gastrointestinal-pharmacology.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+
+<!-- INFLAMMATION -->
+
+<div class="topic-card">
+
+<div class="topic-icon">🔥</div>
+
+<h3>Inflammation</h3>
+
+<a href="inflammation.html"
+class="btn primary-btn">
+Study Now →
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
 
 
 <!-- =========================
@@ -753,6 +1134,7 @@ simple, organized and easy to revise.
 </section>
 
 
+
 <!-- =========================
      FOOTER
 ========================= -->
@@ -772,6 +1154,7 @@ Medical Student Study Platform
 </p>
 
 </footer>
+
 
 
 <!-- =========================
@@ -830,6 +1213,96 @@ link:"pathology.html"
 {
 name:"Microbiology",
 link:"microbiology.html"
+},
+
+{
+name:"Adrenergic Blockers",
+link:"adrenergic-blockers.html"
+},
+
+{
+name:"Adrenergic Drugs",
+link:"adrenergic-drugs.html"
+},
+
+{
+name:"Adverse Drug Reactions",
+link:"adverse-drug-reactions.html"
+},
+
+{
+name:"Antimicrobial Pharmacology",
+link:"antimicrobial-pharmacology.html"
+},
+
+{
+name:"Autonomic Nervous System",
+link:"autonomic-nervous-system.html"
+},
+
+{
+name:"Cardiovascular Pharmacology",
+link:"cardiovascular-pharmacology.html"
+},
+
+{
+name:"Cell Injury",
+link:"cell-injury.html"
+},
+
+{
+name:"Cholinergic Drugs",
+link:"cholinergic-drugs.html"
+},
+
+{
+name:"Clinical Pharmacology",
+link:"clinical-pharmacology.html"
+},
+
+{
+name:"CNS Pharmacology",
+link:"cns-pharmacology.html"
+},
+
+{
+name:"Dose Response",
+link:"dose-response.html"
+},
+
+{
+name:"Drug Interactions",
+link:"drug-interactions.html"
+},
+
+{
+name:"Drug Receptors",
+link:"drug-receptors.html"
+},
+
+{
+name:"Drugs Affecting Blood",
+link:"drugs-affecting-blood.html"
+},
+
+{
+name:"Drugs Affecting Uterus",
+link:"drugs-affecting-uterus.html"
+},
+
+{
+name:"Endocrine Pharmacology",
+link:"endocrine-pharmacology.html"
+},
+
+{
+name:"Gastrointestinal Pharmacology",
+link:"gastrointestinal-pharmacology.html"
+},
+
+{
+name:"Inflammation",
+link:"inflammation.html"
 },
 
 {
@@ -913,4 +1386,3 @@ Study Now →
 </body>
 
 </html>
-```
