@@ -1,596 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MedAcademy | Medical Student Study Platform</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f9fb;
+    color:#18323a;
+}
+
+header{
+    background:#087f8c;
+    color:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:9px 13px;
+    border-radius:8px;
+}
+
+nav a:hover{
+    background:#066b76;
+}
+
+.hero{
+    text-align:center;
+    padding:70px 20px;
+    background:linear-gradient(135deg,#087f8c,#10a6a9);
+    color:white;
+}
+
+.hero h1{
+    font-size:42px;
+    margin:0 0 15px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:700px;
+    margin:0 auto 25px;
+}
+
+.btn{
+    display:inline-block;
+    background:white;
+    color:#087f8c;
+    padding:13px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:5px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.search-box{
+    width:100%;
+    padding:16px;
+    border:2px solid #d7e5e8;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+}
+
+.search-box:focus{
+    border-color:#087f8c;
+}
+
+#searchResults{
+    margin-top:15px;
+}
+
+.result{
+    background:white;
+    padding:14px;
+    margin:8px 0;
+    border-radius:10px;
+    box-shadow:0 3px 10px #0000000d;
+}
+
+.result a{
+    color:#087f8c;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 18px #00000010;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.card h3{
+    color:#087f8c;
+    margin-top:0;
+}
+
+.card a{
+    color:#087f8c;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.question-box{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 18px #00000010;
+    max-width:800px;
+    margin:auto;
+}
+
+textarea{
+    width:100%;
+    min-height:130px;
+    padding:15px;
+    border:2px solid #d7e5e8;
+    border-radius:10px;
+    resize:vertical;
+    font-size:16px;
+}
+
+button{
+    border:0;
+    background:#087f8c;
+    color:white;
+    padding:12px 20px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#066b76;
+}
+
+#questionMessage{
+    margin-top:15px;
+    padding:12px;
+    border-radius:8px;
+    display:none;
+    background:#e6f7f3;
+    color:#087f8c;
+}
+
+footer{
+    background:#12363d;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:40px;
+}
+
+@media(max-width:600px){
+    header{
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    nav{
+        justify-content:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">🩺 MedAcademy</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="notes.html">Notes</a>
+        <a href="notes.html#topics">Topics</a>
+        <a href="#question">Ask Question</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>MedAcademy</h1>
+
+    <p>
+        Medical learning platform for students.
+        Study medical subjects, notes, important topics and MCQs.
+    </p>
+
+    <a class="btn" href="notes.html">📚 Explore Notes</a>
+
+    <a class="btn" href="#subjects">🧠 Explore Subjects</a>
+
+</section>
+
+
+<section class="container">
+
+    <div class="section-title">
+        <h2>🔎 Search Medical Topics</h2>
+        <p>Search any topic available on MedAcademy.</p>
+    </div>
+
+    <input
+        type="text"
+        id="searchBox"
+        class="search-box"
+        placeholder="Search topic... e.g. Heart, Diabetes, ECG"
+        oninput="searchTopics()"
+    >
+
+    <div id="searchResults"></div>
+
+</section>
+
+
+<section class="container" id="subjects">
+
+    <div class="section-title">
+        <h2>📚 Medical Subjects</h2>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>🫀 Anatomy</h3>
+            <p>Study human body structures and organs.</p>
+            <a href="notes.html?topic=Anatomy">Open Notes →</a>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Physiology</h3>
+            <p>Study normal functions of the human body.</p>
+            <a href="notes.html?topic=Physiology">Open Notes →</a>
+        </div>
+
+        <div class="card">
+            <h3>💊 Pharmacology</h3>
+            <p>Study drugs, mechanisms, effects and adverse reactions.</p>
+            <a href="notes.html?topic=Pharmacology">Open Notes →</a>
+        </div>
+
+        <div class="card">
+            <h3>🔬 Pathology</h3>
+            <p>Study diseases and pathological changes.</p>
+            <a href="notes.html?topic=Pathology">Open Notes →</a>
+        </div>
+
+        <div class="card">
+            <h3>🦠 Microbiology</h3>
+            <p>Study bacteria, viruses, fungi and parasites.</p>
+            <a href="notes.html?topic=Microbiology">Open Notes →</a>
+        </div>
+
+        <div class="card">
+            <h3>🏥 Medicine</h3>
+            <p>Explore common diseases and clinical concepts.</p>
+            <a href="notes.html?topic=Medicine">Open Notes →</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container">
+
+    <div class="section-title">
+        <h2>⭐ Quick Access</h2>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>🫀 Heart</h3>
+            <p>Heart anatomy, functions and important concepts.</p>
+            <a href="notes.html?topic=Heart">Study Heart →</a>
+        </div>
+
+        <div class="card">
+            <h3>🧠 Brain</h3>
+            <p>Brain anatomy and nervous system topics.</p>
+            <a href="notes.html?topic=Brain">Study Brain →</a>
+        </div>
+
+        <div class="card">
+            <h3>🩸 Blood Pressure</h3>
+            <p>Learn hypertension and blood pressure basics.</p>
+            <a href="notes.html?topic=Hypertension">Study →</a>
+        </div>
+
+        <div class="card">
+            <h3>🧪 Diabetes</h3>
+            <p>Learn causes, symptoms, complications and management.</p>
+            <a href="notes.html?topic=Diabetes">Study →</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="question">
+
+    <div class="section-title">
+        <h2>❓ Ask a New Question</h2>
+        <p>
+            Agar kisi topic ka answer website par nahi mila,
+            apna question yahan save karein.
+        </p>
+    </div>
+
+    <div class="question-box">
+
+        <textarea
+            id="newQuestion"
+            placeholder="Write your question here..."
+        ></textarea>
+
+        <button onclick="submitQuestion()">
+            Submit Question
+        </button>
+
+        <div id="questionMessage"></div>
+
+    </div>
+
+</section>
+
+
+<section class="container">
+
+    <div class="section-title">
+        <h2>📖 About MedAcademy</h2>
+    </div>
+
+    <div class="card">
+
+        <p>
+            MedAcademy is a medical education website designed
+            to help students study medical subjects, important topics,
+            notes and MCQs in a simple way.
+        </p>
+
+        <p>
+            More subjects, notes, questions and features can be
+            added to the website later.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>🩺 MedAcademy</h3>
+
+    <p>Medical Learning Platform</p>
+
+    <p>© 2026 MedAcademy. All Rights Reserved.</p>
+
+</footer>
+
+
 <script>
 
-/* ==========================================
-   MEDACADEMY STUDENT QUESTION SYSTEM
-   Unanswered questions are saved locally.
-   No AI / Backend required.
-========================================== */
-
-
-/* ==========================================
-   EXISTING TOPICS
-========================================== */
-
 const topics = [
-    "Heart",
-    "Kidney",
-    "Liver",
-    "Brain",
-    "Cranial Nerves",
+
     "Anatomy",
     "Physiology",
     "Pharmacology",
     "Pathology",
     "Microbiology",
     "Medicine",
-    "Adrenergic Blockers",
+
+    "Heart",
+    "Brain",
+    "Kidney",
+    "Liver",
+    "Cranial Nerves",
+
     "Adrenergic Drugs",
+    "Adrenergic Blockers",
+    "Cholinergic Drugs",
+    "Drug Receptors",
+    "Drug Interactions",
     "Adverse Drug Reactions",
-    "Antimicrobial Pharmacology",
     "Autonomic Nervous System",
     "Cardiovascular Pharmacology",
-    "Cell Injury",
-    "Cholinergic Drugs",
-    "Clinical Pharmacology",
     "CNS Pharmacology",
-    "Dose Response",
-    "Drug Interactions",
-    "Drug Receptors",
-    "Drugs Affecting Blood",
-    "Drugs Affecting Uterus",
     "Endocrine Pharmacology",
     "Gastrointestinal Pharmacology",
-    "Inflammation",
+
+    "Diabetes",
+    "Hypertension",
+    "Asthma",
+    "Anemia",
+    "Migraine",
+    "Headache",
     "Fever",
     "Common Cold",
     "Flu",
     "Cough",
-    "Diabetes",
-    "Headache",
-    "Migraine",
-    "Kidney Disease",
+    "Thrombosis",
+    "Osteoporosis",
+    "Stroke",
+    "ECG",
     "Kidney Stones",
     "UTI",
-    "Hypertension",
-    "Asthma",
-    "Anemia",
-    "Tuberculosis",
     "Pneumonia",
+    "Tuberculosis",
     "Hepatitis",
     "Gastritis",
     "Gout",
-    "Osteoporosis",
-    "Thrombosis",
-    "Stroke",
     "Heart Failure",
-    "ECG",
     "Blood Pressure",
+
     "Respiratory System",
     "Nervous System",
     "Endocrine System",
     "Digestive System",
     "Urinary System"
+
 ];
 
 
-/* ==========================================
-   TOPIC ANSWERS
-========================================== */
+function searchTopics(){
 
-const topicAnswers = {
-
-"heart": `
-❤️ HEART
-
-The heart is a muscular organ that pumps blood throughout the body.
-
-Main functions:
-• Pumps oxygenated blood to body tissues
-• Pumps deoxygenated blood to lungs
-• Maintains circulation
-• Helps maintain blood pressure
-
-Four chambers:
-• Right atrium
-• Right ventricle
-• Left atrium
-• Left ventricle
-
-Major valves:
-• Tricuspid valve
-• Pulmonary valve
-• Mitral valve
-• Aortic valve
-`,
-
-"kidney": `
-🫘 KIDNEY
-
-The kidneys are paired organs of the urinary system.
-
-Main functions:
-• Filter blood
-• Remove metabolic waste
-• Produce urine
-• Maintain fluid balance
-• Maintain electrolyte balance
-• Help regulate blood pressure
-
-Functional unit:
-Nephron
-`,
-
-"brain": `
-🧠 BRAIN
-
-The brain is the main organ of the central nervous system.
-
-Major parts:
-• Cerebrum
-• Cerebellum
-• Brainstem
-• Diencephalon
-
-Functions:
-• Thinking
-• Memory
-• Sensation
-• Movement
-• Coordination
-• Regulation of body functions
-`,
-
-"liver": `
-🫀 LIVER
-
-The liver is a major metabolic organ.
-
-Important functions:
-• Metabolism of nutrients
-• Detoxification
-• Bile production
-• Protein synthesis
-• Glycogen storage
-• Storage of vitamins and minerals
-`,
-
-"anatomy": `
-🦴 ANATOMY
-
-Anatomy is the study of the structure of the human body.
-
-Major areas:
-• Gross anatomy
-• Microscopic anatomy
-• Developmental anatomy
-• Neuroanatomy
-• Surface anatomy
-`,
-
-"physiology": `
-🫀 PHYSIOLOGY
-
-Physiology is the study of how the human body normally functions.
-
-Major areas:
-• Cardiovascular physiology
-• Respiratory physiology
-• Renal physiology
-• Nervous system physiology
-• Endocrine physiology
-• Gastrointestinal physiology
-`,
-
-"pharmacology": `
-💊 PHARMACOLOGY
-
-Pharmacology is the study of drugs and their effects on living organisms.
-
-Major concepts:
-• Pharmacokinetics
-• Pharmacodynamics
-• Drug receptors
-• Dose response
-• Drug interactions
-• Adverse drug reactions
-`,
-
-"pathology": `
-🔬 PATHOLOGY
-
-Pathology is the study of disease and the structural and functional changes caused by disease.
-
-Major areas:
-• Cell injury
-• Inflammation
-• Neoplasia
-• Hemodynamic disorders
-• Genetic disorders
-`,
-
-"microbiology": `
-🦠 MICROBIOLOGY
-
-Microbiology is the study of microorganisms.
-
-Major groups:
-• Bacteria
-• Viruses
-• Fungi
-• Parasites
-
-It is important for understanding infectious diseases and their diagnosis.
-`,
-
-"fever": `
-🌡️ FEVER
-
-Fever is an elevation of body temperature caused by an increase in the body's temperature set point.
-
-Common causes:
-• Infections
-• Inflammatory conditions
-• Some medications
-• Other medical conditions
-
-Management depends on the underlying cause.
-`,
-
-"diabetes": `
-🩸 DIABETES
-
-Diabetes mellitus is a group of disorders characterized by elevated blood glucose.
-
-Major types:
-• Type 1 diabetes
-• Type 2 diabetes
-• Gestational diabetes
-
-Common symptoms:
-• Increased thirst
-• Frequent urination
-• Increased hunger
-• Fatigue
-• Weight changes
-`,
-
-"hypertension": `
-❤️ HYPERTENSION
-
-Hypertension means persistently elevated blood pressure.
-
-Long-term uncontrolled hypertension can affect:
-• Heart
-• Brain
-• Kidneys
-• Eyes
-• Blood vessels
-
-Lifestyle modification and appropriate medical management are important.
-`,
-
-"migraine": `
-🧠 MIGRAINE
-
-Migraine is a neurological disorder characterized by recurrent headache attacks.
-
-Possible features:
-• Pulsating headache
-• Nausea
-• Vomiting
-• Sensitivity to light
-• Sensitivity to sound
-
-Some people experience an aura before the headache.
-`,
-
-"thrombosis": `
-🩸 THROMBOSIS
-
-Thrombosis is the formation of a blood clot within a blood vessel.
-
-Important types:
-• Arterial thrombosis
-• Venous thrombosis
-
-A thrombus can obstruct blood flow and may cause serious complications.
-`,
-
-"osteoporosis": `
-🦴 OSTEOPOROSIS
-
-Osteoporosis is a condition characterized by reduced bone strength and increased fracture risk.
-
-Risk factors include:
-• Increasing age
-• Low bone mineral density
-• Hormonal changes
-• Low calcium or vitamin D
-• Certain medications
-`,
-
-"ecg": `
-❤️ ECG
-
-ECG stands for Electrocardiogram.
-
-It records the electrical activity of the heart.
-
-An ECG can provide information about:
-• Heart rate
-• Rhythm
-• Conduction
-• Some abnormalities of the heart
-`,
-
-"stroke": `
-🧠 STROKE
-
-A stroke occurs when blood flow to part of the brain is interrupted or when a blood vessel in the brain bleeds.
-
-Major types:
-• Ischemic stroke
-• Hemorrhagic stroke
-
-Common warning signs include sudden:
-• Weakness
-• Facial drooping
-• Speech difficulty
-• Vision problems
-• Loss of coordination
-`,
-
-"asthma": `
-🫁 ASTHMA
-
-Asthma is a chronic inflammatory disease of the airways characterized by variable respiratory symptoms and airflow limitation.
-
-Common symptoms:
-• Wheezing
-• Cough
-• Shortness of breath
-• Chest tightness
-`,
-
-"anemia": `
-🩸 ANEMIA
-
-Anemia is a condition in which the blood has reduced oxygen-carrying capacity, commonly due to reduced hemoglobin.
-
-Common causes:
-• Iron deficiency
-• Blood loss
-• Vitamin deficiencies
-• Chronic diseases
-• Genetic disorders
-`,
-
-"cough": `
-🫁 COUGH
-
-Cough is a protective reflex that helps clear the airways.
-
-Possible causes:
-• Respiratory infections
-• Asthma
-• Allergies
-• Gastroesophageal reflux
-• Smoking
-`,
-
-"kidney stones": `
-🫘 KIDNEY STONES
-
-Kidney stones are solid deposits that form within the urinary tract.
-
-Common symptoms:
-• Severe flank pain
-• Pain radiating toward the groin
-• Blood in urine
-• Nausea or vomiting
-
-Treatment depends on stone size, location and clinical condition.
-`,
-
-"uti": `
-🦠 UTI
-
-UTI stands for Urinary Tract Infection.
-
-It can affect:
-• Urethra
-• Bladder
-• Ureters
-• Kidneys
-
-Common symptoms:
-• Burning during urination
-• Frequent urination
-• Urgency
-• Lower abdominal discomfort
-`,
-
-"adrenergic drugs": `
-💊 ADRENERGIC DRUGS
-
-Adrenergic drugs act on receptors influenced by the sympathetic nervous system.
-
-Important receptors:
-• Alpha-1
-• Alpha-2
-• Beta-1
-• Beta-2
-• Beta-3
-`,
-
-"adrenergic blockers": `
-💊 ADRENERGIC BLOCKERS
-
-Adrenergic blockers reduce the effects of adrenergic stimulation.
-
-Important groups:
-• Alpha blockers
-• Beta blockers
-
-Their effects depend on which receptor is blocked.
-`,
-
-"cholinergic drugs": `
-💊 CHOLINERGIC DRUGS
-
-Cholinergic drugs produce effects similar to acetylcholine or increase cholinergic activity.
-
-They may affect:
-• Heart
-• Smooth muscle
-• Glands
-• Eye
-• Gastrointestinal tract
-`,
-
-"drug receptors": `
-🔬 DRUG RECEPTORS
-
-Drug receptors are biological structures with which drugs interact to produce effects.
-
-Common receptor families:
-• G-protein coupled receptors
-• Ion channels
-• Enzyme-linked receptors
-• Intracellular receptors
-`,
-
-"drug interactions": `
-⚕️ DRUG INTERACTIONS
-
-A drug interaction occurs when one drug changes the effect of another drug or substance.
-
-Interactions can be:
-• Pharmacokinetic
-• Pharmacodynamic
-
-They may increase toxicity or reduce therapeutic effects.
-`,
-
-"adverse drug reactions": `
-⚠️ ADVERSE DRUG REACTIONS
-
-An adverse drug reaction is an unwanted and harmful response associated with a medicine used at normal doses.
-
-Examples:
-• Allergic reactions
-• Gastrointestinal effects
-• Liver injury
-• Kidney injury
-• Central nervous system effects
-`,
-
-"autonomic nervous system": `
-🧠 AUTONOMIC NERVOUS SYSTEM
-
-The autonomic nervous system regulates involuntary body functions.
-
-Main divisions:
-• Sympathetic nervous system
-• Parasympathetic nervous system
-
-It influences:
-• Heart
-• Blood vessels
-• Lungs
-• Gastrointestinal tract
-• Glands
-`,
-
-"inflammation": `
-🔥 INFLAMMATION
-
-Inflammation is a protective response of living tissue to injury or harmful stimuli.
-
-Cardinal signs:
-• Redness
-• Heat
-• Swelling
-• Pain
-• Loss of function
-
-Inflammation can be acute or chronic.
-`
-
-};
-
-
-/* ==========================================
-   FIND ANSWER
-========================================== */
-
-function findTopic(question){
-
-    const q = question
+    const input =
+        document.getElementById("searchBox").value
         .toLowerCase()
-        .replace(/[?.,!]/g," ");
+        .trim();
 
-    for(const key of Object.keys(topicAnswers)){
+    const results =
+        document.getElementById("searchResults");
 
-        if(q.includes(key)){
-            return key;
-        }
+    results.innerHTML = "";
 
+    if(!input){
+        return;
     }
 
-    return null;
-}
-
-
-/* ==========================================
-   CHECK WHETHER ANSWER EXISTS
-========================================== */
-
-function getAIReply(question){
-
-    const topic = findTopic(question);
-
-    if(topic){
-        return topicAnswers[topic];
-    }
-
-    const found = topics.find(topic =>
-        question.toLowerCase().includes(topic.toLowerCase())
+    const matches = topics.filter(topic =>
+        topic.toLowerCase().includes(input)
     );
 
-    if(found){
+    if(matches.length === 0){
 
-        const key = found.toLowerCase();
+        results.innerHTML = `
+            <div class="result">
+                No topic found.
+                Try another search.
+            </div>
+        `;
 
-        if(topicAnswers[key]){
-            return topicAnswers[key];
-        }
-
-        return `
-📚 ${found}
-
-This topic is present in MedAcademy, but detailed notes for this topic
-have not been added yet.
-
-You can submit your question below.
-The administrator can add the answer/topic later.
-`;
+        return;
     }
 
-    return null;
+    matches.forEach(topic => {
+
+        const div = document.createElement("div");
+
+        div.className = "result";
+
+        div.innerHTML = `
+            <a href="notes.html?topic=${encodeURIComponent(topic)}">
+                📚 ${topic}
+            </a>
+        `;
+
+        results.appendChild(div);
+
+    });
+
 }
 
 
-/* ==========================================
-   SAVE UNANSWERED QUESTION
-========================================== */
+function submitQuestion(){
 
-function saveUnansweredQuestion(question){
+    const input =
+        document.getElementById("newQuestion");
+
+    const message =
+        document.getElementById("questionMessage");
+
+    const question =
+        input.value.trim();
+
+    if(!question){
+
+        message.style.display = "block";
+
+        message.textContent =
+            "Please write your question first.";
+
+        return;
+    }
+
 
     let questions =
         JSON.parse(
             localStorage.getItem("medacademy_questions") || "[]"
         );
+
 
     questions.push({
 
@@ -602,618 +570,23 @@ function saveUnansweredQuestion(question){
 
     });
 
+
     localStorage.setItem(
         "medacademy_questions",
         JSON.stringify(questions)
     );
 
-}
 
+    input.value = "";
 
-/* ==========================================
-   ASK STUDENT QUESTION
-========================================== */
+    message.style.display = "block";
 
-function answerStudentQuestion(){
-
-    const input =
-        document.getElementById("studentQuestion");
-
-    const question =
-        input.value.trim();
-
-    const box =
-        document.getElementById("answerBox");
-
-    const answer =
-        document.getElementById("answerText");
-
-
-    if(!question){
-
-        box.style.display="block";
-
-        answer.textContent =
-            "Please write your question first.";
-
-        return;
-    }
-
-
-    const reply =
-        getAIReply(question);
-
-
-    box.style.display="block";
-
-
-    if(reply){
-
-        answer.textContent = reply;
-
-    }else{
-
-        answer.textContent = `
-❓ Your question is not available yet.
-
-Don't worry!
-
-Your question has been saved as a NEW QUESTION.
-
-📌 The MedAcademy administrator can review it later
-and add the answer/topic to the website.
-
-Thank you for helping us improve MedAcademy ❤️
-`;
-
-        saveUnansweredQuestion(question);
-
-    }
-
-
-    input.value="";
+    message.textContent =
+        "✅ Your question has been saved. It can be added to MedAcademy later.";
 
 }
-
-
-/* ==========================================
-   STUDENT QUESTION BOX
-========================================== */
-
-function submitNewQuestion(){
-
-    const input =
-        document.getElementById("newQuestion");
-
-    const question =
-        input.value.trim();
-
-
-    if(!question){
-
-        alert("Please write your question.");
-
-        return;
-
-    }
-
-
-    saveUnansweredQuestion(question);
-
-
-    document.getElementById("questionSubmitted")
-        .style.display="block";
-
-
-    input.value="";
-
-
-    showPendingQuestions();
-
-}
-
-
-/* ==========================================
-   SHOW PENDING QUESTIONS
-========================================== */
-
-function showPendingQuestions(){
-
-    const container =
-        document.getElementById("pendingQuestions");
-
-    if(!container){
-        return;
-    }
-
-
-    const questions =
-        JSON.parse(
-            localStorage.getItem("medacademy_questions") || "[]"
-        );
-
-
-    if(questions.length===0){
-
-        container.innerHTML =
-            "<p>No questions submitted yet.</p>";
-
-        return;
-    }
-
-
-    container.innerHTML = "";
-
-
-    questions.forEach(function(item,index){
-
-        const div =
-            document.createElement("div");
-
-        div.style.cssText = `
-            background:#fff;
-            padding:15px;
-            margin:10px 0;
-            border-radius:10px;
-            border-left:5px solid #087f8c;
-        `;
-
-
-        div.innerHTML = `
-            <strong>Question ${index+1}</strong>
-            <p>${escapeHTML(item.question)}</p>
-            <small>
-                📅 ${escapeHTML(item.date)}
-                &nbsp; | &nbsp;
-                🕐 ${escapeHTML(item.status)}
-            </small>
-        `;
-
-
-        container.appendChild(div);
-
-    });
-
-}
-
-
-/* ==========================================
-   ADMIN VIEW
-========================================== */
-
-function showAdminQuestions(){
-
-    const password =
-        prompt("Enter Admin Password:");
-
-    if(password !== "admin123"){
-
-        alert("Wrong password.");
-
-        return;
-
-    }
-
-
-    const questions =
-        JSON.parse(
-            localStorage.getItem("medacademy_questions") || "[]"
-        );
-
-
-    if(questions.length===0){
-
-        alert("No unanswered questions.");
-
-        return;
-
-    }
-
-
-    let text =
-        "📋 MEDACADEMY UNANSWERED QUESTIONS\n\n";
-
-
-    questions.forEach(function(item,index){
-
-        text +=
-        `${index+1}. ${item.question}\n`+
-        `Date: ${item.date}\n`+
-        `Status: ${item.status}\n\n`;
-
-    });
-
-
-    alert(text);
-
-}
-
-
-/* ==========================================
-   CLEAR QUESTIONS
-========================================== */
-
-function clearStudentQuestions(){
-
-    const password =
-        prompt("Enter Admin Password:");
-
-    if(password !== "admin123"){
-
-        alert("Wrong password.");
-
-        return;
-
-    }
-
-
-    localStorage.removeItem(
-        "medacademy_questions"
-    );
-
-
-    showPendingQuestions();
-
-    alert("All saved questions cleared.");
-
-}
-
-
-/* ==========================================
-   SEARCH TOPICS
-========================================== */
-
-function searchTopics(){
-
-    const input =
-        document.getElementById("searchBox")
-        .value
-        .toLowerCase()
-        .trim();
-
-
-    const results =
-        document.getElementById("searchResults");
-
-
-    results.innerHTML="";
-
-
-    if(!input){
-        return;
-    }
-
-
-    const matches =
-        topics.filter(topic =>
-            topic.toLowerCase().includes(input)
-        );
-
-
-    if(matches.length===0){
-
-        results.innerHTML=`
-            <div class="search-result">
-                ❌ No topic found.
-            </div>
-        `;
-
-        return;
-
-    }
-
-
-    matches.forEach(topic=>{
-
-        const div =
-            document.createElement("div");
-
-        div.className="search-result";
-
-        const button =
-            document.createElement("button");
-
-        button.textContent =
-            "Ask about "+topic+" →";
-
-        button.onclick=function(){
-
-            document.getElementById("studentQuestion")
-                .value =
-                "Explain "+topic;
-
-            document.getElementById("askQuestion")
-                .scrollIntoView({
-                    behavior:"smooth"
-                });
-
-        };
-
-
-        div.innerHTML =
-            `📖 <strong>${escapeHTML(topic)}</strong>`;
-
-        div.appendChild(
-            document.createElement("br")
-        );
-
-        div.appendChild(button);
-
-        results.appendChild(div);
-
-    });
-
-}
-
-
-/* ==========================================
-   SUGGESTIONS
-========================================== */
-
-function showSuggestions(){
-
-    const input =
-        document.getElementById("suggestionInput");
-
-    const list =
-        document.getElementById("suggestionList");
-
-
-    if(!input || !list){
-        return;
-    }
-
-
-    const value =
-        input.value.toLowerCase().trim();
-
-
-    list.innerHTML="";
-
-
-    const popular = [
-        "Heart",
-        "Brain",
-        "Kidney",
-        "Diabetes",
-        "Migraine",
-        "Anatomy",
-        "Pharmacology",
-        "Pathology"
-    ];
-
-
-    const matches =
-        value
-        ?
-        topics.filter(topic =>
-            topic.toLowerCase().includes(value)
-        ).slice(0,10)
-        :
-        popular;
-
-
-    matches.forEach(topic=>{
-
-        const item =
-            document.createElement("div");
-
-        item.className="suggestion";
-
-        item.textContent =
-            "🔎 "+topic;
-
-
-        item.onclick=function(){
-
-            document.getElementById("searchBox")
-                .value=topic;
-
-            searchTopics();
-
-            document.getElementById("searchBox")
-                .scrollIntoView({
-                    behavior:"smooth"
-                });
-
-        };
-
-
-        list.appendChild(item);
-
-    });
-
-}
-
-
-/* ==========================================
-   ESCAPE HTML
-========================================== */
-
-function escapeHTML(value){
-
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
-
-}
-
-
-/* ==========================================
-   INITIALIZE
-========================================== */
-
-showSuggestions();
-showPendingQuestions();
 
 </script>
 
-
-<!-- ==========================================
-     ADD THIS HTML WHERE YOU WANT
-     THE STUDENT QUESTION SECTION
-========================================== -->
-
-<section id="askQuestion" style="
-    max-width:1000px;
-    margin:40px auto;
-    padding:25px;
-    background:#ffffff;
-    border-radius:15px;
-    box-shadow:0 3px 15px rgba(0,0,0,.08);
-">
-
-    <h2 style="
-        color:#087f8c;
-        text-align:center;
-        margin-bottom:10px;
-    ">
-        ❓ Ask a New Question
-    </h2>
-
-    <p style="
-        text-align:center;
-        color:#666;
-        margin-bottom:20px;
-    ">
-        Didn't find the answer you were looking for?
-        Submit your question and it can be added to MedAcademy later.
-    </p>
-
-
-    <textarea
-        id="newQuestion"
-        placeholder="Write your question here..."
-        style="
-            width:100%;
-            min-height:120px;
-            padding:15px;
-            border:2px solid #ddd;
-            border-radius:10px;
-            font-size:16px;
-            resize:vertical;
-        "
-    ></textarea>
-
-
-    <button
-        onclick="submitNewQuestion()"
-        style="
-            width:100%;
-            margin-top:12px;
-            padding:14px;
-            background:#087f8c;
-            color:white;
-            border:0;
-            border-radius:9px;
-            font-size:16px;
-            font-weight:bold;
-            cursor:pointer;
-        "
-    >
-        📤 Submit Question
-    </button>
-
-
-    <div
-        id="questionSubmitted"
-        style="
-            display:none;
-            margin-top:15px;
-            padding:15px;
-            background:#e8f7ea;
-            color:#176b2c;
-            border-radius:10px;
-            text-align:center;
-        "
-    >
-        ✅ Question saved successfully.
-        <br>
-        The administrator can review and add its answer later.
-    </div>
-
-
-    <div style="
-        margin-top:25px;
-        padding:15px;
-        background:#f3fafb;
-        border-radius:10px;
-    ">
-
-        <strong>📌 How it works:</strong>
-
-        <ol style="margin:10px 0 0 20px;">
-
-            <li>Student asks a question.</li>
-
-            <li>If an answer exists, the website shows it.</li>
-
-            <li>If no answer exists, the question is saved.</li>
-
-            <li>Admin can review unanswered questions later.</li>
-
-            <li>Admin can then add the new topic/answer to the website.</li>
-
-        </ol>
-
-    </div>
-
-
-    <!-- ADMIN BUTTONS -->
-
-    <div style="
-        margin-top:20px;
-        text-align:center;
-    ">
-
-        <button
-            onclick="showAdminQuestions()"
-            style="
-                padding:10px 15px;
-                border:0;
-                border-radius:7px;
-                background:#333;
-                color:white;
-                cursor:pointer;
-                margin:5px;
-            "
-        >
-            🔐 View Unanswered Questions
-        </button>
-
-
-        <button
-            onclick="clearStudentQuestions()"
-            style="
-                padding:10px 15px;
-                border:0;
-                border-radius:7px;
-                background:#dc3545;
-                color:white;
-                cursor:pointer;
-                margin:5px;
-            "
-        >
-            🗑️ Clear Questions
-        </button>
-
-    </div>
-
-
-    <!-- OPTIONAL -->
-    <!--
-    This section can be hidden from normal students.
-    It displays questions saved on THIS browser/device.
-    -->
-
-    <div
-        id="pendingQuestions"
-        style="
-            margin-top:25px;
-        "
-    ></div>
-
-</section>
+</body>
+</html>
