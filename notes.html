@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,12 +15,10 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f4f8fb;
     color:#222;
 }
-
-/* HEADER */
 
 header{
     background:#0d6efd;
@@ -30,6 +27,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    flex-wrap:wrap;
 }
 
 .logo{
@@ -40,43 +38,38 @@ header{
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:20px;
-    font-size:16px;
+    margin-left:18px;
 }
 
 nav a:hover{
     text-decoration:underline;
 }
 
-/* HERO */
-
 .hero{
-    text-align:center;
-    padding:50px 20px;
     background:white;
+    text-align:center;
+    padding:45px 20px;
 }
 
 .hero h1{
-    font-size:38px;
     color:#0d6efd;
+    font-size:38px;
     margin-bottom:10px;
 }
 
 .hero p{
-    font-size:18px;
     color:#555;
+    font-size:18px;
 }
-
-/* SEARCH */
 
 .search-section{
     text-align:center;
-    padding:30px 20px;
+    padding:30px 15px;
 }
 
 #searchBox{
     width:90%;
-    max-width:600px;
+    max-width:700px;
     padding:15px;
     border:2px solid #0d6efd;
     border-radius:10px;
@@ -86,7 +79,7 @@ nav a:hover{
 
 #searchResults{
     width:90%;
-    max-width:600px;
+    max-width:700px;
     margin:15px auto;
     text-align:left;
 }
@@ -96,33 +89,39 @@ nav a:hover{
     padding:15px;
     margin:10px 0;
     border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
-.result a{
+.result strong{
     color:#0d6efd;
-    text-decoration:none;
-    font-weight:bold;
 }
 
-/* NOTES */
+.result button{
+    margin-top:10px;
+    border:none;
+    background:#0d6efd;
+    color:white;
+    padding:9px 14px;
+    border-radius:7px;
+    cursor:pointer;
+}
 
 .notes-container{
-    width:90%;
-    max-width:1100px;
-    margin:30px auto;
+    width:92%;
+    max-width:1200px;
+    margin:20px auto 50px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    gap:22px;
 }
 
 .note-card{
     background:white;
-    padding:30px;
+    padding:25px;
     border-radius:15px;
     text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    transition:0.3s;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transition:.3s;
 }
 
 .note-card:hover{
@@ -136,8 +135,8 @@ nav a:hover{
 
 .note-card p{
     color:#666;
-    margin-bottom:20px;
     line-height:1.5;
+    margin-bottom:18px;
 }
 
 .btn{
@@ -147,23 +146,157 @@ nav a:hover{
     padding:11px 18px;
     border-radius:8px;
     text-decoration:none;
+    border:none;
+    cursor:pointer;
 }
 
 .btn:hover{
     background:#084298;
 }
 
-/* FOOTER */
+/* TOPIC DETAIL */
+
+#topicSection{
+    display:none;
+    width:92%;
+    max-width:1000px;
+    margin:30px auto;
+}
+
+.topic-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.topic-box h2{
+    color:#0d6efd;
+    margin-bottom:15px;
+}
+
+.topic-box h3{
+    margin-top:22px;
+    margin-bottom:10px;
+    color:#333;
+}
+
+.topic-box p,
+.topic-box li{
+    line-height:1.7;
+}
+
+.topic-box ul{
+    padding-left:22px;
+}
+
+/* MCQ */
+
+.mcq{
+    background:#f4f8fb;
+    padding:18px;
+    border-radius:10px;
+    margin-top:15px;
+}
+
+.mcq button{
+    display:block;
+    width:100%;
+    text-align:left;
+    margin:8px 0;
+    padding:12px;
+    border:1px solid #ddd;
+    background:white;
+    border-radius:7px;
+    cursor:pointer;
+}
+
+.mcq button:hover{
+    background:#e9f2ff;
+}
+
+.answer{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+/* AI */
+
+.ai-section{
+    width:92%;
+    max-width:900px;
+    margin:40px auto;
+}
+
+.ai-box{
+    background:white;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    overflow:hidden;
+}
+
+.ai-header{
+    background:#0d6efd;
+    color:white;
+    padding:18px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+#chatArea{
+    height:400px;
+    overflow-y:auto;
+    padding:20px;
+    background:#f8fafc;
+}
+
+.message{
+    padding:12px 15px;
+    margin:10px 0;
+    border-radius:10px;
+    max-width:85%;
+    line-height:1.6;
+}
+
+.user-message{
+    background:#dbeafe;
+    margin-left:auto;
+}
+
+.ai-message{
+    background:white;
+    border:1px solid #ddd;
+}
+
+.ai-input{
+    display:flex;
+    gap:8px;
+    padding:15px;
+}
+
+#chatInput{
+    flex:1;
+    padding:13px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+}
+
+#sendButton{
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:0 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
 
 footer{
-    margin-top:50px;
     background:#0d6efd;
     color:white;
     text-align:center;
     padding:20px;
 }
-
-/* MOBILE */
 
 @media(max-width:600px){
 
@@ -173,11 +306,15 @@ footer{
     }
 
     nav a{
-        margin:0 7px;
+        margin:0 6px;
     }
 
     .hero h1{
         font-size:30px;
+    }
+
+    #chatArea{
+        height:350px;
     }
 
 }
@@ -186,8 +323,6 @@ footer{
 </head>
 
 <body>
-
-<!-- HEADER -->
 
 <header>
 
@@ -204,13 +339,13 @@ footer{
 </header>
 
 
-<!-- HERO -->
-
 <section class="hero">
 
 <h1>📚 Medical Notes</h1>
 
-<p>Study important medical topics easily and quickly.</p>
+<p>
+1000+ Medical & General Knowledge Topics
+</p>
 
 </section>
 
@@ -220,10 +355,10 @@ footer{
 <section class="search-section">
 
 <input
-type="text"
 id="searchBox"
-placeholder="🔍 Search medical topic..."
-onkeyup="searchTopics()"
+type="text"
+placeholder="🔍 Search any topic..."
+oninput="searchTopics()"
 >
 
 <div id="searchResults"></div>
@@ -231,80 +366,82 @@ onkeyup="searchTopics()"
 </section>
 
 
-<!-- NOTES -->
+<!-- TOPIC DETAIL -->
+
+<section id="topicSection">
+
+<div class="topic-box" id="topicContent"></div>
+
+</section>
+
+
+<!-- MAIN CARDS -->
 
 <section class="notes-container">
 
-
-<!-- ANATOMY -->
-
 <div class="note-card">
 
-<h2>🦴 Anatomy</h2>
+<h2>🦴 Human Anatomy</h2>
 
 <p>
-Study human body structures, organs and systems.
+Study structures of the human body, organs and systems.
 </p>
 
-<a class="btn" href="anatomy-notes.html">
-Read Notes →
-</a>
+<button class="btn"
+onclick="openTopic('Human Anatomy')">
+Study Now →
+</button>
 
 </div>
 
 
-<!-- PHYSIOLOGY -->
-
 <div class="note-card">
 
-<h2>🫀 Physiology</h2>
+<h2>🫀 Human Physiology</h2>
 
 <p>
-Learn how organs and body systems function.
+Learn normal functions and mechanisms of the human body.
 </p>
 
-<a class="btn" href="physiology.html">
-Read Notes →
-</a>
+<button class="btn"
+onclick="openTopic('Human Physiology')">
+Study Now →
+</button>
 
 </div>
 
-
-<!-- PHARMACOLOGY -->
-
-<div class="note-card">
-
-<h2>💊 Pharmacology</h2>
-
-<p>
-Learn drugs, mechanisms, uses and adverse effects.
-</p>
-
-<a class="btn" href="pharmacology.html">
-Read Notes →
-</a>
-
-</div>
-
-
-<!-- PATHOLOGY -->
 
 <div class="note-card">
 
 <h2>🔬 Pathology</h2>
 
 <p>
-Study diseases, causes and pathological changes.
+Study diseases, causes, mechanisms and pathological changes.
 </p>
 
-<a class="btn" href="pathology.html">
-Read Notes →
-</a>
+<button class="btn"
+onclick="openTopic('General Pathology')">
+Study Now →
+</button>
 
 </div>
 
 
-<!-- MICROBIOLOGY -->
+<div class="note-card">
+
+<h2>💊 Pharmacology</h2>
+
+<p>
+Study drugs, mechanisms, indications and adverse effects.
+</p>
+
+<button class="btn"
+onclick="openTopic('General Pharmacology')">
+Study Now →
+</button>
+
+</div>
+
 
 <div class="note-card">
 
@@ -314,21 +451,116 @@ Read Notes →
 Study bacteria, viruses, fungi and parasites.
 </p>
 
-<a class="btn" href="microbiology.html">
-Read Notes →
-</a>
+<button class="btn"
+onclick="openTopic('Medical Microbiology')">
+Study Now →
+</button>
 
 </div>
 
 
-<!-- QUIZ -->
+<div class="note-card">
+
+<h2>🧬 Biochemistry</h2>
+
+<p>
+Learn biomolecules, enzymes and metabolic pathways.
+</p>
+
+<button class="btn"
+onclick="openTopic('Medical Biochemistry')">
+Study Now →
+</button>
+
+</div>
+
+
+<div class="note-card">
+
+<h2>❤️ Cardiology</h2>
+
+<p>
+Heart anatomy, physiology, ECG and cardiovascular diseases.
+</p>
+
+<button class="btn"
+onclick="openTopic('Cardiology')">
+Study Now →
+</button>
+
+</div>
+
+
+<div class="note-card">
+
+<h2>🧠 Neurology</h2>
+
+<p>
+Brain, spinal cord, nerves and neurological diseases.
+</p>
+
+<button class="btn"
+onclick="openTopic('Neurology')">
+Study Now →
+</button>
+
+</div>
+
+
+<div class="note-card">
+
+<h2>🫘 Nephrology</h2>
+
+<p>
+Kidney anatomy, physiology and renal diseases.
+</p>
+
+<button class="btn"
+onclick="openTopic('Nephrology')">
+Study Now →
+</button>
+
+</div>
+
+
+<div class="note-card">
+
+<h2>🫁 Pulmonology</h2>
+
+<p>
+Respiratory system, lung diseases and investigations.
+</p>
+
+<button class="btn"
+onclick="openTopic('Pulmonology')">
+Study Now →
+</button>
+
+</div>
+
+
+<div class="note-card">
+
+<h2>👶 Pediatrics</h2>
+
+<p>
+Study childhood diseases, growth and development.
+</p>
+
+<button class="btn"
+onclick="openTopic('Pediatrics')">
+Study Now →
+</button>
+
+</div>
+
 
 <div class="note-card">
 
 <h2>📝 Medical Quiz</h2>
 
 <p>
-Test your medical knowledge with MCQs.
+Practice medical MCQs from basic to advanced level.
 </p>
 
 <a class="btn" href="quiz.html">
@@ -337,96 +569,51 @@ Start Quiz →
 
 </div>
 
-
-<!-- HEART -->
-
-<div class="note-card">
-
-<h2>❤️ Heart</h2>
-
-<p>
-Learn chambers, valves, vessels and blood flow.
-</p>
-
-<a class="btn" href="heart.html">
-Study Heart →
-</a>
-
-</div>
-
-
-<!-- KIDNEY -->
-
-<div class="note-card">
-
-<h2>🫘 Kidney</h2>
-
-<p>
-Study kidney structure and its important functions.
-</p>
-
-<a class="btn" href="kidney.html">
-Study Kidney →
-</a>
-
-</div>
-
-
-<!-- LIVER -->
-
-<div class="note-card">
-
-<h2>🧡 Liver</h2>
-
-<p>
-Learn liver anatomy and major functions.
-</p>
-
-<a class="btn" href="liver.html">
-Study Liver →
-</a>
-
-</div>
-
-
-<!-- BRAIN -->
-
-<div class="note-card">
-
-<h2>🧠 Brain</h2>
-
-<p>
-Study major parts of the brain and their functions.
-</p>
-
-<a class="btn" href="brain.html">
-Study Brain →
-</a>
-
-</div>
-
-
-<!-- CRANIAL NERVES -->
-
-<div class="note-card">
-
-<h2>🧠 Cranial Nerves</h2>
-
-<p>
-Learn the 12 cranial nerves and their functions.
-</p>
-
-<a class="btn" href="cranial-nerves.html">
-Study Cranial Nerves →
-</a>
-
-</div>
-
-
 </section>
 
 
-<!-- FOOTER -->
+<!-- AI -->
+
+<section class="ai-section">
+
+<div class="ai-box">
+
+<div class="ai-header">
+🩺 MedAcademy AI
+</div>
+
+<div id="chatArea">
+
+<div class="message ai-message">
+
+<b>MedAcademy AI:</b><br>
+
+Hello! 👋 Ask me any medical, educational,
+general knowledge, science, technology or other question.
+
+</div>
+
+</div>
+
+<div class="ai-input">
+
+<input
+id="chatInput"
+type="text"
+placeholder="Ask anything..."
+onkeydown="handleEnter(event)"
+>
+
+<button id="sendButton" onclick="sendAI()">
+Send
+</button>
+
+</div>
+
+</div>
+
+</section>
+
 
 <footer>
 
@@ -437,134 +624,1764 @@ Study Cranial Nerves →
 </footer>
 
 
-<!-- SEARCH JAVASCRIPT -->
-
 <script>
 
-const topics = [
+/* =========================================================
+   1000 TOPICS
+   ========================================================= */
 
-{
-name:"Heart",
-link:"heart.html"
-},
+const topicsText = `
 
-{
-name:"Kidney",
-link:"kidney.html"
-},
+Human Anatomy
+Human Physiology
+General Pathology
+Systemic Pathology
+General Pharmacology
+Clinical Pharmacology
+Medical Microbiology
+Medical Biochemistry
+Molecular Biology
+Genetics
+Immunology
+Histology
+Embryology
+Neuroscience
+Medical Ethics
+Medical Terminology
+First Aid
+Basic Life Support
+Advanced Life Support
+Emergency Medicine
+Internal Medicine
+General Surgery
+Pediatrics
+Obstetrics
+Gynecology
+Psychiatry
+Dermatology
+Ophthalmology
+Otolaryngology
+Orthopedics
+Cardiology
+Neurology
+Nephrology
+Gastroenterology
+Pulmonology
+Endocrinology
+Rheumatology
+Hematology
+Oncology
+Infectious Diseases
+Urology
+Neurosurgery
+Cardiothoracic Surgery
+Plastic Surgery
+Vascular Surgery
+Anesthesiology
+Radiology
+Nuclear Medicine
+Rehabilitation Medicine
+Family Medicine
+Public Health
+Epidemiology
+Preventive Medicine
+Community Medicine
+Occupational Medicine
+Sports Medicine
+Geriatric Medicine
+Palliative Care
+Clinical Nutrition
+Toxicology
+Forensic Medicine
+Medical Genetics
+Transfusion Medicine
+Laboratory Medicine
+Nuclear Biology
+Cellular Biology
+Tissue Biology
+Organ Systems
+Homeostasis
+Body Fluids
+Blood
+Plasma
+Red Blood Cells
+White Blood Cells
+Platelets
+Bone Marrow
+Hemoglobin
+Blood Groups
+Coagulation
+Hemostasis
+Immune System
+Lymphatic System
+Cardiovascular System
+Respiratory System
+Digestive System
+Urinary System
+Reproductive System
+Nervous System
+Endocrine System
+Musculoskeletal System
+Integumentary System
+Sensory Systems
+Cardiovascular Anatomy
+Heart Anatomy
+Heart Physiology
+Cardiac Cycle
+Cardiac Output
+Blood Pressure
+Pulse
+ECG Basics
+ECG Interpretation
+Arrhythmias
+Heart Failure
+Coronary Artery Disease
+Myocardial Infarction
+Angina
+Cardiomyopathy
+Myocarditis
+Pericarditis
+Endocarditis
+Valvular Heart Disease
+Rheumatic Heart Disease
+Hypertension
+Hypotension
+Atherosclerosis
+Peripheral Artery Disease
+Deep Vein Thrombosis
+Pulmonary Embolism
+Varicose Veins
+Aortic Aneurysm
+Aortic Dissection
+Shock
+Septic Shock
+Cardiogenic Shock
+Hypovolemic Shock
+Anaphylactic Shock
+Obstructive Shock
+CPR
+Defibrillation
+Pacemakers
+Heart Valves
+Coronary Circulation
+Cardiac Electrophysiology
+Lipid Profile
+Cholesterol
+Triglycerides
+Respiratory Anatomy
+Lung Physiology
+Gas Exchange
+Oxygen Transport
+Carbon Dioxide Transport
+Pulmonary Ventilation
+Lung Volumes
+Spirometry
+Asthma
+COPD
+Pneumonia
+Tuberculosis
+Bronchitis
+Bronchiolitis
+Emphysema
+Pulmonary Fibrosis
+Pleural Effusion
+Pneumothorax
+Hemothorax
+Pulmonary Edema
+ARDS
+Respiratory Failure
+Sleep Apnea
+Lung Cancer
+Pulmonary Hypertension
+Cystic Fibrosis
+Occupational Lung Disease
+Respiratory Infections
+Oxygen Therapy
+Mechanical Ventilation
+Airway Management
+Intubation
+Tracheostomy
+Arterial Blood Gas
+Digestive Anatomy
+Oral Cavity
+Salivary Glands
+Esophagus
+Stomach
+Small Intestine
+Large Intestine
+Rectum
+Anus
+Liver
+Gallbladder
+Pancreas
+Gastrointestinal Motility
+Digestion
+Absorption
+GERD
+Peptic Ulcer Disease
+Gastritis
+Gastroenteritis
+Appendicitis
+Crohn’s Disease
+Ulcerative Colitis
+Irritable Bowel Syndrome
+Celiac Disease
+Intestinal Obstruction
+Gastrointestinal Bleeding
+Hemorrhoids
+Anal Fissure
+Colorectal Cancer
+Liver Function Tests
+Hepatitis
+Fatty Liver Disease
+Cirrhosis
+Portal Hypertension
+Liver Failure
+Gallstones
+Cholecystitis
+Pancreatitis
+Pancreatic Cancer
+Jaundice
+Ascites
+Hepatic Encephalopathy
+Renal Anatomy
+Nephron
+Kidney Physiology
+Glomerular Filtration
+Urine Formation
+Electrolyte Balance
+Acid-Base Balance
+Acute Kidney Injury
+Chronic Kidney Disease
+Glomerulonephritis
+Nephrotic Syndrome
+Nephritic Syndrome
+Kidney Stones
+Pyelonephritis
+Urinary Tract Infection
+Cystitis
+Kidney Cancer
+Dialysis
+Hemodialysis
+Peritoneal Dialysis
+Kidney Transplantation
+Renal Tubular Disorders
+Proteinuria
+Hematuria
+Oliguria
+Anuria
+Polyuria
+Urinary Incontinence
+Neurological Anatomy
+Brain Anatomy
+Spinal Cord
+Cranial Nerves
+Peripheral Nerves
+Autonomic Nervous System
+Neurons
+Neurotransmitters
+Synapses
+Reflexes
+Brain Blood Supply
+Cerebrospinal Fluid
+Blood-Brain Barrier
+Stroke
+Ischemic Stroke
+Hemorrhagic Stroke
+TIA
+Epilepsy
+Seizures
+Migraine
+Tension Headache
+Cluster Headache
+Meningitis
+Encephalitis
+Brain Tumors
+Parkinson’s Disease
+Alzheimer’s Disease
+Dementia
+Multiple Sclerosis
+ALS
+Guillain-Barré Syndrome
+Myasthenia Gravis
+Muscular Dystrophy
+Peripheral Neuropathy
+Neuropathic Pain
+Bell’s Palsy
+Trigeminal Neuralgia
+Hydrocephalus
+Increased Intracranial Pressure
+Spinal Cord Injury
+Endocrine Anatomy
+Pituitary Gland
+Thyroid Gland
+Parathyroid Glands
+Adrenal Glands
+Pancreatic Hormones
+Insulin
+Glucagon
+Diabetes Mellitus
+Type 1 Diabetes
+Type 2 Diabetes
+Gestational Diabetes
+Diabetic Ketoacidosis
+Hyperosmolar Hyperglycemic State
+Hypoglycemia
+Diabetic Neuropathy
+Diabetic Nephropathy
+Diabetic Retinopathy
+Diabetes Complications
+Thyroid Hormones
+Hypothyroidism
+Hyperthyroidism
+Goiter
+Thyroiditis
+Thyroid Cancer
+Hyperparathyroidism
+Hypoparathyroidism
+Cushing Syndrome
+Addison Disease
+Pheochromocytoma
+Growth Hormone
+Acromegaly
+Gigantism
+Pituitary Disorders
+Metabolic Syndrome
+Obesity
+Vitamin Deficiency
+Vitamin A
+Vitamin B1
+Vitamin B2
+Vitamin B3
+Vitamin B5
+Vitamin B6
+Vitamin B7
+Vitamin B9
+Vitamin B12
+Vitamin C
+Vitamin D
+Vitamin E
+Vitamin K
+Calcium
+Magnesium
+Phosphorus
+Sodium
+Potassium
+Chloride
+Iron
+Zinc
+Iodine
+Selenium
+Bone Anatomy
+Bone Physiology
+Bone Remodeling
+Osteoporosis
+Osteomalacia
+Rickets
+Osteoarthritis
+Rheumatoid Arthritis
+Gout
+Septic Arthritis
+Ankylosing Spondylitis
+Systemic Lupus Erythematosus
+Joint Pain
+Back Pain
+Fractures
+Dislocations
+Sprains
+Strains
+Ligament Injuries
+Tendon Injuries
+Muscle Injuries
+Osteomyelitis
+Bone Tumors
+Spinal Disorders
+Scoliosis
+Kyphosis
+Lordosis
+Disc Herniation
+Carpal Tunnel Syndrome
+Sports Injuries
+Skin Anatomy
+Skin Physiology
+Epidermis
+Dermis
+Subcutaneous Tissue
+Hair
+Nails
+Sweat Glands
+Sebaceous Glands
+Acne
+Eczema
+Psoriasis
+Dermatitis
+Urticaria
+Contact Dermatitis
+Fungal Skin Infections
+Bacterial Skin Infections
+Viral Skin Infections
+Scabies
+Pediculosis
+Vitiligo
+Alopecia
+Melanoma
+Skin Cancer
+Burns
+Pressure Ulcers
+Wound Healing
+Cellulitis
+Abscess
+Drug Rashes
+Eye Anatomy
+Eye Physiology
+Vision
+Refraction
+Myopia
+Hypermetropia
+Astigmatism
+Presbyopia
+Cataract
+Glaucoma
+Conjunctivitis
+Keratitis
+Uveitis
+Retinal Disorders
+Retinal Detachment
+Macular Degeneration
+Diabetic Retinopathy
+Optic Neuritis
+Color Blindness
+Blindness
+Eye Trauma
+Ear Anatomy
+Hearing
+External Ear
+Middle Ear
+Inner Ear
+Otitis Externa
+Otitis Media
+Mastoiditis
+Hearing Loss
+Conductive Hearing Loss
+Sensorineural Hearing Loss
+Tinnitus
+Vertigo
+Ménière Disease
+Nose Anatomy
+Sinuses
+Sinusitis
+Allergic Rhinitis
+Epistaxis
+Deviated Nasal Septum
+Tonsillitis
+Pharyngitis
+Laryngitis
+Vocal Cords
+Nasal Polyps
+Sleep Disorders
+Male Reproductive System
+Female Reproductive System
+Spermatogenesis
+Oogenesis
+Menstrual Cycle
+Ovulation
+Fertilization
+Implantation
+Pregnancy
+Prenatal Care
+Antenatal Care
+Labor
+Delivery
+Postpartum Care
+Breastfeeding
+Breast Anatomy
+Breast Cancer
+Menopause
+Polycystic Ovary Syndrome
+Endometriosis
+Uterine Fibroids
+Pelvic Inflammatory Disease
+Ectopic Pregnancy
+Miscarriage
+Infertility
+Contraception
+Sexually Transmitted Infections
+Cervical Cancer
+Ovarian Cancer
+Endometrial Cancer
+Prostate Anatomy
+Benign Prostatic Hyperplasia
+Prostate Cancer
+Erectile Dysfunction
+Male Infertility
+Testicular Cancer
+Testicular Torsion
+Epididymitis
+Orchitis
+Hernias
+Pediatric Anatomy
+Pediatric Physiology
+Neonatology
+Newborn Examination
+Prematurity
+Low Birth Weight
+Birth Asphyxia
+Neonatal Jaundice
+Neonatal Sepsis
+Congenital Heart Disease
+Cleft Lip
+Cleft Palate
+Childhood Asthma
+Childhood Pneumonia
+Childhood Diarrhea
+Childhood Malnutrition
+Growth and Development
+Developmental Milestones
+Childhood Immunization
+Measles
+Mumps
+Rubella
+Chickenpox
+Whooping Cough
+Diphtheria
+Polio
+Tetanus
+Childhood Epilepsy
+ADHD
+Autism Spectrum Disorder
+Cerebral Palsy
+Pediatric Diabetes
+Pediatric Obesity
+General Surgery Principles
+Surgical Instruments
+Surgical Asepsis
+Sterilization
+Sutures
+Surgical Wounds
+Wound Classification
+Preoperative Assessment
+Postoperative Care
+Surgical Infections
+Appendectomy
+Cholecystectomy
+Hernia Repair
+Bowel Surgery
+Thyroid Surgery
+Breast Surgery
+Trauma Surgery
+Abdominal Trauma
+Chest Trauma
+Head Trauma
+Fracture Management
+Burn Management
+Skin Grafting
+Organ Transplantation
+Anesthesia Basics
+General Anesthesia
+Regional Anesthesia
+Local Anesthesia
+Spinal Anesthesia
+Epidural Anesthesia
+Pain Management
+Analgesics
+NSAIDs
+Opioids
+Antibiotics
+Antivirals
+Antifungals
+Antiparasitic Drugs
+Antimalarial Drugs
+Antitubercular Drugs
+Antihypertensive Drugs
+Antiarrhythmic Drugs
+Anticoagulants
+Antiplatelet Drugs
+Thrombolytics
+Diuretics
+Beta Blockers
+Calcium Channel Blockers
+ACE Inhibitors
+ARBs
+Statins
+Insulin Therapy
+Oral Antidiabetic Drugs
+Thyroid Drugs
+Corticosteroids
+Immunosuppressants
+Antihistamines
+Bronchodilators
+Asthma Medications
+Antiepileptic Drugs
+Antidepressants
+Antipsychotics
+Anxiolytics
+Sedatives
+General Drug Interactions
+Drug Side Effects
+Drug Toxicity
+Pharmacokinetics
+Pharmacodynamics
+Drug Absorption
+Drug Distribution
+Drug Metabolism
+Drug Excretion
+Half-Life
+Therapeutic Index
+Drug Receptors
+Agonists
+Antagonists
+Adverse Drug Reactions
+Drug Allergies
+Microorganisms
+Bacteria
+Viruses
+Fungi
+Parasites
+Protozoa
+Helminths
+Gram-Positive Bacteria
+Gram-Negative Bacteria
+Bacterial Toxins
+Viral Replication
+Viral Genetics
+Fungal Infections
+Parasitic Infections
+Malaria
+Dengue
+Typhoid
+Cholera
+Hepatitis Viruses
+HIV/AIDS
+Influenza
+COVID-19
+Rabies
+Polio Virus
+Herpes Viruses
+HPV
+Tuberculosis Bacteria
+Syphilis
+Gonorrhea
+Chlamydia
+Salmonella
+Shigella
+E. coli
+Staphylococcus
+Streptococcus
+Clostridium
+Mycobacteria
+Candida
+Aspergillus
+Amoebiasis
+Giardiasis
+Toxoplasmosis
+Ascariasis
+Hookworm
+Tapeworm
+Schistosomiasis
+Medical Parasitology
+Sterilization Methods
+Infection Control
+Hand Hygiene
+Immune Response
+Innate Immunity
+Adaptive Immunity
+Antibodies
+Antigens
+B Cells
+T Cells
+Natural Killer Cells
+Complement System
+Vaccines
+Vaccine Types
+Vaccine Immunity
+Autoimmune Diseases
+Allergies
+Hypersensitivity
+Immunodeficiency
+HIV and Immunity
+Transplant Immunology
+Tumor Immunology
+Inflammation
+Acute Inflammation
+Chronic Inflammation
+Fever
+Pain
+Edema
+Healing
+Cellular Injury
+Cell Death
+Apoptosis
+Necrosis
+Neoplasia
+Benign Tumors
+Malignant Tumors
+Metastasis
+Cancer Staging
+Cancer Grading
+Tumor Markers
+Chemotherapy
+Radiotherapy
+Immunotherapy
+Cancer Screening
+Cancer Prevention
+DNA
+RNA
+Genes
+Chromosomes
+Mutations
+Genetic Disorders
+Inheritance Patterns
+Genetic Testing
+Medical Biochemistry
+Carbohydrates
+Proteins
+Lipids
+Enzymes
+Vitamins
+Minerals
+Metabolism
+Glycolysis
+Krebs Cycle
+Electron Transport Chain
+Oxidative Phosphorylation
+Gluconeogenesis
+Glycogen Metabolism
+Fatty Acid Metabolism
+Protein Metabolism
+Urea Cycle
+Amino Acids
+DNA Replication
+Protein Synthesis
+Laboratory Medicine
+Complete Blood Count
+Blood Chemistry
+Liver Function Tests
+Kidney Function Tests
+Thyroid Function Tests
+Cardiac Enzymes
+Blood Glucose Testing
+HbA1c
+Urinalysis
+Stool Examination
+Blood Culture
+Urine Culture
+Microbiology Testing
+Serology
+PCR
+Biopsy
+Cytology
+Histopathology
+Imaging Basics
+X-Ray
+Ultrasound
+CT Scan
+MRI
+PET Scan
+Mammography
+Echocardiography
+Doppler Ultrasound
+Endoscopy
+Colonoscopy
+Public Health
+Health Promotion
+Disease Prevention
+Health Education
+Epidemiological Study Designs
+Incidence
+Prevalence
+Mortality
+Morbidity
+Risk Factors
+Screening
+Surveillance
+Outbreak Investigation
+Pandemic
+Epidemic
+Endemic Diseases
+Global Health
+Environmental Health
+Occupational Health
+Maternal Health
+Child Health
+Mental Health
+Community Health
+Health Policy
+Healthcare Systems
+Primary Healthcare
+Universal Health Coverage
+Nutrition
+Balanced Diet
+Macronutrients
+Micronutrients
+Protein Nutrition
+Carbohydrate Nutrition
+Fat Nutrition
+Dietary Fiber
+Water and Hydration
+Malnutrition
+Obesity Prevention
+Food Safety
+Food Poisoning
+General Knowledge
+World Geography
+World History
+Ancient Civilizations
+Modern History
+World Wars
+Famous Historical Events
+Famous Leaders
+Famous Scientists
+Famous Physicians
+Nobel Prize
+Scientific Discoveries
+Inventions
+Space Science
+Solar System
+Planets
+Stars
+Galaxies
+Black Holes
+Universe
+Astronomy
+Astrophysics
+Earth Science
+Geology
+Volcanoes
+Earthquakes
+Tsunamis
+Mountains
+Rivers
+Oceans
+Deserts
+Continents
+Countries of the World
+World Capitals
+World Flags
+Time Zones
+International Borders
+Maps and Cartography
+Climate
+Weather
+Natural Resources
+Environmental Science
+Climate Change
+Global Warming
+Renewable Energy
+Solar Energy
+Wind Energy
+Hydropower
+Nuclear Energy
+Electricity
+Magnetism
+Physics Basics
+Chemistry Basics
+Atomic Structure
+Periodic Table
+Chemical Bonds
+Acids and Bases
+Organic Chemistry
+Inorganic Chemistry
+Biochemistry Basics
+Mathematics Basics
+Algebra
+Geometry
+Trigonometry
+Statistics
+Probability
+Percentages
+Ratios
+Measurements
+Units of Measurement
+Computer Basics
+Computer Hardware
+Computer Software
+Operating Systems
+Internet
+World Wide Web
+Cybersecurity
+Artificial Intelligence
+Machine Learning
+Data Science
+Programming
+Databases
+Cloud Computing
+Robotics
+Biotechnology
+Genetic Engineering
+Cloning
+Stem Cells
+Nanotechnology
+Medical Technology
+Telemedicine
+Digital Health
+Electronic Health Records
+Medical Devices
+Artificial Organs
+Prosthetics
+Biomedical Engineering
+Medical Imaging Technology
+Health Informatics
+Medical Research
+Critical Thinking
+Logical Reasoning
+Communication Skills
+Leadership
+Time Management
+Study Skills
+Memory and Learning
+Psychology Basics
+Human Behavior
+Personality
+Emotions
+Stress
+Anxiety
+Sleep
+Dreams
+Motivation
+Cognitive Psychology
+Social Psychology
+Developmental Psychology
+Educational Psychology
+Workplace Psychology
+Sociology
+Anthropology
+Economics Basics
+Personal Finance
+Banking
+Money and Currency
+Inflation
+Supply and Demand
+Business Basics
+Entrepreneurship
+Marketing
+Management
+Accounting Basics
+Law Basics
+Human Rights
+Constitution
+Government Systems
+Democracy
+International Organizations
+United Nations
+World Health Organization
+UNICEF
+Red Cross
+International Relations
+Diplomacy
+Pakistan Geography
+Pakistan History
+Pakistan Constitution
+Provinces of Pakistan
+Cities of Pakistan
+Rivers of Pakistan
+Mountains of Pakistan
+National Symbols of Pakistan
+Pakistan Economy
+Pakistan Healthcare System
+Pakistan Medical Education
+Pakistani Scientists
+Pakistani Physicians
+Islamic History
+Comparative Religion
+Philosophy
+Ethics
+Logic
+Literature
+English Grammar
+Vocabulary
+Synonyms
+Antonyms
+Idioms
+Proverbs
+Famous Books
+Famous Authors
+Famous Poems
+Art History
+Music
+Cinema
+Sports
+Olympic Games
+Cricket
+Football
+Tennis
+Basketball
+Athletics
+Human Rights in Healthcare
+Medical Consent
+Patient Confidentiality
+Doctor-Patient Relationship
+Medical Negligence
+Organ Donation
+Blood Donation
+Health Insurance
+First Aid for Bleeding
+First Aid for Fractures
+First Aid for Burns
+First Aid for Poisoning
+First Aid for Choking
+First Aid for Seizures
+First Aid for Fainting
+First Aid for Heatstroke
+First Aid for Hypothermia
+Disaster Management
+Emergency Preparedness
+Basic Life-Saving Skills
+Healthy Lifestyle
+Exercise and Fitness
+Sleep Hygiene
+Mental Wellness
+Preventive Healthcare
+Medical and General Knowledge Quiz Topics
 
-{
-name:"Liver",
-link:"liver.html"
-},
+`.trim();
 
-{
-name:"Brain",
-link:"brain.html"
-},
 
-{
-name:"Cranial Nerves",
-link:"cranial-nerves.html"
-},
+const topics = topicsText
+.split("\n")
+.map(x => x.trim())
+.filter(Boolean);
 
-{
-name:"Anatomy",
-link:"anatomy-notes.html"
-},
 
-{
-name:"Physiology",
-link:"physiology.html"
-},
-
-{
-name:"Pharmacology",
-link:"pharmacology.html"
-},
-
-{
-name:"Pathology",
-link:"pathology.html"
-},
-
-{
-name:"Microbiology",
-link:"microbiology.html"
-},
-
-{
-name:"Medical Quiz",
-link:"quiz.html"
-}
-
-];
-
+/* =========================================================
+   TOPIC SEARCH
+   ========================================================= */
 
 function searchTopics(){
 
-const searchBox =
-document.getElementById("searchBox");
-
-const results =
-document.getElementById("searchResults");
-
-const searchText =
-searchBox.value.toLowerCase().trim();
-
-
-results.innerHTML = "";
-
-
-if(searchText === ""){
-    return;
-}
-
-
-const filteredTopics =
-topics.filter(function(topic){
-
-    return topic.name
+    const input =
+    document.getElementById("searchBox").value
     .toLowerCase()
-    .includes(searchText);
+    .trim();
 
-});
+    const results =
+    document.getElementById("searchResults");
 
+    results.innerHTML="";
 
-if(filteredTopics.length === 0){
+    if(!input){
+        return;
+    }
 
-    results.innerHTML =
-    "<div class='result'>❌ No topic found.</div>";
+    const matches =
+    topics.filter(topic =>
+        topic.toLowerCase().includes(input)
+    );
 
-    return;
+    if(matches.length===0){
+
+        results.innerHTML=`
+        <div class="result">
+        ❌ No topic found.
+        </div>
+        `;
+
+        return;
+    }
+
+    matches.slice(0,30).forEach(topic=>{
+
+        results.innerHTML+=`
+
+        <div class="result">
+
+            📚 <strong>${topic}</strong>
+
+            <br>
+
+            <button onclick="openTopic('${escapeQuotes(topic)}')">
+                📖 Read Notes
+            </button>
+
+            <button onclick="askTopicAI('${escapeQuotes(topic)}')">
+                🩺 Ask AI
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
 }
 
 
-filteredTopics.forEach(function(topic){
+function escapeQuotes(text){
 
-    results.innerHTML += `
+    return text
+    .replace(/\\/g,"\\\\")
+    .replace(/'/g,"\\'")
+    .replace(/"/g,'&quot;');
 
-    <div class="result">
+}
 
-        📖 ${topic.name}
 
-        <br><br>
+/* =========================================================
+   TOPIC NOTES
+   ========================================================= */
 
-        <a href="${topic.link}">
-            Study Now →
-        </a>
+const detailedNotes = {
 
-    </div>
+"Human Anatomy":{
+
+definition:
+"Human Anatomy is the study of the structure of the human body.",
+
+points:[
+"Anatomy studies body structures and their relationships.",
+"Major levels include cells, tissues, organs and organ systems.",
+"Major body systems include cardiovascular, respiratory, digestive, nervous and urinary systems.",
+"Anatomical position is the standard reference position used in anatomy."
+],
+
+mcqs:[
+{
+q:"What is the study of body structure called?",
+a:["Physiology","Anatomy","Pathology","Pharmacology"],
+correct:1
+},
+{
+q:"The basic structural unit of the human body is the:",
+a:["Organ","Tissue","Cell","System"],
+correct:2
+}
+]
+
+},
+
+"Human Physiology":{
+
+definition:
+"Human Physiology is the study of normal functions of the human body.",
+
+points:[
+"Physiology explains how cells, tissues, organs and systems function.",
+"Homeostasis maintains a relatively stable internal environment.",
+"Examples include regulation of temperature, blood glucose and blood pressure."
+],
+
+mcqs:[
+{
+q:"The study of normal body functions is called:",
+a:["Anatomy","Physiology","Pathology","Histology"],
+correct:1
+}
+]
+
+},
+
+"Heart Anatomy":{
+
+definition:
+"The heart is a muscular organ that pumps blood through the pulmonary and systemic circulations.",
+
+points:[
+"The heart has four chambers: right atrium, right ventricle, left atrium and left ventricle.",
+"The four major valves are tricuspid, pulmonary, mitral and aortic.",
+"The right side mainly handles deoxygenated blood.",
+"The left side mainly pumps oxygenated blood to systemic circulation."
+],
+
+mcqs:[
+{
+q:"How many chambers does the human heart have?",
+a:["2","3","4","5"],
+correct:2
+},
+{
+q:"Which valve lies between the left atrium and left ventricle?",
+a:["Tricuspid","Pulmonary","Mitral","Aortic"],
+correct:2
+}
+]
+
+},
+
+"Kidney Physiology":{
+
+definition:
+"The kidneys maintain fluid, electrolyte and acid-base balance and remove metabolic waste.",
+
+points:[
+"Kidneys filter plasma and form urine.",
+"They regulate sodium, potassium and water balance.",
+"They participate in acid-base regulation.",
+"They produce erythropoietin and activate vitamin D."
+],
+
+mcqs:[
+{
+q:"The functional unit of the kidney is the:",
+a:["Neuron","Nephron","Alveolus","Hepatocyte"],
+correct:1
+}
+]
+
+},
+
+"Diabetes Mellitus":{
+
+definition:
+"Diabetes mellitus is a group of metabolic disorders characterized by chronic hyperglycemia.",
+
+points:[
+"Type 1 diabetes is primarily associated with autoimmune beta-cell destruction.",
+"Type 2 diabetes involves insulin resistance with progressive beta-cell dysfunction.",
+"Long-term complications may affect eyes, kidneys, nerves and cardiovascular system.",
+"Diagnosis is based on established glucose/HbA1c criteria."
+],
+
+mcqs:[
+{
+q:"Diabetes mellitus is primarily characterized by:",
+a:["Hypoglycemia","Hyperglycemia","Hypercalcemia","Hypotension"],
+correct:1
+}
+]
+
+},
+
+"Hypertension":{
+
+definition:
+"Hypertension is persistently elevated arterial blood pressure.",
+
+points:[
+"Blood pressure depends on cardiac output and systemic vascular resistance.",
+"Long-standing hypertension can damage the heart, brain, kidneys and eyes.",
+"Lifestyle measures can help reduce cardiovascular risk.",
+"Diagnosis requires appropriate blood-pressure measurement and clinical assessment."
+],
+
+mcqs:[
+{
+q:"Hypertension refers to persistent elevation of:",
+a:["Blood glucose","Blood pressure","Body temperature","Hemoglobin"],
+correct:1
+}
+]
+
+},
+
+"Asthma":{
+
+definition:
+"Asthma is a chronic inflammatory airway disease characterized by variable respiratory symptoms and airflow limitation.",
+
+points:[
+"Common symptoms include wheezing, cough, chest tightness and shortness of breath.",
+"Triggers vary between patients.",
+"Airway inflammation and bronchial hyperresponsiveness are important features.",
+"Treatment depends on severity and current clinical guidelines."
+],
+
+mcqs:[
+{
+q:"A common symptom of asthma is:",
+a:["Wheezing","Jaundice","Hematuria","Edema"],
+correct:0
+}
+]
+
+},
+
+"Stroke":{
+
+definition:
+"Stroke is a neurological emergency caused by interruption of brain blood flow or bleeding within the brain.",
+
+points:[
+"Ischemic stroke results from vessel occlusion.",
+"Hemorrhagic stroke results from bleeding.",
+"Rapid recognition and emergency assessment are essential.",
+"Symptoms may include facial weakness, arm weakness and speech disturbance."
+],
+
+mcqs:[
+{
+q:"The two major broad categories of stroke are:",
+a:["Infectious and allergic","Ischemic and hemorrhagic","Acute and chronic","Benign and malignant"],
+correct:1
+}
+]
+
+},
+
+"Pharmacokinetics":{
+
+definition:
+"Pharmacokinetics describes what the body does to a drug.",
+
+points:[
+"The major processes are absorption, distribution, metabolism and excretion.",
+"Pharmacokinetics influences drug concentration over time.",
+"Half-life is an important pharmacokinetic parameter."
+],
+
+mcqs:[
+{
+q:"ADME stands for:",
+a:[
+"Absorption, Distribution, Metabolism, Excretion",
+"Action, Dose, Mechanism, Effect",
+"Absorption, Drug, Metabolism, Enzyme",
+"Action, Distribution, Metabolism, Effect"
+],
+correct:0
+}
+]
+
+},
+
+"Pharmacodynamics":{
+
+definition:
+"Pharmacodynamics describes the effects of drugs on the body and their mechanisms of action.",
+
+points:[
+"Drug receptors are important targets for many medicines.",
+"Agonists activate receptors.",
+"Antagonists reduce or block receptor-mediated effects.",
+"Drug response can depend on dose and receptor interactions."
+],
+
+mcqs:[
+{
+q:"Pharmacodynamics primarily describes:",
+a:[
+"What the body does to the drug",
+"What the drug does to the body",
+"Drug excretion only",
+"Drug absorption only"
+],
+correct:1
+}
+]
+
+},
+
+"Medical Microbiology":{
+
+definition:
+"Medical microbiology studies microorganisms relevant to human health and disease.",
+
+points:[
+"Important groups include bacteria, viruses, fungi and parasites.",
+"Microbiology supports diagnosis, treatment and infection prevention.",
+"Laboratory methods include microscopy, culture, antigen testing and molecular tests."
+],
+
+mcqs:[
+{
+q:"Which is a major group studied in medical microbiology?",
+a:["Bacteria","Mountains","Planets","Rocks"],
+correct:0
+}
+]
+
+},
+
+"First Aid for Bleeding":{
+
+definition:
+"First aid for bleeding aims to control blood loss and protect the person until definitive medical care is available.",
+
+points:[
+"Apply firm direct pressure to significant external bleeding.",
+"Use appropriate protective barriers when available.",
+"Severe bleeding requires urgent emergency medical assistance.",
+"Do not remove an embedded object; stabilize it and seek emergency care."
+],
+
+mcqs:[
+{
+q:"A basic first-aid measure for significant external bleeding is:",
+a:[
+"Direct pressure",
+"Giving food",
+"Making the person walk",
+"Applying perfume"
+],
+correct:0
+}
+]
+
+}
+
+};
+
+
+/* =========================================================
+   GENERIC TOPIC NOTES
+   ========================================================= */
+
+function createGenericNotes(topic){
+
+    return {
+
+        definition:
+        `${topic} is an important topic within medical, scientific, educational or general knowledge studies.`,
+
+        points:[
+            `Definition and basic concepts of ${topic}.`,
+            `Important structures, mechanisms, classifications or principles related to ${topic}.`,
+            `Clinical, scientific or practical importance of ${topic}.`,
+            `Important investigations, applications, prevention or management concepts may depend on the specific topic.`,
+            `For examination preparation, focus on definitions, classifications, mechanisms, key facts and clinical correlations.`
+        ],
+
+        mcqs:[
+            {
+                q:`Which statement best describes ${topic}?`,
+                a:[
+                    `It is an important area of study.`,
+                    `It has no scientific relevance.`,
+                    `It is unrelated to education.`,
+                    `None of the above.`
+                ],
+                correct:0
+            },
+            {
+                q:`For studying ${topic}, an important approach is to understand:`,
+                a:[
+                    `Definitions and key concepts`,
+                    `Only memorization`,
+                    `Nothing about mechanisms`,
+                    `Only unrelated facts`
+                ],
+                correct:0
+            }
+        ]
+
+    };
+
+}
+
+
+/* =========================================================
+   OPEN TOPIC
+   ========================================================= */
+
+function openTopic(topic){
+
+    const section =
+    document.getElementById("topicSection");
+
+    const content =
+    document.getElementById("topicContent");
+
+    const data =
+    detailedNotes[topic] ||
+    createGenericNotes(topic);
+
+    let mcqHTML="";
+
+    data.mcqs.forEach((mcq,index)=>{
+
+        mcqHTML+=`
+
+        <div class="mcq">
+
+        <b>
+        MCQ ${index+1}: ${mcq.q}
+        </b>
+
+        ${mcq.a.map((option,i)=>`
+
+            <button
+            onclick="checkMCQ(this,${i},${mcq.correct})">
+
+            ${String.fromCharCode(65+i)}. ${option}
+
+            </button>
+
+        `).join("")}
+
+        <div class="answer"></div>
+
+        </div>
+
+        `;
+
+    });
+
+
+    content.innerHTML=`
+
+    <h2>📚 ${topic}</h2>
+
+    <h3>Definition</h3>
+
+    <p>
+    ${data.definition}
+    </p>
+
+    <h3>Important Notes</h3>
+
+    <ul>
+
+    ${data.points.map(point=>`
+        <li>${point}</li>
+    `).join("")}
+
+    </ul>
+
+    <h3>📝 MCQs</h3>
+
+    ${mcqHTML}
+
+    <br>
+
+    <button
+    class="btn"
+    onclick="askTopicAI('${escapeQuotes(topic)}')">
+
+    🩺 Ask AI About ${topic}
+
+    </button>
 
     `;
 
-});
+
+    section.style.display="block";
+
+    section.scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
-</script>
 
+/* =========================================================
+   MCQ CHECK
+   ========================================================= */
+
+function checkMCQ(button,selected,correct){
+
+    const parent =
+    button.parentElement;
+
+    const answer =
+    parent.querySelector(".answer");
+
+    if(selected===correct){
+
+        answer.innerHTML=
+        "✅ Correct Answer!";
+
+    }else{
+
+        answer.innerHTML=
+        "❌ Incorrect. Correct answer is " +
+        String.fromCharCode(65+correct) +
+        ".";
+
+    }
+
+}
+
+
+/* =========================================================
+   AI
+   ========================================================= */
+
+let chatHistory=[];
+
+
+function addMessage(text,type){
+
+    const chat =
+    document.getElementById("chatArea");
+
+    const div =
+    document.createElement("div");
+
+    div.className =
+    "message " +
+    (type==="user"
+    ? "user-message"
+    : "ai-message");
+
+    div.innerHTML =
+    type==="user"
+    ? "<b>You:</b><br>"+formatAI(text)
+    : "<b>MedAcademy AI:</b><br>"+formatAI(text);
+
+    chat.appendChild(div);
+
+    chat.scrollTop =
+    chat.scrollHeight;
+
+}
+
+
+function formatAI(text){
+
+    return text
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/\n/g,"<br>");
+
+}
+
+
+function handleEnter(event){
+
+    if(event.key==="Enter"){
+        sendAI();
+    }
+
+}
+
+
+async function sendAI(){
+
+    const input =
+    document.getElementById("chatInput");
+
+    const question =
+    input.value.trim();
+
+    if(!question){
+        return;
+    }
+
+    input.value="";
+
+    addMessage(question,"user");
+
+    const loading =
+    document.createElement("div");
+
+    loading.className=
+    "message ai-message";
+
+    loading.id="aiLoading";
+
+    loading.innerHTML=
+    "<b>MedAcademy AI:</b><br>Thinking...";
+
+    document
+    .getElementById("chatArea")
+    .appendChild(loading);
+
+
+    try{
+
+        const response =
+        await fetch("/api/ask",{
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":
+                "application/json"
+            },
+
+            body:JSON.stringify({
+
+                question:question,
+
+                history:chatHistory
+
+            })
+
+        });
+
+
+        if(!response.ok){
+            throw new Error("AI server error");
+        }
+
+
+        const data =
+        await response.json();
+
+
+        loading.remove();
+
+
+        const answer =
+        data.answer ||
+        data.output ||
+        data.response ||
+        "Sorry, I could not generate an answer.";
+
+
+        addMessage(answer,"ai");
+
+
+        chatHistory.push({
+            role:"user",
+            content:question
+        });
+
+        chatHistory.push({
+            role:"assistant",
+            content:answer
+        });
+
+
+        if(chatHistory.length>20){
+
+            chatHistory =
+            chatHistory.slice(-20);
+
+        }
+
+
+    }catch(error){
+
+        loading.remove();
+
+        addMessage(
+
+        "⚠️ AI connection is not available right now. Please make sure your MedAcademy AI backend is running.",
+
+        "ai"
+
+        );
+
+        console.error(error);
+
+    }
+
+}
+
+
+/* =========================================================
+   ASK AI ABOUT TOPIC
+   ========================================================= */
+
+function askTopicAI(topic){
+
+    const input =
+    document.getElementById("chatInput");
+
+    input.value =
+    `Explain ${topic} in detail for an MBBS student. Include definition, important points, clinical features, diagnosis, treatment/management where applicable, complications and MCQs.`;
+
+    document
+    .querySelector(".ai-section")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+    input.focus();
+
+}
+
+
+/* =========================================================
+   AI GREETING
+   ========================================================= */
+
+addMessage(
+"Ask me anything. I can explain medical topics, diseases, drugs, investigations, anatomy, physiology, pathology, pharmacology, microbiology, general knowledge and much more. For medical emergencies, seek professional medical care.",
+"ai"
+);
+
+</script>
 
 </body>
 </html>
-```
