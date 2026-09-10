@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cell Injury - MedAcademy</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#f4f8fb;
+    color:#222;
+}
+
+header{
+    background:#0b5ed7;
+    color:white;
+    padding:22px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:32px;
+}
+
+header p{
+    margin:8px 0 0;
+    font-size:16px;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:30px auto;
+}
+
+.back{
+    display:inline-block;
+    margin-bottom:20px;
+    text-decoration:none;
+    color:#0b5ed7;
+    font-weight:bold;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    margin-bottom:20px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.10);
+}
+
+.card h2{
+    color:#0b5ed7;
+    margin-top:0;
+    font-size:23px;
+}
+
+.card h3{
+    color:#333;
+    margin-top:22px;
+}
+
+.card p{
+    line-height:1.7;
+}
+
+.card ul,
+.card ol{
+    padding-left:25px;
+    line-height:1.8;
+}
+
+.card li{
+    margin-bottom:5px;
+}
+
+.highlight{
+    background:#eef6ff;
+    border-left:5px solid #0b5ed7;
+    padding:14px;
+    margin:15px 0;
+    line-height:1.7;
+}
+
+.warning{
+    background:#fff4e5;
+    border-left:5px solid #f0ad4e;
+    padding:14px;
+    margin:15px 0;
+    line-height:1.7;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th,
+td{
+    border:1px solid #ccc;
+    padding:10px;
+    text-align:left;
+    vertical-align:top;
+}
+
+th{
+    background:#eaf2ff;
+}
+
+.visual-flow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:25px 0;
+}
+
+.flow-box{
+    background:#eef6ff;
+    border:2px solid #0b5ed7;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
+    min-width:150px;
+    font-weight:bold;
+}
+
+.arrow{
+    font-size:28px;
+    color:#0b5ed7;
+}
+
+.cell-diagram{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin:20px 0;
+}
+
+.cell{
+    width:190px;
+    height:190px;
+    border-radius:50%;
+    border:5px solid #0b5ed7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    background:#eef6ff;
+    font-weight:bold;
+}
+
+.cell.damaged{
+    border-color:#dc3545;
+    background:#fff0f0;
+}
+
+.cell.dead{
+    border-color:#6c757d;
+    background:#f1f1f1;
+}
+
+.mcq{
+    margin-bottom:18px;
+    line-height:1.7;
+}
+
+.answer{
+    background:#f1f8f1;
+    border-left:4px solid #28a745;
+    padding:8px 12px;
+    margin-top:7px;
+}
+
+.test-paper{
+    background:white;
+    padding:30px;
+    border:1px solid #ddd;
+}
+
+.test-header{
+    text-align:center;
+    border-bottom:2px solid #222;
+    padding-bottom:15px;
+    margin-bottom:20px;
+}
+
+.test-info{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin:20px 0;
+}
+
+.test-info div{
+    min-width:220px;
+    border-bottom:1px solid #555;
+    padding:7px;
+}
+
+.test-question{
+    margin-bottom:20px;
+    line-height:1.8;
+}
+
+.answer-line{
+    height:28px;
+    border-bottom:1px solid #777;
+    margin-top:5px;
+}
+
+.print-button{
+    background:#0b5ed7;
+    color:white;
+    border:none;
+    padding:13px 24px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.print-button:hover{
+    background:#084298;
+}
+
+footer{
+    text-align:center;
+    margin-top:40px;
+    padding:20px;
+    background:#0b5ed7;
+    color:white;
+}
+
+
+/* PRINT ONLY TEST PAPER */
+
+@media print{
+
+    body *{
+        visibility:hidden;
+    }
+
+    #printArea,
+    #printArea *{
+        visibility:visible;
+    }
+
+    #printArea{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        background:white;
+        padding:20px;
+    }
+
+    .no-print{
+        display:none !important;
+    }
+
+    @page{
+        margin:15mm;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Cell Injury</h1>
+
+<p>Pathology - MedAcademy</p>
+
+</header>
+
+<div class="container">
+
+<a href="pathology.html" class="back">
+← Back to Pathology
+</a>
+
+<!-- INTRODUCTION -->
+
+<div class="card">
+
+<h2>1. Introduction to Cell Injury</h2>
+
+<p>
+Cell injury occurs when a cell is exposed to stress or a harmful stimulus
+that exceeds its ability to adapt. The outcome depends on the type, duration
+and severity of the injury as well as the type and metabolic state of the cell.
+</p>
+
+<div class="visual-flow">
+
+<div class="flow-box">
+Normal Cell
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+Cellular Adaptation
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+Reversible Injury
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+Irreversible Injury
+</div>
+
+<div class="arrow">→</div>
+
+<div class="flow-box">
+Cell Death
+</div>
+
+</div>
+
+<p>
+Mild or transient injury may be reversible if the damaging stimulus is removed.
+Persistent or severe injury can become irreversible and lead to cell death.
+
+</p>
+
+</div>
+
+<!-- PICTURE -->
+
+<div class="card">
+
+<h2>2. Visual Concept of Cell Injury</h2>
+
+<div class="cell-diagram">
+
+<div class="cell">
+NORMAL<br><br>
+Normal ATP<br>
+Normal membrane<br>
+Normal function
+</div>
+
+<div class="arrow">→</div>
+
+<div class="cell damaged">
+REVERSIBLE INJURY<br><br>
+Cell swelling<br>
+Fatty change<br>
+ATP depletion
+</div>
+
+<div class="arrow">→</div>
+
+<div class="cell dead">
+IRREVERSIBLE INJURY<br><br>
+Membrane damage<br>
+Severe mitochondrial damage<br>
+Cell death
+</div>
+
+</div>
+
+<p style="text-align:center;">
+<strong>Severity and duration of injury determine whether the cell recovers or dies.</strong>
+</p>
+
+</div>
+
+<!-- CAUSES -->
+
+<div class="card">
+
+<h2>3. Causes of Cell Injury</h2>
+
+<h3>1. Oxygen Deprivation</h3>
+
+<ul>
+
+<li>Hypoxia.</li>
+
+<li>Ischemia.</li>
+
+<li>Respiratory failure.</li>
+
+<li>Anemia.</li>
+
+<li>Carbon monoxide poisoning.</li>
+
+</ul>
+
+<h3>2. Physical Agents</h3>
+
+<ul>
+
+<li>Trauma.</li>
+
+<li>Extreme temperatures.</li>
+
+<li>Radiation.</li>
+
+<li>Electric shock.</li>
+
+<li>Changes in atmospheric pressure.</li>
+
+</ul>
+
+<h3>3. Chemical Agents</h3>
+
+<ul>
+
+<li>Drugs and therapeutic agents.</li>
+
+<li>Industrial chemicals.</li>
+
+<li>Poisons.</li>
+
+<li>Heavy metals.</li>
+
+<li>Environmental pollutants.</li>
+
+</ul>
+
+<h3>4. Infectious Agents</h3>
+
+<ul>
+
+<li>Bacteria.</li>
+
+<li>Viruses.</li>
+
+<li>Fungi.</li>
+
+<li>Protozoa.</li>
+
+<li>Parasites.</li>
+
+</ul>
+
+<h3>5. Immunologic Reactions</h3>
+
+<ul>
+
+<li>Autoimmune diseases.</li>
+
+<li>Hypersensitivity reactions.</li>
+
+<li>Excessive inflammatory responses.</li>
+
+</ul>
+
+<h3>6. Genetic Abnormalities</h3>
+
+<ul>
+
+<li>Abnormal proteins.</li>
+
+<li>Enzyme defects.</li>
+
+<li>DNA abnormalities.</li>
+
+<li>Chromosomal abnormalities.</li>
+
+</ul>
+
+<h3>7. Nutritional Imbalances</h3>
+
+<ul>
+
+<li>Protein-calorie deficiency.</li>
+
+<li>Vitamin deficiency.</li>
+
+<li>Obesity.</li>
+
+<li>Excessive nutrient intake.</li>
+
+</ul>
+
+<h3>8. Aging</h3>
+
+<p>
+Cellular aging reduces the ability of cells to repair damage and maintain
+normal homeostasis.
+</p>
+
+</div>
+
+<!-- HYPOXIA -->
+
+<div class="card">
+
+<h2>4. Hypoxia and Ischemia</h2>
+
+<h3>Hypoxia</h3>
+
+<p>
+Hypoxia means inadequate oxygen availability to cells.
+</p>
+
+<h3>Ischemia</h3>
+
+<p>
+Ischemia is reduced blood flow to tissue, causing reduced oxygen and nutrient
+delivery and impaired removal of metabolic waste.
+</p>
+
+<div class="highlight">
+
+<strong>Important:</strong>
+Ischemia is generally more harmful than hypoxia alone because it causes both
+oxygen deprivation and reduced delivery of nutrients with impaired removal
+of metabolic waste.
+
+</div>
+
+<h3>Common Causes of Hypoxia</h3>
+
+<ul>
+
+<li>Respiratory failure.</li>
+
+<li>Anemia.</li>
+
+<li>Carbon monoxide poisoning.</li>
+
+<li>Reduced blood flow.</li>
+
+</ul>
+
+<h3>Common Causes of Ischemia</h3>
+
+<ul>
+
+<li>Thrombosis.</li>
+
+<li>Embolism.</li>
+
+<li>Atherosclerosis.</li>
+
+<li>Vascular obstruction.</li>
+
+</ul>
+
+</div>
+
+<!-- REVERSIBLE -->
+
+<div class="card">
+
+<h2>5. Reversible Cell Injury</h2>
+
+<p>
+Reversible injury occurs when the cell can recover after removal of the
+injurious stimulus.
+</p>
+
+<h3>Major Morphologic Features</h3>
+
+<ul>
+
+<li>Cellular swelling.</li>
+
+<li>Hydropic change.</li>
+
+<li>Fatty change.</li>
+
+<li>Plasma membrane blebbing.</li>
+
+<li>Loss or blunting of microvilli.</li>
+
+<li>Mitochondrial swelling.</li>
+
+<li>Endoplasmic reticulum dilation.</li>
+
+<li>Detachment of ribosomes.</li>
+
+<li>Chromatin clumping.</li>
+
+<li>Reduced protein synthesis.</li>
+
+</ul>
+
+<h3>Cellular Swelling</h3>
+
+<p>
+Cellular swelling is one of the earliest manifestations of reversible injury.
+It commonly results from failure of energy-dependent ion pumps, particularly
+the Na⁺/K⁺ ATPase, causing intracellular sodium and water accumulation.
+
+</p>
+
+<h3>Fatty Change</h3>
+
+<p>
+Fatty change refers to abnormal accumulation of lipid droplets in the
+cytoplasm. It is especially important in organs involved in lipid metabolism,
+such as the liver.
+</p>
+
+</div>
+
+<!-- IRREVERSIBLE -->
+
+<div class="card">
+
+<h2>6. Irreversible Cell Injury</h2>
+
+<p>
+If the injury becomes sufficiently severe or prolonged, the cell reaches a
+point from which recovery is no longer possible and eventually dies.
+</p>
+
+<h3>Major Features</h3>
+
+<ul>
+
+<li>Severe mitochondrial dysfunction.</li>
+
+<li>Failure of oxidative phosphorylation.</li>
+
+<li>Severe ATP depletion.</li>
+
+<li>Extensive plasma membrane damage.</li>
+
+<li>Lysosomal membrane damage.</li>
+
+<li>Massive calcium influx.</li>
+
+<li>Leakage of intracellular enzymes.</li>
+
+<li>Nuclear destruction.</li>
+
+</ul>
+
+<div class="warning">
+
+<strong>Two major features of irreversibility:</strong>
+
+<br><br>
+
+1. Inability to reverse mitochondrial dysfunction and restore oxidative
+   phosphorylation.
+
+<br>
+
+2. Severe membrane damage.
+
+</div>
+
+</div>
+
+<!-- ATP -->
+
+<div class="card">
+
+<h2>7. ATP Depletion</h2>
+
+<p>
+ATP is essential for many cellular functions. Depletion of ATP is a major
+mechanism of cell injury, particularly in hypoxic and ischemic injury.
+
+</p>
+
+<h3>Consequences of ATP Depletion</h3>
+
+<ol>
+
+<li>Failure of Na⁺/K⁺ ATPase.</li>
+
+<li>Intracellular sodium accumulation.</li>
+
+<li>Water enters the cell.</li>
+
+<li>Cellular swelling.</li>
+
+<li>Increased anaerobic glycolysis.</li>
+
+<li>Increased lactic acid production.</li>
+
+<li>Decreased intracellular pH.</li>
+
+<li>Chromatin clumping.</li>
+
+<li>Failure of protein synthesis.</li>
+
+<li>Progression to irreversible injury if severe.</li>
+
+</ol>
+
+<div class="highlight">
+
+<strong>Exam Chain:</strong>
+
+ATP ↓ → Na⁺/K⁺ pump failure → Na⁺ + water enter cell
+→ cellular swelling.
+
+</div>
+
+</div>
+
+<!-- MITOCHONDRIA -->
+
+<div class="card">
+
+<h2>8. Mitochondrial Damage</h2>
+
+<p>
+Mitochondria are central to cellular energy production. Severe mitochondrial
+damage can cause ATP depletion and may also contribute to apoptosis through
+release of pro-apoptotic proteins.
+
+</p>
+
+<h3>Effects</h3>
+
+<ul>
+
+<li>Reduced ATP production.</li>
+
+<li>Loss of oxidative phosphorylation.</li>
+
+<li>Increased reactive oxygen species.</li>
+
+<li>Release of proteins that can activate apoptosis.</li>
+
+<li>Progression toward cell death.</li>
+
+</ul>
+
+</div>
+
+<!-- CALCIUM -->
+
+<div class="card">
+
+<h2>9. Calcium Influx</h2>
+
+<p>
+Injured cells may develop abnormal increases in intracellular calcium.
+Excess calcium activates enzymes that damage cellular components.
+
+</p>
+
+<h3>Calcium Activates</h3>
+
+<ul>
+
+<li>Phospholipases → membrane damage.</li>
+
+<li>Proteases → cytoskeletal and membrane protein damage.</li>
+
+<li>Endonucleases → DNA damage.</li>
+
+<li>ATPases → further ATP depletion.</li>
+
+</ul>
+
+<div class="highlight">
+
+<strong>High-Yield:</strong>
+↑ Intracellular Ca²⁺ → activation of destructive enzymes → membrane,
+protein and DNA damage.
+
+</div>
+
+</div>
+
+<!-- ROS -->
+
+<div class="card">
+
+<h2>10. Reactive Oxygen Species (ROS)</h2>
+
+<p>
+Reactive oxygen species are highly reactive molecules that can damage
+lipids, proteins and nucleic acids.
+</p>
+
+<h3>Important ROS</h3>
+
+<ul>
+
+<li>Superoxide (O₂•⁻).</li>
+
+<li>Hydrogen peroxide (H₂O₂).</li>
+
+<li>Hydroxyl radical (OH•).</li>
+
+</ul>
+
+<h3>Mechanisms of Damage</h3>
+
+<ul>
+
+<li>Lipid peroxidation of membranes.</li>
+
+<li>Protein oxidation and modification.</li>
+
+<li>DNA damage.</li>
+
+<li>Mitochondrial damage.</li>
+
+</ul>
+
+<h3>Antioxidant Defenses</h3>
+
+<ul>
+
+<li>Superoxide dismutase.</li>
+
+<li>Catalase.</li>
+
+<li>Glutathione peroxidase.</li>
+
+<li>Vitamins and other antioxidant systems.</li>
+
+</ul>
+
+</div>
+
+<!-- MEMBRANE DAMAGE -->
+
+<div class="card">
+
+<h2>11. Membrane Damage</h2>
+
+<p>
+Membrane integrity is essential for cell survival. Damage to the plasma,
+mitochondrial or lysosomal membranes can contribute to irreversible injury.
+</p>
+
+<h3>Consequences of Plasma Membrane Damage</h3>
+
+<ul>
+
+<li>Loss of cellular contents.</li>
+
+<li>Abnormal ion influx.</li>
+
+<li>Loss of homeostasis.</li>
+
+<li>Enzyme leakage.</li>
+
+</ul>
+
+<h3>Mitochondrial Membrane Damage</h3>
+
+<ul>
+
+<li>ATP production decreases.</li>
+
+<li>Pro-apoptotic proteins may be released.</li>
+
+</ul>
+
+<h3>Lysosomal Membrane Damage</h3>
+
+<ul>
+
+<li>Hydrolytic enzymes are released.</li>
+
+<li>Cellular components are digested.</li>
+
+</ul>
+
+</div>
+
+<!-- NUCLEAR -->
+
+<div class="card">
+
+<h2>12. Nuclear Changes in Cell Death</h2>
+
+<table>
+
+<tr>
+<th>Change</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td>Pyknosis</td>
+<td>Nuclear shrinkage with increased basophilia/condensation of chromatin</td>
+</tr>
+
+<tr>
+<td>Karyorrhexis</td>
+<td>Fragmentation of the nucleus</td>
+</tr>
+
+<tr>
+<td>Karyolysis</td>
+<td>Dissolution/fading of the nucleus due to DNase activity</td>
+</tr>
+
+</table>
+
+<div class="highlight">
+
+<strong>Memory Trick:</strong>
+
+<br>
+
+<strong>Pyknosis = Shrink</strong>
+
+<br>
+
+<strong>Karyorrhexis = Break</strong>
+
+<br>
+
+<strong>Karyolysis = Dissolve</strong>
+
+</div>
+
+</div>
+
+<!-- NECROSIS -->
+
+<div class="card">
+
+<h2>13. Necrosis</h2>
+
+<p>
+Necrosis is a form of cell death associated with loss of membrane integrity,
+enzymatic digestion of cellular components and an inflammatory response.
+
+</p>
+
+<h3>Features of Necrosis</h3>
+
+<ul>
+
+<li>Cell swelling.</li>
+
+<li>Membrane disruption.</li>
+
+<li>Leakage of cellular contents.</li>
+
+<li>Nuclear changes.</li>
+
+<li>Inflammation.</li>
+
+</ul>
+
+<h3>Major Types of Necrosis</h3>
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Typical Examples</th>
+</tr>
+
+<tr>
+<td>Coagulative</td>
+<td>Ischemic infarction of most solid organs except brain</td>
+</tr>
+
+<tr>
+<td>Liquefactive</td>
+<td>Brain infarction and many bacterial/fungal infections</td>
+</tr>
+
+<tr>
+<td>Caseous</td>
+<td>Tuberculosis</td>
+</tr>
+
+<tr>
+<td>Fat</td>
+<td>Acute pancreatitis and traumatic fat necrosis</td>
+</tr>
+
+<tr>
+<td>Fibrinoid</td>
+<td>Immune-mediated vascular injury</td>
+</tr>
+
+<tr>
+<td>Gangrenous</td>
+<td>Clinical pattern usually involving ischemic tissue; may be dry or complicated by infection</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- APOPTOSIS -->
+
+<div class="card">
+
+<h2>14. Apoptosis</h2>
+
+<p>
+Apoptosis is a regulated form of cell death in which individual cells activate
+intracellular death pathways. It is important in normal physiology and in
+several pathological conditions.
+</p>
+
+<h3>Physiological Examples</h3>
+
+<ul>
+
+<li>Embryonic development.</li>
+
+<li>Removal of cells during tissue remodeling.</li>
+
+<li>Elimination of cells after hormone withdrawal.</li>
+
+<li>Removal of some immune cells after completion of an immune response.</li>
+
+</ul>
+
+<h3>Pathological Causes</h3>
+
+<ul>
+
+<li>DNA damage.</li>
+
+<li>Accumulation of misfolded proteins.</li>
+
+<li>Some viral infections.</li>
+
+<li>Cell death following certain pathological stresses.</li>
+
+</ul>
+
+<h3>Morphologic Features</h3>
+
+<ul>
+
+<li>Cell shrinkage.</li>
+
+<li>Chromatin condensation.</li>
+
+<li>Nuclear fragmentation.</li>
+
+<li>Formation of apoptotic bodies.</li>
+
+<li>Usually no significant surrounding inflammation.</li>
+
+</ul>
+
+<h3>Major Pathways</h3>
+
+<table>
+
+<tr>
+<th>Pathway</th>
+<th>Main Trigger</th>
+</tr>
+
+<tr>
+<td>Intrinsic pathway</td>
+<td>Mitochondrial stress, DNA damage, growth-factor withdrawal</td>
+</tr>
+
+<tr>
+<td>Extrinsic pathway</td>
+<td>Death receptors such as Fas and TNF-receptor family signals</td>
+</tr>
+
+</table>
+
+<h3>Caspases</h3>
+
+<p>
+Caspases are proteolytic enzymes that execute apoptosis. Initiator caspases
+activate downstream executioner caspases, resulting in controlled destruction
+of the cell.
+</p>
+
+</div>
+
+<!-- NECROSIS VS APOPTOSIS -->
+
+<div class="card">
+
+<h2>15. Necrosis vs Apoptosis</h2>
+
+<table>
+
+<tr>
+<th>Feature</th>
+<th>Necrosis</th>
+<th>Apoptosis</th>
+</tr>
+
+<tr>
+<td>Cell size</td>
+<td>Usually swelling</td>
+<td>Usually shrinkage</td>
+</tr>
+
+<tr>
+<td>Cell membrane</td>
+<td>Disrupted</td>
+<td>Generally maintained until apoptotic bodies form</td>
+</tr>
+
+<tr>
+<td>Nuclear changes</td>
+<td>Pyknosis, karyorrhexis, karyolysis</td>
+<td>Chromatin condensation and fragmentation</td>
+</tr>
+
+<tr>
+<td>Cell contents</td>
+<td>Leak into extracellular space</td>
+<td>Packaged into apoptotic bodies</td>
+</tr>
+
+<tr>
+<td>Inflammation</td>
+<td>Usually present</td>
+<td>Usually absent/minimal</td>
+</tr>
+
+<tr>
+<td>Typical pattern</td>
+<td>Often groups of cells</td>
+<td>Often individual cells</td>
+</tr>
+
+<tr>
+<td>Role</td>
+<td>Usually pathologic</td>
+<td>Physiologic and pathologic</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- ISCHEMIA REPERFUSION -->
+
+<div class="card">
+
+<h2>16. Ischemia-Reperfusion Injury</h2>
+
+<p>
+Reperfusion can sometimes cause additional injury to previously ischemic
+tissue. Important mechanisms include oxidative stress, inflammation and
+calcium-related injury.
+
+</p>
+
+<h3>Important Mechanisms</h3>
+
+<ul>
+
+<li>Generation of reactive oxygen species.</li>
+
+<li>Calcium overload.</li>
+
+<li>Inflammatory cell activation.</li>
+
+<li>Mitochondrial dysfunction.</li>
+
+<li>Complement-related injury.</li>
+
+</ul>
+
+<div class="highlight">
+
+<strong>Concept:</strong>
+
+Restoration of blood flow is essential, but reperfusion of severely ischemic
+tissue can paradoxically contribute to additional cellular damage.
+
+</div>
+
+</div>
+
+<!-- HIGH YIELD -->
+
+<div class="card">
+
+<h2>17. High-Yield MBBS Revision Table</h2>
+
+<table>
+
+<tr>
+<th>Mechanism</th>
+<th>Main Consequence</th>
+</tr>
+
+<tr>
+<td>ATP depletion</td>
+<td>Ion pump failure and cellular swelling</td>
+</tr>
+
+<tr>
+<td>Mitochondrial damage</td>
+<td>ATP depletion and possible apoptosis</td>
+</tr>
+
+<tr>
+<td>Ca²⁺ influx</td>
+<td>Activation of destructive enzymes</td>
+</tr>
+
+<tr>
+<td>ROS</td>
+<td>Lipid, protein and DNA damage</td>
+</tr>
+
+<tr>
+<td>Membrane damage</td>
+<td>Leakage and loss of cellular homeostasis</td>
+</tr>
+
+<tr>
+<td>Lysosomal damage</td>
+<td>Enzymatic digestion of cellular components</td>
+</tr>
+
+<tr>
+<td>DNA damage</td>
+<td>Cell-cycle arrest or apoptosis</td>
+</tr>
+
+<tr>
+<td>Misfolded proteins</td>
+<td>ER stress and possible apoptosis</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- QUESTIONS -->
+
+<div class="card">
+
+<h2>18. MBBS-Level Questions & Answers</h2>
+
+<h3>Q1. Define cell injury.</h3>
+
+<p>
+<strong>Answer:</strong>
+Cell injury is a state in which a cell is unable to maintain normal structure
+and function because the stress or harmful stimulus exceeds its adaptive capacity.
+</p>
+
+<h3>Q2. What determines the outcome of cell injury?</h3>
+
+<p>
+<strong>Answer:</strong>
+The type, severity and duration of the stimulus, along with the type,
+metabolic state and adaptability of the cell.
+</p>
+
+<h3>Q3. What are the two main types of cell injury?</h3>
+
+<p>
+<strong>Answer:</strong>
+Reversible cell injury and irreversible cell injury.
+</p>
+
+<h3>Q4. What is the most common morphologic manifestation of reversible injury?</h3>
+
+<p>
+<strong>Answer:</strong>
+Cellular swelling.
+</p>
+
+<h3>Q5. What causes cellular swelling?</h3>
+
+<p>
+<strong>Answer:</strong>
+Failure of ATP-dependent ion pumps, especially the Na⁺/K⁺ ATPase,
+leading to intracellular sodium and water accumulation.
+</p>
+
+<h3>Q6. What are the major mechanisms of cell injury?</h3>
+
+<p>
+<strong>Answer:</strong>
+ATP depletion, mitochondrial damage, calcium influx, accumulation of ROS,
+membrane damage, DNA damage and accumulation of misfolded proteins.
+
+</p>
+
+<h3>Q7. What are the two important features of irreversible injury?</h3>
+
+<p>
+<strong>Answer:</strong>
+Severe mitochondrial dysfunction with failure to restore oxidative
+phosphorylation and profound membrane damage.
+</p>
+
+<h3>Q8. Define necrosis.</h3>
+
+<p>
+<strong>Answer:</strong>
+Necrosis is cell death characterized by loss of membrane integrity,
+enzymatic digestion of cellular components and an associated inflammatory response.
+</p>
+
+<h3>Q9. Define apoptosis.</h3>
+
+<p>
+<strong>Answer:</strong>
+Apoptosis is a regulated form of cell death in which individual cells undergo
+controlled destruction, usually without significant surrounding inflammation.
+</p>
+
+<h3>Q10. What are the nuclear changes in necrosis?</h3>
+
+<p>
+<strong>Answer:</strong>
+Pyknosis, karyorrhexis and karyolysis.
+</p>
+
+<h3>Q11. What is pyknosis?</h3>
+
+<p>
+<strong>Answer:</strong>
+Pyknosis is nuclear shrinkage with chromatin condensation.
+</p>
+
+<h3>Q12. What is karyorrhexis?</h3>
+
+<p>
+<strong>Answer:</strong>
+Karyorrhexis is fragmentation of the nucleus.
+</p>
+
+<h3>Q13. What is karyolysis?</h3>
+
+<p>
+<strong>Answer:</strong>
+Karyolysis is dissolution and fading of the nucleus.
+</p>
+
+<h3>Q14. Give examples of coagulative necrosis.</h3>
+
+<p>
+<strong>Answer:</strong>
+Ischemic infarction of most solid organs such as the heart and kidney,
+with the major exception of the brain.
+</p>
+
+<h3>Q15. Which type of necrosis occurs in tuberculosis?</h3>
+
+<p>
+<strong>Answer:</strong>
+Caseous necrosis.
+</p>
+
+<h3>Q16. Which type of necrosis occurs in brain infarction?</h3>
+
+<p>
+<strong>Answer:</strong>
+Liquefactive necrosis.
+</p>
+
+<h3>Q17. What is the major difference between necrosis and apoptosis?</h3>
+
+<p>
+<strong>Answer:</strong>
+Necrosis usually involves membrane disruption and inflammation, whereas
+apoptosis is a regulated process with cell shrinkage and minimal inflammation.
+</p>
+
+<h3>Q18. What is the role of ROS in cell injury?</h3>
+
+<p>
+<strong>Answer:</strong>
+ROS damage lipids, proteins and DNA through oxidative reactions, contributing
+to membrane damage and cellular dysfunction.
+</p>
+
+<h3>Q19. What happens when intracellular calcium increases excessively?</h3>
+
+<p>
+<strong>Answer:</strong>
+Calcium activates phospholipases, proteases, endonucleases and ATPases,
+causing membrane, protein, DNA and energy damage.
+</p>
+
+<h3>Q20. What is ischemia-reperfusion injury?</h3>
+
+<p>
+<strong>Answer:</strong>
+It is additional cellular injury that can occur when blood flow is restored
+to previously ischemic tissue, partly due to ROS generation, calcium overload
+and inflammatory mechanisms.
+</p>
+
+</div>
+
+<!-- MCQS -->
+
+<div class="card">
+
+<h2>19. 30 MBBS-Level MCQs</h2>
+
+<div class="mcq">
+<strong>1. The earliest major manifestation of reversible cell injury is:</strong>
+<br>A. Cellular swelling
+<br>B. Nuclear dissolution
+<br>C. Karyorrhexis
+<br>D. Complete membrane rupture
+
+<div class="answer"><strong>Answer: A. Cellular swelling</strong></div>
+</div>
+
+<div class="mcq">
+<strong>2. Cellular swelling is mainly caused by failure of:</strong>
+<br>A. Na⁺/K⁺ ATPase
+<br>B. DNA polymerase
+<br>C. Ribosomes
+<br>D. Lysosomes
+
+<div class="answer"><strong>Answer: A. Na⁺/K⁺ ATPase</strong></div>
+</div>
+
+<div class="mcq">
+<strong>3. ATP depletion causes:</strong>
+<br>A. Ion pump failure
+<br>B. Increased protein synthesis
+<br>C. Increased oxidative phosphorylation
+<br>D. Complete recovery
+
+<div class="answer"><strong>Answer: A. Ion pump failure</strong></div>
+</div>
+
+<div class="mcq">
+<strong>4. Which is a feature of reversible injury?</strong>
+<br>A. Cellular swelling
+<br>B. Complete membrane rupture
+<br>C. Nuclear dissolution
+<br>D. Extensive lysosomal rupture
+
+<div class="answer"><strong>Answer: A. Cellular swelling</strong></div>
+</div>
+
+<div class="mcq">
+<strong>5. Which is a feature of irreversible injury?</strong>
+<br>A. Severe membrane damage
+<br>B. Mild ER dilation only
+<br>C. Mild cellular swelling only
+<br>D. Temporary ATP reduction
+
+<div class="answer"><strong>Answer: A. Severe membrane damage</strong></div>
+</div>
+
+<div class="mcq">
+<strong>6. A major mechanism of cell injury is:</strong>
+<br>A. ATP depletion
+<br>B. Increased normal homeostasis
+<br>C. Increased protein synthesis
+<br>D. Improved membrane integrity
+
+<div class="answer"><strong>Answer: A. ATP depletion</strong></div>
+</div>
+
+<div class="mcq">
+<strong>7. Excess intracellular calcium activates:</strong>
+<br>A. Phospholipases
+<br>B. Proteases
+<br>C. Endonucleases
+<br>D. All of the above
+
+<div class="answer"><strong>Answer: D. All of the above</strong></div>
+</div>
+
+<div class="mcq">
+<strong>8. Which is an important reactive oxygen species?</strong>
+<br>A. Hydroxyl radical
+<br>B. Sodium
+<br>C. Calcium
+<br>D. Chloride
+
+<div class="answer"><strong>Answer: A. Hydroxyl radical</strong></div>
+</div>
+
+<div class="mcq">
+<strong>9. ROS can cause:</strong>
+<br>A. Lipid peroxidation
+<br>B. Protein damage
+<br>C. DNA damage
+<br>D. All of the above
+
+<div class="answer"><strong>Answer: D. All of the above</strong></div>
+</div>
+
+<div class="mcq">
+<strong>10. Which enzyme protects against superoxide?</strong>
+<br>A. Superoxide dismutase
+<br>B. Pepsin
+<br>C. Trypsin
+<br>D. Amylase
+
+<div class="answer"><strong>Answer: A. Superoxide dismutase</strong></div>
+</div>
+
+<div class="mcq">
+<strong>11. Pyknosis means:</strong>
+<br>A. Nuclear shrinkage
+<br>B. Nuclear fragmentation
+<br>C. Nuclear dissolution
+<br>D. Cell swelling
+
+<div class="answer"><strong>Answer: A. Nuclear shrinkage</strong></div>
+</div>
+
+<div class="mcq">
+<strong>12. Karyorrhexis means:</strong>
+<br>A. Nuclear fragmentation
+<br>B. Nuclear swelling
+<br>C. Cytoplasmic swelling
+<br>D. Fatty change
+
+<div class="answer"><strong>Answer: A. Nuclear fragmentation</strong></div>
+</div>
+
+<div class="mcq">
+<strong>13. Karyolysis means:</strong>
+<br>A. Nuclear dissolution
+<br>B. Nuclear enlargement
+<br>C. Cell swelling
+<br>D. Mitochondrial swelling
+
+<div class="answer"><strong>Answer: A. Nuclear dissolution</strong></div>
+</div>
+
+<div class="mcq">
+<strong>14. Coagulative necrosis is typically seen in:</strong>
+<br>A. Ischemic infarction of most solid organs
+<br>B. Brain infarction
+<br>C. Tuberculosis
+<br>D. Pancreatitis only
+
+<div class="answer"><strong>Answer: A. Ischemic infarction of most solid organs</strong></div>
+</div>
+
+<div class="mcq">
+<strong>15. Brain infarction causes:</strong>
+<br>A. Liquefactive necrosis
+<br>B. Coagulative necrosis
+<br>C. Caseous necrosis
+<br>D. Fat necrosis
+
+<div class="answer"><strong>Answer: A. Liquefactive necrosis</strong></div>
+</div>
+
+<div class="mcq">
+<strong>16. Tuberculosis classically produces:</strong>
+<br>A. Caseous necrosis
+<br>B. Fat necrosis
+<br>C. Coagulative necrosis only
+<br>D. Fibrinoid necrosis
+
+<div class="answer"><strong>Answer: A. Caseous necrosis</strong></div>
+</div>
+
+<div class="mcq">
+<strong>17. Fat necrosis is classically associated with:</strong>
+<br>A. Acute pancreatitis
+<br>B. Brain infarction
+<br>C. Tuberculosis
+<br>D. Renal infarction
+
+<div class="answer"><strong>Answer: A. Acute pancreatitis</strong></div>
+</div>
+
+<div class="mcq">
+<strong>18. Necrosis usually produces:</strong>
+<br>A. Inflammation
+<br>B. No cellular leakage
+<br>C. Cell shrinkage only
+<br>D. No membrane damage
+
+<div class="answer"><strong>Answer: A. Inflammation</strong></div>
+</div>
+
+<div class="mcq">
+<strong>19. Apoptosis usually affects:</strong>
+<br>A. Individual cells
+<br>B. Entire organs immediately
+<br>C. Only bacteria
+<br>D. Only extracellular material
+
+<div class="answer"><strong>Answer: A. Individual cells</strong></div>
+</div>
+
+<div class="mcq">
+<strong>20. Apoptotic cells typically:</strong>
+<br>A. Shrink
+<br>B. Swell massively
+<br>C. Rupture immediately
+<br>D. Cause intense inflammation
+
+<div class="answer"><strong>Answer: A. Shrink</strong></div>
+</div>
+
+<div class="mcq">
+<strong>21. Apoptosis is mediated by:</strong>
+<br>A. Caspases
+<br>B. Hemoglobin
+<br>C. Albumin
+<br>D. Amylase
+
+<div class="answer"><strong>Answer: A. Caspases</strong></div>
+</div>
+
+<div class="mcq">
+<strong>22. The intrinsic apoptotic pathway is strongly associated with:</strong>
+<br>A. Mitochondria
+<br>B. Lysosomes only
+<br>C. Ribosomes only
+<br>D. Golgi apparatus only
+
+<div class="answer"><strong>Answer: A. Mitochondria</strong></div>
+</div>
+
+<div class="mcq">
+<strong>23. Ischemia means:</strong>
+<br>A. Reduced blood flow
+<br>B. Increased blood flow
+<br>C. Increased oxygen delivery
+<br>D. Increased nutrient delivery
+
+<div class="answer"><strong>Answer: A. Reduced blood flow</strong></div>
+</div>
+
+<div class="mcq">
+<strong>24. Ischemia is usually more damaging than hypoxia alone because:</strong>
+<br>A. Nutrient delivery is also reduced and waste removal is impaired
+<br>B. Oxygen always increases
+<br>C. ATP always increases
+<br>D. Blood flow increases
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>25. Lysosomal membrane damage causes:</strong>
+<br>A. Release of hydrolytic enzymes
+<br>B. Increased ATP production
+<br>C. Increased protein synthesis
+<br>D. Normal cell function
+
+<div class="answer"><strong>Answer: A. Release of hydrolytic enzymes</strong></div>
+</div>
+
+<div class="mcq">
+<strong>26. Severe mitochondrial damage can result in:</strong>
+<br>A. ATP depletion
+<br>B. Apoptosis
+<br>C. Cell death
+<br>D. All of the above
+
+<div class="answer"><strong>Answer: D. All of the above</strong></div>
+</div>
+
+<div class="mcq">
+<strong>27. Which is an antioxidant enzyme?</strong>
+<br>A. Catalase
+<br>B. Pepsin
+<br>C. Trypsin
+<br>D. Lipase
+
+<div class="answer"><strong>Answer: A. Catalase</strong></div>
+</div>
+
+<div class="mcq">
+<strong>28. Ischemia-reperfusion injury is associated with increased:</strong>
+<br>A. ROS generation
+<br>B. Calcium overload
+<br>C. Inflammation
+<br>D. All of the above
+
+<div class="answer"><strong>Answer: D. All of the above</strong></div>
+</div>
+
+<div class="mcq">
+<strong>29. Which is NOT a nuclear change of necrosis?</strong>
+<br>A. Pyknosis
+<br>B. Karyorrhexis
+<br>C. Karyolysis
+<br>D. Hypertrophy
+
+<div class="answer"><strong>Answer: D. Hypertrophy</strong></div>
+</div>
+
+<div class="mcq">
+<strong>30. The major difference between necrosis and apoptosis is:</strong>
+<br>A. Necrosis commonly causes inflammation, while apoptosis usually does not
+<br>B. Apoptosis always causes severe inflammation
+<br>C. Necrosis always affects one cell only
+<br>D. Apoptosis always causes membrane rupture
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+</div>
+
+<!-- PRINT BUTTON -->
+
+<div class="card no-print">
+
+<h2>20. Printable Test Paper</h2>
+
+<p>
+The button below will print <strong>ONLY the test paper</strong>.
+</p>
+
+<button class="print-button" onclick="printTest()">
+🖨 Print Test Paper
+</button>
+
+</div>
+
+<!-- TEST PAPER -->
+
+<div id="printArea" class="test-paper">
+
+<div class="test-header">
+
+<h1>MedAcademy</h1>
+
+<h2>Pathology - Cell Injury</h2>
+
+<p><strong>MBBS Pathology Test Paper</strong></p>
+
+<p>
+Time: 40 Minutes &nbsp;&nbsp; | &nbsp;&nbsp; Total Marks: 40
+</p>
+
+</div>
+
+<div class="test-info">
+
+<div>Name: __________________________</div>
+
+<div>Roll No: ________________________</div>
+
+<div>Date: ___________________________</div>
+
+</div>
+
+<h3>Section A - MCQs (10 Marks)</h3>
+
+<div class="test-question">
+
+<strong>1. The earliest major manifestation of reversible cell injury is:</strong> <br>A. Cellular swelling <br>B. Nuclear dissolution <br>C. Karyorrhexis <br>D. Membrane rupture
+
+</div>
+
+<div class="test-question">
+
+<strong>2. ATP depletion causes failure of:</strong> <br>A. Na⁺/K⁺ ATPase <br>B. DNA replication <br>C. Lysosomal synthesis <br>D. Collagen formation
+
+</div>
+
+<div class="test-question">
+
+<strong>3. Which is a feature of irreversible injury?</strong> <br>A. Severe membrane damage <br>B. Mild ER dilation <br>C. Temporary swelling <br>D. Mild ATP reduction
+
+</div>
+
+<div class="test-question">
+
+<strong>4. Pyknosis means:</strong> <br>A. Nuclear shrinkage <br>B. Nuclear fragmentation <br>C. Nuclear dissolution <br>D. Cell swelling
+
+</div>
+
+<div class="test-question">
+
+<strong>5. Tuberculosis is classically associated with:</strong> <br>A. Caseous necrosis <br>B. Fat necrosis <br>C. Liquefactive necrosis <br>D. Coagulative necrosis
+
+</div>
+
+<div class="test-question">
+
+<strong>6. Brain infarction causes:</strong> <br>A. Liquefactive necrosis <br>B. Caseous necrosis <br>C. Fat necrosis <br>D. Fibrinoid necrosis
+
+</div>
+
+<div class="test-question">
+
+<strong>7. Apoptosis is mediated by:</strong> <br>A. Caspases <br>B. Amylase <br>C. Pepsin <br>D. Hemoglobin
+
+</div>
+
+<div class="test-question">
+
+<strong>8. Excess intracellular calcium activates:</strong> <br>A. Phospholipases <br>B. Proteases <br>C. Endonucleases <br>D. All of the above
+
+</div>
+
+<div class="test-question">
+
+<strong>9. Which is an important reactive oxygen species?</strong> <br>A. Hydroxyl radical <br>B. Sodium <br>C. Chloride <br>D. Calcium
+
+</div>
+
+<div class="test-question">
+
+<strong>10. Necrosis commonly causes:</strong> <br>A. Inflammation <br>B. No membrane damage <br>C. Cell shrinkage only <br>D. No leakage
+
+</div>
+
+<h3>Section B - Short Questions (10 Marks)</h3>
+
+<div class="test-question">
+
+<strong>1. Define reversible cell injury.</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<div class="test-question">
+
+<strong>2. Write four causes of cell injury.</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<div class="test-question">
+
+<strong>3. Explain the mechanism of cellular swelling.</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<div class="test-question">
+
+<strong>4. Write the three nuclear changes of necrosis.</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<div class="test-question">
+
+<strong>5. Differentiate necrosis from apoptosis.</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<h3>Section C - Long Questions (20 Marks)</h3>
+
+<div class="test-question">
+
+<strong>
+1. Discuss the mechanisms of cell injury. Include ATP depletion,
+mitochondrial damage, calcium influx, reactive oxygen species and
+membrane damage.
+</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<div class="test-question">
+
+<strong>
+2. Describe necrosis and apoptosis. Compare their morphology,
+mechanisms and inflammatory response.
+</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+</div>
+
+<!-- ANSWER KEY -->
+
+<div class="card no-print">
+
+<h2>21. Test Paper Answer Key</h2>
+
+<h3>Section A - MCQs</h3>
+
+<p>
+
+1. A   
+2. A   
+3. A   
+4. A   
+5. A
+
+</p>
+
+<p>
+
+6. A   
+7. A   
+8. D   
+9. A   
+10. A
+
+</p>
+
+<h3>Section B - Key Points</h3>
+
+<ul>
+
+<li>
+<strong>Reversible injury:</strong>
+Cell injury from which the cell can recover if the harmful stimulus is removed.
+</li>
+
+<li>
+<strong>Causes:</strong>
+Hypoxia/ischemia, physical agents, chemicals, infections, immune reactions,
+genetic abnormalities and nutritional imbalance.
+</li>
+
+<li>
+<strong>Cell swelling:</strong>
+ATP depletion → Na⁺/K⁺ pump failure → intracellular sodium and water accumulation.
+</li>
+
+<li>
+<strong>Nuclear changes:</strong>
+Pyknosis, karyorrhexis and karyolysis.
+</li>
+
+<li>
+<strong>Necrosis vs apoptosis:</strong>
+Necrosis usually involves membrane disruption and inflammation; apoptosis is
+regulated cell death with shrinkage and minimal inflammation.
+</li>
+
+</ul>
+
+</div>
+
+<!-- QUICK REVISION -->
+
+<div class="card no-print">
+
+<h2>22. Final High-Yield Revision</h2>
+
+<table>
+
+<tr>
+<th>Topic</th>
+<th>Remember</th>
+</tr>
+
+<tr>
+<td>Reversible injury</td>
+<td>Cell swelling and fatty change</td>
+</tr>
+
+<tr>
+<td>ATP depletion</td>
+<td>Na⁺/K⁺ pump failure → cellular swelling</td>
+</tr>
+
+<tr>
+<td>Calcium influx</td>
+<td>Activates phospholipases, proteases, endonucleases and ATPases</td>
+</tr>
+
+<tr>
+<td>ROS</td>
+<td>Damage lipids, proteins and DNA</td>
+</tr>
+
+<tr>
+<td>Irreversible injury</td>
+<td>Severe mitochondrial dysfunction + membrane damage</td>
+</tr>
+
+<tr>
+<td>Pyknosis</td>
+<td>Nuclear shrinkage</td>
+</tr>
+
+<tr>
+<td>Karyorrhexis</td>
+<td>Nuclear fragmentation</td>
+</tr>
+
+<tr>
+<td>Karyolysis</td>
+<td>Nuclear dissolution</td>
+</tr>
+
+<tr>
+<td>Coagulative necrosis</td>
+<td>Most solid-organ infarcts except brain</td>
+</tr>
+
+<tr>
+<td>Liquefactive necrosis</td>
+<td>Brain infarction and many abscesses</td>
+</tr>
+
+<tr>
+<td>Caseous necrosis</td>
+<td>Tuberculosis</td>
+</tr>
+
+<tr>
+<td>Fat necrosis</td>
+<td>Acute pancreatitis</td>
+</tr>
+
+<tr>
+<td>Apoptosis</td>
+<td>Regulated cell death, usually minimal inflammation</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- RELATED -->
+
+<div class="card no-print">
+
+<h2>23. Related Pathology Chapters</h2>
+
+<ul>
+
+<li>
+<a href="pathology.html">
+Pathology Home →
+</a>
+</li>
+
+<li>
+Cellular Adaptations →
+</li>
+
+<li>
+Inflammation →
+</li>
+
+<li>
+Hemodynamic Disorders →
+</li>
+
+<li>
+Neoplasia →
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<footer class="no-print">
+
+<p>
+© 2026 MedAcademy - Medical Students
+</p>
+
+</footer>
+
+<script>
+
+function printTest(){
+
+    window.print();
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MedAcademy - Inflammation</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f9fb;
+    color:#222;
+}
+
+header{
+    background:#087f8c;
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h2{
+    margin:0;
+}
+
+header a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+header a:hover{
+    text-decoration:underline;
+}
+
+.hero{
+    text-align:center;
+    background:white;
+    padding:55px 20px;
+}
+
+.hero h1{
+    color:#087f8c;
+    font-size:40px;
+    margin:0 0 15px;
+}
+
+.hero p{
+    color:#555;
+    font-size:18px;
+}
+
+.content{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:35px 0;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px #ddd;
+}
+
+.card h2{
+    color:#087f8c;
+    margin-top:0;
+}
+
+.card h3{
+    color:#087f8c;
+}
+
+.card p,
+.card li{
+    line-height:1.7;
+}
+
+.card ul,
+.card ol{
+    padding-left:25px;
+}
+
+.highlight{
+    background:#e8f7f8;
+    border-left:5px solid #087f8c;
+    padding:15px;
+    border-radius:6px;
+    margin:15px 0;
+}
+
+.warning{
+    background:#fff4e5;
+    border-left:5px solid #f39c12;
+    padding:15px;
+    border-radius:6px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th,
+td{
+    border:1px solid #ccc;
+    padding:12px;
+    text-align:left;
+    vertical-align:top;
+}
+
+th{
+    background:#087f8c;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f7fafa;
+}
+
+
+/* VISUAL DIAGRAM */
+
+.diagram{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.step{
+    background:#e8f7f8;
+    border:2px solid #087f8c;
+    padding:18px;
+    border-radius:12px;
+    text-align:center;
+    min-width:130px;
+    font-weight:bold;
+}
+
+.arrow{
+    font-size:28px;
+    color:#087f8c;
+}
+
+
+/* BLOOD VESSEL DIAGRAM */
+
+.vessel{
+    width:90%;
+    max-width:750px;
+    margin:25px auto;
+    padding:25px;
+    background:#fdfdfd;
+    border:3px solid #087f8c;
+    border-radius:15px;
+    text-align:center;
+}
+
+.vessel-inner{
+    background:#ffe8e8;
+    border:3px dashed #c44;
+    padding:25px;
+    border-radius:50%;
+    min-height:100px;
+}
+
+.leukocytes{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.cell{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid #087f8c;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+}
+
+
+/* QUESTION BOX */
+
+.question{
+    background:#f7fbfb;
+    border-left:4px solid #087f8c;
+    padding:15px;
+    margin:12px 0;
+    border-radius:6px;
+}
+
+.question strong{
+    color:#087f8c;
+}
+
+
+/* MCQ */
+
+.mcq{
+    margin-bottom:20px;
+}
+
+.mcq b{
+    display:block;
+    margin-bottom:8px;
+}
+
+.answer{
+    color:#087f8c;
+    font-weight:bold;
+}
+
+
+/* PRINT TEST */
+
+.print-button{
+    display:block;
+    margin:20px auto;
+    padding:14px 25px;
+    background:#087f8c;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.print-button:hover{
+    background:#066b75;
+}
+
+.test-paper{
+    background:white;
+    border:2px solid #087f8c;
+    padding:30px;
+    margin-top:25px;
+}
+
+.test-paper h2,
+.test-paper h3{
+    color:#087f8c;
+}
+
+.answer-key{
+    background:#eef9fa;
+    padding:20px;
+    border-radius:8px;
+}
+
+
+/* FOOTER */
+
+footer{
+    margin-top:40px;
+    background:#087f8c;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+footer p{
+    margin:0;
+}
+
+
+/* PRINT ONLY TEST PAPER */
+
+@media print{
+
+    body *{
+        visibility:hidden;
+    }
+
+    #printArea,
+    #printArea *{
+        visibility:visible;
+    }
+
+    #printArea{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        background:white;
+        padding:20px;
+        box-sizing:border-box;
+    }
+
+    .no-print{
+        display:none !important;
+    }
+
+    @page{
+        margin:15mm;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="no-print">
+
+<h2>🩺 MedAcademy</h2>
+
+<a href="pathology.html">← Pathology</a>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero no-print">
+
+<h1>🔥 Inflammation</h1>
+
+<p>Complete MBBS-Level Pathology Study Page</p>
+
+</section>
+
+<div class="content">
+
+<!-- INTRODUCTION -->
+
+<div class="card">
+
+<h2>1. Introduction to Inflammation</h2>
+
+<p>
+Inflammation is a protective response of vascularized tissues
+to infection, tissue injury, or other harmful stimuli. Its main
+purpose is to eliminate the injurious agent, remove damaged tissue,
+and initiate repair.
+</p>
+
+<div class="highlight">
+
+<strong>High-Yield:</strong>
+
+Inflammation is protective, but excessive or uncontrolled inflammation
+can itself cause tissue injury.
+
+</div>
+
+<h3>Five Cardinal Signs</h3>
+
+<ul>
+
+<li><strong>Rubor</strong> — Redness</li>
+
+<li><strong>Calor</strong> — Heat</li>
+
+<li><strong>Tumor</strong> — Swelling</li>
+
+<li><strong>Dolor</strong> — Pain</li>
+
+<li><strong>Functio laesa</strong> — Loss of function</li>
+
+</ul>
+
+</div>
+
+<!-- TYPES -->
+
+<div class="card">
+
+<h2>2. Types of Inflammation</h2>
+
+<table>
+
+<tr>
+
+<th>Feature</th>
+
+<th>Acute Inflammation</th>
+
+<th>Chronic Inflammation</th>
+
+</tr>
+
+<tr>
+
+<td>Onset</td>
+
+<td>Rapid: minutes to hours</td>
+
+<td>Slow: days to months/years</td>
+
+</tr>
+
+<tr>
+
+<td>Duration</td>
+
+<td>Usually short</td>
+
+<td>Long-lasting</td>
+
+</tr>
+
+<tr>
+
+<td>Main cells</td>
+
+<td>Neutrophils</td>
+
+<td>Macrophages, lymphocytes, plasma cells</td>
+
+</tr>
+
+<tr>
+
+<td>Vascular changes</td>
+
+<td>Prominent</td>
+
+<td>Usually less prominent</td>
+
+</tr>
+
+<tr>
+
+<td>Tissue injury</td>
+
+<td>Usually limited</td>
+
+<td>Often progressive</td>
+
+</tr>
+
+<tr>
+
+<td>Fibrosis</td>
+
+<td>Usually limited</td>
+
+<td>Common</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- VISUAL -->
+
+<div class="card">
+
+<h2>3. Inflammation Process — Visual Diagram</h2>
+
+<div class="diagram">
+
+<div class="step">
+Injury / Infection
+</div>
+
+<div class="arrow">→</div>
+
+<div class="step">
+Recognition
+</div>
+
+<div class="arrow">→</div>
+
+<div class="step">
+Mediators
+</div>
+
+<div class="arrow">→</div>
+
+<div class="step">
+Vascular Changes
+</div>
+
+<div class="arrow">→</div>
+
+<div class="step">
+Leukocyte Recruitment
+</div>
+
+<div class="arrow">→</div>
+
+<div class="step">
+Removal & Repair
+</div>
+
+</div>
+
+<p>
+This simplified pathway represents the major sequence of the
+inflammatory response.
+</p>
+
+</div>
+
+<!-- CAUSES -->
+
+<div class="card">
+
+<h2>4. Causes of Inflammation</h2>
+
+<ul>
+
+<li>Microbial infections</li>
+
+<li>Tissue necrosis</li>
+
+<li>Physical agents such as trauma, burns and radiation</li>
+
+<li>Chemical irritants and toxins</li>
+
+<li>Foreign bodies</li>
+
+<li>Immune reactions</li>
+
+<li>Autoimmune diseases</li>
+
+<li>Crystal deposition such as gout</li>
+
+</ul>
+
+</div>
+
+<!-- ACUTE -->
+
+<div class="card">
+
+<h2>5. Acute Inflammation</h2>
+
+<p>
+Acute inflammation is a rapid response that delivers leukocytes
+and plasma proteins to the site of injury.
+</p>
+
+<h3>Major Components</h3>
+
+<ol>
+
+<li>Vasodilation</li>
+
+<li>Increased vascular permeability</li>
+
+<li>Exudation of plasma proteins</li>
+
+<li>Leukocyte recruitment</li>
+
+<li>Leukocyte activation</li>
+
+<li>Removal of offending agent</li>
+
+</ol>
+
+</div>
+
+<!-- VASCULAR -->
+
+<div class="card">
+
+<h2>6. Vascular Changes in Acute Inflammation</h2>
+
+<h3>Step 1 — Vasodilation</h3>
+
+<p>
+Arteriolar vasodilation increases blood flow to the affected area.
+This produces redness and heat.
+</p>
+
+<h3>Step 2 — Increased Vascular Permeability</h3>
+
+<p>
+Endothelial gaps and other permeability mechanisms allow
+protein-rich fluid to leave the blood vessels.
+</p>
+
+<h3>Step 3 — Edema</h3>
+
+<p>
+Accumulation of protein-rich extravascular fluid produces
+inflammatory edema.
+</p>
+
+<div class="highlight">
+
+<strong>Important:</strong>
+
+Exudate is protein-rich inflammatory fluid, whereas transudate
+is usually a low-protein fluid caused mainly by hydrostatic or
+osmotic imbalance.
+
+</div>
+
+</div>
+
+<!-- LEUKOCYTE RECRUITMENT -->
+
+<div class="card">
+
+<h2>7. Leukocyte Recruitment</h2>
+
+<p>
+Leukocyte recruitment occurs through a sequence of important steps.
+</p>
+
+<div class="vessel">
+
+<strong>Blood Vessel</strong>
+
+<div class="vessel-inner">
+
+Endothelium
+
+<div class="leukocytes">
+
+<div class="cell">WBC</div>
+
+<div class="cell">WBC</div>
+
+<div class="cell">WBC</div>
+
+<div class="cell">WBC</div>
+
+</div>
+
+<p>
+Rolling → Adhesion → Transmigration → Chemotaxis
+</p>
+
+</div>
+
+</div>
+
+<h3>Steps</h3>
+
+<ol>
+
+<li><strong>Margination</strong></li>
+
+<li><strong>Rolling</strong> — mainly selectins</li>
+
+<li><strong>Adhesion</strong> — mainly integrins</li>
+
+<li><strong>Transmigration / Diapedesis</strong></li>
+
+<li><strong>Chemotaxis</strong></li>
+
+</ol>
+
+</div>
+
+<!-- MEDIATORS -->
+
+<div class="card">
+
+<h2>8. Chemical Mediators of Inflammation</h2>
+
+<table>
+
+<tr>
+
+<th>Mediator</th>
+
+<th>Main Actions</th>
+
+</tr>
+
+<tr>
+
+<td>Histamine</td>
+
+<td>Vasodilation and increased vascular permeability</td>
+
+</tr>
+
+<tr>
+
+<td>Prostaglandins</td>
+
+<td>Vasodilation, pain and fever</td>
+
+</tr>
+
+<tr>
+
+<td>Leukotrienes</td>
+
+<td>Vascular permeability, chemotaxis and bronchoconstriction</td>
+
+</tr>
+
+<tr>
+
+<td>TNF and IL-1</td>
+
+<td>Endothelial activation and systemic inflammatory effects</td>
+
+</tr>
+
+<tr>
+
+<td>Chemokines</td>
+
+<td>Leukocyte chemotaxis and activation</td>
+
+</tr>
+
+<tr>
+
+<td>C5a</td>
+
+<td>Strong chemotactic and leukocyte-activating effects</td>
+
+</tr>
+
+<tr>
+
+<td>C3b</td>
+
+<td>Opsonization</td>
+
+</tr>
+
+<tr>
+
+<td>Bradykinin</td>
+
+<td>Pain and increased vascular permeability</td>
+
+</tr>
+
+<tr>
+
+<td>NO</td>
+
+<td>Vasodilation and antimicrobial effects</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- PHAGOCYTOSIS -->
+
+<div class="card">
+
+<h2>9. Phagocytosis</h2>
+
+<p>
+Phagocytosis is the process by which neutrophils and macrophages
+recognize, engulf, and destroy microorganisms or cellular debris.
+</p>
+
+<h3>Three Major Steps</h3>
+
+<ol>
+
+<li>Recognition and attachment</li>
+
+<li>Engulfment</li>
+
+<li>Killing and degradation</li>
+
+</ol>
+
+<h3>Important Opsonins</h3>
+
+<ul>
+
+<li>IgG</li>
+
+<li>C3b</li>
+
+<li>Collectins such as mannose-binding lectin</li>
+
+</ul>
+
+</div>
+
+<!-- NEUTROPHILS -->
+
+<div class="card">
+
+<h2>10. Neutrophils</h2>
+
+<p>
+Neutrophils are the predominant leukocytes during the early phase
+of most acute inflammatory responses.
+</p>
+
+<h3>Important Functions</h3>
+
+<ul>
+
+<li>Phagocytosis</li>
+
+<li>Microbial killing</li>
+
+<li>Release of reactive oxygen species</li>
+
+<li>Release of lysosomal enzymes</li>
+
+<li>Formation of neutrophil extracellular traps in appropriate settings</li>
+
+</ul>
+
+</div>
+
+<!-- CHRONIC -->
+
+<div class="card">
+
+<h2>11. Chronic Inflammation</h2>
+
+<p>
+Chronic inflammation is prolonged inflammation in which inflammation,
+tissue injury, and attempts at repair may occur simultaneously.
+</p>
+
+<h3>Major Causes</h3>
+
+<ul>
+
+<li>Persistent infections</li>
+
+<li>Autoimmune diseases</li>
+
+<li>Prolonged exposure to toxic agents</li>
+
+<li>Some metabolic disorders</li>
+
+</ul>
+
+<h3>Main Cells</h3>
+
+<ul>
+
+<li>Macrophages</li>
+
+<li>Lymphocytes</li>
+
+<li>Plasma cells</li>
+
+<li>Eosinophils in selected conditions</li>
+
+</ul>
+
+<h3>Important Features</h3>
+
+<ul>
+
+<li>Persistent inflammatory infiltrate</li>
+
+<li>Ongoing tissue destruction</li>
+
+<li>Angiogenesis</li>
+
+<li>Fibrosis</li>
+
+</ul>
+
+</div>
+
+<!-- MACROPHAGES -->
+
+<div class="card">
+
+<h2>12. Macrophages</h2>
+
+<p>
+Macrophages are central cells in chronic inflammation and also
+play important roles in acute inflammation and tissue repair.
+</p>
+
+<h3>Functions</h3>
+
+<ul>
+
+<li>Phagocytosis</li>
+
+<li>Antigen presentation</li>
+
+<li>Cytokine production</li>
+
+<li>Microbial killing</li>
+
+<li>Growth factor production</li>
+
+<li>Participation in tissue repair and fibrosis</li>
+
+</ul>
+
+</div>
+
+<!-- GRANULOMATOUS -->
+
+<div class="card">
+
+<h2>13. Granulomatous Inflammation</h2>
+
+<p>
+Granulomatous inflammation is a distinctive form of chronic
+inflammation characterized by collections of activated macrophages,
+often called epithelioid cells.
+</p>
+
+<h3>Common Causes</h3>
+
+<ul>
+
+<li>Tuberculosis</li>
+
+<li>Fungal infections</li>
+
+<li>Sarcoidosis</li>
+
+<li>Foreign-body reactions</li>
+
+<li>Selected immune-mediated diseases</li>
+
+</ul>
+
+<div class="highlight">
+
+<strong>MBBS Point:</strong>
+
+A granuloma is a localized collection of activated macrophages,
+often surrounded by lymphocytes.
+
+</div>
+
+</div>
+
+<!-- MORPHOLOGIC PATTERNS -->
+
+<div class="card">
+
+<h2>14. Morphologic Patterns of Acute Inflammation</h2>
+
+<h3>Serous Inflammation</h3>
+
+<p>
+Thin, relatively cell-poor fluid accumulation. Example:
+skin blister after a burn.
+</p>
+
+<h3>Fibrinous Inflammation</h3>
+
+<p>
+Fibrin-rich exudate. Commonly seen on serosal surfaces in certain
+injuries.
+</p>
+
+<h3>Suppurative / Purulent Inflammation</h3>
+
+<p>
+Production of pus containing neutrophils, necrotic debris,
+and edema fluid.
+</p>
+
+<h3>Ulcer</h3>
+
+<p>
+A local defect of the surface epithelium caused by shedding
+of inflamed necrotic tissue.
+</p>
+
+</div>
+
+<!-- SYSTEMIC -->
+
+<div class="card">
+
+<h2>15. Systemic Effects of Inflammation</h2>
+
+<ul>
+
+<li>Fever</li>
+
+<li>Leukocytosis</li>
+
+<li>Acute-phase protein production</li>
+
+<li>Malaise and fatigue</li>
+
+<li>Tachycardia</li>
+
+<li>Severe inflammation may contribute to hypotension and shock</li>
+
+</ul>
+
+<h3>Important Acute-Phase Proteins</h3>
+
+<ul>
+
+<li>C-reactive protein (CRP)</li>
+
+<li>Serum amyloid A</li>
+
+<li>Fibrinogen</li>
+
+</ul>
+
+<div class="highlight">
+
+<strong>Exam Point:</strong>
+
+IL-6 is an important cytokine stimulating hepatic acute-phase
+protein production.
+
+</div>
+
+</div>
+
+<!-- OUTCOMES -->
+
+<div class="card">
+
+<h2>16. Outcomes of Acute Inflammation</h2>
+
+<div class="diagram">
+
+<div class="step">
+Resolution
+</div>
+
+<div class="arrow">or</div>
+
+<div class="step">
+Abscess / Suppuration
+</div>
+
+<div class="arrow">or</div>
+
+<div class="step">
+Fibrosis
+</div>
+
+<div class="arrow">or</div>
+
+<div class="step">
+Chronic Inflammation
+</div>
+
+</div>
+
+<p>
+The outcome depends on the type and severity of injury, the tissue
+involved, and the ability to eliminate the offending agent.
+</p>
+
+</div>
+
+<!-- ACUTE VS CHRONIC -->
+
+<div class="card">
+
+<h2>17. Acute vs Chronic Inflammation — High-Yield Table</h2>
+
+<table>
+
+<tr>
+
+<th>Point</th>
+
+<th>Acute</th>
+
+<th>Chronic</th>
+
+</tr>
+
+<tr>
+
+<td>Onset</td>
+
+<td>Rapid</td>
+
+<td>Slow</td>
+
+</tr>
+
+<tr>
+
+<td>Duration</td>
+
+<td>Short</td>
+
+<td>Long</td>
+
+</tr>
+
+<tr>
+
+<td>Main leukocyte</td>
+
+<td>Neutrophil</td>
+
+<td>Macrophage / lymphocyte</td>
+
+</tr>
+
+<tr>
+
+<td>Edema</td>
+
+<td>Prominent</td>
+
+<td>Variable</td>
+
+</tr>
+
+<tr>
+
+<td>Tissue destruction</td>
+
+<td>Usually limited</td>
+
+<td>Often progressive</td>
+
+</tr>
+
+<tr>
+
+<td>Fibrosis</td>
+
+<td>Usually limited</td>
+
+<td>Common</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- MBBS QUESTIONS -->
+
+<div class="card">
+
+<h2>18. MBBS-Level Questions & Answers</h2>
+
+<div class="question">
+
+<strong>Q1. Define inflammation.</strong>
+
+<p>
+Inflammation is a protective response of vascularized tissue to
+injury or infection that brings immune cells, plasma proteins,
+and mediators to the affected site.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q2. What are the five cardinal signs of inflammation?</strong>
+
+<p>
+Rubor, calor, tumor, dolor, and loss of function.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q3. What is acute inflammation?</strong>
+
+<p>
+A rapid inflammatory response characterized by vascular changes,
+plasma protein exudation, and predominantly neutrophilic leukocyte
+infiltration.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q4. What is chronic inflammation?</strong>
+
+<p>
+Prolonged inflammation characterized by macrophages, lymphocytes,
+and other mononuclear cells, with tissue injury and attempts at repair.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q5. Which leukocyte predominates in acute inflammation?</strong>
+
+<p>
+Neutrophils.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q6. Which cells predominate in chronic inflammation?</strong>
+
+<p>
+Macrophages and lymphocytes, with plasma cells in many settings.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q7. What is chemotaxis?</strong>
+
+<p>
+Directed movement of leukocytes toward a chemical concentration
+gradient at the site of inflammation.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q8. Name important chemotactic agents.</strong>
+
+<p>
+C5a, LTB4, chemokines, and certain bacterial products.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q9. What is the role of histamine?</strong>
+
+<p>
+Histamine causes vasodilation and increases vascular permeability
+during acute inflammation.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q10. What is the role of C3b?</strong>
+
+<p>
+C3b acts mainly as an opsonin and facilitates phagocytosis.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q11. What is the role of C5a?</strong>
+
+<p>
+C5a promotes chemotaxis and activation of leukocytes.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q12. What is an exudate?</strong>
+
+<p>
+An inflammatory extravascular fluid that is relatively rich in
+protein and often contains leukocytes.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q13. What is an opsonin?</strong>
+
+<p>
+A molecule that coats microbes or particles and facilitates their
+recognition and phagocytosis by leukocytes.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q14. Name important opsonins.</strong>
+
+<p>
+IgG and C3b are major examples.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q15. What is granulomatous inflammation?</strong>
+
+<p>
+A form of chronic inflammation characterized by collections of
+activated macrophages, often with surrounding lymphocytes.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q16. What is the difference between exudate and transudate?</strong>
+
+<p>
+Exudate is protein-rich inflammatory fluid, while transudate is
+usually low in protein and results mainly from hydrostatic or
+osmotic imbalance.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q17. What causes fever during inflammation?</strong>
+
+<p>
+Inflammatory cytokines such as IL-1 and TNF promote prostaglandin
+production in the hypothalamic thermoregulatory pathway, producing
+an increased temperature set point.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q18. What are the possible outcomes of acute inflammation?</strong>
+
+<p>
+Resolution, suppuration/abscess formation, fibrosis/scarring,
+or progression to chronic inflammation.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q19. Why is chronic inflammation associated with fibrosis?</strong>
+
+<p>
+Persistent inflammatory mediators and growth factors stimulate
+fibroblasts and extracellular matrix deposition during attempts at repair.
+</p>
+
+</div>
+
+<div class="question">
+
+<strong>Q20. What are the five Rs of inflammation?</strong>
+
+<p>
+Recognition, Recruitment, Removal, Regulation, and Resolution.
+</p>
+
+</div>
+
+</div>
+
+<!-- MCQS -->
+
+<div class="card">
+
+<h2>19. MBBS-Level MCQs</h2>
+
+<div class="mcq">
+
+<b>1. The predominant leukocyte in early acute inflammation is:</b>
+
+A. Lymphocyte<br>
+B. Neutrophil<br>
+C. Plasma cell<br>
+D. Eosinophil
+
+<p class="answer">Answer: B. Neutrophil</p>
+
+</div>
+
+<div class="mcq">
+
+<b>2. Which molecule is an important opsonin?</b>
+
+A. C3b<br>
+B. Histamine<br>
+C. Bradykinin<br>
+D. IL-1
+
+<p class="answer">Answer: A. C3b</p>
+
+</div>
+
+<div class="mcq">
+
+<b>3. C5a is particularly important for:</b>
+
+A. Opsonization<br>
+B. Chemotaxis<br>
+C. Antibody production<br>
+D. Collagen synthesis
+
+<p class="answer">Answer: B. Chemotaxis</p>
+
+</div>
+
+<div class="mcq">
+
+<b>4. Histamine mainly causes:</b>
+
+A. Vasodilation and increased permeability<br>
+B. Fibrosis<br>
+C. Antibody production<br>
+D. Platelet destruction
+
+<p class="answer">Answer: A. Vasodilation and increased permeability</p>
+
+</div>
+
+<div class="mcq">
+
+<b>5. Rolling of leukocytes is mainly mediated by:</b>
+
+A. Integrins<br>
+B. Selectins<br>
+C. Immunoglobulin G<br>
+D. Complement C3b
+
+<p class="answer">Answer: B. Selectins</p>
+
+</div>
+
+<div class="mcq">
+
+<b>6. Firm leukocyte adhesion mainly involves:</b>
+
+A. Selectins<br>
+B. Integrins<br>
+C. Histamine<br>
+D. Bradykinin
+
+<p class="answer">Answer: B. Integrins</p>
+
+</div>
+
+<div class="mcq">
+
+<b>7. Which mediator is strongly associated with pain?</b>
+
+A. Bradykinin<br>
+B. C3b<br>
+C. IL-10<br>
+D. Albumin
+
+<p class="answer">Answer: A. Bradykinin</p>
+
+</div>
+
+<div class="mcq">
+
+<b>8. Which cells are characteristic of chronic inflammation?</b>
+
+A. Only neutrophils<br>
+B. Macrophages and lymphocytes<br>
+C. Only platelets<br>
+D. Only erythrocytes
+
+<p class="answer">Answer: B. Macrophages and lymphocytes</p>
+
+</div>
+
+<div class="mcq">
+
+<b>9. Which cytokine is especially important in hepatic acute-phase protein production?</b>
+
+A. IL-6<br>
+B. IL-4<br>
+C. IL-5<br>
+D. IL-13
+
+<p class="answer">Answer: A. IL-6</p>
+
+</div>
+
+<div class="mcq">
+
+<b>10. Granulomatous inflammation is characterized mainly by:</b>
+
+A. Activated macrophages<br>
+B. Erythrocytes<br>
+C. Platelets<br>
+D. Basophils only
+
+<p class="answer">Answer: A. Activated macrophages</p>
+
+</div>
+
+<div class="mcq">
+
+<b>11. Which is a typical outcome of acute inflammation?</b>
+
+A. Resolution<br>
+B. Always cancer<br>
+C. Always necrosis<br>
+D. Always autoimmune disease
+
+<p class="answer">Answer: A. Resolution</p>
+
+</div>
+
+<div class="mcq">
+
+<b>12. Which mediator is a potent neutrophil chemotactic factor?</b>
+
+A. C5a<br>
+B. C3b<br>
+C. Albumin<br>
+D. Fibrinogen
+
+<p class="answer">Answer: A. C5a</p>
+
+</div>
+
+<div class="mcq">
+
+<b>13. An exudate is usually:</b>
+
+A. Protein-rich<br>
+B. Protein-free<br>
+C. Always pure blood<br>
+D. Only lymph
+
+<p class="answer">Answer: A. Protein-rich</p>
+
+</div>
+
+<div class="mcq">
+
+<b>14. Which leukotriene is strongly chemotactic for neutrophils?</b>
+
+A. LTB4<br>
+B. LTC4<br>
+C. LTD4<br>
+D. LTE4
+
+<p class="answer">Answer: A. LTB4</p>
+
+</div>
+
+<div class="mcq">
+
+<b>15. The main function of phagocytes in inflammation is:</b>
+
+A. Remove microbes and debris<br>
+B. Produce erythrocytes<br>
+C. Produce insulin<br>
+D. Transport oxygen
+
+<p class="answer">Answer: A. Remove microbes and debris</p>
+
+</div>
+
+<div class="mcq">
+
+<b>16. Which is NOT a cardinal sign of inflammation?</b>
+
+A. Redness<br>
+B. Heat<br>
+C. Swelling<br>
+D. Cyanosis
+
+<p class="answer">Answer: D. Cyanosis</p>
+
+</div>
+
+<div class="mcq">
+
+<b>17. Which mediator is associated with vasodilation and pain?</b>
+
+A. Prostaglandins<br>
+B. C3b only<br>
+C. IgG only<br>
+D. Fibrin
+
+<p class="answer">Answer: A. Prostaglandins</p>
+
+</div>
+
+<div class="mcq">
+
+<b>18. A granuloma commonly contains:</b>
+
+A. Epithelioid macrophages<br>
+B. Only neutrophils<br>
+C. Only RBCs<br>
+D. Only platelets
+
+<p class="answer">Answer: A. Epithelioid macrophages</p>
+
+</div>
+
+<div class="mcq">
+
+<b>19. Which inflammatory cell is particularly important in chronic inflammation?</b>
+
+A. Macrophage<br>
+B. Erythrocyte<br>
+C. Megakaryocyte<br>
+D. Platelet
+
+<p class="answer">Answer: A. Macrophage</p>
+
+</div>
+
+<div class="mcq">
+
+<b>20. Loss of function in inflammation can result from:</b>
+
+A. Pain and edema<br>
+B. Increased hemoglobin only<br>
+C. Increased RBC count only<br>
+D. Increased insulin
+
+<p class="answer">Answer: A. Pain and edema</p>
+
+</div>
+
+</div>
+
+<!-- PRINTABLE TEST -->
+
+<div class="card no-print">
+
+<h2>20. Printable Test Paper</h2>
+
+<p>
+Click the button below to print the test paper. Only the test paper
+will appear in the printout.
+</p>
+
+<button class="print-button" onclick="printTest()">
+🖨 Print Test Paper
+</button>
+
+</div>
+
+<!-- TEST AREA -->
+
+<div id="printArea" class="test-paper">
+
+<h2 style="text-align:center;">
+MedAcademy — Pathology
+</h2>
+
+<h2 style="text-align:center;">
+Inflammation — MBBS Test Paper
+</h2>
+
+<p><strong>Time:</strong> 40 Minutes</p>
+
+<p><strong>Total Marks:</strong> 40</p>
+
+<hr>
+
+<h3>Section A — MCQs</h3>
+
+<p>Choose the best answer. (10 × 1 = 10 Marks)</p>
+
+<ol>
+
+<li>
+The predominant cell in early acute inflammation is:
+<br>
+A. Lymphocyte &nbsp;
+B. Neutrophil &nbsp;
+C. Plasma cell &nbsp;
+D. Macrophage
+</li>
+
+<br>
+
+<li>
+C5a is mainly associated with:
+<br>
+A. Chemotaxis &nbsp;
+B. Opsonization &nbsp;
+C. Antibody production &nbsp;
+D. Fibrosis
+</li>
+
+<br>
+
+<li>
+Rolling of leukocytes is mediated mainly by:
+<br>
+A. Integrins &nbsp;
+B. Selectins &nbsp;
+C. C3b &nbsp;
+D. IgG
+</li>
+
+<br>
+
+<li>
+Which is an important opsonin?
+<br>
+A. Histamine &nbsp;
+B. C3b &nbsp;
+C. Bradykinin &nbsp;
+D. IL-1
+</li>
+
+<br>
+
+<li>
+A major cell in chronic inflammation is:
+<br>
+A. Macrophage &nbsp;
+B. RBC &nbsp;
+C. Platelet &nbsp;
+D. Megakaryocyte
+</li>
+
+<br>
+
+<li>
+Which mediator is associated with pain?
+<br>
+A. Bradykinin &nbsp;
+B. C3b &nbsp;
+C. Albumin &nbsp;
+D. IgM
+</li>
+
+<br>
+
+<li>
+Which cytokine is important in acute-phase protein production?
+<br>
+A. IL-6 &nbsp;
+B. IL-4 &nbsp;
+C. IL-5 &nbsp;
+D. IL-13
+</li>
+
+<br>
+
+<li>
+Granulomatous inflammation is characterized by:
+<br>
+A. Activated macrophages &nbsp;
+B. RBCs &nbsp;
+C. Platelets &nbsp;
+D. Neutrophils only
+</li>
+
+<br>
+
+<li>
+Which is a possible outcome of acute inflammation?
+<br>
+A. Resolution &nbsp;
+B. Always malignancy &nbsp;
+C. Always fibrosis &nbsp;
+D. Always chronic disease
+</li>
+
+<br>
+
+<li>
+Exudate is generally:
+<br>
+A. Protein-rich &nbsp;
+B. Protein-free &nbsp;
+C. Only RBCs &nbsp;
+D. Pure lymph
+</li>
+
+</ol>
+
+<h3>Section B — Short Questions</h3>
+
+<p>
+Answer any <strong>5</strong>. (5 × 2 = 10 Marks)
+</p>
+
+<ol>
+
+<li>Define inflammation.</li>
+
+<li>List the five cardinal signs of inflammation.</li>
+
+<li>Differentiate acute and chronic inflammation.</li>
+
+<li>What is chemotaxis?</li>
+
+<li>What is the function of C3b?</li>
+
+<li>What is the function of C5a?</li>
+
+<li>Define exudate.</li>
+
+<li>List the major steps of leukocyte recruitment.</li>
+
+</ol>
+
+<h3>Section C — Short Notes</h3>
+
+<p>
+Answer any <strong>2</strong>. (2 × 5 = 10 Marks)
+</p>
+
+<ol>
+
+<li>Describe the vascular changes in acute inflammation.</li>
+
+<li>Describe leukocyte recruitment and activation.</li>
+
+<li>Write a note on chemical mediators of inflammation.</li>
+
+<li>Describe chronic inflammation and its major cells.</li>
+
+</ol>
+
+<h3>Section D — Long Question</h3>
+
+<p>
+Answer the following question. (10 Marks)
+</p>
+
+<p>
+<strong>
+Describe acute inflammation in detail, including vascular changes,
+leukocyte recruitment, major chemical mediators, and possible outcomes.
+</strong>
+</p>
+
+<br><br>
+
+<p><strong>Student Name:</strong> ______________________________</p>
+
+<p><strong>Roll No:</strong> _________________________________</p>
+
+<p><strong>Date:</strong> ____________________________________</p>
+
+</div>
+
+<!-- ANSWER KEY -->
+
+<div class="card no-print">
+
+<h2>21. Test Paper Answer Key</h2>
+
+<div class="answer-key">
+
+<p>
+<strong>MCQs:</strong>
+1-B, 2-A, 3-B, 4-B, 5-A,
+6-A, 7-A, 8-A, 9-A, 10-A
+</p>
+
+<h3>Short Question Key Points</h3>
+
+<ul>
+
+<li>Inflammation = protective vascularized tissue response to injury/infection.</li>
+
+<li>Five signs = rubor, calor, tumor, dolor, loss of function.</li>
+
+<li>Acute = rapid, neutrophil predominant; chronic = prolonged, macrophage/lymphocyte predominant.</li>
+
+<li>Chemotaxis = directed leukocyte movement toward chemical signals.</li>
+
+<li>C3b = opsonization.</li>
+
+<li>C5a = chemotaxis and leukocyte activation.</li>
+
+<li>Exudate = protein-rich inflammatory extravascular fluid.</li>
+
+<li>Recruitment = margination, rolling, adhesion, transmigration and chemotaxis.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- HIGH YIELD -->
+
+<div class="card no-print">
+
+<h2>22. Final High-Yield Revision</h2>
+
+<ul>
+
+<li>Acute inflammation → predominantly neutrophils.</li>
+
+<li>Chronic inflammation → macrophages and lymphocytes.</li>
+
+<li>Rolling → selectins.</li>
+
+<li>Firm adhesion → integrins.</li>
+
+<li>Chemotaxis → C5a, LTB4, chemokines.</li>
+
+<li>Opsonization → C3b and IgG.</li>
+
+<li>Histamine → vasodilation and increased vascular permeability.</li>
+
+<li>Bradykinin → pain and vascular permeability.</li>
+
+<li>Prostaglandins → pain, fever and vasodilation.</li>
+
+<li>IL-6 → hepatic acute-phase protein production.</li>
+
+<li>Granuloma → activated macrophages/epithelioid cells.</li>
+
+<li>Possible outcomes → resolution, suppuration, fibrosis or chronic inflammation.</li>
+
+</ul>
+
+</div>
+
+<!-- RELATED -->
+
+<div class="card no-print">
+
+<h2>23. Related Pathology Chapters</h2>
+
+<ul>
+
+<li>
+<a href="pathology.html">
+← Back to Pathology
+</a>
+</li>
+
+<li>
+<a href="cell-injury.html">
+Cell Injury →
+</a>
+</li>
+
+<li>
+<a href="neoplasia.html">
+Neoplasia →
+</a>
+</li>
+
+<li>
+<a href="hematology.html">
+Hematology →
+</a>
+</li>
+
+<li>
+<a href="immunopathology.html">
+Immunopathology →
+</a>
+</li>
+
+<li>
+<a href="systemic-pathology.html">
+Systemic Pathology →
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="no-print">
+
+<p>© 2026 MedAcademy. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+function printTest(){
+
+    window.print();
+
+}
+
+</script>
+
+</body>
+
+</html>

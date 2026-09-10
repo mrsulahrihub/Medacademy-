@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pharmacokinetics - MedAcademy</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f8fb;
+    color:#222;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:#0d6efd;
+    color:white;
+    padding:16px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:22px;
+}
+
+nav a{
+    color:white;
+    font-size:16px;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    color:#0d6efd;
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#666;
+    font-size:18px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn{
+    display:inline-block;
+    margin-bottom:25px;
+    padding:10px 18px;
+    border-radius:8px;
+    background:#0d6efd;
+    color:white;
+    font-weight:bold;
+}
+
+.back-btn:hover{
+    background:#084298;
+}
+
+
+/* =========================
+   CONTENT CARD
+========================= */
+
+.content-card{
+    background:white;
+    padding:30px;
+    margin-bottom:25px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.content-card h2{
+    color:#0d6efd;
+    margin-bottom:15px;
+    font-size:27px;
+}
+
+.content-card h3{
+    color:#0d6efd;
+    margin-top:20px;
+    margin-bottom:8px;
+}
+
+.content-card p{
+    color:#444;
+    margin-bottom:12px;
+}
+
+.content-card ul{
+    padding-left:25px;
+    margin-bottom:15px;
+}
+
+.content-card li{
+    margin-bottom:7px;
+}
+
+
+/* =========================
+   HIGHLIGHT BOX
+========================= */
+
+.highlight{
+    background:#eaf3ff;
+    border-left:5px solid #0d6efd;
+    padding:18px;
+    margin:20px 0;
+    border-radius:8px;
+}
+
+.highlight strong{
+    color:#0d6efd;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-container{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th,
+td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:left;
+}
+
+th{
+    background:#0d6efd;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f4f8fb;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+footer p{
+    margin:5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav{
+        gap:12px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .content-card{
+        padding:22px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="logo">
+🩺 MedAcademy
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="pharmacology.html">Pharmacology</a>
+
+<a href="notes.html">Notes</a>
+
+<a href="quiz.html">Quiz</a>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<h1>💊 Pharmacokinetics</h1>
+
+<p>
+Study what the body does to a drug.
+</p>
+
+</section>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<div class="container">
+
+
+<a href="pharmacology.html" class="back-btn">
+← Back to Pharmacology
+</a>
+
+
+<!-- INTRODUCTION -->
+
+<div class="content-card">
+
+<h2>Introduction to Pharmacokinetics</h2>
+
+<p>
+Pharmacokinetics is the study of what the body does to a drug after administration.
+It describes how drugs are absorbed, distributed, metabolized and eliminated.
+</p>
+
+<div class="highlight">
+
+<strong>Key Concept:</strong>
+
+Pharmacokinetics is commonly summarized as
+<strong>ADME</strong>:
+
+Absorption → Distribution → Metabolism → Excretion.
+
+</div>
+
+</div>
+
+
+<!-- ABSORPTION -->
+
+<div class="content-card">
+
+<h2>1. Absorption</h2>
+
+<p>
+Absorption is the process by which a drug moves from its site of administration
+into the systemic circulation.
+</p>
+
+<h3>Factors Affecting Absorption</h3>
+
+<ul>
+
+<li>Route of administration</li>
+
+<li>Blood flow to the absorption site</li>
+
+<li>Surface area</li>
+
+<li>Drug formulation</li>
+
+<li>Gastrointestinal motility</li>
+
+<li>pH of the environment</li>
+
+<li>Food and other drugs</li>
+
+</ul>
+
+<h3>Bioavailability</h3>
+
+<p>
+Bioavailability is the fraction of an administered dose that reaches the systemic
+circulation in unchanged form.
+</p>
+
+<div class="highlight">
+
+<strong>Important:</strong>
+
+Intravenous administration generally has a bioavailability of 100%.
+
+</div>
+
+</div>
+
+
+<!-- DISTRIBUTION -->
+
+<div class="content-card">
+
+<h2>2. Distribution</h2>
+
+<p>
+Distribution is the reversible movement of a drug from the bloodstream into
+body tissues and fluids.
+</p>
+
+<h3>Factors Affecting Distribution</h3>
+
+<ul>
+
+<li>Blood flow to tissues</li>
+
+<li>Capillary permeability</li>
+
+<li>Plasma protein binding</li>
+
+<li>Tissue binding</li>
+
+<li>Lipid solubility</li>
+
+<li>Body composition</li>
+
+</ul>
+
+<h3>Plasma Protein Binding</h3>
+
+<p>
+Many drugs bind reversibly to plasma proteins such as albumin.
+Only the unbound fraction is generally available to leave the bloodstream
+and produce pharmacological effects.
+</p>
+
+</div>
+
+
+<!-- METABOLISM -->
+
+<div class="content-card">
+
+<h2>3. Metabolism</h2>
+
+<p>
+Drug metabolism is the chemical modification of drugs by enzymes in the body.
+The liver is the major organ responsible for drug metabolism.
+</p>
+
+<h3>Phase I Reactions</h3>
+
+<ul>
+
+<li>Oxidation</li>
+
+<li>Reduction</li>
+
+<li>Hydrolysis</li>
+
+</ul>
+
+<h3>Phase II Reactions</h3>
+
+<ul>
+
+<li>Glucuronidation</li>
+
+<li>Sulfation</li>
+
+<li>Acetylation</li>
+
+<li>Methylation</li>
+
+<li>Conjugation with glutathione</li>
+
+</ul>
+
+<div class="highlight">
+
+<strong>Purpose of metabolism:</strong>
+
+Drug metabolism often makes substances more water-soluble and easier to eliminate,
+although metabolism can sometimes produce active or toxic metabolites.
+
+</div>
+
+</div>
+
+
+<!-- FIRST PASS -->
+
+<div class="content-card">
+
+<h2>4. First-Pass Effect</h2>
+
+<p>
+The first-pass effect occurs when a drug administered by certain routes,
+particularly the oral route, is metabolized in the intestinal wall and liver
+before reaching the systemic circulation.
+</p>
+
+<p>
+This can reduce the amount of unchanged drug reaching the systemic circulation.
+</p>
+
+</div>
+
+
+<!-- EXCRETION -->
+
+<div class="content-card">
+
+<h2>5. Excretion</h2>
+
+<p>
+Excretion is the removal of drugs and their metabolites from the body.
+</p>
+
+<h3>Main Routes of Excretion</h3>
+
+<ul>
+
+<li>Kidneys → urine</li>
+
+<li>Bile → feces</li>
+
+<li>Lungs → exhaled air</li>
+
+<li>Breast milk</li>
+
+<li>Sweat and saliva</li>
+
+</ul>
+
+<div class="highlight">
+
+<strong>Major route:</strong>
+
+The kidneys are the major organs responsible for the elimination of many drugs
+and their metabolites.
+
+</div>
+
+</div>
+
+
+<!-- HALF LIFE -->
+
+<div class="content-card">
+
+<h2>6. Half-Life</h2>
+
+<p>
+The elimination half-life is the time required for the concentration of a drug
+in the body or plasma to decrease by approximately 50% during the elimination phase.
+</p>
+
+<h3>Clinical Importance</h3>
+
+<ul>
+
+<li>Helps determine dosing intervals.</li>
+
+<li>Helps estimate the time required to reach steady state.</li>
+
+<li>Helps estimate how long a drug may remain in the body.</li>
+
+</ul>
+
+</div>
+
+
+<!-- CLEARANCE -->
+
+<div class="content-card">
+
+<h2>7. Clearance</h2>
+
+<p>
+Clearance describes the volume of plasma from which a drug is completely removed
+per unit of time.
+</p>
+
+<p>
+Clearance is an important concept for determining drug maintenance dosing.
+</p>
+
+</div>
+
+
+<!-- VOLUME OF DISTRIBUTION -->
+
+<div class="content-card">
+
+<h2>8. Volume of Distribution</h2>
+
+<p>
+Volume of distribution is a theoretical volume that relates the amount of drug
+in the body to the concentration of drug in plasma.
+</p>
+
+<div class="highlight">
+
+<strong>High volume of distribution:</strong>
+
+Generally suggests extensive distribution of the drug into tissues.
+
+</div>
+
+</div>
+
+
+<!-- STEADY STATE -->
+
+<div class="content-card">
+
+<h2>9. Steady-State Concentration</h2>
+
+<p>
+Steady state is reached when the rate of drug administration is approximately
+equal to the rate of drug elimination.
+</p>
+
+<p>
+For many drugs, steady state is approached after several elimination half-lives.
+</p>
+
+</div>
+
+
+<!-- QUICK REVISION -->
+
+<div class="content-card">
+
+<h2>📌 Quick Revision</h2>
+
+<div class="table-container">
+
+<table>
+
+<tr>
+
+<th>Term</th>
+
+<th>Meaning</th>
+
+</tr>
+
+<tr>
+
+<td>Absorption</td>
+
+<td>Movement of drug into systemic circulation</td>
+
+</tr>
+
+<tr>
+
+<td>Distribution</td>
+
+<td>Movement of drug between blood and tissues</td>
+
+</tr>
+
+<tr>
+
+<td>Metabolism</td>
+
+<td>Chemical modification of drugs</td>
+
+</tr>
+
+<tr>
+
+<td>Excretion</td>
+
+<td>Removal of drug from the body</td>
+
+</tr>
+
+<tr>
+
+<td>Bioavailability</td>
+
+<td>Fraction of dose reaching systemic circulation unchanged</td>
+
+</tr>
+
+<tr>
+
+<td>Half-life</td>
+
+<td>Time for drug concentration to decrease by about 50%</td>
+
+</tr>
+
+<tr>
+
+<td>Clearance</td>
+
+<td>Volume of plasma cleared of drug per unit time</td>
+
+</tr>
+
+<tr>
+
+<td>Volume of Distribution</td>
+
+<td>Theoretical volume relating amount of drug to plasma concentration</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- IMPORTANT POINTS -->
+
+<div class="content-card">
+
+<h2>⭐ Important Exam Points</h2>
+
+<ul>
+
+<li>ADME stands for Absorption, Distribution, Metabolism and Excretion.</li>
+
+<li>Intravenous administration generally provides 100% bioavailability.</li>
+
+<li>The liver is the major site of drug metabolism.</li>
+
+<li>The kidneys are the major organs involved in drug excretion.</li>
+
+<li>Only the unbound fraction of many drugs is readily available for distribution and pharmacological action.</li>
+
+<li>Half-life is important when determining dosing intervals.</li>
+
+<li>First-pass metabolism can reduce the systemic availability of orally administered drugs.</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+🩺 <strong>MedAcademy</strong>
+</p>
+
+<p>
+Pharmacology - Pharmacokinetics
+</p>
+
+<p>
+© 2026 MedAcademy. All Rights Reserved.
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

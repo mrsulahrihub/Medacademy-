@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Clinical Pharmacology - MedAcademy</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#f4f8fb;
+    color:#222;
+}
+
+header{
+    background:#0b5ed7;
+    color:white;
+    padding:22px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:32px;
+}
+
+header p{
+    margin:8px 0 0;
+    font-size:16px;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:30px auto;
+}
+
+.back{
+    display:inline-block;
+    margin-bottom:20px;
+    text-decoration:none;
+    color:#0b5ed7;
+    font-weight:bold;
+}
+
+.card{
+    background:white;
+    padding:22px;
+    margin-bottom:20px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.10);
+}
+
+.card h2{
+    color:#0b5ed7;
+    margin-top:0;
+    font-size:23px;
+}
+
+.card h3{
+    color:#333;
+    margin-top:22px;
+}
+
+.card p{
+    line-height:1.7;
+}
+
+.card ul{
+    padding-left:25px;
+    line-height:1.8;
+}
+
+.card li{
+    margin-bottom:5px;
+}
+
+.highlight{
+    background:#eef6ff;
+    border-left:5px solid #0b5ed7;
+    padding:14px;
+    margin:15px 0;
+    line-height:1.7;
+}
+
+.warning{
+    background:#fff4e5;
+    border-left:5px solid #f0ad4e;
+    padding:14px;
+    margin:15px 0;
+    line-height:1.7;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th,td{
+    border:1px solid #ccc;
+    padding:10px;
+    text-align:left;
+    vertical-align:top;
+}
+
+th{
+    background:#eaf2ff;
+}
+
+.mcq{
+    margin-bottom:18px;
+    line-height:1.7;
+}
+
+.answer{
+    background:#f1f8f1;
+    border-left:4px solid #28a745;
+    padding:8px 12px;
+    margin-top:7px;
+}
+
+.quick-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin-top:20px;
+}
+
+.quick-item{
+    background:#f8fbff;
+    border:1px solid #d8e8fa;
+    border-radius:10px;
+    padding:18px;
+    text-align:center;
+}
+
+.quick-item h3{
+    color:#0b5ed7;
+    margin-top:8px;
+}
+
+.icon{
+    font-size:50px;
+}
+
+.test-paper{
+    background:white;
+    padding:30px;
+    border:1px solid #ddd;
+}
+
+.test-header{
+    text-align:center;
+    border-bottom:2px solid #222;
+    padding-bottom:15px;
+    margin-bottom:20px;
+}
+
+.test-info{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin:20px 0;
+}
+
+.test-info div{
+    min-width:220px;
+    border-bottom:1px solid #555;
+    padding:7px;
+}
+
+.test-question{
+    margin-bottom:20px;
+    line-height:1.8;
+}
+
+.answer-line{
+    height:28px;
+    border-bottom:1px solid #777;
+    margin-top:5px;
+}
+
+.print-button{
+    background:#0b5ed7;
+    color:white;
+    border:none;
+    padding:13px 24px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.print-button:hover{
+    background:#084298;
+}
+
+footer{
+    text-align:center;
+    margin-top:40px;
+    padding:20px;
+    background:#0b5ed7;
+    color:white;
+}
+
+
+/* PRINT ONLY TEST PAPER */
+
+@media print{
+
+    body *{
+        visibility:hidden;
+    }
+
+    #printArea,
+    #printArea *{
+        visibility:visible;
+    }
+
+    #printArea{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        background:white;
+        padding:20px;
+    }
+
+    .no-print{
+        display:none !important;
+    }
+
+    @page{
+        margin:15mm;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Clinical Pharmacology</h1>
+
+<p>Medical Pharmacology - MedAcademy</p>
+
+</header>
+
+<div class="container">
+
+<a href="pharmacology.html" class="back">
+← Back to Pharmacology
+</a>
+
+<!-- INTRODUCTION -->
+
+<div class="card">
+
+<h2>1. Introduction to Clinical Pharmacology</h2>
+
+<p>
+Clinical pharmacology is the study of medicines in humans, including their
+safe and effective use, therapeutic benefits, adverse effects, interactions,
+individual variation and monitoring.
+</p>
+
+<div class="highlight">
+
+<strong>Four Major Topics:</strong>
+
+<ul>
+
+<li>Prescription Writing</li>
+
+<li>Rational Drug Use</li>
+
+<li>Drug Safety</li>
+
+<li>Therapeutic Drug Monitoring</li>
+
+</ul>
+
+</div>
+
+<p>
+The ultimate aim is to select the right treatment for the right patient,
+using an appropriate medicine, dose, route and duration while minimizing
+avoidable harm.
+</p>
+
+</div>
+
+<!-- PICTURE / VISUAL -->
+
+<div class="card">
+
+<h2>2. Clinical Pharmacology - Visual Overview</h2>
+
+<div class="quick-box">
+
+<div class="quick-item">
+
+<div class="icon">📝</div>
+
+<h3>Prescription</h3>
+
+<p>
+Correct drug, dose, route, frequency and duration.
+</p>
+
+</div>
+
+<div class="quick-item">
+
+<div class="icon">⚖️</div>
+
+<h3>Rational Use</h3>
+
+<p>
+Choose treatment according to patient needs and evidence.
+</p>
+
+</div>
+
+<div class="quick-item">
+
+<div class="icon">🛡️</div>
+
+<h3>Drug Safety</h3>
+
+<p>
+Prevent medication errors and monitor adverse reactions.
+</p>
+
+</div>
+
+<div class="quick-item">
+
+<div class="icon">🧪</div>
+
+<h3>TDM</h3>
+
+<p>
+Measure selected drug concentrations when clinically useful.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PRESCRIPTION WRITING -->
+
+<div class="card">
+
+<h2>3. Prescription Writing</h2>
+
+<p>
+A prescription is a written or electronic instruction from an authorized
+prescriber for the treatment of a patient.
+</p>
+
+<h3>Essential Components of a Prescription</h3>
+
+<ol>
+
+<li>Patient name and appropriate identifying information.</li>
+
+<li>Date of prescription.</li>
+
+<li>Generic name of the medicine whenever appropriate.</li>
+
+<li>Strength and dosage form.</li>
+
+<li>Dose to be administered.</li>
+
+<li>Route of administration.</li>
+
+<li>Frequency or dosing interval.</li>
+
+<li>Duration or quantity to be supplied.</li>
+
+<li>Specific instructions for the patient.</li>
+
+<li>Prescriber identification and signature/authentication as required.</li>
+
+</ol>
+
+<h3>Common Prescription Format</h3>
+
+<table>
+
+<tr>
+<th>Component</th>
+<th>Example/Explanation</th>
+</tr>
+
+<tr>
+<td>Patient</td>
+<td>Name, age and relevant clinical information</td>
+</tr>
+
+<tr>
+<td>Drug</td>
+<td>Preferably generic name</td>
+</tr>
+
+<tr>
+<td>Strength</td>
+<td>e.g. 500 mg</td>
+</tr>
+
+<tr>
+<td>Dosage form</td>
+<td>Tablet, capsule, syrup, injection etc.</td>
+</tr>
+
+<tr>
+<td>Dose</td>
+<td>Amount administered at each dose</td>
+</tr>
+
+<tr>
+<td>Route</td>
+<td>Oral, IV, IM, topical etc.</td>
+</tr>
+
+<tr>
+<td>Frequency</td>
+<td>How often the medicine is given</td>
+</tr>
+
+<tr>
+<td>Duration</td>
+<td>How long treatment should continue</td>
+</tr>
+
+<tr>
+<td>Patient instructions</td>
+<td>Important administration and precautionary information</td>
+</tr>
+
+</table>
+
+<h3>Example of a Teaching Prescription</h3>
+
+<div class="highlight">
+
+<strong>Patient:</strong> Adult patient<br> <strong>Drug:</strong> Paracetamol<br> <strong>Strength:</strong> 500 mg tablet<br> <strong>Route:</strong> Oral<br> <strong>Directions:</strong> Take according to the prescribed dosing schedule for the specified indication and duration.
+
+</div>
+
+<p>
+A real prescription must be individualized according to the patient's
+diagnosis, age, weight when relevant, organ function, allergies, interactions
+and applicable local prescribing requirements.
+</p>
+
+<h3>Common Prescription Errors</h3>
+
+<ul>
+
+<li>Illegible or ambiguous writing.</li>
+
+<li>Wrong patient.</li>
+
+<li>Wrong drug or strength.</li>
+
+<li>Wrong dose or frequency.</li>
+
+<li>Missing route of administration.</li>
+
+<li>Unclear duration.</li>
+
+<li>Unsafe abbreviations.</li>
+
+<li>Failure to check allergies or interactions.</li>
+
+<li>Failure to consider renal or hepatic impairment.</li>
+
+<li>Unnecessary polypharmacy.</li>
+
+</ul>
+
+<div class="warning">
+
+<strong>MBBS Point:</strong>
+Always check the patient, indication, drug, dose, route, frequency,
+duration, allergies, contraindications and important interactions before
+finalizing a prescription.
+
+</div>
+
+</div>
+
+<!-- RATIONAL DRUG USE -->
+
+<div class="card">
+
+<h2>4. Rational Drug Use</h2>
+
+<p>
+Rational use of medicines means that patients receive medicines appropriate
+to their clinical needs, in doses appropriate to their individual requirements,
+for an adequate period and at the lowest appropriate cost.
+</p>
+
+<h3>Steps of Rational Prescribing</h3>
+
+<ol>
+
+<li>Define the patient's problem.</li>
+
+<li>Specify the therapeutic objective.</li>
+
+<li>Consider non-drug treatment when appropriate.</li>
+
+<li>Select a suitable drug.</li>
+
+<li>Determine the correct dosage regimen.</li>
+
+<li>Write the prescription clearly.</li>
+
+<li>Give the patient appropriate information.</li>
+
+<li>Monitor the response.</li>
+
+<li>Modify or stop treatment when indicated.</li>
+
+</ol>
+
+<h3>Factors to Consider Before Choosing a Drug</h3>
+
+<ul>
+
+<li>Diagnosis and therapeutic goal.</li>
+
+<li>Age and body weight when relevant.</li>
+
+<li>Pregnancy and breastfeeding status when relevant.</li>
+
+<li>Renal function.</li>
+
+<li>Hepatic function.</li>
+
+<li>Drug allergies.</li>
+
+<li>Contraindications.</li>
+
+<li>Drug-drug and drug-food interactions.</li>
+
+<li>Cost and availability.</li>
+
+<li>Patient adherence.</li>
+
+</ul>
+
+<h3>Irrational Drug Use</h3>
+
+<p>
+Examples include unnecessary polypharmacy, inappropriate antibiotic use,
+incorrect dosing, unnecessary injections, failure to follow evidence-based
+guidelines and inappropriate self-medication.
+</p>
+
+<h3>Advantages of Rational Drug Use</h3>
+
+<ul>
+
+<li>Improves therapeutic outcomes.</li>
+
+<li>Reduces adverse drug reactions.</li>
+
+<li>Reduces medication errors.</li>
+
+<li>Helps prevent antimicrobial resistance.</li>
+
+<li>Reduces unnecessary healthcare expenditure.</li>
+
+<li>Improves patient adherence.</li>
+
+</ul>
+
+</div>
+
+<!-- DRUG SAFETY -->
+
+<div class="card">
+
+<h2>5. Drug Safety</h2>
+
+<p>
+Drug safety focuses on identifying, preventing and managing medication-related
+harm throughout the medicine-use process.
+</p>
+
+<h3>Important Areas of Drug Safety</h3>
+
+<ul>
+
+<li>Correct prescribing.</li>
+
+<li>Correct dispensing.</li>
+
+<li>Correct administration.</li>
+
+<li>Monitoring therapeutic response.</li>
+
+<li>Recognition of adverse drug reactions.</li>
+
+<li>Detection of drug interactions.</li>
+
+<li>Medication-error reporting.</li>
+
+<li>Pharmacovigilance.</li>
+
+</ul>
+
+<h3>Pharmacovigilance</h3>
+
+<p>
+Pharmacovigilance is the science and activities related to detecting,
+assessing, understanding and preventing adverse effects and other
+drug-related problems.
+</p>
+
+<h3>Medication Errors</h3>
+
+<table>
+
+<tr>
+<th>Error</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td>Prescribing error</td>
+<td>Incorrect dose or inappropriate medicine</td>
+</tr>
+
+<tr>
+<td>Dispensing error</td>
+<td>Wrong medicine supplied</td>
+</tr>
+
+<tr>
+<td>Administration error</td>
+<td>Wrong route or wrong patient</td>
+</tr>
+
+<tr>
+<td>Monitoring error</td>
+<td>Failure to monitor an important adverse effect</td>
+</tr>
+
+</table>
+
+<h3>Five Rights of Medication Administration</h3>
+
+<ul>
+
+<li>Right patient.</li>
+
+<li>Right drug.</li>
+
+<li>Right dose.</li>
+
+<li>Right route.</li>
+
+<li>Right time.</li>
+
+</ul>
+
+<p>
+These checks are an important medication-safety principle; safe systems also
+emphasize clear communication, avoiding error-prone abbreviations and reporting
+medication incidents.
+</p>
+
+<h3>Adverse Drug Reactions</h3>
+
+<p>
+An adverse drug reaction is a harmful and unintended response associated with
+the use of a medicine at normally used doses. Important steps include recognizing
+the reaction, assessing severity, managing the patient and reporting suspected
+reactions through appropriate systems.
+</p>
+
+<div class="highlight">
+
+<strong>Drug Safety Rule:</strong>
+Never assume that a medicine is completely risk-free. The prescriber must
+balance expected benefit against potential harm.
+
+</div>
+
+</div>
+
+<!-- TDM -->
+
+<div class="card">
+
+<h2>6. Therapeutic Drug Monitoring (TDM)</h2>
+
+<p>
+Therapeutic Drug Monitoring involves measuring drug concentrations in biological
+samples and using the results, together with clinical information, to optimize
+therapy.
+</p>
+
+<h3>Why is TDM Used?</h3>
+
+<ul>
+
+<li>To maintain drug concentration within an appropriate therapeutic range.</li>
+
+<li>To reduce toxicity.</li>
+
+<li>To investigate suspected treatment failure.</li>
+
+<li>To assess adherence in selected situations.</li>
+
+<li>To individualize dosing when pharmacokinetic variability is important.</li>
+
+</ul>
+
+<h3>Drugs Commonly Associated with TDM</h3>
+
+<table>
+
+<tr>
+<th>Drug</th>
+<th>Why Monitoring May Be Useful</th>
+</tr>
+
+<tr>
+<td>Digoxin</td>
+<td>Narrow therapeutic range; toxicity can be serious</td>
+</tr>
+
+<tr>
+<td>Lithium</td>
+<td>Narrow therapeutic range and important renal/electrolyte effects</td>
+</tr>
+
+<tr>
+<td>Phenytoin</td>
+<td>Variable pharmacokinetics and concentration-dependent toxicity</td>
+</tr>
+
+<tr>
+<td>Valproate</td>
+<td>Concentration monitoring can be useful in selected clinical situations</td>
+</tr>
+
+<tr>
+<td>Carbamazepine</td>
+<td>Monitoring may assist in selected cases</td>
+</tr>
+
+<tr>
+<td>Phenobarbital</td>
+<td>Concentration monitoring can be useful</td>
+</tr>
+
+<tr>
+<td>Some aminoglycosides</td>
+<td>Monitoring can help optimize exposure and reduce toxicity</td>
+</tr>
+
+<tr>
+<td>Vancomycin</td>
+<td>Exposure-guided monitoring is used in selected serious infections</td>
+</tr>
+
+</table>
+
+<h3>Important Factors Affecting Drug Concentration</h3>
+
+<ul>
+
+<li>Dose.</li>
+
+<li>Absorption.</li>
+
+<li>Distribution.</li>
+
+<li>Metabolism.</li>
+
+<li>Renal elimination.</li>
+
+<li>Liver function.</li>
+
+<li>Age.</li>
+
+<li>Drug interactions.</li>
+
+<li>Genetic variability.</li>
+
+<li>Adherence.</li>
+
+</ul>
+
+<h3>Peak and Trough Concentrations</h3>
+
+<p>
+The timing of blood sampling is critical. A concentration should be interpreted
+in relation to when the last dose was given and the pharmacokinetic properties
+of the drug.
+</p>
+
+<ul>
+
+<li>
+<strong>Trough:</strong> concentration immediately before the next dose.
+</li>
+
+<li>
+<strong>Peak:</strong> concentration measured at an appropriate time after dosing
+when a peak measurement is clinically relevant.
+</li>
+
+</ul>
+
+<div class="warning">
+
+<strong>High-Yield Point:</strong>
+A drug level should never be interpreted in isolation. The patient's clinical
+condition, dose, sampling time, organ function and laboratory method must also
+be considered.
+
+</div>
+
+</div>
+
+<!-- TDM SPECIAL -->
+
+<div class="card">
+
+<h2>7. Important TDM Examples</h2>
+
+<h3>Lithium</h3>
+
+<ul>
+
+<li>Used as a mood stabilizer.</li>
+
+<li>Has a narrow therapeutic range.</li>
+
+<li>Renally eliminated.</li>
+
+<li>Renal function and thyroid function are important to monitor.</li>
+
+<li>Toxicity may cause tremor, gastrointestinal symptoms, confusion and neurological abnormalities.</li>
+
+<li>Changes in sodium/fluid balance and several medicines can alter lithium concentrations.</li>
+
+</ul>
+
+<h3>Digoxin</h3>
+
+<ul>
+
+<li>Has a narrow therapeutic range.</li>
+
+<li>Renal impairment can increase exposure.</li>
+
+<li>Hypokalemia increases risk of toxicity.</li>
+
+<li>Toxicity may produce gastrointestinal, neurological and cardiac manifestations.</li>
+
+</ul>
+
+<h3>Phenytoin</h3>
+
+<ul>
+
+<li>Shows nonlinear pharmacokinetics at therapeutic concentrations.</li>
+
+<li>Highly protein bound.</li>
+
+<li>Low albumin can affect interpretation of total concentration.</li>
+
+<li>Drug interactions can significantly alter concentration.</li>
+
+</ul>
+
+<h3>Aminoglycosides</h3>
+
+<ul>
+
+<li>Examples include gentamicin and amikacin.</li>
+
+<li>Renal function is important.</li>
+
+<li>Excess exposure may cause nephrotoxicity and ototoxicity.</li>
+
+<li>Drug-level monitoring may be used depending on regimen and clinical setting.</li>
+
+</ul>
+
+</div>
+
+<!-- COMPARISON -->
+
+<div class="card">
+
+<h2>8. Prescription Writing vs Rational Use vs Drug Safety vs TDM</h2>
+
+<table>
+
+<tr>
+<th>Topic</th>
+<th>Main Purpose</th>
+</tr>
+
+<tr>
+<td>Prescription Writing</td>
+<td>Communicate a clear and complete treatment order</td>
+</tr>
+
+<tr>
+<td>Rational Drug Use</td>
+<td>Select the most appropriate treatment for the patient</td>
+</tr>
+
+<tr>
+<td>Drug Safety</td>
+<td>Prevent, detect and manage medicine-related harm</td>
+</tr>
+
+<tr>
+<td>Therapeutic Drug Monitoring</td>
+<td>Optimize selected medicines using concentration measurements plus clinical information</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- Q&A -->
+
+<div class="card">
+
+<h2>9. MBBS-Level Questions & Answers</h2>
+
+<h3>Q1. Define clinical pharmacology.</h3>
+
+<p>
+<strong>Answer:</strong>
+Clinical pharmacology is the study of medicines and their effects in humans,
+including therapeutic use, adverse effects, interactions and safe individualized
+treatment.
+</p>
+
+<h3>Q2. What are the essential components of a prescription?</h3>
+
+<p>
+<strong>Answer:</strong>
+Patient identification, date, drug name, strength, dosage form, dose, route,
+frequency, duration/quantity, instructions and prescriber authentication.
+</p>
+
+<h3>Q3. What is rational drug use?</h3>
+
+<p>
+<strong>Answer:</strong>
+It means selecting medicines appropriate to the patient's clinical needs,
+using an appropriate dose and duration while considering safety, effectiveness,
+patient factors and cost.
+</p>
+
+<h3>Q4. What are the steps of rational prescribing?</h3>
+
+<p>
+<strong>Answer:</strong>
+Define the problem, specify the therapeutic objective, consider treatment
+options, select the drug, determine dosage, write the prescription, give
+instructions and monitor the response.
+</p>
+
+<h3>Q5. What is pharmacovigilance?</h3>
+
+<p>
+<strong>Answer:</strong>
+Pharmacovigilance is the science and activities concerned with detecting,
+assessing, understanding and preventing adverse effects and other drug-related
+problems.
+</p>
+
+<h3>Q6. What is a medication error?</h3>
+
+<p>
+<strong>Answer:</strong>
+A preventable error that may occur during prescribing, dispensing,
+administration or monitoring of medicines and may lead to inappropriate
+medicine use or patient harm.
+</p>
+
+<h3>Q7. What are the five rights of medication administration?</h3>
+
+<p>
+<strong>Answer:</strong>
+Right patient, right drug, right dose, right route and right time.
+</p>
+
+<h3>Q8. Define therapeutic drug monitoring.</h3>
+
+<p>
+<strong>Answer:</strong>
+TDM is the measurement and interpretation of drug concentrations, together
+with clinical information, to optimize treatment for selected medicines.
+</p>
+
+<h3>Q9. Why is TDM important?</h3>
+
+<p>
+<strong>Answer:</strong>
+It is useful when there is substantial pharmacokinetic variability, a narrow
+therapeutic range, a clear concentration-effect/toxicity relationship, or when
+concentration measurement can meaningfully guide dosing.
+</p>
+
+<h3>Q10. Give examples of drugs commonly monitored by TDM.</h3>
+
+<p>
+<strong>Answer:</strong>
+Lithium, digoxin, phenytoin, carbamazepine, phenobarbital, valproate,
+selected aminoglycosides and vancomycin.
+</p>
+
+<h3>Q11. Why can phenytoin concentration be difficult to interpret?</h3>
+
+<p>
+<strong>Answer:</strong>
+Phenytoin is highly protein bound and has nonlinear pharmacokinetics.
+Low albumin and interacting medicines can affect the relationship between
+measured total concentration and active drug exposure.
+</p>
+
+<h3>Q12. Why is lithium monitoring important?</h3>
+
+<p>
+<strong>Answer:</strong>
+Lithium has a narrow therapeutic range and is mainly eliminated by the kidneys.
+Changes in renal function, fluid balance, sodium balance and interacting drugs
+can alter lithium concentrations and toxicity risk.
+</p>
+
+<h3>Q13. What is rational prescribing important for antibiotics?</h3>
+
+<p>
+<strong>Answer:</strong>
+It helps ensure that antibiotics are used only when indicated and that the
+appropriate agent, dose and duration are selected, reducing unnecessary exposure
+and helping limit antimicrobial resistance.
+</p>
+
+<h3>Q14. What is the difference between an adverse drug reaction and a medication error?</h3>
+
+<p>
+<strong>Answer:</strong>
+An adverse drug reaction is a harmful unintended response associated with a
+medicine at normal doses. A medication error is a preventable mistake in the
+medicine-use process.
+</p>
+
+<h3>Q15. Why should generic drug names be preferred in prescribing?</h3>
+
+<p>
+<strong>Answer:</strong>
+Generic names clearly identify the active pharmaceutical ingredient and reduce
+confusion between different brand names containing the same medicine.
+</p>
+
+</div>
+
+<!-- MCQS -->
+
+<div class="card">
+
+<h2>10. 30 MBBS-Level MCQs</h2>
+
+<div class="mcq">
+<strong>1. The primary purpose of prescription writing is to:</strong>
+<br>A. Advertise medicines
+<br>B. Communicate clear treatment instructions
+<br>C. Increase polypharmacy
+<br>D. Replace diagnosis
+
+<div class="answer"><strong>Answer: B</strong></div>
+</div>
+
+<div class="mcq">
+<strong>2. Which should preferably be used when naming a medicine?</strong>
+<br>A. Generic name
+<br>B. Manufacturer slogan
+<br>C. Chemical formula only
+<br>D. Abbreviation
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>3. Rational drug use means:</strong>
+<br>A. Maximum number of medicines
+<br>B. Appropriate medicine for the patient's needs
+<br>C. Use of injections whenever possible
+<br>D. Use of expensive medicines only
+
+<div class="answer"><strong>Answer: B</strong></div>
+</div>
+
+<div class="mcq">
+<strong>4. Which is an example of irrational drug use?</strong>
+<br>A. Appropriate dose
+<br>B. Evidence-based treatment
+<br>C. Unnecessary polypharmacy
+<br>D. Monitoring treatment
+
+<div class="answer"><strong>Answer: C</strong></div>
+</div>
+
+<div class="mcq">
+<strong>5. Pharmacovigilance mainly deals with:</strong>
+<br>A. Drug manufacturing only
+<br>B. Detection and prevention of drug-related harm
+<br>C. Surgical procedures
+<br>D. Diagnosis only
+
+<div class="answer"><strong>Answer: B</strong></div>
+</div>
+
+<div class="mcq">
+<strong>6. Which is NOT one of the classic five rights?</strong>
+<br>A. Right patient
+<br>B. Right drug
+<br>C. Right dose
+<br>D. Right manufacturer
+
+<div class="answer"><strong>Answer: D</strong></div>
+</div>
+
+<div class="mcq">
+<strong>7. TDM is particularly useful for drugs with:</strong>
+<br>A. Very wide therapeutic range
+<br>B. Narrow therapeutic range
+<br>C. No pharmacological effects
+<br>D. No toxicity
+
+<div class="answer"><strong>Answer: B</strong></div>
+</div>
+
+<div class="mcq">
+<strong>8. Which drug is classically monitored by serum concentration?</strong>
+<br>A. Lithium
+<br>B. Paracetamol in every patient
+<br>C. Antacid
+<br>D. Topical emollient
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>9. Which factor is especially important when interpreting a drug level?</strong>
+<br>A. Sampling time
+<br>B. Patient's shoe size
+<br>C. Hair colour
+<br>D. Eye colour
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>10. Trough concentration is generally measured:</strong>
+<br>A. Immediately before the next dose
+<br>B. Before the first dose only
+<br>C. Several days after stopping treatment
+<br>D. Before diagnosis
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>11. Which drug has important renal elimination and a narrow therapeutic range?</strong>
+<br>A. Lithium
+<br>B. Omeprazole
+<br>C. Antacid
+<br>D. Lactulose
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>12. Hypokalemia increases the risk of toxicity from:</strong>
+<br>A. Digoxin
+<br>B. Paracetamol
+<br>C. Amoxicillin
+<br>D. Omeprazole
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>13. Phenytoin is highly:</strong>
+<br>A. Protein bound
+<br>B. Water soluble only
+<br>C. Unbound in plasma
+<br>D. Excreted unchanged completely
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>14. A prescription should specify:</strong>
+<br>A. Dose
+<br>B. Route
+<br>C. Frequency
+<br>D. All of the above
+
+<div class="answer"><strong>Answer: D</strong></div>
+</div>
+
+<div class="mcq">
+<strong>15. Which is a prescribing error?</strong>
+<br>A. Correct dose
+<br>B. Wrong dose
+<br>C. Correct patient
+<br>D. Correct route
+
+<div class="answer"><strong>Answer: B</strong></div>
+</div>
+
+<div class="mcq">
+<strong>16. Which is a dispensing error?</strong>
+<br>A. Wrong medicine supplied
+<br>B. Correct medicine supplied
+<br>C. Correct diagnosis
+<br>D. Correct dose
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>17. Which is an administration error?</strong>
+<br>A. Giving medicine to the wrong patient
+<br>B. Correct administration
+<br>C. Correct prescribing
+<br>D. Correct dispensing
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>18. Rational prescribing should consider:</strong>
+<br>A. Renal function
+<br>B. Drug interactions
+<br>C. Allergies
+<br>D. All of the above
+
+<div class="answer"><strong>Answer: D</strong></div>
+</div>
+
+<div class="mcq">
+<strong>19. Which medicine is commonly associated with TDM?</strong>
+<br>A. Digoxin
+<br>B. Simple moisturizer
+<br>C. Antacid
+<br>D. Saline nasal spray
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>20. A major purpose of drug safety monitoring is:</strong>
+<br>A. Detecting preventable harm
+<br>B. Increasing drug prices
+<br>C. Increasing prescriptions
+<br>D. Avoiding follow-up
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>21. Which is an important principle of medication safety?</strong>
+<br>A. Use ambiguous abbreviations
+<br>B. Clear communication
+<br>C. Ignore allergies
+<br>D. Skip monitoring
+
+<div class="answer"><strong>Answer: B</strong></div>
+</div>
+
+<div class="mcq">
+<strong>22. Which drug concentration can be affected by low albumin?</strong>
+<br>A. Phenytoin
+<br>B. Lactulose
+<br>C. Antacid
+<br>D. ORS
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>23. TDM results should be interpreted with:</strong>
+<br>A. Clinical information
+<br>B. Sampling time
+<br>C. Dose history
+<br>D. All of the above
+
+<div class="answer"><strong>Answer: D</strong></div>
+</div>
+
+<div class="mcq">
+<strong>24. Which can increase the risk of medication errors?</strong>
+<br>A. Unclear prescriptions
+<br>B. Clear prescriptions
+<br>C. Proper patient identification
+<br>D. Medication reconciliation
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>25. The best treatment choice should primarily be based on:</strong>
+<br>A. Clinical need and evidence
+<br>B. Advertising alone
+<br>C. Colour of package
+<br>D. Most expensive brand
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>26. Which is an example of pharmacovigilance?</strong>
+<br>A. Reporting suspected serious ADRs
+<br>B. Ignoring adverse reactions
+<br>C. Changing diagnosis without examination
+<br>D. Prescribing without indication
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>27. Which is important before prescribing a medicine?</strong>
+<br>A. Check allergies
+<br>B. Check interactions
+<br>C. Check contraindications
+<br>D. All of the above
+
+<div class="answer"><strong>Answer: D</strong></div>
+</div>
+
+<div class="mcq">
+<strong>28. Which drug is commonly associated with TDM because of a narrow therapeutic range?</strong>
+<br>A. Lithium
+<br>B. Vitamin C
+<br>C. Antacid
+<br>D. Topical cream
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>29. Irrational antibiotic use can contribute to:</strong>
+<br>A. Antimicrobial resistance
+<br>B. Better adherence automatically
+<br>C. Elimination of all infections
+<br>D. No clinical consequences
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+<div class="mcq">
+<strong>30. The overall goal of clinical pharmacology is:</strong>
+<br>A. Safe and effective individualized medicine use
+<br>B. Maximum number of medicines
+<br>C. Maximum cost
+<br>D. Avoiding patient monitoring
+
+<div class="answer"><strong>Answer: A</strong></div>
+</div>
+
+</div>
+
+<!-- PRINTABLE TEST -->
+
+<div class="card no-print">
+
+<h2>11. Printable Test Paper</h2>
+
+<p>
+This button prints <strong>ONLY the test paper</strong>.
+</p>
+
+<button class="print-button" onclick="printTest()">
+🖨 Print Test Paper
+</button>
+
+</div>
+
+<!-- TEST PAPER -->
+
+<div id="printArea" class="test-paper">
+
+<div class="test-header">
+
+<h1>MedAcademy</h1>
+
+<h2>Clinical Pharmacology - Test Paper</h2>
+
+<p>
+<strong>MBBS Pharmacology</strong>
+</p>
+
+<p>
+Time: 40 Minutes &nbsp;&nbsp; | &nbsp;&nbsp; Total Marks: 40
+</p>
+
+</div>
+
+<div class="test-info">
+
+<div>Name: __________________________</div>
+
+<div>Roll No: ________________________</div>
+
+<div>Date: ___________________________</div>
+
+</div>
+
+<h3>Section A - MCQs (10 Marks)</h3>
+
+<div class="test-question">
+
+<strong>1. Rational drug use means:</strong> <br>A. Maximum number of drugs <br>B. Appropriate medicines for clinical needs <br>C. Use of injections in every patient <br>D. Use of expensive drugs only
+
+</div>
+
+<div class="test-question">
+
+<strong>2. Which is part of a complete prescription?</strong> <br>A. Drug dose <br>B. Route <br>C. Frequency <br>D. All of the above
+
+</div>
+
+<div class="test-question">
+
+<strong>3. Pharmacovigilance deals mainly with:</strong> <br>A. Drug-related safety problems <br>B. Surgery <br>C. Diagnosis <br>D. Radiology
+
+</div>
+
+<div class="test-question">
+
+<strong>4. Which drug is classically monitored by TDM?</strong> <br>A. Lithium <br>B. Antacid <br>C. ORS <br>D. Vitamin C
+
+</div>
+
+<div class="test-question">
+
+<strong>5. Trough concentration is usually obtained:</strong> <br>A. Immediately before the next dose <br>B. Before diagnosis <br>C. After stopping treatment <br>D. Before prescribing
+
+</div>
+
+<div class="test-question">
+
+<strong>6. Which electrolyte abnormality increases digoxin toxicity?</strong> <br>A. Hypokalemia <br>B. Hypernatremia <br>C. Hypercalcemia only <br>D. Hypochloremia only
+
+</div>
+
+<div class="test-question">
+
+<strong>7. Which drug is highly protein bound?</strong> <br>A. Phenytoin <br>B. Lactulose <br>C. Antacid <br>D. ORS
+
+</div>
+
+<div class="test-question">
+
+<strong>8. Which is a medication administration error?</strong> <br>A. Giving the wrong patient a medicine <br>B. Correct administration <br>C. Correct prescription <br>D. Correct dispensing
+
+</div>
+
+<div class="test-question">
+
+<strong>9. Rational antibiotic use helps reduce:</strong> <br>A. Antimicrobial resistance <br>B. Patient monitoring <br>C. Drug safety <br>D. Treatment adherence
+
+</div>
+
+<div class="test-question">
+
+<strong>10. Which is one of the five rights?</strong> <br>A. Right patient <br>B. Right manufacturer <br>C. Right advertisement <br>D. Right package colour
+
+</div>
+
+<h3>Section B - Short Questions (10 Marks)</h3>
+
+<div class="test-question">
+
+<strong>1. Define rational drug use.</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<div class="test-question">
+
+<strong>2. List the essential components of a prescription.</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<div class="test-question">
+
+<strong>3. Define pharmacovigilance.</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<div class="test-question">
+
+<strong>4. Define therapeutic drug monitoring and give four examples of drugs that may require monitoring.</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<div class="test-question">
+
+<strong>5. Write the five rights of medication administration.</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<h3>Section C - Long Questions (20 Marks)</h3>
+
+<div class="test-question">
+
+<strong>
+1. Describe rational prescribing under the following headings:
+definition, steps, factors affecting drug selection, advantages and examples
+of irrational drug use.
+</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+<div class="test-question">
+
+<strong>
+2. Discuss therapeutic drug monitoring. Include definition, indications,
+important factors affecting drug concentration, sampling time and examples
+of commonly monitored drugs.
+</strong>
+
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+
+</div>
+
+</div>
+
+<!-- ANSWER KEY -->
+
+<div class="card no-print">
+
+<h2>12. Test Paper Answer Key</h2>
+
+<h3>MCQs</h3>
+
+<p>
+
+1. B   
+2. D   
+3. A   
+4. A   
+5. A
+
+</p>
+
+<p>
+
+6. A   
+7. A   
+8. A   
+9. A   
+10. A
+
+</p>
+
+<h3>Short Question Key Points</h3>
+
+<ul>
+
+<li>
+<strong>Rational drug use:</strong>
+Appropriate medicine, dose and duration according to the patient's clinical needs.
+</li>
+
+<li>
+<strong>Prescription:</strong>
+Patient details, date, drug, strength, dosage form, dose, route, frequency,
+duration/quantity, instructions and prescriber authentication.
+</li>
+
+<li>
+<strong>Pharmacovigilance:</strong>
+Detection, assessment, understanding and prevention of adverse effects and
+other drug-related problems.
+</li>
+
+<li>
+<strong>TDM:</strong>
+Measurement and interpretation of drug concentrations together with clinical
+information to optimize selected medicines.
+</li>
+
+<li>
+<strong>Five rights:</strong>
+Right patient, right drug, right dose, right route and right time.
+</li>
+
+</ul>
+
+</div>
+
+<!-- QUICK REVISION -->
+
+<div class="card no-print">
+
+<h2>13. High-Yield Exam Revision</h2>
+
+<table>
+
+<tr>
+<th>Topic</th>
+<th>One-Line Revision</th>
+</tr>
+
+<tr>
+<td>Prescription Writing</td>
+<td>Correct patient + drug + dose + route + frequency + duration + instructions.</td>
+</tr>
+
+<tr>
+<td>Rational Drug Use</td>
+<td>Right medicine for the right patient at the right dose and duration.</td>
+</tr>
+
+<tr>
+<td>Drug Safety</td>
+<td>Prevent, identify and manage medication-related harm.</td>
+</tr>
+
+<tr>
+<td>Pharmacovigilance</td>
+<td>Detect and prevent adverse drug reactions and other drug-related problems.</td>
+</tr>
+
+<tr>
+<td>TDM</td>
+<td>Measure selected drug concentrations to help individualize therapy.</td>
+</tr>
+
+<tr>
+<td>Trough</td>
+<td>Usually measured immediately before the next dose.</td>
+</tr>
+
+<tr>
+<td>Lithium</td>
+<td>Narrow therapeutic range; renal and thyroid monitoring are important.</td>
+</tr>
+
+<tr>
+<td>Digoxin</td>
+<td>Narrow therapeutic range; hypokalemia increases toxicity risk.</td>
+</tr>
+
+<tr>
+<td>Phenytoin</td>
+<td>Highly protein bound and has nonlinear pharmacokinetics.</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- RELATED -->
+
+<div class="card no-print">
+
+<h2>14. Related Pharmacology Chapters</h2>
+
+<ul>
+
+<li>
+<a href="drugs-affecting-uterus.html">
+Drugs Affecting Uterus →
+</a>
+</li>
+
+<li>
+<a href="drugs-affecting-blood.html">
+Drugs Affecting Blood →
+</a>
+</li>
+
+<li>
+<a href="endocrine-pharmacology.html">
+Endocrine Pharmacology →
+</a>
+</li>
+
+<li>
+<a href="pharmacology.html">
+Pharmacology Home →
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<footer class="no-print">
+
+<p>
+© 2026 MedAcademy - Medical Students
+</p>
+
+</footer>
+
+<script>
+
+function printTest(){
+
+    window.print();
+
+}
+
+</script>
+
+</body>
+
+</html>

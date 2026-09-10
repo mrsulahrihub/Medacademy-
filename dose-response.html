@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dose Response - MedAcademy</title>
+
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f8fb;
+        color: #222;
+        line-height: 1.6;
+    }
+
+    header {
+        background: #0b5ed7;
+        color: white;
+        padding: 25px 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 34px;
+    }
+
+    header p {
+        margin: 8px 0 0;
+        font-size: 16px;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 30px auto;
+    }
+
+    .back {
+        display: inline-block;
+        margin-bottom: 20px;
+        text-decoration: none;
+        color: #0b5ed7;
+        font-weight: bold;
+    }
+
+    .back:hover {
+        text-decoration: underline;
+    }
+
+    .section {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+        margin-bottom: 25px;
+    }
+
+    .section h2 {
+        color: #0b5ed7;
+        margin-top: 0;
+        border-bottom: 2px solid #e5eef8;
+        padding-bottom: 8px;
+    }
+
+    .section h3 {
+        color: #084298;
+        margin-top: 20px;
+    }
+
+    ul {
+        padding-left: 25px;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    .highlight {
+        background: #eaf3ff;
+        border-left: 5px solid #0b5ed7;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 6px;
+    }
+
+    .important {
+        background: #fff8e1;
+        border-left: 5px solid #f0ad00;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 6px;
+    }
+
+    .example {
+        background: #f1f8f3;
+        border-left: 5px solid #198754;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 6px;
+    }
+
+    .formula {
+        background: #f4f4f4;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        margin: 15px 0;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        margin-top: 15px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background: #0b5ed7;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background: #f8fbff;
+    }
+
+    .mcq {
+        background: #f8fbff;
+        padding: 18px;
+        border-radius: 10px;
+        margin-top: 15px;
+        border: 1px solid #dce8f5;
+    }
+
+    .mcq strong {
+        color: #0b5ed7;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        background: #0b5ed7;
+        color: white;
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+
+```
+<h1>Dose Response</h1>
+
+<p>
+    Dose-Response Relationship & Drug Effects - MedAcademy
+</p>
+```
+
+</header>
+
+<div class="container">
+
+```
+<a href="pharmacology.html" class="back">
+    ← Back to Pharmacology
+</a>
+
+
+<!-- INTRODUCTION -->
+
+<div class="section">
+
+    <h2>1. Introduction to Dose-Response</h2>
+
+    <p>
+        The dose-response relationship describes the relationship
+        between the amount or concentration of a drug and the
+        biological response produced by that drug.
+    </p>
+
+    <div class="highlight">
+
+        <strong>Key Concept:</strong>
+
+        As the dose of a drug increases, its effect generally
+        increases until a maximum response is reached.
+
+    </div>
+
+</div>
+
+
+<!-- DOSE -->
+
+<div class="section">
+
+    <h2>2. Important Terms</h2>
+
+    <h3>Dose</h3>
+
+    <p>
+        Dose is the quantity of a drug administered to a patient.
+    </p>
+
+    <h3>Response</h3>
+
+    <p>
+        Response is the measurable physiological or biochemical
+        effect produced by a drug.
+    </p>
+
+    <h3>Concentration</h3>
+
+    <p>
+        Drug concentration refers to the amount of drug present
+        in a particular volume, often measured at the site of action
+        or in plasma.
+    </p>
+
+</div>
+
+
+<!-- TYPES -->
+
+<div class="section">
+
+    <h2>3. Types of Dose-Response Relationships</h2>
+
+    <p>
+        Two major types of dose-response relationships are commonly
+        discussed in pharmacology.
+    </p>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+
+                <th>Type</th>
+
+                <th>Description</th>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Graded dose-response
+                </td>
+
+                <td>
+                    Measures the magnitude of response in an individual
+                    biological system.
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Quantal dose-response
+                </td>
+
+                <td>
+                    Measures an all-or-none response in a population.
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- GRADED -->
+
+<div class="section">
+
+    <h2>4. Graded Dose-Response Relationship</h2>
+
+    <p>
+        A graded response varies continuously with increasing
+        drug concentration or dose.
+    </p>
+
+    <h3>Characteristics</h3>
+
+    <ul>
+
+        <li>
+            Usually studied in an individual tissue or preparation.
+        </li>
+
+        <li>
+            Response increases progressively with dose.
+        </li>
+
+        <li>
+            Eventually reaches a maximum response.
+        </li>
+
+        <li>
+            Helps determine potency and efficacy.
+        </li>
+
+    </ul>
+
+    <div class="example">
+
+        <strong>Example:</strong>
+
+        Increasing concentrations of a bronchodilator may produce
+        progressively greater relaxation of airway smooth muscle
+        until maximum relaxation is reached.
+
+    </div>
+
+</div>
+
+
+<!-- QUANTAL -->
+
+<div class="section">
+
+    <h2>5. Quantal Dose-Response Relationship</h2>
+
+    <p>
+        A quantal response is an all-or-none response measured
+        across a population.
+    </p>
+
+    <p>
+        Examples include whether a patient experiences a particular
+        therapeutic effect or whether a predefined toxic effect occurs.
+    </p>
+
+    <h3>Uses</h3>
+
+    <ul>
+
+        <li>
+            Determining ED<sub>50</sub>
+        </li>
+
+        <li>
+            Determining TD<sub>50</sub>
+        </li>
+
+        <li>
+            Determining LD<sub>50</sub> in experimental settings
+        </li>
+
+        <li>
+            Assessing variability of drug responses in a population
+        </li>
+
+    </ul>
+
+</div>
+
+
+<!-- EMAX -->
+
+<div class="section">
+
+    <h2>6. E<sub>max</sub></h2>
+
+    <p>
+        E<sub>max</sub> represents the maximum effect that a drug
+        can produce in a particular system.
+    </p>
+
+    <div class="highlight">
+
+        <strong>E<sub>max</sub> is related to drug efficacy.</strong>
+
+    </div>
+
+    <p>
+        Once E<sub>max</sub> has been reached, increasing the dose
+        generally does not increase the desired effect further,
+        although toxicity may continue to increase.
+    </p>
+
+</div>
+
+
+<!-- EC50 -->
+
+<div class="section">
+
+    <h2>7. EC<sub>50</sub></h2>
+
+    <p>
+        EC<sub>50</sub> is the concentration of a drug that produces
+        50% of its maximum effect.
+    </p>
+
+    <div class="formula">
+
+        EC<sub>50</sub> = Concentration producing 50% of E<sub>max</sub>
+
+    </div>
+
+    <div class="important">
+
+        <strong>Exam Point:</strong>
+
+        A lower EC<sub>50</sub> generally indicates greater potency.
+
+    </div>
+
+</div>
+
+
+<!-- ED50 -->
+
+<div class="section">
+
+    <h2>8. ED<sub>50</sub></h2>
+
+    <p>
+        ED<sub>50</sub> is the dose that produces the specified
+        therapeutic effect in 50% of a population.
+    </p>
+
+    <div class="highlight">
+
+        ED<sub>50</sub> is commonly used when discussing
+        quantal dose-response relationships.
+
+    </div>
+
+</div>
+
+
+<!-- TD50 -->
+
+<div class="section">
+
+    <h2>9. TD<sub>50</sub></h2>
+
+    <p>
+        TD<sub>50</sub> is the dose that produces a specified
+        toxic effect in 50% of a population.
+    </p>
+
+    <div class="important">
+
+        TD<sub>50</sub> is used in calculations of the
+        therapeutic index.
+
+    </div>
+
+</div>
+
+
+<!-- POTENCY -->
+
+<div class="section">
+
+    <h2>10. Potency</h2>
+
+    <p>
+        Potency describes the amount of drug required to produce
+        a particular effect.
+    </p>
+
+    <div class="formula">
+
+        Lower EC<sub>50</sub> → Greater Potency
+
+    </div>
+
+    <p>
+        Potency should not be confused with efficacy.
+    </p>
+
+</div>
+
+
+<!-- EFFICACY -->
+
+<div class="section">
+
+    <h2>11. Efficacy</h2>
+
+    <p>
+        Efficacy refers to the maximum effect that a drug can produce.
+    </p>
+
+    <div class="formula">
+
+        E<sub>max</sub> → Measure of Maximum Drug Effect
+
+    </div>
+
+    <div class="example">
+
+        A drug can be more potent but less efficacious than another
+        drug.
+
+    </div>
+
+</div>
+
+
+<!-- POTENCY VS EFFICACY -->
+
+<div class="section">
+
+    <h2>12. Potency vs Efficacy</h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+
+                <th>Feature</th>
+
+                <th>Potency</th>
+
+                <th>Efficacy</th>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Meaning
+                </td>
+
+                <td>
+                    Amount required to produce an effect
+                </td>
+
+                <td>
+                    Maximum effect produced
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Common measure
+                </td>
+
+                <td>
+                    EC<sub>50</sub>
+                </td>
+
+                <td>
+                    E<sub>max</sub>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Main question
+                </td>
+
+                <td>
+                    How much drug is needed?
+                </td>
+
+                <td>
+                    How much effect can it produce?
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- LOG DOSE RESPONSE -->
+
+<div class="section">
+
+    <h2>13. Log Dose-Response Curve</h2>
+
+    <p>
+        Dose-response data are often plotted against the logarithm
+        of drug concentration or dose.
+    </p>
+
+    <p>
+        This commonly produces a sigmoid-shaped curve over the
+        useful concentration range.
+    </p>
+
+    <div class="highlight">
+
+        The log scale allows a wide range of drug concentrations
+        to be displayed more conveniently.
+
+    </div>
+
+</div>
+
+
+<!-- COMPETITIVE ANTAGONIST -->
+
+<div class="section">
+
+    <h2>14. Effect of Competitive Antagonists</h2>
+
+    <p>
+        A reversible competitive antagonist competes with an agonist
+        for the same receptor site.
+    </p>
+
+    <p>
+        Increasing the agonist concentration can overcome the
+        antagonistic effect.
+    </p>
+
+    <div class="important">
+
+        <strong>Typical curve change:</strong>
+
+        A reversible competitive antagonist causes a rightward
+        shift of the agonist concentration-response curve without
+        reducing the maximum response when sufficient agonist
+        concentration can overcome the antagonism.
+
+    </div>
+
+</div>
+
+
+<!-- THERAPEUTIC INDEX -->
+
+<div class="section">
+
+    <h2>15. Therapeutic Index</h2>
+
+    <p>
+        Therapeutic index provides an estimate of the separation
+        between doses producing therapeutic and toxic effects.
+    </p>
+
+    <div class="formula">
+
+        Therapeutic Index =
+        TD<sub>50</sub> / ED<sub>50</sub>
+
+    </div>
+
+    <div class="important">
+
+        A larger therapeutic index generally indicates a wider
+        separation between therapeutic and toxic doses.
+
+    </div>
+
+</div>
+
+
+<!-- THERAPEUTIC WINDOW -->
+
+<div class="section">
+
+    <h2>16. Therapeutic Window</h2>
+
+    <p>
+        The therapeutic window is the range of drug concentrations
+        or doses between the minimum effective concentration and
+        the concentration at which unacceptable toxicity begins.
+    </p>
+
+    <div class="example">
+
+        Drugs with a narrow therapeutic window require careful
+        dosing and may require therapeutic drug monitoring.
+
+    </div>
+
+</div>
+
+
+<!-- SPARE RECEPTORS -->
+
+<div class="section">
+
+    <h2>17. Spare Receptors</h2>
+
+    <p>
+        Spare receptors exist when a maximal response can be achieved
+        without occupying all available receptors.
+    </p>
+
+    <p>
+        The presence of spare receptors can increase the sensitivity
+        of a tissue to an agonist.
+    </p>
+
+</div>
+
+
+<!-- IMPORTANT COMPARISON -->
+
+<div class="section">
+
+    <h2>18. Important Dose-Response Terms</h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+
+                <th>Term</th>
+
+                <th>Meaning</th>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    E<sub>max</sub>
+                </td>
+
+                <td>
+                    Maximum effect produced by a drug
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    EC<sub>50</sub>
+                </td>
+
+                <td>
+                    Concentration producing 50% of maximum effect
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    ED<sub>50</sub>
+                </td>
+
+                <td>
+                    Dose producing a specified effect in 50% of a population
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    TD<sub>50</sub>
+                </td>
+
+                <td>
+                    Dose producing a specified toxic effect in 50% of a population
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    LD<sub>50</sub>
+                </td>
+
+                <td>
+                    Dose causing death in 50% of an experimental population
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- QUICK REVISION -->
+
+<div class="section">
+
+    <h2>19. Quick Revision Points</h2>
+
+    <ul>
+
+        <li>
+            Dose-response describes the relationship between
+            drug dose/concentration and biological response.
+        </li>
+
+        <li>
+            Graded response measures response magnitude in an
+            individual biological system.
+        </li>
+
+        <li>
+            Quantal response measures an all-or-none outcome
+            in a population.
+        </li>
+
+        <li>
+            E<sub>max</sub> is associated with maximum efficacy.
+        </li>
+
+        <li>
+            EC<sub>50</sub> is associated with potency.
+        </li>
+
+        <li>
+            Lower EC<sub>50</sub> generally means greater potency.
+        </li>
+
+        <li>
+            ED<sub>50</sub> is the dose producing a specified
+            effect in 50% of a population.
+        </li>
+
+        <li>
+            TD<sub>50</sub> is the dose producing a specified
+            toxic effect in 50% of a population.
+        </li>
+
+        <li>
+            Therapeutic Index = TD<sub>50</sub> / ED<sub>50</sub>.
+        </li>
+
+        <li>
+            A reversible competitive antagonist typically shifts
+            the agonist curve to the right without reducing E<sub>max</sub>.
+        </li>
+
+    </ul>
+
+</div>
+
+
+<!-- MCQS -->
+
+<div class="section">
+
+    <h2>20. Important MCQs</h2>
+
+
+    <div class="mcq">
+
+        <strong>
+            Q1. E<sub>max</sub> primarily represents:
+        </strong>
+
+        <p>
+
+            A. Drug absorption
+
+            <br>
+
+            B. Drug potency
+
+            <br>
+
+            C. Maximum drug effect
+
+            <br>
+
+            D. Drug elimination
+
+        </p>
+
+        <strong>
+            Answer: C. Maximum drug effect
+        </strong>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <strong>
+            Q2. EC<sub>50</sub> is mainly used as a measure of:
+        </strong>
+
+        <p>
+
+            A. Potency
+
+            <br>
+
+            B. Toxicity
+
+            <br>
+
+            C. Bioavailability
+
+            <br>
+
+            D. Clearance
+
+        </p>
+
+        <strong>
+            Answer: A. Potency
+        </strong>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <strong>
+            Q3. A graded dose-response curve measures:
+        </strong>
+
+        <p>
+
+            A. All-or-none response in a population
+
+            <br>
+
+            B. Magnitude of response in an individual system
+
+            <br>
+
+            C. Drug metabolism
+
+            <br>
+
+            D. Drug excretion
+
+        </p>
+
+        <strong>
+            Answer: B. Magnitude of response in an individual system
+        </strong>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <strong>
+            Q4. Therapeutic Index is calculated as:
+        </strong>
+
+        <p>
+
+            A. ED<sub>50</sub> / TD<sub>50</sub>
+
+            <br>
+
+            B. TD<sub>50</sub> / ED<sub>50</sub>
+
+            <br>
+
+            C. EC<sub>50</sub> / E<sub>max</sub>
+
+            <br>
+
+            D. E<sub>max</sub> / EC<sub>50</sub>
+
+        </p>
+
+        <strong>
+            Answer: B. TD<sub>50</sub> / ED<sub>50</sub>
+        </strong>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <strong>
+            Q5. A lower EC<sub>50</sub> generally indicates:
+        </strong>
+
+        <p>
+
+            A. Lower potency
+
+            <br>
+
+            B. Greater potency
+
+            <br>
+
+            C. Lower efficacy
+
+            <br>
+
+            D. Greater toxicity
+
+        </p>
+
+        <strong>
+            Answer: B. Greater potency
+        </strong>
+
+    </div>
+
+
+    <div class="mcq">
+
+        <strong>
+            Q6. A reversible competitive antagonist usually causes:
+        </strong>
+
+        <p>
+
+            A. Leftward shift of the agonist curve
+
+            <br>
+
+            B. Rightward shift without reducing E<sub>max</sub>
+
+            <br>
+
+            C. Complete loss of response
+
+            <br>
+
+            D. Increased E<sub>max</sub>
+
+        </p>
+
+        <strong>
+            Answer: B. Rightward shift without reducing E<sub>max</sub>
+        </strong>
+
+    </div>
+
+
+</div>
+```
+
+</div>
+
+<footer>
+
+```
+<p>
+    © 2026 MedAcademy - Medical Students
+</p>
+```
+
+</footer>
+
+</body>
+
+</html>
