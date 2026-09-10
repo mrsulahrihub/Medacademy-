@@ -7,80 +7,104 @@
 <title>Medical Notes | MedAcademy</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family:Arial, sans-serif;
-    background:#f4f9fa;
-    color:#222;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f8fa;
+    color:#1f2937;
     line-height:1.6;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 header{
     background:#087f8c;
     color:white;
-    padding:16px 6%;
+    padding:15px 5%;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,.15);
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
 }
 
 .logo{
     font-size:24px;
-    font-weight:bold;
+    font-weight:800;
+    white-space:nowrap;
 }
 
 nav{
     display:flex;
-    gap:20px;
-    flex-wrap:wrap;
+    gap:22px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
     font-weight:bold;
+    transition:.2s;
 }
 
 nav a:hover{
-    text-decoration:underline;
+    opacity:.8;
 }
 
+/* =========================
+   HERO
+========================= */
+
 .hero{
-    background:linear-gradient(135deg,#087f8c,#0aa6b5);
+    background:
+    linear-gradient(135deg,#087f8c,#05a9ba);
     color:white;
     text-align:center;
-    padding:60px 20px;
+    padding:70px 20px;
 }
 
 .hero h1{
-    font-size:42px;
-    margin-bottom:10px;
+    font-size:44px;
+    margin-bottom:12px;
 }
 
 .hero p{
     font-size:18px;
+    opacity:.95;
 }
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
     width:92%;
-    max-width:1200px;
+    max-width:1250px;
     margin:35px auto;
 }
+
+/* =========================
+   SEARCH
+========================= */
 
 .search-box{
     background:white;
     padding:25px;
-    border-radius:14px;
-    box-shadow:0 3px 15px rgba(0,0,0,.08);
+    border-radius:16px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
     margin-bottom:30px;
 }
 
@@ -91,8 +115,8 @@ nav a:hover{
 
 #searchBox{
     width:100%;
-    padding:15px;
-    border:2px solid #ddd;
+    padding:15px 17px;
+    border:2px solid #d8e2e5;
     border-radius:10px;
     font-size:17px;
     outline:none;
@@ -100,6 +124,7 @@ nav a:hover{
 
 #searchBox:focus{
     border-color:#087f8c;
+    box-shadow:0 0 0 3px rgba(8,127,140,.1);
 }
 
 #searchResults{
@@ -107,17 +132,70 @@ nav a:hover{
 }
 
 .search-item{
-    padding:12px 15px;
-    background:#f1fafb;
-    border-left:4px solid #087f8c;
+    background:#effafb;
+    border-left:5px solid #087f8c;
+    padding:13px 15px;
     margin:8px 0;
-    border-radius:7px;
+    border-radius:8px;
     cursor:pointer;
+    transition:.2s;
 }
 
 .search-item:hover{
-    background:#dff5f7;
+    background:#dff4f6;
+    transform:translateX(3px);
 }
+
+.search-subject{
+    font-size:12px;
+    color:#087f8c;
+    font-weight:bold;
+    margin-top:3px;
+}
+
+/* =========================
+   SUBJECT FILTER
+========================= */
+
+.filter-area{
+    background:white;
+    padding:22px;
+    border-radius:16px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+    margin-bottom:30px;
+}
+
+.filter-area h2{
+    color:#087f8c;
+    margin-bottom:15px;
+}
+
+.subject-filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.filter-btn{
+    border:1px solid #087f8c;
+    background:white;
+    color:#087f8c;
+    padding:9px 14px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:#087f8c;
+    color:white;
+}
+
+/* =========================
+   SUBJECT HEADER
+========================= */
 
 .section-title{
     text-align:center;
@@ -126,86 +204,114 @@ nav a:hover{
     font-size:30px;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:14px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 7px 20px rgba(0,0,0,.12);
-}
-
-.card h3{
+.subject-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin:35px 0 15px;
     color:#087f8c;
-    margin-bottom:10px;
+    border-bottom:2px solid #dcecef;
+    padding-bottom:10px;
 }
 
-.card button,
-.topic-button{
-    border:none;
-    background:#087f8c;
-    color:white;
-    padding:10px 15px;
-    border-radius:7px;
-    cursor:pointer;
-    margin-top:10px;
+.topic-count{
+    background:#e6f6f8;
+    color:#087f8c;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:13px;
 }
 
-.card button:hover,
-.topic-button:hover{
-    background:#066873;
-}
+/* =========================
+   TOPIC GRID
+========================= */
 
-.topic-section{
-    background:white;
-    padding:25px;
-    border-radius:14px;
-    box-shadow:0 3px 15px rgba(0,0,0,.08);
-}
-
-.topic-list{
+.topic-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:10px;
-    margin-top:20px;
+    grid-template-columns:
+    repeat(auto-fill,minmax(220px,1fr));
+    gap:12px;
 }
 
 .topic-button{
-    width:100%;
+    border:1px solid #dce5e7;
+    background:white;
+    color:#263238;
+    padding:14px;
+    border-radius:10px;
     text-align:left;
-    margin:0;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    transition:.2s;
+    box-shadow:0 2px 8px rgba(0,0,0,.04);
 }
+
+.topic-button:hover{
+    border-color:#087f8c;
+    color:#087f8c;
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+/* =========================
+   TOPIC DETAILS
+========================= */
 
 #topicDetails{
     display:none;
-    margin-top:30px;
-    background:#f8ffff;
-    border:2px solid #087f8c;
-    border-radius:14px;
+    background:white;
+    margin-top:40px;
+    border-radius:18px;
+    box-shadow:0 6px 25px rgba(0,0,0,.1);
+    overflow:hidden;
+}
+
+.topic-header{
+    background:linear-gradient(135deg,#087f8c,#05a9ba);
+    color:white;
+    padding:30px;
+}
+
+.topic-header h2{
+    font-size:30px;
+    margin-bottom:6px;
+}
+
+.topic-header p{
+    opacity:.9;
+}
+
+.topic-content{
     padding:25px;
 }
 
-#topicDetails h2{
-    color:#087f8c;
-    margin-bottom:15px;
+.close-btn{
+    float:right;
+    background:#dc3545;
+    color:white;
+    border:none;
+    padding:9px 15px;
+    border-radius:7px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
+.close-btn:hover{
+    background:#b52a37;
+}
+
+/* =========================
+   NOTES
+========================= */
+
 .note-box{
-    background:white;
-    border-radius:10px;
-    padding:20px;
-    margin:15px 0;
+    background:#f9fcfd;
     border-left:5px solid #087f8c;
+    padding:20px;
+    margin:18px 0;
+    border-radius:10px;
 }
 
 .note-box h3{
@@ -214,67 +320,119 @@ nav a:hover{
 }
 
 .note-box ul{
-    margin-left:20px;
+    margin-left:22px;
+}
+
+.note-box li{
+    margin-bottom:7px;
+}
+
+.definition{
+    background:#eaf8fa;
+    padding:18px;
+    border-radius:10px;
+    margin-bottom:18px;
+}
+
+.definition strong{
+    color:#087f8c;
+}
+
+/* =========================
+   MCQS
+========================= */
+
+.mcq-section{
+    margin-top:30px;
+}
+
+.mcq-section h3{
+    color:#087f8c;
+    margin-bottom:15px;
 }
 
 .mcq{
-    background:#fff;
-    padding:18px;
-    margin:12px 0;
-    border-radius:10px;
-    border:1px solid #ddd;
+    background:white;
+    border:1px solid #dce2e5;
+    padding:20px;
+    border-radius:12px;
+    margin:15px 0;
+}
+
+.mcq-question{
+    font-weight:bold;
+    margin-bottom:12px;
 }
 
 .mcq button{
     display:block;
     width:100%;
     text-align:left;
+    padding:12px;
     margin:7px 0;
-    padding:11px;
-    background:#f4f8f9;
-    border:1px solid #ccc;
-    border-radius:7px;
+    border:1px solid #ccd6d9;
+    background:#f5f8f9;
+    border-radius:8px;
     cursor:pointer;
+    transition:.2s;
 }
 
 .mcq button:hover{
-    background:#e4f5f7;
+    background:#e8f5f7;
 }
 
 .correct{
-    background:#d4edda !important;
+    background:#d1e7dd !important;
     border-color:#198754 !important;
+    color:#0b5130;
 }
 
 .wrong{
     background:#f8d7da !important;
     border-color:#dc3545 !important;
+    color:#842029;
 }
 
-.close-btn{
-    background:#dc3545;
-    color:white;
-    border:none;
-    padding:10px 18px;
+.explanation{
+    display:none;
+    margin-top:10px;
+    padding:10px;
+    background:#eef7f8;
     border-radius:7px;
-    cursor:pointer;
-    margin-bottom:15px;
+    font-size:14px;
 }
+
+/* =========================
+   INFO
+========================= */
 
 .info{
-    background:#eef9fa;
-    padding:15px;
+    margin-top:35px;
+    background:#fff8e6;
+    border-left:5px solid #f0ad00;
+    padding:18px;
     border-radius:10px;
-    margin-top:20px;
 }
 
+.info h3{
+    margin-bottom:5px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
-    margin-top:50px;
+    margin-top:60px;
     background:#087f8c;
     color:white;
     text-align:center;
     padding:30px 20px;
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:700px){
 
@@ -284,8 +442,13 @@ footer{
     }
 
     nav{
+        gap:14px;
+        flex-wrap:wrap;
         justify-content:center;
-        gap:12px;
+    }
+
+    .hero{
+        padding:50px 15px;
     }
 
     .hero h1{
@@ -295,15 +458,35 @@ footer{
     .container{
         width:94%;
     }
+
+    .topic-grid{
+        grid-template-columns:1fr;
+    }
+
+    .subject-title{
+        font-size:20px;
+    }
+
+    .topic-header h2{
+        font-size:24px;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
-<div class="logo">🩺 MedAcademy</div>
+<div class="logo">
+🩺 MedAcademy
+</div>
 
 <nav>
 <a href="index.html">Home</a>
@@ -314,11 +497,17 @@ footer{
 </header>
 
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
 <h1>📚 Medical Notes</h1>
 
-<p>Study medical subjects, important topics, notes and MCQs</p>
+<p>
+Professional Medical & General Knowledge Learning Portal
+</p>
 
 </section>
 
@@ -326,14 +515,18 @@ footer{
 <div class="container">
 
 
+<!-- =========================
+     SEARCH
+========================= -->
+
 <section class="search-box">
 
-<h2>🔎 Search Medical Topics</h2>
+<h2>🔎 Search Topics</h2>
 
 <input
 type="text"
 id="searchBox"
-placeholder="Search any topic..."
+placeholder="Search Anatomy, Heart, Diabetes, ECG, Biology..."
 autocomplete="off"
 >
 
@@ -342,69 +535,56 @@ autocomplete="off"
 </section>
 
 
-<h2 class="section-title">📖 Main Subjects</h2>
+<!-- =========================
+     SUBJECT FILTER
+========================= -->
 
-<section class="cards">
+<section class="filter-area">
 
-<div class="card">
-<h3>🦴 Anatomy</h3>
-<p>Study the structure of the human body, organs, bones, muscles, nerves and vessels.</p>
-<button data-topic="Human Anatomy">Open Notes</button>
-</div>
+<h2>📚 Subjects</h2>
 
-<div class="card">
-<h3>❤️ Physiology</h3>
-<p>Learn normal functions of organs and body systems.</p>
-<button data-topic="Human Physiology">Open Notes</button>
-</div>
-
-<div class="card">
-<h3>💊 Pharmacology</h3>
-<p>Learn drugs, mechanisms, indications, adverse effects and important concepts.</p>
-<button data-topic="Pharmacology">Open Notes</button>
-</div>
-
-<div class="card">
-<h3>🔬 Pathology</h3>
-<p>Study disease mechanisms, cellular injury, inflammation and pathology.</p>
-<button data-topic="Pathology">Open Notes</button>
-</div>
-
-<div class="card">
-<h3>🦠 Microbiology</h3>
-<p>Study bacteria, viruses, fungi, parasites and infectious diseases.</p>
-<button data-topic="Microbiology">Open Notes</button>
-</div>
-
-<div class="card">
-<h3>🩺 Medicine</h3>
-<p>Study common diseases, clinical features, investigations and general management.</p>
-<button data-topic="Medicine">Open Notes</button>
+<div
+class="subject-filters"
+id="subjectFilters">
 </div>
 
 </section>
 
 
-<section class="topic-section">
+<!-- =========================
+     TOPICS
+========================= -->
 
-<h2 class="section-title">📚 Important Topics</h2>
+<section>
 
-<div class="topic-list" id="topicList"></div>
+<h2 class="section-title">
+📖 Medical & General Knowledge Topics
+</h2>
+
+<div id="subjectsContainer"></div>
 
 </section>
 
+
+<!-- =========================
+     TOPIC DETAILS
+========================= -->
 
 <section id="topicDetails"></section>
 
 
+<!-- =========================
+     INFORMATION
+========================= -->
+
 <section class="info">
 
-<h3>📌 Important</h3>
+<h3>📌 Educational Notice</h3>
 
 <p>
-These notes are for educational purposes. They are designed for medical
-students and general learning. Clinical diagnosis and treatment should be
-based on qualified medical assessment.
+These notes are provided for educational and academic purposes.
+They are not a substitute for professional medical advice,
+diagnosis or treatment.
 </p>
 
 </section>
@@ -412,157 +592,635 @@ based on qualified medical assessment.
 </div>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-<p>© 2026 MedAcademy — Medical Student Learning Portal</p>
+<p>
+© 2026 MedAcademy — Medical Student Learning Portal
+</p>
 
 </footer>
 
 
 <script>
 
-/* =========================
-   TOPIC LIST
-========================= */
+/* =====================================================
+   TOPIC DATABASE
+   Add your complete 1–1000 list here.
+===================================================== */
 
 const topics = [
 
 "Human Anatomy",
 "Human Physiology",
-"Pharmacology",
-"Pathology",
-"Microbiology",
-"Medicine",
+"General Pathology",
+"Systemic Pathology",
+"General Pharmacology",
+"Clinical Pharmacology",
+"Medical Microbiology",
+"Medical Biochemistry",
+"Molecular Biology",
+"Genetics",
+"Immunology",
+"Histology",
+"Embryology",
+"Neuroscience",
+"Medical Ethics",
+"Medical Terminology",
+
+"First Aid",
+"Basic Life Support",
+"Advanced Life Support",
+"Emergency Medicine",
+
+"Internal Medicine",
+"General Surgery",
+"Pediatrics",
+"Obstetrics",
+"Gynecology",
+"Psychiatry",
+"Dermatology",
+"Ophthalmology",
+"Otolaryngology",
+"Orthopedics",
+
+"Cardiology",
+"Neurology",
+"Nephrology",
+"Gastroenterology",
+"Pulmonology",
+"Endocrinology",
+"Rheumatology",
+"Hematology",
+"Oncology",
+"Infectious Diseases",
+"Urology",
+
+"Cardiovascular System",
+"Respiratory System",
+"Digestive System",
+"Urinary System",
+"Reproductive System",
+"Nervous System",
+"Endocrine System",
+"Musculoskeletal System",
+"Integumentary System",
 
 "Heart",
 "Heart Anatomy",
 "Heart Physiology",
-"ECG",
-"Blood Pressure",
-"Hypertension",
-"Heart Failure",
+"Cardiac Cycle",
 "Cardiac Output",
+"Blood Pressure",
+"Pulse",
+"ECG Basics",
+"ECG Interpretation",
+"Arrhythmias",
+"Heart Failure",
+"Coronary Artery Disease",
+"Myocardial Infarction",
+"Angina",
+"Cardiomyopathy",
+"Myocarditis",
+"Pericarditis",
+"Endocarditis",
+"Valvular Heart Disease",
+"Hypertension",
+"Hypotension",
+"Atherosclerosis",
+"Deep Vein Thrombosis",
+"Pulmonary Embolism",
+"Shock",
+"CPR",
+"Defibrillation",
 
-"Brain",
-"Brain Anatomy",
-"Brain Physiology",
-"Cranial Nerves",
-"Nervous System",
-"Stroke",
-"Migraine",
-"Headache",
-
-"Kidney",
-"Kidney Anatomy",
-"Kidney Physiology",
-"Kidney Disease",
-"Kidney Stones",
-"Urinary Tract Infection",
-"Chronic Kidney Disease",
-
-"Liver",
-"Liver Anatomy",
-"Liver Physiology",
-"Hepatitis",
-"Jaundice",
-
-"Respiratory System",
+"Respiratory Anatomy",
+"Lung Physiology",
+"Gas Exchange",
+"Oxygen Transport",
+"Carbon Dioxide Transport",
+"Pulmonary Ventilation",
+"Lung Volumes",
+"Spirometry",
 "Asthma",
+"COPD",
 "Pneumonia",
 "Tuberculosis",
-"Common Cold",
-"Influenza",
-"Cough",
+"Bronchitis",
+"Bronchiolitis",
+"Emphysema",
+"Pulmonary Fibrosis",
+"Pleural Effusion",
+"Pneumothorax",
+"Pulmonary Edema",
+"ARDS",
+"Respiratory Failure",
+"Sleep Apnea",
+"Lung Cancer",
+"Oxygen Therapy",
+"Mechanical Ventilation",
+"Airway Management",
+"Intubation",
 
-"Digestive System",
-"Gastritis",
+"Digestive Anatomy",
+"Oral Cavity",
+"Salivary Glands",
+"Esophagus",
+"Stomach",
+"Small Intestine",
+"Large Intestine",
+"Rectum",
+"Anus",
+"Liver",
+"Gallbladder",
+"Pancreas",
+"Gastrointestinal Motility",
+"Digestion",
+"Absorption",
+"GERD",
 "Peptic Ulcer Disease",
-"Diarrhea",
-"Constipation",
+"Gastritis",
+"Gastroenteritis",
+"Appendicitis",
+"Crohn's Disease",
+"Ulcerative Colitis",
+"Irritable Bowel Syndrome",
+"Celiac Disease",
+"Intestinal Obstruction",
+"Gastrointestinal Bleeding",
+"Hemorrhoids",
+"Colorectal Cancer",
+"Hepatitis",
+"Fatty Liver Disease",
+"Cirrhosis",
+"Portal Hypertension",
+"Liver Failure",
+"Gallstones",
+"Cholecystitis",
+"Pancreatitis",
+"Jaundice",
+"Ascites",
 
-"Endocrine System",
+"Renal Anatomy",
+"Nephron",
+"Kidney Physiology",
+"Glomerular Filtration",
+"Urine Formation",
+"Electrolyte Balance",
+"Acid-Base Balance",
+"Acute Kidney Injury",
+"Chronic Kidney Disease",
+"Glomerulonephritis",
+"Nephrotic Syndrome",
+"Nephritic Syndrome",
+"Kidney Stones",
+"Pyelonephritis",
+"Urinary Tract Infection",
+"Cystitis",
+"Dialysis",
+"Hemodialysis",
+"Peritoneal Dialysis",
+"Kidney Transplantation",
+"Proteinuria",
+"Hematuria",
+"Oliguria",
+"Anuria",
+"Polyuria",
+
+"Brain Anatomy",
+"Spinal Cord",
+"Cranial Nerves",
+"Peripheral Nerves",
+"Autonomic Nervous System",
+"Neurons",
+"Neurotransmitters",
+"Synapses",
+"Reflexes",
+"Brain Blood Supply",
+"Cerebrospinal Fluid",
+"Blood-Brain Barrier",
+"Stroke",
+"Ischemic Stroke",
+"Hemorrhagic Stroke",
+"TIA",
+"Epilepsy",
+"Seizures",
+"Migraine",
+"Tension Headache",
+"Cluster Headache",
+"Meningitis",
+"Encephalitis",
+"Brain Tumors",
+"Parkinson's Disease",
+"Alzheimer's Disease",
+"Dementia",
+"Multiple Sclerosis",
+"ALS",
+"Guillain-Barré Syndrome",
+"Myasthenia Gravis",
+"Peripheral Neuropathy",
+"Neuropathic Pain",
+"Bell's Palsy",
+
+"Pituitary Gland",
+"Thyroid Gland",
+"Parathyroid Glands",
+"Adrenal Glands",
+"Pancreatic Hormones",
+"Insulin",
+"Glucagon",
 "Diabetes Mellitus",
-"Thyroid Disorders",
-"Hyperthyroidism",
+"Type 1 Diabetes",
+"Type 2 Diabetes",
+"Gestational Diabetes",
+"Diabetic Ketoacidosis",
+"Hypoglycemia",
+"Diabetic Neuropathy",
+"Diabetic Nephropathy",
+"Diabetic Retinopathy",
+"Thyroid Hormones",
 "Hypothyroidism",
+"Hyperthyroidism",
+"Goiter",
+"Thyroiditis",
+"Thyroid Cancer",
+"Hyperparathyroidism",
+"Hypoparathyroidism",
+"Cushing Syndrome",
+"Addison Disease",
+"Pheochromocytoma",
+"Growth Hormone",
+"Acromegaly",
+"Metabolic Syndrome",
+"Obesity",
 
 "Blood",
+"Plasma",
+"Red Blood Cells",
+"White Blood Cells",
+"Platelets",
+"Bone Marrow",
+"Hemoglobin",
+"Blood Groups",
+"Coagulation",
+"Hemostasis",
 "Anemia",
 "Thrombosis",
-"Blood Groups",
-"Hemoglobin",
-"Coagulation",
 
+"Immune System",
+"Lymphatic System",
+"Innate Immunity",
+"Adaptive Immunity",
+"Antibodies",
+"Antigens",
+"B Cells",
+"T Cells",
+"Natural Killer Cells",
+"Complement System",
+"Vaccines",
+"Autoimmune Diseases",
+"Allergies",
+"Hypersensitivity",
+"Immunodeficiency",
+"Transplant Immunology",
+
+"Cellular Biology",
 "Cell Injury",
-"Inflammation",
-"Neoplasia",
-"Edema",
-"Necrosis",
+"Cell Death",
 "Apoptosis",
+"Necrosis",
+"Inflammation",
+"Acute Inflammation",
+"Chronic Inflammation",
+"Fever",
+"Pain",
+"Edema",
+"Healing",
+"Neoplasia",
+"Benign Tumors",
+"Malignant Tumors",
+"Metastasis",
+"Cancer Staging",
+"Cancer Grading",
+"Tumor Markers",
+"Chemotherapy",
+"Radiotherapy",
+"Immunotherapy",
+"Cancer Screening",
 
-"Adrenergic Drugs",
-"Adrenergic Blockers",
-"Cholinergic Drugs",
-"Antimicrobial Pharmacology",
-"Cardiovascular Pharmacology",
-"CNS Pharmacology",
-"Endocrine Pharmacology",
-"Gastrointestinal Pharmacology",
-"Clinical Pharmacology",
-"Drug Receptors",
+"Bone Anatomy",
+"Bone Physiology",
+"Bone Remodeling",
+"Osteoporosis",
+"Osteomalacia",
+"Rickets",
+"Osteoarthritis",
+"Rheumatoid Arthritis",
+"Gout",
+"Septic Arthritis",
+"Ankylosing Spondylitis",
+"Systemic Lupus Erythematosus",
+"Joint Pain",
+"Back Pain",
+"Fractures",
+"Dislocations",
+"Sprains",
+"Strains",
+"Ligament Injuries",
+"Tendon Injuries",
+"Muscle Injuries",
+"Osteomyelitis",
+"Scoliosis",
+"Kyphosis",
+"Lordosis",
+"Disc Herniation",
+"Carpal Tunnel Syndrome",
+
+"Skin Anatomy",
+"Skin Physiology",
+"Epidermis",
+"Dermis",
+"Subcutaneous Tissue",
+"Hair",
+"Nails",
+"Sweat Glands",
+"Sebaceous Glands",
+"Acne",
+"Eczema",
+"Psoriasis",
+"Dermatitis",
+"Urticaria",
+"Contact Dermatitis",
+"Fungal Skin Infections",
+"Bacterial Skin Infections",
+"Viral Skin Infections",
+"Scabies",
+"Vitiligo",
+"Alopecia",
+"Melanoma",
+"Skin Cancer",
+"Burns",
+"Pressure Ulcers",
+"Wound Healing",
+"Cellulitis",
+"Abscess",
+
+"Eye Anatomy",
+"Eye Physiology",
+"Vision",
+"Refraction",
+"Myopia",
+"Hypermetropia",
+"Astigmatism",
+"Presbyopia",
+"Cataract",
+"Glaucoma",
+"Conjunctivitis",
+"Keratitis",
+"Uveitis",
+"Retinal Disorders",
+"Retinal Detachment",
+"Macular Degeneration",
+"Diabetic Retinopathy",
+"Optic Neuritis",
+
+"Ear Anatomy",
+"Hearing",
+"External Ear",
+"Middle Ear",
+"Inner Ear",
+"Otitis Externa",
+"Otitis Media",
+"Mastoiditis",
+"Hearing Loss",
+"Conductive Hearing Loss",
+"Sensorineural Hearing Loss",
+"Tinnitus",
+"Vertigo",
+"Ménière Disease",
+
+"Nose Anatomy",
+"Sinuses",
+"Sinusitis",
+"Allergic Rhinitis",
+"Epistaxis",
+"Deviated Nasal Septum",
+"Tonsillitis",
+"Pharyngitis",
+"Laryngitis",
+"Vocal Cords",
+"Nasal Polyps",
+
+"Male Reproductive System",
+"Female Reproductive System",
+"Spermatogenesis",
+"Oogenesis",
+"Menstrual Cycle",
+"Ovulation",
+"Fertilization",
+"Implantation",
+"Pregnancy",
+"Prenatal Care",
+"Antenatal Care",
+"Labor",
+"Delivery",
+"Postpartum Care",
+"Breastfeeding",
+"Breast Anatomy",
+"Breast Cancer",
+"Menopause",
+"Polycystic Ovary Syndrome",
+"Endometriosis",
+"Uterine Fibroids",
+"Pelvic Inflammatory Disease",
+"Ectopic Pregnancy",
+"Miscarriage",
+"Infertility",
+"Contraception",
+"Sexually Transmitted Infections",
+"Cervical Cancer",
+"Ovarian Cancer",
+"Prostate Anatomy",
+"Benign Prostatic Hyperplasia",
+"Prostate Cancer",
+"Erectile Dysfunction",
+"Male Infertility",
+"Testicular Cancer",
+"Testicular Torsion",
+
+"Neonatology",
+"Newborn Examination",
+"Prematurity",
+"Low Birth Weight",
+"Birth Asphyxia",
+"Neonatal Jaundice",
+"Neonatal Sepsis",
+"Congenital Heart Disease",
+"Cleft Lip",
+"Cleft Palate",
+"Childhood Asthma",
+"Childhood Pneumonia",
+"Childhood Diarrhea",
+"Childhood Malnutrition",
+"Growth and Development",
+"Developmental Milestones",
+"Childhood Immunization",
+"Measles",
+"Mumps",
+"Rubella",
+"Chickenpox",
+"Whooping Cough",
+"Diphtheria",
+"Polio",
+"Tetanus",
+"Childhood Epilepsy",
+"ADHD",
+"Autism Spectrum Disorder",
+"Cerebral Palsy",
+
+"General Surgery Principles",
+"Surgical Instruments",
+"Surgical Asepsis",
+"Sterilization",
+"Sutures",
+"Surgical Wounds",
+"Wound Classification",
+"Preoperative Assessment",
+"Postoperative Care",
+"Surgical Infections",
+"Appendectomy",
+"Cholecystectomy",
+"Hernia Repair",
+"Bowel Surgery",
+"Thyroid Surgery",
+"Breast Surgery",
+"Trauma Surgery",
+"Abdominal Trauma",
+"Chest Trauma",
+"Head Trauma",
+"Fracture Management",
+"Burn Management",
+"Skin Grafting",
+"Organ Transplantation",
+
+"Anesthesia Basics",
+"General Anesthesia",
+"Regional Anesthesia",
+"Local Anesthesia",
+"Spinal Anesthesia",
+"Epidural Anesthesia",
+"Pain Management",
+
+"Analgesics",
+"NSAIDs",
+"Opioids",
+"Antibiotics",
+"Antivirals",
+"Antifungals",
+"Antiparasitic Drugs",
+"Antimalarial Drugs",
+"Antitubercular Drugs",
+"Antihypertensive Drugs",
+"Antiarrhythmic Drugs",
+"Anticoagulants",
+"Antiplatelet Drugs",
+"Thrombolytics",
+"Diuretics",
+"Beta Blockers",
+"Calcium Channel Blockers",
+"ACE Inhibitors",
+"ARBs",
+"Statins",
+"Insulin Therapy",
+"Oral Antidiabetic Drugs",
+"Thyroid Drugs",
+"Corticosteroids",
+"Immunosuppressants",
+"Antihistamines",
+"Bronchodilators",
+"Asthma Medications",
+"Antiepileptic Drugs",
+"Antidepressants",
+"Antipsychotics",
+"Anxiolytics",
+"Sedatives",
 "Drug Interactions",
-"Dose Response",
-"Adverse Drug Reactions",
-"Drugs Affecting Blood",
-"Drugs Affecting Uterus",
-"Autonomic Nervous System",
-
+"Drug Side Effects",
+"Drug Toxicity",
 "Pharmacokinetics",
 "Pharmacodynamics",
 "Drug Absorption",
 "Drug Distribution",
 "Drug Metabolism",
 "Drug Excretion",
+"Half-Life",
+"Therapeutic Index",
+"Drug Receptors",
+"Agonists",
+"Antagonists",
+"Adverse Drug Reactions",
+"Drug Allergies",
 
-"Antibiotics",
-"Penicillin",
-"Cephalosporins",
-"Macrolides",
-"Aminoglycosides",
-"Tetracyclines",
-"Fluoroquinolones",
-"Antiviral Drugs",
-"Antifungal Drugs",
-"Antitubercular Drugs",
+"Microorganisms",
+"Bacteria",
+"Viruses",
+"Fungi",
+"Parasites",
+"Protozoa",
+"Helminths",
+"Gram-Positive Bacteria",
+"Gram-Negative Bacteria",
+"Bacterial Toxins",
+"Viral Replication",
+"Viral Genetics",
+"Fungal Infections",
+"Parasitic Infections",
+"Malaria",
+"Dengue",
+"Typhoid",
+"Cholera",
+"Hepatitis Viruses",
+"HIV/AIDS",
+"Influenza",
+"COVID-19",
+"Rabies",
+"HPV",
+"Tuberculosis Bacteria",
+"Syphilis",
+"Gonorrhea",
+"Chlamydia",
+"Salmonella",
+"Shigella",
+"E. coli",
+"Staphylococcus",
+"Streptococcus",
+"Clostridium",
+"Mycobacteria",
+"Candida",
+"Aspergillus",
+"Amoebiasis",
+"Giardiasis",
+"Toxoplasmosis",
+"Ascariasis",
+"Hookworm",
+"Tapeworm",
+"Schistosomiasis",
+"Medical Parasitology",
+"Sterilization Methods",
+"Infection Control",
+"Hand Hygiene",
 
-"Fever",
-"Diabetes",
-"Osteoporosis",
-"Gout",
-"Thrombosis",
-"Stroke",
-"Asthma",
-"Anemia",
-"Pneumonia",
-"Hypertension",
-
-"First Aid",
-"Basic Life Support",
-"CPR",
-"Shock",
-"Bleeding",
-"Burns",
-"Fractures",
-"Poisoning",
-
-"Genetics",
 "DNA",
 "RNA",
-"Protein Synthesis",
+"Genes",
 "Chromosomes",
-"Mutation",
-
-"Biochemistry",
+"Mutations",
+"Genetic Disorders",
+"Inheritance Patterns",
+"Genetic Testing",
 "Carbohydrates",
 "Proteins",
 "Lipids",
@@ -572,328 +1230,821 @@ const topics = [
 "Metabolism",
 "Glycolysis",
 "Krebs Cycle",
-"Urea Cycle"
+"Electron Transport Chain",
+"Oxidative Phosphorylation",
+"Gluconeogenesis",
+"Glycogen Metabolism",
+"Fatty Acid Metabolism",
+"Protein Metabolism",
+"Urea Cycle",
+"Amino Acids",
+"DNA Replication",
+"Protein Synthesis",
+
+"Complete Blood Count",
+"Blood Chemistry",
+"Liver Function Tests",
+"Kidney Function Tests",
+"Thyroid Function Tests",
+"Cardiac Enzymes",
+"Blood Glucose Testing",
+"HbA1c",
+"Urinalysis",
+"Stool Examination",
+"Blood Culture",
+"Urine Culture",
+"Microbiology Testing",
+"Serology",
+"PCR",
+"Biopsy",
+"Cytology",
+"Histopathology",
+"Imaging Basics",
+"X-Ray",
+"Ultrasound",
+"CT Scan",
+"MRI",
+"PET Scan",
+"Mammography",
+"Echocardiography",
+"Doppler Ultrasound",
+"Endoscopy",
+"Colonoscopy",
+
+"Public Health",
+"Health Promotion",
+"Disease Prevention",
+"Health Education",
+"Epidemiological Study Designs",
+"Incidence",
+"Prevalence",
+"Mortality",
+"Morbidity",
+"Risk Factors",
+"Screening",
+"Surveillance",
+"Outbreak Investigation",
+"Pandemic",
+"Epidemic",
+"Endemic Diseases",
+"Global Health",
+"Environmental Health",
+"Occupational Health",
+"Maternal Health",
+"Child Health",
+"Mental Health",
+"Community Health",
+"Health Policy",
+"Healthcare Systems",
+"Primary Healthcare",
+"Universal Health Coverage",
+
+"Nutrition",
+"Balanced Diet",
+"Macronutrients",
+"Micronutrients",
+"Protein Nutrition",
+"Carbohydrate Nutrition",
+"Fat Nutrition",
+"Dietary Fiber",
+"Water and Hydration",
+"Malnutrition",
+"Obesity Prevention",
+"Food Safety",
+"Food Poisoning",
+
+"First Aid",
+"First Aid for Bleeding",
+"First Aid for Fractures",
+"First Aid for Burns",
+"First Aid for Poisoning",
+"First Aid for Choking",
+"First Aid for Seizures",
+"First Aid for Fainting",
+"First Aid for Heatstroke",
+"First Aid for Hypothermia",
+"Disaster Management",
+"Emergency Preparedness",
+"Basic Life-Saving Skills",
+
+"World Geography",
+"World History",
+"Ancient Civilizations",
+"Modern History",
+"World Wars",
+"Famous Historical Events",
+"Famous Leaders",
+"Famous Scientists",
+"Famous Physicians",
+"Nobel Prize",
+"Scientific Discoveries",
+"Inventions",
+"Space Science",
+"Solar System",
+"Planets",
+"Stars",
+"Galaxies",
+"Black Holes",
+"Universe",
+"Astronomy",
+"Astrophysics",
+"Earth Science",
+"Geology",
+"Volcanoes",
+"Earthquakes",
+"Tsunamis",
+"Mountains",
+"Rivers",
+"Oceans",
+"Deserts",
+"Continents",
+"Countries of the World",
+"World Capitals",
+"World Flags",
+"Time Zones",
+"Climate",
+"Weather",
+"Natural Resources",
+"Environmental Science",
+"Climate Change",
+"Global Warming",
+"Renewable Energy",
+"Solar Energy",
+"Wind Energy",
+"Hydropower",
+"Nuclear Energy",
+"Electricity",
+"Magnetism",
+"Physics Basics",
+"Chemistry Basics",
+"Atomic Structure",
+"Periodic Table",
+"Chemical Bonds",
+"Acids and Bases",
+"Organic Chemistry",
+"Inorganic Chemistry",
+
+"Computer Basics",
+"Computer Hardware",
+"Computer Software",
+"Operating Systems",
+"Internet",
+"World Wide Web",
+"Cybersecurity",
+"Artificial Intelligence",
+"Machine Learning",
+"Data Science",
+"Programming",
+"Databases",
+"Cloud Computing",
+"Robotics",
+"Biotechnology",
+"Genetic Engineering",
+"Cloning",
+"Stem Cells",
+"Nanotechnology",
+"Medical Technology",
+"Telemedicine",
+"Digital Health",
+"Electronic Health Records",
+"Medical Devices",
+"Artificial Organs",
+"Prosthetics",
+"Biomedical Engineering",
+"Medical Imaging Technology",
+"Health Informatics",
+"Medical Research",
+
+"Critical Thinking",
+"Logical Reasoning",
+"Communication Skills",
+"Leadership",
+"Time Management",
+"Study Skills",
+"Memory and Learning",
+"Psychology Basics",
+"Human Behavior",
+"Personality",
+"Emotions",
+"Stress",
+"Anxiety",
+"Sleep",
+"Dreams",
+"Motivation",
+"Cognitive Psychology",
+"Social Psychology",
+"Developmental Psychology",
+"Educational Psychology",
+"Workplace Psychology",
+"Sociology",
+"Anthropology",
+"Economics Basics",
+"Personal Finance",
+"Banking",
+"Money and Currency",
+"Inflation",
+"Supply and Demand",
+"Business Basics",
+"Entrepreneurship",
+"Marketing",
+"Management",
+"Accounting Basics",
+"Law Basics",
+"Human Rights",
+"Constitution",
+"Government Systems",
+"Democracy",
+"International Organizations",
+"United Nations",
+"World Health Organization",
+"UNICEF",
+"Red Cross",
+"International Relations",
+"Diplomacy",
+
+"Pakistan Geography",
+"Pakistan History",
+"Pakistan Constitution",
+"Provinces of Pakistan",
+"Cities of Pakistan",
+"Rivers of Pakistan",
+"Mountains of Pakistan",
+"National Symbols of Pakistan",
+"Pakistan Economy",
+"Pakistan Healthcare System",
+"Pakistan Medical Education",
+"Pakistani Scientists",
+"Pakistani Physicians",
+
+"Islamic History",
+"Comparative Religion",
+"Philosophy",
+"Ethics",
+"Logic",
+"Literature",
+"English Grammar",
+"Vocabulary",
+"Synonyms",
+"Antonyms",
+"Idioms",
+"Proverbs",
+"Famous Books",
+"Famous Authors",
+"Famous Poems",
+"Art History",
+"Music",
+"Cinema",
+"Sports",
+"Olympic Games",
+"Cricket",
+"Football",
+"Tennis",
+"Basketball",
+"Athletics",
+
+"Medical Consent",
+"Patient Confidentiality",
+"Doctor-Patient Relationship",
+"Medical Negligence",
+"Organ Donation",
+"Blood Donation",
+"Health Insurance",
+"Healthy Lifestyle",
+"Exercise and Fitness",
+"Sleep Hygiene",
+"Mental Wellness",
+"Preventive Healthcare"
 
 ];
 
 
-/* =========================
-   TOPIC NOTES
-========================= */
+/* =====================================================
+   SUBJECT CATEGORIES
+===================================================== */
 
-const notes = {
+const subjectRules = [
 
-"Human Anatomy":{
-summary:"Human anatomy is the study of the structure of the human body.",
-points:[
-"Anatomy studies body structures and their relationships.",
-"The human body is organized into cells, tissues, organs and systems.",
-"Major body systems include nervous, cardiovascular, respiratory, digestive and urinary systems.",
-"Anatomical position is the standard reference position used in anatomy."
-],
-mcqs:[
 {
-q:"Anatomy is mainly the study of:",
-o:["Body structure","Body temperature","Drug action","Disease treatment"],
-a:0
-},
-{
-q:"The basic structural unit of the body is:",
-o:["Cell","Organ","Tissue","System"],
-a:0
-}
+name:"🦴 Anatomy",
+keywords:[
+"anatomy","bone","organ","heart anatomy",
+"brain anatomy","eye anatomy","ear anatomy",
+"nose anatomy","skin anatomy","renal anatomy",
+"respiratory anatomy","digestive anatomy",
+"reproductive system","male reproductive",
+"female reproductive","cranial nerves",
+"spinal cord"
 ]
 },
 
-"Human Physiology":{
-summary:"Physiology is the study of normal functions of the human body.",
-points:[
-"Physiology explains how organs and body systems function.",
-"Homeostasis maintains a relatively stable internal environment.",
-"The nervous and endocrine systems coordinate many body functions.",
-"Blood transports oxygen, nutrients, hormones and waste products."
-],
-mcqs:[
 {
-q:"Physiology is the study of:",
-o:["Body function","Body shape only","Drug names","Bacteria"],
-a:0
-},
-{
-q:"Maintenance of a stable internal environment is called:",
-o:["Homeostasis","Necrosis","Inflammation","Mutation"],
-a:0
-}
+name:"❤️ Physiology",
+keywords:[
+"physiology","cardiac cycle","cardiac output",
+"blood pressure","pulse","gas exchange",
+"oxygen transport","lung volumes",
+"pulmonary ventilation","urine formation",
+"glomerular filtration","homeostasis",
+"electrolyte balance","acid-base balance"
 ]
 },
 
-"Heart":{
-summary:"The heart is a muscular organ that pumps blood through the pulmonary and systemic circulations.",
-points:[
-"The heart has four chambers: right atrium, right ventricle, left atrium and left ventricle.",
-"The right side pumps blood to the lungs.",
-"The left side pumps oxygenated blood to the systemic circulation.",
-"Cardiac valves help maintain one-way blood flow.",
-"The SA node normally acts as the pacemaker."
-],
-mcqs:[
 {
-q:"How many chambers does the human heart have?",
-o:["2","3","4","5"],
-a:2
-},
-{
-q:"The normal pacemaker of the heart is:",
-o:["AV node","SA node","Bundle of His","Purkinje fibers"],
-a:1
-}
+name:"🔬 Pathology",
+keywords:[
+"pathology","cell injury","cell death",
+"apoptosis","necrosis","inflammation",
+"edema","healing","neoplasia","tumor",
+"cancer","metastasis","fibrosis"
 ]
 },
 
-"Heart Anatomy":{
-summary:"Heart anatomy describes the chambers, valves, vessels and layers of the heart.",
-points:[
-"The four chambers are two atria and two ventricles.",
-"The tricuspid valve lies between right atrium and right ventricle.",
-"The mitral valve lies between left atrium and left ventricle.",
-"The pulmonary artery carries blood from the right ventricle to the lungs.",
-"The aorta carries blood from the left ventricle to the systemic circulation."
-],
-mcqs:[
 {
-q:"The mitral valve is located between:",
-o:["Right atrium and right ventricle","Left atrium and left ventricle","Left ventricle and aorta","Right ventricle and pulmonary artery"],
-a:1
-}
+name:"💊 Pharmacology",
+keywords:[
+"pharmacology","drug","antibiotic",
+"antiviral","antifungal","analgesic",
+"NSAID","opioid","antihypertensive",
+"antiarrhythmic","anticoagulant",
+"antiplatelet","diuretic","beta blocker",
+"ACE inhibitor","ARB","statin","insulin",
+"corticosteroid","antihistamine",
+"bronchodilator","antiepileptic",
+"antidepressant","antipsychotic",
+"pharmacokinetics","pharmacodynamics",
+"drug receptor","agonist","antagonist",
+"toxicity","drug allergy"
 ]
 },
 
-"Kidney":{
-summary:"The kidneys maintain fluid, electrolyte and acid-base balance and remove metabolic waste.",
-points:[
-"The nephron is the structural and functional unit of the kidney.",
-"Kidneys filter plasma and modify the filtrate through reabsorption and secretion.",
-"They regulate water and electrolyte balance.",
-"They contribute to blood pressure regulation.",
-"They produce erythropoietin and activate vitamin D."
-],
-mcqs:[
 {
-q:"The functional unit of kidney is:",
-o:["Neuron","Nephron","Alveolus","Hepatocyte"],
-a:1
-},
-{
-q:"Most filtered glucose is normally reabsorbed in:",
-o:["Proximal tubule","Collecting duct","Loop of Henle","Ureter"],
-a:0
-}
+name:"🦠 Microbiology",
+keywords:[
+"microbiology","microorganism","bacteria",
+"virus","fungi","parasite","protozoa",
+"helminth","malaria","dengue","typhoid",
+"cholera","HIV","influenza","COVID",
+"rabies","tuberculosis","syphilis",
+"gonorrhea","chlamydia","salmonella",
+"shigella","E. coli","staphylococcus",
+"streptococcus","clostridium","candida",
+"aspergillus","amoebiasis","giardiasis",
+"schistosomiasis","infection control"
 ]
 },
 
-"Diabetes Mellitus":{
-summary:"Diabetes mellitus is a group of metabolic disorders characterized by chronic hyperglycemia.",
-points:[
-"Type 1 diabetes results from severe or absolute insulin deficiency.",
-"Type 2 diabetes involves insulin resistance with progressive beta-cell dysfunction.",
-"Persistent hyperglycemia can damage blood vessels and nerves.",
-"Important complications include retinopathy, nephropathy and neuropathy.",
-"Management depends on diabetes type and individual clinical factors."
-],
-mcqs:[
 {
-q:"Diabetes mellitus is characterized by chronic:",
-o:["Hyperglycemia","Hypothermia","Hypotension","Hyperventilation"],
-a:0
-},
-{
-q:"Insulin is produced by pancreatic:",
-o:["Alpha cells","Beta cells","Delta cells","Acinar cells"],
-a:1
-}
+name:"🧬 Biochemistry & Molecular Biology",
+keywords:[
+"biochemistry","molecular biology",
+"carbohydrate","protein","lipid",
+"enzyme","metabolism","glycolysis",
+"krebs","oxidative phosphorylation",
+"gluconeogenesis","glycogen",
+"fatty acid","urea cycle","amino acid",
+"DNA","RNA","protein synthesis",
+"DNA replication"
 ]
 },
 
-"Hypertension":{
-summary:"Hypertension is persistently elevated arterial blood pressure.",
-points:[
-"Blood pressure depends on cardiac output and systemic vascular resistance.",
-"Long-standing hypertension can damage the heart, brain, kidneys and blood vessels.",
-"Risk factors include obesity, high sodium intake, inactivity and genetic factors.",
-"Treatment may include lifestyle modification and antihypertensive medicines."
-],
-mcqs:[
 {
-q:"Hypertension primarily refers to persistently elevated:",
-o:["Blood pressure","Blood glucose","Body temperature","Heart size"],
-a:0
-}
+name:"🧬 Genetics",
+keywords:[
+"genetic","gene","chromosome","mutation",
+"inheritance","genetic testing"
 ]
 },
 
-"Asthma":{
-summary:"Asthma is a chronic inflammatory airway disease characterized by variable respiratory symptoms and airflow limitation.",
-points:[
-"Common symptoms include wheezing, cough and shortness of breath.",
-"Triggers can include allergens, exercise, infections and irritants.",
-"Airflow limitation is often variable and reversible.",
-"Treatment is individualized and commonly includes inhaled therapies."
-],
-mcqs:[
 {
-q:"A common symptom of asthma is:",
-o:["Wheezing","Jaundice","Hematuria","Hearing loss"],
-a:0
-}
+name:"🛡️ Immunology",
+keywords:[
+"immune","immunity","antibody","antigen",
+"B cell","T cell","natural killer",
+"complement","vaccine","autoimmune",
+"allergy","hypersensitivity",
+"immunodeficiency","transplant immunology"
 ]
 },
 
-"Stroke":{
-summary:"Stroke is an acute neurological disorder caused by interruption of cerebral blood flow or bleeding within the brain.",
-points:[
-"Ischemic stroke results from vascular occlusion.",
-"Hemorrhagic stroke results from bleeding.",
-"Sudden weakness, speech difficulty or facial asymmetry can be warning signs.",
-"Stroke is a medical emergency requiring rapid assessment."
-],
-mcqs:[
 {
-q:"Most strokes are caused by:",
-o:["Vascular occlusion","Bone fracture","Skin infection","Vitamin deficiency"],
-a:0
-}
+name:"🫀 Clinical Medicine",
+keywords:[
+"heart","hypertension","stroke","asthma",
+"COPD","pneumonia","kidney","liver",
+"diabetes","thyroid","anemia","migraine",
+"epilepsy","meningitis","Parkinson",
+"Alzheimer","arthritis","gout","GERD",
+"gastritis","appendicitis","hepatitis",
+"cirrhosis","kidney stones","UTI",
+"osteoporosis","osteomalacia","rickets"
 ]
 },
 
-"Pharmacokinetics":{
-summary:"Pharmacokinetics describes what the body does to a drug.",
-points:[
-"The major processes are absorption, distribution, metabolism and excretion.",
-"Bioavailability describes the fraction of an administered dose reaching systemic circulation.",
-"Drug clearance describes removal of drug from plasma.",
-"Half-life is related to drug elimination."
-],
-mcqs:[
 {
-q:"Pharmacokinetics describes:",
-o:["What the drug does to the body","What the body does to the drug","Only adverse effects","Only drug receptors"],
-a:1
-}
+name:"🏥 Surgery",
+keywords:[
+"surgery","surgical","appendectomy",
+"cholecystectomy","hernia repair",
+"bowel surgery","thyroid surgery",
+"breast surgery","trauma surgery",
+"skin grafting","transplantation",
+"suture","preoperative","postoperative"
 ]
 },
 
-"Pharmacodynamics":{
-summary:"Pharmacodynamics describes the biochemical and physiological effects of drugs and their mechanisms of action.",
-points:[
-"Drug effects may occur through receptors, enzymes, ion channels or transporters.",
-"Agonists activate receptors.",
-"Antagonists reduce or block receptor-mediated effects.",
-"Dose-response relationships describe how effect changes with dose."
-],
-mcqs:[
 {
-q:"Pharmacodynamics primarily describes:",
-o:["Drug effects on the body","Drug excretion only","Drug absorption only","Drug storage"],
-a:0
-}
+name:"👶 Pediatrics",
+keywords:[
+"pediatric","childhood","newborn",
+"neonatal","prematurity","birth asphyxia",
+"child","measles","mumps","rubella",
+"chickenpox","whooping cough","diphtheria",
+"polio","tetanus","ADHD","autism",
+"cerebral palsy"
 ]
 },
 
-"Microbiology":{
-summary:"Medical microbiology studies microorganisms that cause disease and their interactions with humans.",
-points:[
-"Major groups include bacteria, viruses, fungi and parasites.",
-"Microbiology includes diagnosis, transmission, prevention and treatment of infections.",
-"Laboratory methods may include microscopy, culture, antigen detection and molecular tests.",
-"Infection prevention includes hygiene, vaccination and appropriate antimicrobial use."
-],
-mcqs:[
 {
-q:"Which is a major group studied in medical microbiology?",
-o:["Bacteria","Bones","Muscles","Cartilage"],
-a:0
-}
+name:"🤰 Obstetrics & Gynecology",
+keywords:[
+"pregnancy","prenatal","antenatal",
+"labor","delivery","postpartum",
+"breastfeeding","menstrual","ovulation",
+"fertilization","implantation","menopause",
+"polycystic","endometriosis","uterine",
+"ectopic","miscarriage","infertility",
+"contraception","cervical","ovarian",
+"prostate","testicular","erectile"
 ]
 },
 
-"Pathology":{
-summary:"Pathology is the study of disease processes and the structural and functional changes caused by disease.",
-points:[
-"Cell injury may result from hypoxia, toxins, infections or immune reactions.",
-"Inflammation is an important protective response.",
-"Neoplasia involves abnormal cell proliferation.",
-"Pathology connects disease mechanisms with clinical manifestations."
-],
-mcqs:[
 {
-q:"Pathology mainly studies:",
-o:["Disease processes","Normal exercise","Weather","Computer systems"],
-a:0
-}
+name:"🚑 Emergency & First Aid",
+keywords:[
+"first aid","CPR","basic life support",
+"advanced life support","emergency",
+"shock","bleeding","burns","choking",
+"seizures","fainting","heatstroke",
+"hypothermia","disaster","defibrillation",
+"airway management","intubation"
 ]
 },
 
-"First Aid":{
-summary:"First aid is immediate basic care provided to an injured or suddenly ill person until professional medical help is available.",
-points:[
-"Ensure scene safety before helping.",
-"Call emergency services when serious injury or illness is suspected.",
-"Severe bleeding requires prompt pressure and emergency assessment.",
-"Unconsciousness and abnormal breathing require urgent action.",
-"Do not give food or drink to an unconscious person."
-],
-mcqs:[
 {
-q:"The first priority before providing first aid is:",
-o:["Ensure scene safety","Give medicine","Give food","Move everyone"],
-a:0
-}
+name:"🧪 Laboratory & Diagnostics",
+keywords:[
+"laboratory","blood test","CBC",
+"blood chemistry","liver function",
+"kidney function","thyroid function",
+"cardiac enzymes","glucose testing",
+"HbA1c","urinalysis","stool examination",
+"blood culture","urine culture","PCR",
+"biopsy","cytology","histopathology",
+"X-Ray","ultrasound","CT","MRI","PET",
+"mammography","echocardiography",
+"Doppler","endoscopy","colonoscopy"
+]
+},
+
+{
+name:"🌍 Public Health",
+keywords:[
+"public health","health promotion",
+"disease prevention","epidemiology",
+"incidence","prevalence","mortality",
+"morbidity","risk factors","screening",
+"surveillance","outbreak","pandemic",
+"epidemic","endemic","global health",
+"community health","health policy",
+"healthcare systems","primary healthcare"
+]
+},
+
+{
+name:"🥗 Nutrition",
+keywords:[
+"nutrition","diet","macronutrient",
+"micronutrient","protein nutrition",
+"carbohydrate nutrition","fat nutrition",
+"fiber","hydration","malnutrition",
+"food safety","food poisoning",
+"obesity"
+]
+},
+
+{
+name:"🌎 General Knowledge",
+keywords:[
+"geography","history","civilization",
+"world wars","historical","leaders",
+"scientists","physicians","Nobel",
+"discoveries","inventions","space",
+"solar system","planets","stars",
+"galaxies","black holes","universe",
+"astronomy","astrophysics","earth",
+"geology","volcano","earthquake",
+"tsunami","mountains","rivers","oceans",
+"deserts","continents","countries",
+"capitals","flags","time zones",
+"climate","weather","resources",
+"environment","global warming",
+"energy","electricity","magnetism",
+"physics","chemistry","atomic",
+"periodic table","organic chemistry"
+]
+},
+
+{
+name:"💻 Computer & Technology",
+keywords:[
+"computer","internet","web","cybersecurity",
+"artificial intelligence","machine learning",
+"data science","programming","database",
+"cloud computing","robotics",
+"biotechnology","genetic engineering",
+"cloning","stem cells","nanotechnology",
+"telemedicine","digital health",
+"electronic health records",
+"medical technology","medical devices",
+"prosthetics","biomedical engineering",
+"health informatics"
+]
+},
+
+{
+name:"🧠 Psychology & Social Sciences",
+keywords:[
+"psychology","behavior","personality",
+"emotion","stress","anxiety","sleep",
+"dreams","motivation","cognitive",
+"social psychology","developmental",
+"educational psychology","workplace",
+"sociology","anthropology","economics",
+"finance","banking","inflation",
+"business","entrepreneurship","marketing",
+"management","accounting","leadership"
+]
+},
+
+{
+name:"🇵🇰 Pakistan Studies",
+keywords:[
+"Pakistan","Pakistani","provinces of Pakistan",
+"cities of Pakistan","rivers of Pakistan",
+"mountains of Pakistan","national symbols",
+"Pakistan economy","Pakistan healthcare",
+"Pakistan medical education"
+]
+},
+
+{
+name:"📚 Ethics, Religion & Literature",
+keywords:[
+"Islamic history","religion","philosophy",
+"ethics","logic","literature",
+"grammar","vocabulary","synonyms",
+"antonyms","idioms","proverbs","books",
+"authors","poems","art","music","cinema"
+]
+},
+
+{
+name:"⚽ Sports",
+keywords:[
+"sports","Olympic","cricket","football",
+"tennis","basketball","athletics"
 ]
 }
+
+];
+
+
+/* =====================================================
+   GET SUBJECT
+===================================================== */
+
+function getSubject(topic){
+
+const lower=topic.toLowerCase();
+
+for(const subject of subjectRules){
+
+for(const keyword of subject.keywords){
+
+if(lower.includes(keyword.toLowerCase())){
+return subject.name;
+}
+
+}
+
+}
+
+return "📘 Other Medical & General Knowledge";
+
+}
+
+
+/* =====================================================
+   CREATE SUBJECT DATABASE
+===================================================== */
+
+function createSubjectDatabase(){
+
+const database={};
+
+topics.forEach(function(topic){
+
+const subject=getSubject(topic);
+
+if(!database[subject]){
+database[subject]=[];
+}
+
+if(!database[subject].includes(topic)){
+database[subject].push(topic);
+}
+
+});
+
+return database;
+
+}
+
+
+/* =====================================================
+   RENDER SUBJECT FILTERS
+===================================================== */
+
+const subjectsContainer=
+document.getElementById("subjectsContainer");
+
+const subjectFilters=
+document.getElementById("subjectFilters");
+
+const database=createSubjectDatabase();
+
+
+function renderFilters(){
+
+subjectFilters.innerHTML="";
+
+const allButton=document.createElement("button");
+
+allButton.className="filter-btn active";
+allButton.textContent="All Subjects";
+
+allButton.onclick=function(){
+
+document
+.querySelectorAll(".filter-btn")
+.forEach(btn=>btn.classList.remove("active"));
+
+allButton.classList.add("active");
+
+renderSubjects();
 
 };
 
+subjectFilters.appendChild(allButton);
 
-/* =========================
+
+Object.keys(database).forEach(function(subject){
+
+const button=document.createElement("button");
+
+button.className="filter-btn";
+button.textContent=subject;
+
+button.onclick=function(){
+
+document
+.querySelectorAll(".filter-btn")
+.forEach(btn=>btn.classList.remove("active"));
+
+button.classList.add("active");
+
+renderSubjects(subject);
+
+};
+
+subjectFilters.appendChild(button);
+
+});
+
+}
+
+
+/* =====================================================
+   RENDER SUBJECTS
+===================================================== */
+
+function renderSubjects(selectedSubject=null){
+
+subjectsContainer.innerHTML="";
+
+let subjects=Object.keys(database);
+
+if(selectedSubject){
+subjects=subjects.filter(
+subject=>subject===selectedSubject
+);
+}
+
+subjects.forEach(function(subject){
+
+const section=document.createElement("section");
+
+const title=document.createElement("div");
+
+title.className="subject-title";
+
+title.innerHTML=`
+<h2>${subject}</h2>
+<span class="topic-count">
+${database[subject].length} Topics
+</span>
+`;
+
+section.appendChild(title);
+
+
+const grid=document.createElement("div");
+
+grid.className="topic-grid";
+
+
+database[subject].forEach(function(topic){
+
+const button=document.createElement("button");
+
+button.className="topic-button";
+
+button.textContent="📖 "+topic;
+
+button.onclick=function(){
+
+openTopic(topic);
+
+};
+
+grid.appendChild(button);
+
+});
+
+
+section.appendChild(grid);
+
+subjectsContainer.appendChild(section);
+
+});
+
+}
+
+
+/* =====================================================
    GENERIC NOTES
-========================= */
+===================================================== */
 
 function makeGenericNote(topic){
 
 return {
 
 summary:
-topic+" is an important topic for medical and general academic study.",
+`${topic} is an important topic for medical and academic study.`,
 
 points:[
-"Learn the definition and basic concept of "+topic+".",
-"Understand its important structures, functions or mechanisms.",
-"Study common clinical or practical applications related to "+topic+".",
-"Review important terminology and high-yield examination points.",
-"Use textbooks and qualified medical resources for advanced study."
+`Understand the basic definition and concept of ${topic}.`,
+`Study the important structures, functions or mechanisms related to ${topic}.`,
+`Review important clinical or practical applications of ${topic}.`,
+`Learn important terminology and high-yield examination points.`,
+`Revise the topic regularly and use reliable medical textbooks for advanced study.`
 ],
 
 mcqs:[
 {
-q:"Which approach is most useful when studying "+topic+"?",
+q:`What is the best first step when studying ${topic}?`,
 o:[
-"Understand the basic concept first",
-"Memorize random information only",
-"Ignore definitions",
+"Understand the basic concept",
+"Memorize random facts",
+"Skip the definition",
 "Avoid revision"
 ],
-a:0
+a:0,
+e:"Understanding the basic concept provides a foundation for deeper learning."
 },
+
 {
-q:topic+" is best studied by:",
+q:`Which approach is most useful for ${topic}?`,
 o:[
-"Understanding concepts and reviewing them",
-"Skipping important concepts",
+"Conceptual understanding and revision",
+"Skipping important information",
 "Never practicing questions",
 "Studying without revision"
 ],
-a:0
+a:0,
+e:"Conceptual understanding followed by revision improves retention."
 }
+
 ]
 
 };
@@ -901,168 +2052,542 @@ a:0
 }
 
 
-/* =========================
-   DISPLAY TOPICS
-========================= */
+/* =====================================================
+   DETAILED NOTES
+===================================================== */
 
-const topicList=document.getElementById("topicList");
+const notes={
 
-function renderTopics(list){
 
-topicList.innerHTML="";
+"Human Anatomy":{
 
-list.forEach(function(topic){
+summary:
+"Human anatomy is the scientific study of the structure of the human body and the relationships between its parts.",
 
-const button=document.createElement("button");
+points:[
+"The body is organized into cells, tissues, organs and organ systems.",
+"Anatomical position is the standard reference position.",
+"Major systems include cardiovascular, respiratory, nervous, digestive and urinary systems.",
+"Anatomy can be studied regionally or systemically."
+],
 
-button.className="topic-button";
-button.textContent=topic;
+mcqs:[
+{
+q:"Anatomy is primarily the study of:",
+o:[
+"Body structure",
+"Drug action",
+"Disease treatment",
+"Body temperature"
+],
+a:0,
+e:"Anatomy focuses on body structures and their relationships."
+},
 
-button.addEventListener("click",function(){
+{
+q:"The basic structural unit of the human body is:",
+o:[
+"Cell",
+"Tissue",
+"Organ",
+"System"
+],
+a:0,
+e:"The cell is the basic structural and functional unit of the body."
+}
+]
 
-openTopic(topic);
+},
 
-});
 
-topicList.appendChild(button);
+"Human Physiology":{
 
-});
+summary:
+"Physiology is the study of the normal functions of the human body.",
+
+points:[
+"Physiology explains how cells, tissues, organs and systems work.",
+"Homeostasis helps maintain a stable internal environment.",
+"The nervous and endocrine systems regulate many body processes.",
+"Blood transports oxygen, nutrients, hormones and waste products."
+],
+
+mcqs:[
+{
+q:"Physiology is mainly the study of:",
+o:[
+"Body function",
+"Body structure only",
+"Bacteria",
+"Drug names"
+],
+a:0,
+e:"Physiology deals with normal body functions."
+},
+
+{
+q:"Maintenance of a relatively stable internal environment is called:",
+o:[
+"Homeostasis",
+"Necrosis",
+"Mutation",
+"Inflammation"
+],
+a:0,
+e:"Homeostasis refers to maintaining internal physiological balance."
+}
+]
+
+},
+
+
+"Heart":{
+
+summary:
+"The heart is a muscular organ that pumps blood through pulmonary and systemic circulation.",
+
+points:[
+"The heart has four chambers.",
+"The right side pumps blood toward the lungs.",
+"The left side pumps oxygenated blood to the systemic circulation.",
+"Heart valves help maintain one-way blood flow.",
+"The SA node normally acts as the cardiac pacemaker."
+],
+
+mcqs:[
+{
+q:"How many chambers does the human heart have?",
+o:["2","3","4","5"],
+a:2,
+e:"The heart has two atria and two ventricles."
+},
+
+{
+q:"The normal pacemaker of the heart is:",
+o:[
+"AV node",
+"SA node",
+"Bundle of His",
+"Purkinje fibers"
+],
+a:1,
+e:"The sinoatrial node normally initiates the cardiac impulse."
+}
+]
+
+},
+
+
+"Kidney Physiology":{
+
+summary:
+"Kidney physiology explains how the kidneys regulate fluid, electrolytes, acid-base balance and waste removal.",
+
+points:[
+"The nephron is the functional unit of the kidney.",
+"Filtration occurs at the renal corpuscle.",
+"Reabsorption returns useful substances to the blood.",
+"Secretion moves selected substances into tubular fluid.",
+"The kidneys contribute to blood pressure regulation and erythropoietin production."
+],
+
+mcqs:[
+{
+q:"The functional unit of the kidney is:",
+o:[
+"Neuron",
+"Nephron",
+"Alveolus",
+"Hepatocyte"
+],
+a:1,
+e:"The nephron is the structural and functional unit of the kidney."
+}
+]
+
+},
+
+
+"Diabetes Mellitus":{
+
+summary:
+"Diabetes mellitus is a group of metabolic disorders characterized by chronic hyperglycemia.",
+
+points:[
+"Type 1 diabetes involves severe or absolute insulin deficiency.",
+"Type 2 diabetes commonly involves insulin resistance and progressive beta-cell dysfunction.",
+"Persistent hyperglycemia can damage blood vessels and nerves.",
+"Important complications include retinopathy, nephropathy and neuropathy.",
+"Management depends on diabetes type and individual clinical factors."
+],
+
+mcqs:[
+{
+q:"Diabetes mellitus is characterized by chronic:",
+o:[
+"Hyperglycemia",
+"Hypothermia",
+"Hypotension",
+"Hyperventilation"
+],
+a:0,
+e:"The defining metabolic abnormality is persistent elevation of blood glucose."
+},
+
+{
+q:"Insulin is produced by pancreatic:",
+o:[
+"Alpha cells",
+"Beta cells",
+"Delta cells",
+"Acinar cells"
+],
+a:1,
+e:"Beta cells of the pancreatic islets produce insulin."
+}
+]
+
+},
+
+
+"Hypertension":{
+
+summary:
+"Hypertension refers to persistently elevated arterial blood pressure.",
+
+points:[
+"Blood pressure is influenced by cardiac output and systemic vascular resistance.",
+"Long-standing hypertension can damage the heart, brain, kidneys and blood vessels.",
+"Risk factors include obesity, high sodium intake, inactivity and genetic factors.",
+"Management can involve lifestyle modification and antihypertensive medication."
+],
+
+mcqs:[
+{
+q:"Hypertension primarily refers to persistent elevation of:",
+o:[
+"Blood pressure",
+"Blood glucose",
+"Body temperature",
+"Heart size"
+],
+a:0,
+e:"Hypertension is defined by persistently elevated arterial blood pressure."
+}
+]
+
+},
+
+
+"Asthma":{
+
+summary:
+"Asthma is a chronic inflammatory airway disorder characterized by variable respiratory symptoms and airflow limitation.",
+
+points:[
+"Common symptoms include wheezing, cough and shortness of breath.",
+"Triggers may include allergens, exercise, infections and irritants.",
+"Airflow limitation is often variable.",
+"Treatment is individualized and may include inhaled medications."
+],
+
+mcqs:[
+{
+q:"A common symptom of asthma is:",
+o:[
+"Wheezing",
+"Jaundice",
+"Hematuria",
+"Hearing loss"
+],
+a:0,
+e:"Wheezing is a common respiratory symptom of asthma."
+}
+]
+
+},
+
+
+"Stroke":{
+
+summary:
+"Stroke is an acute neurological disorder caused by interruption of cerebral blood flow or bleeding within the brain.",
+
+points:[
+"Ischemic stroke results from interruption of blood flow due to vascular occlusion.",
+"Hemorrhagic stroke results from bleeding.",
+"Sudden weakness, facial asymmetry and speech difficulty are important warning signs.",
+"Stroke requires rapid medical assessment."
+],
+
+mcqs:[
+{
+q:"Ischemic stroke is primarily caused by:",
+o:[
+"Vascular occlusion",
+"Bone fracture",
+"Skin infection",
+"Vitamin deficiency"
+],
+a:0,
+e:"Ischemic stroke occurs when cerebral blood flow is obstructed."
+}
+]
+
+},
+
+
+"Pharmacokinetics":{
+
+summary:
+"Pharmacokinetics describes what the body does to a drug.",
+
+points:[
+"The major processes are absorption, distribution, metabolism and excretion.",
+"Bioavailability describes the fraction of an administered dose reaching systemic circulation.",
+"Clearance describes removal of drug from plasma.",
+"Half-life is related to drug elimination."
+],
+
+mcqs:[
+{
+q:"Pharmacokinetics describes:",
+o:[
+"What the drug does to the body",
+"What the body does to the drug",
+"Only adverse effects",
+"Only receptors"
+],
+a:1,
+e:"Pharmacokinetics includes absorption, distribution, metabolism and excretion."
+}
+]
+
+},
+
+
+"Pharmacodynamics":{
+
+summary:
+"Pharmacodynamics describes the effects of drugs on the body and their mechanisms of action.",
+
+points:[
+"Drugs may act through receptors, enzymes, ion channels or transporters.",
+"Agonists activate receptors.",
+"Antagonists reduce or block receptor-mediated effects.",
+"Dose-response relationships describe changes in effect with dose."
+],
+
+mcqs:[
+{
+q:"Pharmacodynamics primarily describes:",
+o:[
+"Drug effects on the body",
+"Drug excretion only",
+"Drug absorption only",
+"Drug storage"
+],
+a:0,
+e:"Pharmacodynamics focuses on drug actions and effects."
+}
+]
+
+},
+
+
+"Microbiology":{
+
+summary:
+"Medical microbiology studies microorganisms and their interactions with humans, including infectious disease.",
+
+points:[
+"Important groups include bacteria, viruses, fungi and parasites.",
+"Microbiology includes diagnosis, transmission, prevention and treatment of infection.",
+"Laboratory methods include microscopy, culture, antigen detection and molecular testing.",
+"Infection prevention includes hygiene, vaccination and appropriate antimicrobial use."
+],
+
+mcqs:[
+{
+q:"Which is a major group studied in medical microbiology?",
+o:[
+"Bacteria",
+"Bones",
+"Muscles",
+"Cartilage"
+],
+a:0,
+e:"Bacteria are one of the major groups studied in medical microbiology."
+}
+]
+
+},
+
+
+"Pathology":{
+
+summary:
+"Pathology is the study of disease processes and the structural and functional changes caused by disease.",
+
+points:[
+"Cell injury may result from hypoxia, toxins, infection or immune reactions.",
+"Inflammation is an important protective response.",
+"Neoplasia involves abnormal cell proliferation.",
+"Pathology connects disease mechanisms with clinical manifestations."
+],
+
+mcqs:[
+{
+q:"Pathology primarily studies:",
+o:[
+"Disease processes",
+"Normal exercise",
+"Weather",
+"Computer systems"
+],
+a:0,
+e:"Pathology focuses on disease processes and their effects on tissues and organs."
+}
+]
+
+},
+
+
+"First Aid":{
+
+summary:
+"First aid is immediate basic care provided to an injured or suddenly ill person until professional medical help becomes available.",
+
+points:[
+"Ensure scene safety before providing assistance.",
+"Activate emergency medical services when serious illness or injury is suspected.",
+"Severe bleeding requires prompt pressure and urgent medical assessment.",
+"Unconsciousness and abnormal breathing require immediate action.",
+"Do not give food or drink to an unconscious person."
+],
+
+mcqs:[
+{
+q:"Before providing first aid, the first priority is:",
+o:[
+"Ensure scene safety",
+"Give medicine",
+"Give food",
+"Move everyone"
+],
+a:0,
+e:"The rescuer should first ensure that the scene is safe."
+}
+]
 
 }
 
-renderTopics(topics);
+};
 
 
-/* =========================
+/* =====================================================
    OPEN TOPIC
-========================= */
+===================================================== */
 
 function openTopic(topic){
 
-const details=document.getElementById("topicDetails");
+const details=
+document.getElementById("topicDetails");
 
-const data=notes[topic] || makeGenericNote(topic);
+const data=
+notes[topic] || makeGenericNote(topic);
+
+const subject=getSubject(topic);
 
 let html="";
 
 html+=`
-<button class="close-btn" id="closeTopic">✕ Close</button>
 
-<h2>📖 ${escapeHTML(topic)}</h2>
+<div class="topic-header">
 
-<div class="note-box">
+<button
+class="close-btn"
+onclick="closeTopic()">
+✕ Close
+</button>
 
-<h3>📝 Short Note</h3>
+<h2>📖 ${topic}</h2>
 
-<p>${escapeHTML(data.summary)}</p>
+<p>${subject}</p>
+
+</div>
+
+<div class="topic-content">
+
+<div class="definition">
+
+<strong>Overview:</strong>
+
+<p>${data.summary}</p>
 
 </div>
 
 <div class="note-box">
 
-<h3>📚 Important Points</h3>
+<h3>📌 Key Points</h3>
 
 <ul>
-${data.points.map(function(point){
-return "<li>"+escapeHTML(point)+"</li>";
-}).join("")}
+
+${data.points.map(point=>
+`<li>${point}</li>`
+).join("")}
+
 </ul>
 
 </div>
 
-<div class="note-box">
+<div class="mcq-section">
 
-<h3>🧠 MCQs</h3>
+<h3>🧠 Practice MCQs</h3>
 
-`;
-
-data.mcqs.forEach(function(mcq,index){
-
-html+=`
+${data.mcqs.map((mcq,index)=>`
 
 <div class="mcq">
 
-<strong>${index+1}. ${escapeHTML(mcq.q)}</strong>
+<div class="mcq-question">
 
-<div class="mcq-options">
+${index+1}. ${mcq.q}
 
-${mcq.o.map(function(option,optIndex){
+</div>
 
-return `
+${mcq.o.map((option,i)=>`
+
 <button
-data-answer="${optIndex}"
-data-correct="${mcq.a}"
->
-${String.fromCharCode(65+optIndex)}. ${escapeHTML(option)}
+onclick="checkAnswer(this,${i},${mcq.a},'exp${index}')">
+
+${String.fromCharCode(65+i)}. ${option}
+
 </button>
-`;
 
-}).join("")}
+`).join("")}
+
+<div
+id="exp${index}"
+class="explanation">
+
+<strong>Explanation:</strong>
+${mcq.e || "Review the topic carefully for more details."}
 
 </div>
 
-<p class="answer-message"></p>
+</div>
+
+`).join("")}
+
+</div>
 
 </div>
 
 `;
-
-});
-
-html+=`</div>`;
 
 details.innerHTML=html;
 
 details.style.display="block";
-
-details.querySelector("#closeTopic").addEventListener("click",function(){
-
-details.style.display="none";
-
-});
-
-const allButtons=details.querySelectorAll(".mcq button");
-
-allButtons.forEach(function(button){
-
-button.addEventListener("click",function(){
-
-const parent=button.closest(".mcq");
-
-const buttons=parent.querySelectorAll("button");
-
-const correct=Number(button.dataset.correct);
-
-const selected=Number(button.dataset.answer);
-
-buttons.forEach(function(btn){
-
-btn.disabled=true;
-
-});
-
-if(selected===correct){
-
-button.classList.add("correct");
-
-parent.querySelector(".answer-message").textContent=
-"✅ Correct answer!";
-
-}else{
-
-button.classList.add("wrong");
-
-buttons[correct].classList.add("correct");
-
-parent.querySelector(".answer-message").textContent=
-"❌ Incorrect. The correct answer is option "+
-String.fromCharCode(65+correct)+".";
-
-}
-
-});
-
-});
 
 details.scrollIntoView({
 behavior:"smooth",
@@ -1072,103 +2597,139 @@ block:"start"
 }
 
 
-/* =========================
-   SEARCH
-========================= */
+/* =====================================================
+   CLOSE TOPIC
+===================================================== */
 
-const searchBox=document.getElementById("searchBox");
-const searchResults=document.getElementById("searchResults");
+function closeTopic(){
+
+const details=
+document.getElementById("topicDetails");
+
+details.style.display="none";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* =====================================================
+   MCQ CHECK
+===================================================== */
+
+function checkAnswer(button,selected,correct,explanationId){
+
+const parent=button.parentElement;
+
+const buttons=
+parent.querySelectorAll("button");
+
+buttons.forEach(btn=>{
+btn.disabled=true;
+});
+
+if(selected===correct){
+
+button.classList.add("correct");
+
+}else{
+
+button.classList.add("wrong");
+
+buttons[correct].classList.add("correct");
+
+}
+
+document
+.getElementById(explanationId)
+.style.display="block";
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+const searchBox=
+document.getElementById("searchBox");
+
+const searchResults=
+document.getElementById("searchResults");
+
 
 searchBox.addEventListener("input",function(){
 
-const query=searchBox.value.trim().toLowerCase();
+const query=
+this.value.trim().toLowerCase();
+
+searchResults.innerHTML="";
 
 if(!query){
+return;
+}
 
-searchResults.innerHTML="";
+const results=topics.filter(topic=>
+topic.toLowerCase().includes(query)
+);
 
-renderTopics(topics);
+if(results.length===0){
+
+searchResults.innerHTML=`
+<div class="search-item">
+❌ No topic found
+</div>
+`;
 
 return;
 
 }
 
-const matches=topics.filter(function(topic){
+results.slice(0,30).forEach(function(topic){
 
-return topic.toLowerCase().includes(query);
-
-});
-
-searchResults.innerHTML="";
-
-if(matches.length===0){
-
-searchResults.innerHTML=
-"<p>No topic found. Try another keyword.</p>";
-
-renderTopics([]);
-
-return;
-
-}
-
-matches.forEach(function(topic){
-
-const item=document.createElement("div");
+const item=
+document.createElement("div");
 
 item.className="search-item";
 
-item.textContent="📖 "+topic;
+item.innerHTML=`
 
-item.addEventListener("click",function(){
+<strong>📖 ${topic}</strong>
+
+<div class="search-subject">
+${getSubject(topic)}
+</div>
+
+`;
+
+item.onclick=function(){
 
 openTopic(topic);
 
-});
+searchBox.value="";
+
+searchResults.innerHTML="";
+
+};
 
 searchResults.appendChild(item);
 
 });
 
-renderTopics(matches);
-
 });
 
 
-/* =========================
-   SUBJECT CARD BUTTONS
-========================= */
+/* =====================================================
+   INITIALIZE
+===================================================== */
 
-document.querySelectorAll(".card button").forEach(function(button){
+renderFilters();
 
-button.addEventListener("click",function(){
+renderSubjects();
 
-openTopic(button.dataset.topic);
-
-});
-
-});
-
-
-/* =========================
-   SAFE HTML
-========================= */
-
-function escapeHTML(value){
-
-return String(value)
-
-.replace(/&/g,"&amp;")
-
-.replace(/</g,"&lt;")
-
-.replace(/>/g,"&gt;")
-
-.replace(/"/g,"&quot;")
-
-.replace(/'/g,"&#039;");
-
-}
 
 </script>
 
