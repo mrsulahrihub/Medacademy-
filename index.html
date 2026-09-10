@@ -1,5 +1,16 @@
 <script>
 
+/* ==========================================
+   MEDACADEMY STUDENT QUESTION SYSTEM
+   Unanswered questions are saved locally.
+   No AI / Backend required.
+========================================== */
+
+
+/* ==========================================
+   EXISTING TOPICS
+========================================== */
+
 const topics = [
     "Heart",
     "Kidney",
@@ -62,9 +73,9 @@ const topics = [
 ];
 
 
-/* ================================
-   TOPIC INFORMATION
-================================ */
+/* ==========================================
+   TOPIC ANSWERS
+========================================== */
 
 const topicAnswers = {
 
@@ -74,7 +85,7 @@ const topicAnswers = {
 The heart is a muscular organ that pumps blood throughout the body.
 
 Main functions:
-• Pumps oxygenated blood to tissues
+• Pumps oxygenated blood to body tissues
 • Pumps deoxygenated blood to lungs
 • Maintains circulation
 • Helps maintain blood pressure
@@ -120,19 +131,19 @@ Major parts:
 • Brainstem
 • Diencephalon
 
-Functions include:
+Functions:
 • Thinking
 • Memory
 • Sensation
 • Movement
 • Coordination
-• Regulation of many body functions
+• Regulation of body functions
 `,
 
 "liver": `
 🫀 LIVER
 
-The liver is a large metabolic organ.
+The liver is a major metabolic organ.
 
 Important functions:
 • Metabolism of nutrients
@@ -359,7 +370,7 @@ Common causes:
 
 Cough is a protective reflex that helps clear the airways.
 
-Possible causes include:
+Possible causes:
 • Respiratory infections
 • Asthma
 • Allergies
@@ -410,8 +421,6 @@ Important receptors:
 • Beta-1
 • Beta-2
 • Beta-3
-
-They can affect heart rate, blood vessels, bronchi and other organs.
 `,
 
 "adrenergic blockers": `
@@ -419,7 +428,7 @@ They can affect heart rate, blood vessels, bronchi and other organs.
 
 Adrenergic blockers reduce the effects of adrenergic stimulation.
 
-Examples of groups:
+Important groups:
 • Alpha blockers
 • Beta blockers
 
@@ -444,7 +453,7 @@ They may affect:
 
 Drug receptors are biological structures with which drugs interact to produce effects.
 
-Common receptor families include:
+Common receptor families:
 • G-protein coupled receptors
 • Ion channels
 • Enzyme-linked receptors
@@ -468,7 +477,7 @@ They may increase toxicity or reduce therapeutic effects.
 
 An adverse drug reaction is an unwanted and harmful response associated with a medicine used at normal doses.
 
-Examples include:
+Examples:
 • Allergic reactions
 • Gastrointestinal effects
 • Liver injury
@@ -511,21 +520,17 @@ Inflammation can be acute or chronic.
 };
 
 
-/* ================================
-   FIND TOPIC
-================================ */
+/* ==========================================
+   FIND ANSWER
+========================================== */
 
 function findTopic(question){
 
-    const q =
-    question
-    .toLowerCase()
-    .replace(/[?.,!]/g," ");
+    const q = question
+        .toLowerCase()
+        .replace(/[?.,!]/g," ");
 
-    const keys =
-    Object.keys(topicAnswers);
-
-    for(const key of keys){
+    for(const key of Object.keys(topicAnswers)){
 
         if(q.includes(key)){
             return key;
@@ -534,322 +539,341 @@ function findTopic(question){
     }
 
     return null;
-
 }
 
 
-/* ================================
-   AI RESPONSE
-================================ */
+/* ==========================================
+   CHECK WHETHER ANSWER EXISTS
+========================================== */
 
 function getAIReply(question){
 
-    const topic =
-    findTopic(question);
-
-
-    /* Topic found */
+    const topic = findTopic(question);
 
     if(topic){
-
         return topicAnswers[topic];
-
     }
 
-
-    /* Search partial topic */
-
-    const found =
-    topics.find(topic =>
-        question
-        .toLowerCase()
-        .includes(
-            topic.toLowerCase()
-        )
+    const found = topics.find(topic =>
+        question.toLowerCase().includes(topic.toLowerCase())
     );
-
 
     if(found){
 
-        const key =
-        found.toLowerCase();
+        const key = found.toLowerCase();
 
         if(topicAnswers[key]){
-
             return topicAnswers[key];
-
         }
 
         return `
 📚 ${found}
 
-This topic is available on MedAcademy.
+This topic is present in MedAcademy, but detailed notes for this topic
+have not been added yet.
 
-Please open the topic page from the Topics section to study its complete notes.
+You can submit your question below.
+The administrator can add the answer/topic later.
 `;
-
     }
 
-
-    /* Greetings */
-
-    const q =
-    question.toLowerCase();
-
-
-    if(
-        q.includes("hello") ||
-        q.includes("hi") ||
-        q.includes("assalam")
-    ){
-
-        return `
-👋 Hello!
-
-I am MedAcademy AI.
-
-I can answer questions related to the medical topics available on this website.
-
-Try asking:
-
-• What is heart?
-• What is kidney?
-• Explain pharmacology
-• What is thrombosis?
-• What is ECG?
-• Explain hypertension
-`;
-
-    }
-
-
-    /* Not available */
-
-    return `
-❌ Sorry!
-
-I can only answer questions related to the topics currently available on the MedAcademy website.
-
-Please ask about one of these topics:
-
-❤️ Heart
-🧠 Brain
-🫘 Kidney
-🫀 Liver
-🦴 Anatomy
-🫁 Physiology
-💊 Pharmacology
-🔬 Pathology
-🦠 Microbiology
-🩸 Diabetes
-❤️ Hypertension
-🧠 Migraine
-🩸 Thrombosis
-🧠 Stroke
-❤️ ECG
-🔥 Inflammation
-💊 Adrenergic Drugs
-💊 Cholinergic Drugs
-⚕️ Drug Interactions
-
-Use the Search Topics box to find more.
-`;
-
+    return null;
 }
 
 
-/* ================================
-   CHAT
-================================ */
+/* ==========================================
+   SAVE UNANSWERED QUESTION
+========================================== */
 
-function sendAI(){
+function saveUnansweredQuestion(question){
 
-    const input =
-    document.getElementById("chatInput");
-
-    const question =
-    input.value.trim();
-
-
-    if(!question){
-        return;
-    }
-
-
-    addMessage(
-        question,
-        "user-message"
-    );
-
-
-    input.value="";
-
-
-    setTimeout(()=>{
-
-        const answer =
-        getAIReply(question);
-
-
-        addMessage(
-            answer,
-            "ai-message"
+    let questions =
+        JSON.parse(
+            localStorage.getItem("medacademy_questions") || "[]"
         );
 
-    },500);
+    questions.push({
+
+        question: question,
+
+        date: new Date().toLocaleString(),
+
+        status: "Pending"
+
+    });
+
+    localStorage.setItem(
+        "medacademy_questions",
+        JSON.stringify(questions)
+    );
 
 }
 
 
-/* ================================
-   ADD MESSAGE
-================================ */
-
-function addMessage(text,type){
-
-    const chat =
-    document.getElementById("chatArea");
-
-
-    const message =
-    document.createElement("div");
-
-
-    message.className =
-    "message "+type;
-
-
-    message.textContent =
-    text;
-
-
-    chat.appendChild(message);
-
-
-    chat.scrollTop =
-    chat.scrollHeight;
-
-}
-
-
-/* ================================
-   ENTER
-================================ */
-
-function handleEnter(event){
-
-    if(
-        event.key==="Enter" &&
-        !event.shiftKey
-    ){
-
-        event.preventDefault();
-
-        sendAI();
-
-    }
-
-}
-
-
-/* ================================
-   CLEAR CHAT
-================================ */
-
-function clearChat(){
-
-    document.getElementById("chatArea")
-    .innerHTML=`
-    <div class="message ai-message">
-    👋 Chat cleared.
-
-    Ask me about a MedAcademy topic.
-    </div>
-    `;
-
-}
-
-
-/* ================================
-   PROMPT
-================================ */
-
-function usePrompt(text){
-
-    const input =
-    document.getElementById("chatInput");
-
-    input.value=text;
-
-    input.focus();
-
-}
-
-
-/* ================================
-   ASK QUESTION
-================================ */
+/* ==========================================
+   ASK STUDENT QUESTION
+========================================== */
 
 function answerStudentQuestion(){
 
     const input =
-    document.getElementById("studentQuestion");
+        document.getElementById("studentQuestion");
 
     const question =
-    input.value.trim();
-
+        input.value.trim();
 
     const box =
-    document.getElementById("answerBox");
+        document.getElementById("answerBox");
 
     const answer =
-    document.getElementById("answerText");
+        document.getElementById("answerText");
 
 
     if(!question){
 
         box.style.display="block";
 
-        answer.textContent=
-        "Please enter your question.";
+        answer.textContent =
+            "Please write your question first.";
+
+        return;
+    }
+
+
+    const reply =
+        getAIReply(question);
+
+
+    box.style.display="block";
+
+
+    if(reply){
+
+        answer.textContent = reply;
+
+    }else{
+
+        answer.textContent = `
+❓ Your question is not available yet.
+
+Don't worry!
+
+Your question has been saved as a NEW QUESTION.
+
+📌 The MedAcademy administrator can review it later
+and add the answer/topic to the website.
+
+Thank you for helping us improve MedAcademy ❤️
+`;
+
+        saveUnansweredQuestion(question);
+
+    }
+
+
+    input.value="";
+
+}
+
+
+/* ==========================================
+   STUDENT QUESTION BOX
+========================================== */
+
+function submitNewQuestion(){
+
+    const input =
+        document.getElementById("newQuestion");
+
+    const question =
+        input.value.trim();
+
+
+    if(!question){
+
+        alert("Please write your question.");
 
         return;
 
     }
 
 
-    box.style.display="block";
+    saveUnansweredQuestion(question);
 
 
-    answer.textContent=
-    "🤖 Thinking...";
+    document.getElementById("questionSubmitted")
+        .style.display="block";
 
 
-    setTimeout(()=>{
+    input.value="";
 
-        answer.textContent =
-        getAIReply(question);
 
-    },500);
+    showPendingQuestions();
 
 }
 
 
-/* ================================
+/* ==========================================
+   SHOW PENDING QUESTIONS
+========================================== */
+
+function showPendingQuestions(){
+
+    const container =
+        document.getElementById("pendingQuestions");
+
+    if(!container){
+        return;
+    }
+
+
+    const questions =
+        JSON.parse(
+            localStorage.getItem("medacademy_questions") || "[]"
+        );
+
+
+    if(questions.length===0){
+
+        container.innerHTML =
+            "<p>No questions submitted yet.</p>";
+
+        return;
+    }
+
+
+    container.innerHTML = "";
+
+
+    questions.forEach(function(item,index){
+
+        const div =
+            document.createElement("div");
+
+        div.style.cssText = `
+            background:#fff;
+            padding:15px;
+            margin:10px 0;
+            border-radius:10px;
+            border-left:5px solid #087f8c;
+        `;
+
+
+        div.innerHTML = `
+            <strong>Question ${index+1}</strong>
+            <p>${escapeHTML(item.question)}</p>
+            <small>
+                📅 ${escapeHTML(item.date)}
+                &nbsp; | &nbsp;
+                🕐 ${escapeHTML(item.status)}
+            </small>
+        `;
+
+
+        container.appendChild(div);
+
+    });
+
+}
+
+
+/* ==========================================
+   ADMIN VIEW
+========================================== */
+
+function showAdminQuestions(){
+
+    const password =
+        prompt("Enter Admin Password:");
+
+    if(password !== "admin123"){
+
+        alert("Wrong password.");
+
+        return;
+
+    }
+
+
+    const questions =
+        JSON.parse(
+            localStorage.getItem("medacademy_questions") || "[]"
+        );
+
+
+    if(questions.length===0){
+
+        alert("No unanswered questions.");
+
+        return;
+
+    }
+
+
+    let text =
+        "📋 MEDACADEMY UNANSWERED QUESTIONS\n\n";
+
+
+    questions.forEach(function(item,index){
+
+        text +=
+        `${index+1}. ${item.question}\n`+
+        `Date: ${item.date}\n`+
+        `Status: ${item.status}\n\n`;
+
+    });
+
+
+    alert(text);
+
+}
+
+
+/* ==========================================
+   CLEAR QUESTIONS
+========================================== */
+
+function clearStudentQuestions(){
+
+    const password =
+        prompt("Enter Admin Password:");
+
+    if(password !== "admin123"){
+
+        alert("Wrong password.");
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        "medacademy_questions"
+    );
+
+
+    showPendingQuestions();
+
+    alert("All saved questions cleared.");
+
+}
+
+
+/* ==========================================
    SEARCH TOPICS
-================================ */
+========================================== */
 
 function searchTopics(){
 
     const input =
-    document.getElementById("searchBox")
-    .value
-    .toLowerCase()
-    .trim();
+        document.getElementById("searchBox")
+        .value
+        .toLowerCase()
+        .trim();
 
 
     const results =
-    document.getElementById("searchResults");
+        document.getElementById("searchResults");
 
 
     results.innerHTML="";
@@ -861,19 +885,17 @@ function searchTopics(){
 
 
     const matches =
-    topics.filter(topic =>
-        topic
-        .toLowerCase()
-        .includes(input)
-    );
+        topics.filter(topic =>
+            topic.toLowerCase().includes(input)
+        );
 
 
     if(matches.length===0){
 
         results.innerHTML=`
-        <div class="search-result">
-        ❌ No topic found.
-        </div>
+            <div class="search-result">
+                ❌ No topic found.
+            </div>
         `;
 
         return;
@@ -884,27 +906,38 @@ function searchTopics(){
     matches.forEach(topic=>{
 
         const div =
-        document.createElement("div");
+            document.createElement("div");
 
-        div.className=
-        "search-result";
+        div.className="search-result";
 
-        div.innerHTML=
-        `📖 <strong>${topic}</strong>
-        <br>
-        <button
-        onclick="askTopic('${topic.replace(/'/g,"\\'")}')"
-        style="
-        margin-top:8px;
-        padding:8px 14px;
-        border:0;
-        border-radius:7px;
-        background:#0d6efd;
-        color:white;
-        cursor:pointer;
-        ">
-        Ask AI →
-        </button>`;
+        const button =
+            document.createElement("button");
+
+        button.textContent =
+            "Ask about "+topic+" →";
+
+        button.onclick=function(){
+
+            document.getElementById("studentQuestion")
+                .value =
+                "Explain "+topic;
+
+            document.getElementById("askQuestion")
+                .scrollIntoView({
+                    behavior:"smooth"
+                });
+
+        };
+
+
+        div.innerHTML =
+            `📖 <strong>${escapeHTML(topic)}</strong>`;
+
+        div.appendChild(
+            document.createElement("br")
+        );
+
+        div.appendChild(button);
 
         results.appendChild(div);
 
@@ -913,53 +946,32 @@ function searchTopics(){
 }
 
 
-/* ================================
-   ASK TOPIC FROM SEARCH
-================================ */
-
-function askTopic(topic){
-
-    document
-    .getElementById("chatInput")
-    .value =
-    "Explain "+topic;
-
-    document
-    .getElementById("ai")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-    setTimeout(()=>{
-        sendAI();
-    },500);
-
-}
-
-
-/* ================================
+/* ==========================================
    SUGGESTIONS
-================================ */
+========================================== */
 
 function showSuggestions(){
 
     const input =
-    document
-    .getElementById("suggestionInput")
-    .value
-    .toLowerCase()
-    .trim();
-
+        document.getElementById("suggestionInput");
 
     const list =
-    document
-    .getElementById("suggestionList");
+        document.getElementById("suggestionList");
+
+
+    if(!input || !list){
+        return;
+    }
+
+
+    const value =
+        input.value.toLowerCase().trim();
 
 
     list.innerHTML="";
 
 
-    const popular=[
+    const popular = [
         "Heart",
         "Brain",
         "Kidney",
@@ -972,44 +984,37 @@ function showSuggestions(){
 
 
     const matches =
-    input
-    ?
-    topics
-    .filter(topic =>
-        topic
-        .toLowerCase()
-        .includes(input)
-    )
-    .slice(0,10)
-    :
-    popular;
+        value
+        ?
+        topics.filter(topic =>
+            topic.toLowerCase().includes(value)
+        ).slice(0,10)
+        :
+        popular;
 
 
     matches.forEach(topic=>{
 
         const item =
-        document.createElement("div");
+            document.createElement("div");
 
-        item.className=
-        "suggestion";
+        item.className="suggestion";
 
-        item.textContent=
-        "🔎 "+topic;
+        item.textContent =
+            "🔎 "+topic;
 
 
-        item.onclick=()=>{
+        item.onclick=function(){
 
-            document
-            .getElementById("searchBox")
-            .value=topic;
+            document.getElementById("searchBox")
+                .value=topic;
 
             searchTopics();
 
-            document
-            .querySelector(".search-area")
-            .scrollIntoView({
-                behavior:"smooth"
-            });
+            document.getElementById("searchBox")
+                .scrollIntoView({
+                    behavior:"smooth"
+                });
 
         };
 
@@ -1021,10 +1026,194 @@ function showSuggestions(){
 }
 
 
-/* ================================
-   START
-================================ */
+/* ==========================================
+   ESCAPE HTML
+========================================== */
+
+function escapeHTML(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* ==========================================
+   INITIALIZE
+========================================== */
 
 showSuggestions();
+showPendingQuestions();
 
 </script>
+
+
+<!-- ==========================================
+     ADD THIS HTML WHERE YOU WANT
+     THE STUDENT QUESTION SECTION
+========================================== -->
+
+<section id="askQuestion" style="
+    max-width:1000px;
+    margin:40px auto;
+    padding:25px;
+    background:#ffffff;
+    border-radius:15px;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+">
+
+    <h2 style="
+        color:#087f8c;
+        text-align:center;
+        margin-bottom:10px;
+    ">
+        ❓ Ask a New Question
+    </h2>
+
+    <p style="
+        text-align:center;
+        color:#666;
+        margin-bottom:20px;
+    ">
+        Didn't find the answer you were looking for?
+        Submit your question and it can be added to MedAcademy later.
+    </p>
+
+
+    <textarea
+        id="newQuestion"
+        placeholder="Write your question here..."
+        style="
+            width:100%;
+            min-height:120px;
+            padding:15px;
+            border:2px solid #ddd;
+            border-radius:10px;
+            font-size:16px;
+            resize:vertical;
+        "
+    ></textarea>
+
+
+    <button
+        onclick="submitNewQuestion()"
+        style="
+            width:100%;
+            margin-top:12px;
+            padding:14px;
+            background:#087f8c;
+            color:white;
+            border:0;
+            border-radius:9px;
+            font-size:16px;
+            font-weight:bold;
+            cursor:pointer;
+        "
+    >
+        📤 Submit Question
+    </button>
+
+
+    <div
+        id="questionSubmitted"
+        style="
+            display:none;
+            margin-top:15px;
+            padding:15px;
+            background:#e8f7ea;
+            color:#176b2c;
+            border-radius:10px;
+            text-align:center;
+        "
+    >
+        ✅ Question saved successfully.
+        <br>
+        The administrator can review and add its answer later.
+    </div>
+
+
+    <div style="
+        margin-top:25px;
+        padding:15px;
+        background:#f3fafb;
+        border-radius:10px;
+    ">
+
+        <strong>📌 How it works:</strong>
+
+        <ol style="margin:10px 0 0 20px;">
+
+            <li>Student asks a question.</li>
+
+            <li>If an answer exists, the website shows it.</li>
+
+            <li>If no answer exists, the question is saved.</li>
+
+            <li>Admin can review unanswered questions later.</li>
+
+            <li>Admin can then add the new topic/answer to the website.</li>
+
+        </ol>
+
+    </div>
+
+
+    <!-- ADMIN BUTTONS -->
+
+    <div style="
+        margin-top:20px;
+        text-align:center;
+    ">
+
+        <button
+            onclick="showAdminQuestions()"
+            style="
+                padding:10px 15px;
+                border:0;
+                border-radius:7px;
+                background:#333;
+                color:white;
+                cursor:pointer;
+                margin:5px;
+            "
+        >
+            🔐 View Unanswered Questions
+        </button>
+
+
+        <button
+            onclick="clearStudentQuestions()"
+            style="
+                padding:10px 15px;
+                border:0;
+                border-radius:7px;
+                background:#dc3545;
+                color:white;
+                cursor:pointer;
+                margin:5px;
+            "
+        >
+            🗑️ Clear Questions
+        </button>
+
+    </div>
+
+
+    <!-- OPTIONAL -->
+    <!--
+    This section can be hidden from normal students.
+    It displays questions saved on THIS browser/device.
+    -->
+
+    <div
+        id="pendingQuestions"
+        style="
+            margin-top:25px;
+        "
+    ></div>
+
+</section>
