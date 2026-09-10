@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MedAcademy | Medical Student Study Platform</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -30,8 +28,6 @@ a{
     text-decoration:none;
 }
 
-/* HEADER */
-
 header{
     background:#0d6efd;
     color:white;
@@ -52,19 +48,17 @@ header{
 nav{
     display:flex;
     gap:22px;
+    flex-wrap:wrap;
 }
 
 nav a{
     color:white;
     font-size:16px;
-    font-weight:500;
 }
 
 nav a:hover{
     text-decoration:underline;
 }
-
-/* HERO */
 
 .hero{
     min-height:480px;
@@ -97,8 +91,6 @@ nav a:hover{
     margin-bottom:30px;
 }
 
-/* BUTTONS */
-
 .btn{
     display:inline-block;
     padding:13px 24px;
@@ -128,8 +120,6 @@ nav a:hover{
     color:white;
 }
 
-/* SECTIONS */
-
 .section{
     padding:60px 7%;
 }
@@ -148,26 +138,41 @@ nav a:hover{
     color:#666;
 }
 
-/* QUICK ACCESS */
-
-.quick-container{
+.quick-container,
+.subject-container,
+.topic-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
 }
 
-.quick-card{
+.quick-card,
+.subject-card,
+.topic-card{
     background:white;
-    padding:25px;
     border-radius:15px;
     text-align:center;
     box-shadow:0 4px 12px rgba(0,0,0,.08);
     transition:.3s;
 }
 
-.quick-card:hover{
+.quick-card{
+    padding:25px;
+}
+
+.subject-card{
+    padding:30px;
+}
+
+.topic-card{
+    padding:22px;
+}
+
+.quick-card:hover,
+.subject-card:hover,
+.topic-card:hover{
     transform:translateY(-5px);
 }
 
@@ -176,12 +181,25 @@ nav a:hover{
     margin-bottom:10px;
 }
 
-.quick-card h3{
-    color:#0d6efd;
+.subject-icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.topic-icon{
+    font-size:35px;
     margin-bottom:8px;
 }
 
-.quick-card p{
+.quick-card h3,
+.subject-card h3,
+.topic-card h3{
+    color:#0d6efd;
+    margin-bottom:10px;
+}
+
+.quick-card p,
+.subject-card p{
     color:#666;
     margin-bottom:15px;
 }
@@ -215,10 +233,6 @@ nav a:hover{
     outline:none;
 }
 
-.search-box:focus{
-    box-shadow:0 0 8px rgba(13,110,253,.25);
-}
-
 .search-results{
     width:90%;
     max-width:700px;
@@ -239,89 +253,14 @@ nav a:hover{
     font-weight:bold;
 }
 
-.no-result{
-    padding:15px;
-    color:#777;
-}
-
-/* SUBJECTS */
-
-.subject-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:25px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.subject-card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.subject-card:hover{
-    transform:translateY(-6px);
-}
-
-.subject-icon{
-    font-size:45px;
-    margin-bottom:10px;
-}
-
-.subject-card h3{
-    color:#0d6efd;
-    margin-bottom:10px;
-}
-
-.subject-card p{
-    color:#666;
-    margin-bottom:18px;
-}
-
-/* TOPICS */
-
-.topic-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.topic-card{
-    background:white;
-    padding:22px;
-    border-radius:14px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,.07);
-    transition:.3s;
-}
-
-.topic-card:hover{
-    transform:translateY(-5px);
-}
-
-.topic-card h3{
-    color:#0d6efd;
-    margin-bottom:12px;
-}
-
-.topic-icon{
-    font-size:35px;
-    margin-bottom:8px;
-}
-
 /* SUGGESTIONS */
 
 .suggestion-section{
     padding:60px 7%;
 }
 
-.suggestion-box{
+.suggestion-box,
+.ask-box{
     max-width:850px;
     margin:auto;
     background:white;
@@ -330,13 +269,15 @@ nav a:hover{
     box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
-.suggestion-box h2{
+.suggestion-box h2,
+.ask-box h2{
     color:#0d6efd;
     text-align:center;
     margin-bottom:10px;
 }
 
-.suggestion-box p{
+.suggestion-box p,
+.ask-box .intro{
     text-align:center;
     color:#666;
     margin-bottom:20px;
@@ -371,7 +312,6 @@ nav a:hover{
     padding:9px 13px;
     border-radius:20px;
     cursor:pointer;
-    font-size:14px;
 }
 
 .suggestion:hover{
@@ -384,27 +324,6 @@ nav a:hover{
 .ask-section{
     padding:60px 7%;
     background:#eef7ff;
-}
-
-.ask-box{
-    max-width:850px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-}
-
-.ask-box h2{
-    color:#0d6efd;
-    text-align:center;
-    margin-bottom:8px;
-}
-
-.ask-box .intro{
-    text-align:center;
-    color:#666;
-    margin-bottom:20px;
 }
 
 .question-input{
@@ -426,8 +345,8 @@ nav a:hover{
     cursor:pointer;
 }
 
-.ask-btn:hover{
-    background:#084298;
+.ask-btn:disabled{
+    opacity:.6;
 }
 
 .answer-box{
@@ -448,14 +367,14 @@ nav a:hover{
     white-space:pre-line;
 }
 
-/* AI CHAT */
+/* AI */
 
 .ai-section{
     padding:60px 7%;
 }
 
 .ai-box{
-    max-width:850px;
+    max-width:900px;
     margin:auto;
     background:white;
     border-radius:16px;
@@ -471,19 +390,27 @@ nav a:hover{
     font-weight:bold;
 }
 
+.ai-status{
+    font-size:12px;
+    font-weight:normal;
+    margin-top:3px;
+    opacity:.9;
+}
+
 .chat-area{
-    height:360px;
+    height:430px;
     overflow-y:auto;
     padding:20px;
     background:#f7fbff;
 }
 
 .message{
-    max-width:80%;
+    max-width:82%;
     padding:12px 15px;
     border-radius:14px;
     margin-bottom:12px;
     white-space:pre-line;
+    overflow-wrap:anywhere;
 }
 
 .ai-message{
@@ -496,6 +423,11 @@ nav a:hover{
     color:white;
     margin-left:auto;
     border-bottom-right-radius:3px;
+}
+
+.typing{
+    opacity:.75;
+    font-style:italic;
 }
 
 .chat-input-area{
@@ -523,8 +455,25 @@ nav a:hover{
     font-weight:bold;
 }
 
-.chat-send:hover{
-    background:#084298;
+.chat-send:disabled{
+    opacity:.6;
+}
+
+.ai-tools{
+    display:flex;
+    gap:8px;
+    padding:0 15px 15px;
+    background:white;
+    flex-wrap:wrap;
+}
+
+.ai-tool{
+    border:1px solid #cfe2ff;
+    background:#f4f9ff;
+    color:#0d6efd;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
 /* ABOUT */
@@ -567,9 +516,8 @@ footer p{
     }
 
     nav{
-        gap:12px;
-        flex-wrap:wrap;
         justify-content:center;
+        gap:12px;
     }
 
     .hero h1{
@@ -589,7 +537,7 @@ footer p{
     }
 
     .message{
-        max-width:90%;
+        max-width:92%;
     }
 
     .chat-input-area{
@@ -599,18 +547,11 @@ footer p{
     .chat-send{
         padding:12px;
     }
-
 }
-
 </style>
-
 </head>
 
-
 <body>
-
-
-<!-- HEADER -->
 
 <header>
 
@@ -619,19 +560,12 @@ footer p{
 </div>
 
 <nav>
-
 <a href="index.html">Home</a>
-
 <a href="#subjects">Subjects</a>
-
 <a href="#topics">Topics</a>
-
 <a href="notes.html">Notes</a>
-
 <a href="quiz.html">Quiz</a>
-
 <a href="#ask">Ask Question</a>
-
 </nav>
 
 </header>
@@ -648,8 +582,8 @@ footer p{
 <h2>Your Medical Student Study Platform</h2>
 
 <p>
-Study medical subjects, read concise notes,
-practice MCQs and ask medical questions.
+Study medical subjects, read notes, practice MCQs
+and ask questions with MedAcademy AI.
 </p>
 
 <a href="notes.html" class="btn primary-btn">
@@ -681,9 +615,7 @@ practice MCQs and ask medical questions.
 
 </div>
 
-
 <div class="quick-container">
-
 
 <div class="quick-card">
 
@@ -743,7 +675,7 @@ Study Heart
 <h3>Brain</h3>
 
 <p>
-Learn major parts and functions of the brain.
+Learn major parts and functions of brain.
 </p>
 
 <a href="brain.html" class="btn primary-btn">
@@ -752,17 +684,18 @@ Study Brain
 
 </div>
 
-
 </div>
 
 </section>
 
 
-<!-- SEARCH ALL TOPICS -->
+<!-- SEARCH -->
 
 <section class="search-area">
 
-<h2>🔎 Search Medical Topics</h2>
+<h2>
+🔎 Search Medical Topics
+</h2>
 
 <p>
 Search any topic available on MedAcademy.
@@ -789,7 +722,9 @@ oninput="searchTopics()"
 
 <h2>📚 Medical Subjects</h2>
 
-<p>Choose a subject and start studying.</p>
+<p>
+Choose a subject and start studying.
+</p>
 
 </div>
 
@@ -898,7 +833,6 @@ Explore Medicine
 
 </div>
 
-
 </div>
 
 </section>
@@ -912,7 +846,9 @@ Explore Medicine
 
 <h2>📖 Medical Topics</h2>
 
-<p>Explore medical study topics.</p>
+<p>
+Explore medical study topics.
+</p>
 
 </div>
 
@@ -1045,7 +981,6 @@ Explore Medicine
 <a href="inflammation.html" class="btn primary-btn">Study Now →</a>
 </div>
 
-
 </div>
 
 </section>
@@ -1057,10 +992,12 @@ Explore Medicine
 
 <div class="suggestion-box">
 
-<h2>💡 Student Suggestions</h2>
+<h2>
+💡 Student Suggestions
+</h2>
 
 <p>
-Type a topic and get quick topic suggestions.
+Type a topic and get quick suggestions.
 </p>
 
 <input
@@ -1070,26 +1007,25 @@ placeholder="Example: heart, kidney, diabetes..."
 oninput="showSuggestions()"
 >
 
-<div
-id="suggestionList"
-class="suggestion-list">
-</div>
+<div id="suggestionList" class="suggestion-list"></div>
 
 </div>
 
 </section>
 
 
-<!-- ASK NEW QUESTION -->
+<!-- ASK QUESTION -->
 
 <section class="ask-section" id="ask">
 
 <div class="ask-box">
 
-<h2>❓ Ask Your Question</h2>
+<h2>
+❓ Ask Your Question
+</h2>
 
 <p class="intro">
-Student apna medical question yahan type kar sakta hai.
+Ask any medical or educational question.
 </p>
 
 <textarea
@@ -1100,18 +1036,19 @@ placeholder="Example: What is the function of the vagus nerve?"
 
 <button
 class="ask-btn"
-onclick="answerStudentQuestion()">
-🔍 Get Answer
+id="askBtn"
+onclick="answerStudentQuestion()"
+>
+🤖 Get AI Answer
 </button>
 
 <div id="answerBox" class="answer-box">
 
-<h3>🩺 MedAcademy Answer</h3>
+<h3>
+🩺 MedAcademy AI Answer
+</h3>
 
-<div
-id="answerText"
-class="answer-text">
-</div>
+<div id="answerText" class="answer-text"></div>
 
 </div>
 
@@ -1120,27 +1057,57 @@ class="answer-text">
 </section>
 
 
-<!-- SMALL AI -->
+<!-- AI CHAT -->
 
 <section class="ai-section" id="ai">
 
 <div class="ai-box">
 
 <div class="ai-header">
-🤖 MedAcademy Mini AI
+
+🤖 MedAcademy AI
+
+<div class="ai-status" id="aiStatus">
+Checking AI connection...
 </div>
 
-<div
-class="chat-area"
-id="chatArea">
+</div>
+
+
+<div class="chat-area" id="chatArea">
 
 <div class="message ai-message">
-👋 Hello! I am MedAcademy Mini AI.
 
-Ask me a basic medical study question about Anatomy, Physiology, Pharmacology, Pathology or common diseases.
+👋 Hello! I am MedAcademy AI.
+
+You can ask me medical, MBBS study, anatomy, physiology, pharmacology, pathology, microbiology or general educational questions.
+
+I can explain difficult topics in simple English or Roman Urdu.
+
 </div>
 
 </div>
+
+
+<div class="ai-tools">
+
+<button class="ai-tool"
+onclick="usePrompt('Explain this topic in simple Roman Urdu: ')">
+🇵🇰 Roman Urdu
+</button>
+
+<button class="ai-tool"
+onclick="usePrompt('Explain this topic at MBBS level with key points: ')">
+🎓 MBBS Mode
+</button>
+
+<button class="ai-tool"
+onclick="clearChat()">
+🗑️ Clear Chat
+</button>
+
+</div>
+
 
 <div class="chat-input-area">
 
@@ -1148,12 +1115,13 @@ Ask me a basic medical study question about Anatomy, Physiology, Pharmacology, P
 type="text"
 id="chatInput"
 class="chat-input"
-placeholder="Ask a medical question..."
-onkeydown="if(event.key==='Enter') sendAI()"
+placeholder="Ask MedAcademy AI anything..."
+onkeydown="handleEnter(event)"
 >
 
 <button
 class="chat-send"
+id="chatSend"
 onclick="sendAI()">
 Send
 </button>
@@ -1171,24 +1139,23 @@ Send
 
 <div class="section-title">
 
-<h2>ℹ️ About MedAcademy</h2>
+<h2>
+ℹ️ About MedAcademy
+</h2>
 
 </div>
 
 <div class="about">
 
 <p>
-MedAcademy is a simple medical study website
-designed to help medical students access
-subjects, notes, quizzes and medical questions
-in one place.
+MedAcademy is a medical study website designed to help students
+access subjects, notes, quizzes and AI-powered explanations in one place.
 </p>
 
 <br>
 
 <p>
-Our goal is to make medical learning
-simple, organized and easy to revise.
+Our goal is to make medical learning simple, organized and easy to revise.
 </p>
 
 </div>
@@ -1202,18 +1169,26 @@ simple, organized and easy to revise.
 
 <p>🩺 <strong>MedAcademy</strong></p>
 
-<p>Medical Student Study Platform</p>
+<p>
+Medical Student Study Platform
+</p>
 
-<p>© 2026 MedAcademy. All Rights Reserved.</p>
+<p>
+<strong>Made by MR. SULHAHRI</strong>
+</p>
+
+<p>
+© 2026 MedAcademy. All Rights Reserved.
+</p>
 
 </footer>
 
 
 <script>
 
-/* =====================================================
-   ALL MEDICAL TOPICS
-===================================================== */
+/* =========================
+   TOPICS DATABASE
+========================= */
 
 const topics = [
 
@@ -1281,9 +1256,9 @@ const topics = [
 ];
 
 
-/* =====================================================
-   SEARCH BAR
-===================================================== */
+/* =========================
+   SEARCH
+========================= */
 
 function searchTopics(){
 
@@ -1298,504 +1273,487 @@ function searchTopics(){
 
     results.innerHTML="";
 
-    if(input===""){
+    if(!input){
         return;
     }
 
-    const matches=topics.filter(topic =>
+    const matches =
+    topics.filter(topic =>
         topic.name.toLowerCase().includes(input)
     );
 
     if(matches.length===0){
 
-        results.innerHTML=
-        `<div class="search-result no-result">
+        results.innerHTML =
+        `<div class="search-result">
         ❌ No topic found.
         </div>`;
 
         return;
     }
 
-    matches.forEach(topic=>{
+    matches.forEach(topic => {
 
-        results.innerHTML+=`
+        const div =
+        document.createElement("div");
 
-        <div class="search-result">
+        div.className="search-result";
 
-        📖 <strong>${topic.name}</strong>
+        const strong =
+        document.createElement("strong");
 
-        <br>
+        strong.textContent="📖 "+topic.name;
 
-        <a href="${topic.link}">
-        Study ${topic.name} →
-        </a>
+        const br =
+        document.createElement("br");
 
-        </div>
+        const link =
+        document.createElement("a");
 
-        `;
+        link.href=topic.link;
+
+        link.textContent=
+        "Study "+topic.name+" →";
+
+        div.appendChild(strong);
+        div.appendChild(br);
+        div.appendChild(link);
+
+        results.appendChild(div);
 
     });
 
 }
 
 
-/* =====================================================
-   SUGGESTION BOX
-===================================================== */
+/* =========================
+   SUGGESTIONS
+========================= */
 
 function showSuggestions(){
 
-    const input=
+    const input =
     document.getElementById("suggestionInput")
     .value
     .toLowerCase()
     .trim();
 
-    const list=
+    const list =
     document.getElementById("suggestionList");
 
     list.innerHTML="";
 
-    if(input===""){
+    const popular=[
+        "Heart",
+        "Brain",
+        "Kidney",
+        "Diabetes",
+        "Migraine",
+        "Anatomy",
+        "Pharmacology",
+        "Pathology"
+    ];
 
-        const popular=[
-            "Heart",
-            "Brain",
-            "Kidney",
-            "Diabetes",
-            "Migraine",
-            "Anatomy",
-            "Pharmacology",
-            "Pathology"
-        ];
+    let matches;
 
-        popular.forEach(name=>{
-            createSuggestion(name,list);
-        });
+    if(input){
 
-        return;
+        matches =
+        topics
+        .filter(topic =>
+            topic.name.toLowerCase().includes(input)
+        )
+        .slice(0,10)
+        .map(topic=>topic.name);
+
+    }else{
+
+        matches=popular;
+
     }
 
-    const matches=topics.filter(topic=>
-        topic.name.toLowerCase().includes(input)
-    ).slice(0,10);
+    [...new Set(matches)].forEach(name=>{
 
-    matches.forEach(topic=>{
-        createSuggestion(topic.name,list);
+        const item =
+        document.createElement("div");
+
+        item.className="suggestion";
+
+        item.textContent="🔎 "+name;
+
+        item.onclick=()=>{
+
+            document.getElementById("searchBox")
+            .value=name;
+
+            searchTopics();
+
+            document
+            .querySelector(".search-area")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
+        };
+
+        list.appendChild(item);
+
     });
 
 }
 
 
-function createSuggestion(name,list){
+/* =========================
+   AI VARIABLES
+========================= */
 
-    const item=document.createElement("div");
+let chatHistory=[];
 
-    item.className="suggestion";
+let busy=false;
 
-    item.textContent="🔎 "+name;
 
-    item.onclick=function(){
+/* =========================
+   SEND QUESTION TO BACKEND
+========================= */
 
-        document.getElementById("searchBox").value=name;
+async function askBackend(message){
 
-        searchTopics();
+    const response =
+    await fetch("/api/ask",{
 
-        document.getElementById("search-area");
+        method:"POST",
 
-        window.scrollTo({
-            top:document.querySelector(".search-area").offsetTop-70,
-            behavior:"smooth"
-        });
+        headers:{
+            "Content-Type":"application/json"
+        },
 
-    };
+        body:JSON.stringify({
 
-    list.appendChild(item);
+            message:message,
+
+            history:
+            chatHistory.slice(-12)
+
+        })
+
+    });
+
+
+    const data =
+    await response.json();
+
+
+    if(!response.ok){
+
+        throw new Error(
+            data.error ||
+            "AI request failed."
+        );
+
+    }
+
+
+    return data.answer;
 
 }
 
 
-/* =====================================================
-   STUDENT QUESTION ANSWER SYSTEM
-===================================================== */
+/* =========================
+   AI CHAT
+========================= */
 
-const medicalAnswers={
+async function sendAI(){
 
-"heart":
-"❤️ Heart: The heart is a muscular organ that pumps blood through pulmonary and systemic circulation. It has four chambers: right atrium, right ventricle, left atrium and left ventricle.",
-
-"kidney":
-"🫘 Kidney: The kidneys maintain fluid, electrolyte and acid-base balance, remove metabolic wastes and produce urine. The nephron is the functional unit of the kidney.",
-
-"brain":
-"🧠 Brain: The brain is the main organ of the central nervous system. Major regions include the cerebrum, cerebellum and brainstem.",
-
-"diabetes":
-"🍬 Diabetes mellitus is a group of disorders characterized by chronic hyperglycemia. Type 2 diabetes commonly involves insulin resistance and progressive beta-cell dysfunction.",
-
-"fever":
-"🌡️ Fever is an elevation of body temperature caused by a regulated change in the hypothalamic set point, commonly due to infection or inflammation.",
-
-"cold":
-"🤧 The common cold is usually caused by viral infection. Common symptoms include runny nose, sneezing, sore throat and cough.",
-
-"flu":
-"🦠 Influenza is a viral respiratory infection that commonly causes fever, cough, myalgia, fatigue and headache.",
-
-"cough":
-"😷 Cough is a protective reflex that clears the airway. Causes include respiratory infections, asthma, allergies, smoking and gastroesophageal reflux.",
-
-"headache":
-"🤕 Headache has many causes. Common primary headaches include tension-type headache and migraine.",
-
-"migraine":
-"🧠 Migraine is a recurrent neurological disorder characterized by attacks of headache, often associated with nausea and sensitivity to light or sound.",
-
-"hypertension":
-"🩺 Hypertension means persistently elevated blood pressure. Long-term uncontrolled hypertension increases the risk of cardiovascular, cerebrovascular and kidney disease.",
-
-"anemia":
-"🩸 Anemia is a reduction in hemoglobin concentration or red-cell mass below normal. Causes include blood loss, decreased production and increased destruction of red cells.",
-
-"asthma":
-"🫁 Asthma is a chronic inflammatory airway disorder characterized by variable respiratory symptoms and variable airflow limitation. Wheezing and episodic breathlessness are common.",
-
-"thrombosis":
-"🩸 Thrombosis is formation of a blood clot within a blood vessel. Risk factors can be understood using Virchow's triad: endothelial injury, abnormal blood flow and hypercoagulability.",
-
-"osteoporosis":
-"🦴 Osteoporosis is characterized by reduced bone strength and increased fracture risk. Risk factors include aging, low bone mass and certain medications or diseases.",
-
-"pharmacology":
-"💊 Pharmacology is the study of drugs, including their mechanisms of action, pharmacokinetics, pharmacodynamics, therapeutic effects and adverse effects.",
-
-"anatomy":
-"🦴 Anatomy is the study of the structure of the human body. It includes gross anatomy, microscopic anatomy and developmental anatomy.",
-
-"physiology":
-"🫀 Physiology is the study of normal body functions, including cardiovascular, respiratory, renal, nervous and endocrine functions.",
-
-"pathology":
-"🔬 Pathology is the study of disease mechanisms and the structural and functional changes produced by disease.",
-
-"microbiology":
-"🦠 Microbiology studies microorganisms such as bacteria, viruses, fungi and parasites.",
-
-"cranial nerve":
-"🧠 There are 12 pairs of cranial nerves. They are numbered I-XII and perform sensory, motor or mixed functions.",
-
-"ecg":
-"❤️ ECG records the electrical activity of the heart. P wave represents atrial depolarization, QRS complex represents ventricular depolarization and T wave represents ventricular repolarization.",
-
-"kidney stone":
-"🪨 Kidney stones are solid crystal deposits that form in the urinary tract. Calcium oxalate is a common stone type. Severe flank pain and hematuria can occur.",
-
-"uti":
-"🚽 Urinary tract infection is usually caused by bacteria. Common symptoms include dysuria, urinary frequency and urgency.",
-
-"stroke":
-"⚠️ Stroke is a medical emergency caused by interruption of blood flow to part of the brain or bleeding in the brain. Sudden facial weakness, arm weakness or speech difficulty requires urgent assessment."
-
-};
-
-
-function answerStudentQuestion(){
-
-    const question=
-    document.getElementById("studentQuestion")
-    .value
-    .toLowerCase()
-    .trim();
-
-    const answerBox=
-    document.getElementById("answerBox");
-
-    const answerText=
-    document.getElementById("answerText");
-
-    if(question===""){
-
-        answerText.textContent=
-        "Please type your medical question first.";
-
-        answerBox.style.display="block";
-
+    if(busy){
         return;
     }
 
-    let answer=
-    "📚 I could not find a specific answer in my basic MedAcademy knowledge base.\n\nTry asking about Anatomy, Physiology, Pharmacology, Pathology, Heart, Brain, Kidney, Diabetes, Fever, Migraine or another medical topic.";
-
-    for(const key in medicalAnswers){
-
-        if(question.includes(key)){
-
-            answer=medicalAnswers[key];
-
-            break;
-
-        }
-
-    }
-
-    answerText.textContent=answer;
-
-    answerBox.style.display="block";
-
-}
-
-
-/* =====================================================
-   MINI AI
-===================================================== */
-
-function sendAI(){
-
-    const input=
+    const input =
     document.getElementById("chatInput");
 
-    const text=input.value.trim();
+    const text =
+    input.value.trim();
 
-    if(text==="") return;
+    if(!text){
+        return;
+    }
 
-    addMessage(text,"user-message");
+
+    addMessage(
+        text,
+        "user-message"
+    );
+
 
     input.value="";
 
-    setTimeout(function(){
+    busy=true;
 
-        const reply=getAIReply(text);
+    setBusy(true);
 
-        addMessage(reply,"ai-message");
 
-    },500);
+    const typing =
+    addMessage(
+        "🤖 Thinking...",
+        "ai-message typing"
+    );
+
+
+    try{
+
+        const answer =
+        await askBackend(text);
+
+
+        typing.remove();
+
+
+        addMessage(
+            answer,
+            "ai-message"
+        );
+
+
+        chatHistory.push(
+            {
+                role:"user",
+                content:text
+            },
+            {
+                role:"assistant",
+                content:answer
+            }
+        );
+
+
+    }catch(error){
+
+        typing.remove();
+
+
+        addMessage(
+
+            "⚠️ AI connection error.\n\n"+
+            error.message+
+            "\n\nPlease make sure the MedAcademy backend is running and your API key is configured.",
+
+            "ai-message"
+
+        );
+
+    }finally{
+
+        busy=false;
+
+        setBusy(false);
+
+    }
 
 }
 
 
-function addMessage(text,className){
+/* =========================
+   ADD MESSAGE
+========================= */
 
-    const chat=
+function addMessage(text,cls){
+
+    const chat =
     document.getElementById("chatArea");
 
-    const message=
+    const message =
     document.createElement("div");
 
-    message.className="message "+className;
+    message.className =
+    "message "+cls;
 
     message.textContent=text;
 
     chat.appendChild(message);
 
-    chat.scrollTop=chat.scrollHeight;
+    chat.scrollTop =
+    chat.scrollHeight;
+
+    return message;
 
 }
 
 
-/* =====================================================
-   MINI AI RESPONSE ENGINE
-===================================================== */
+/* =========================
+   BUSY STATE
+========================= */
 
-function getAIReply(question){
+function setBusy(value){
 
-    const q=question.toLowerCase();
+    document.getElementById("chatSend")
+    .disabled=value;
 
-    if(
-        q.includes("hello") ||
-        q.includes("hi") ||
-        q.includes("assalam")
-    ){
-
-        return "👋 Hello! Ask me any basic medical study question.";
-
-    }
-
-
-    if(q.includes("heart")){
-
-        return medicalAnswers.heart;
-
-    }
-
-
-    if(q.includes("kidney")){
-
-        return medicalAnswers.kidney;
-
-    }
-
-
-    if(q.includes("brain")){
-
-        return medicalAnswers.brain;
-
-    }
-
-
-    if(q.includes("diabetes")){
-
-        return medicalAnswers.diabetes;
-
-    }
-
-
-    if(q.includes("fever")){
-
-        return medicalAnswers.fever;
-
-    }
-
-
-    if(q.includes("cold")){
-
-        return medicalAnswers.cold;
-
-    }
-
-
-    if(q.includes("flu")){
-
-        return medicalAnswers.flu;
-
-    }
-
-
-    if(q.includes("cough")){
-
-        return medicalAnswers.cough;
-
-    }
-
-
-    if(q.includes("migraine")){
-
-        return medicalAnswers.migraine;
-
-    }
-
-
-    if(q.includes("headache")){
-
-        return medicalAnswers.headache;
-
-    }
-
-
-    if(q.includes("hypertension") || q.includes("blood pressure")){
-
-        return medicalAnswers.hypertension;
-
-    }
-
-
-    if(q.includes("anemia") || q.includes("anaemia")){
-
-        return medicalAnswers.anemia;
-
-    }
-
-
-    if(q.includes("asthma")){
-
-        return medicalAnswers.asthma;
-
-    }
-
-
-    if(q.includes("thrombosis")){
-
-        return medicalAnswers.thrombosis;
-
-    }
-
-
-    if(q.includes("osteoporosis")){
-
-        return medicalAnswers.osteoporosis;
-
-    }
-
-
-    if(q.includes("pharmacology")){
-
-        return medicalAnswers.pharmacology;
-
-    }
-
-
-    if(q.includes("anatomy")){
-
-        return medicalAnswers.anatomy;
-
-    }
-
-
-    if(q.includes("physiology")){
-
-        return medicalAnswers.physiology;
-
-    }
-
-
-    if(q.includes("pathology")){
-
-        return medicalAnswers.pathology;
-
-    }
-
-
-    if(q.includes("microbiology")){
-
-        return medicalAnswers.microbiology;
-
-    }
-
-
-    if(q.includes("cranial nerve")){
-
-        return medicalAnswers["cranial nerve"];
-
-    }
-
-
-    if(q.includes("ecg")){
-
-        return medicalAnswers.ecg;
-
-    }
-
-
-    if(q.includes("stone")){
-
-        return medicalAnswers["kidney stone"];
-
-    }
-
-
-    if(q.includes("uti") || q.includes("urinary infection")){
-
-        return medicalAnswers.uti;
-
-    }
-
-
-    if(q.includes("stroke")){
-
-        return medicalAnswers.stroke;
-
-    }
-
-
-    return "🤖 I am the MedAcademy Mini AI. I can currently answer common study questions about Anatomy, Physiology, Pharmacology, Pathology, Heart, Brain, Kidney, Diabetes, Fever, Flu, Cough, Migraine, Hypertension, Anemia, Asthma, Thrombosis and more.\n\n💡 For a wider AI that can answer new questions automatically, connect this box to an AI API/backend.";
+    document.getElementById("chatInput")
+    .disabled=value;
 
 }
 
 
-/* =====================================================
-   LOAD POPULAR SUGGESTIONS
-===================================================== */
+/* =========================
+   ENTER KEY
+========================= */
+
+function handleEnter(event){
+
+    if(event.key==="Enter"){
+
+        event.preventDefault();
+
+        sendAI();
+
+    }
+
+}
+
+
+/* =========================
+   PROMPT BUTTONS
+========================= */
+
+function usePrompt(prefix){
+
+    const input =
+    document.getElementById("chatInput");
+
+    input.value=prefix;
+
+    input.focus();
+
+}
+
+
+/* =========================
+   CLEAR CHAT
+========================= */
+
+function clearChat(){
+
+    chatHistory=[];
+
+    document.getElementById("chatArea")
+    .innerHTML=
+    `<div class="message ai-message">
+    👋 Chat cleared. Ask me a new question.
+    </div>`;
+
+}
+
+
+/* =========================
+   ASK QUESTION BOX
+========================= */
+
+async function answerStudentQuestion(){
+
+    const q =
+    document.getElementById("studentQuestion")
+    .value
+    .trim();
+
+    const box =
+    document.getElementById("answerBox");
+
+    const text =
+    document.getElementById("answerText");
+
+    const btn =
+    document.getElementById("askBtn");
+
+
+    if(!q){
+
+        box.style.display="block";
+
+        text.textContent=
+        "Please type your question first.";
+
+        return;
+
+    }
+
+
+    box.style.display="block";
+
+    text.textContent=
+    "🤖 Thinking...";
+
+    btn.disabled=true;
+
+
+    try{
+
+        const answer =
+        await askBackend(q);
+
+        text.textContent=answer;
+
+    }catch(error){
+
+        text.textContent=
+        "⚠️ "+error.message+
+        "\n\nPlease check that the backend is running and the API key is configured.";
+
+    }finally{
+
+        btn.disabled=false;
+
+    }
+
+}
+
+
+/* =========================
+   AI CONNECTION CHECK
+========================= */
+
+async function checkAI(){
+
+    const status =
+    document.getElementById("aiStatus");
+
+    try{
+
+        const response =
+        await fetch("/api/health");
+
+        const data =
+        await response.json();
+
+
+        if(data.ok){
+
+            status.textContent=
+            "🟢 AI Online";
+
+        }else{
+
+            status.textContent=
+            "🔴 AI API Key Missing";
+
+        }
+
+    }catch(error){
+
+        status.textContent=
+        "🔴 Start MedAcademy Server";
+
+    }
+
+}
+
+
+/* =========================
+   START
+========================= */
 
 showSuggestions();
+
+checkAI();
 
 </script>
 
