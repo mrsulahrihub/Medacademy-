@@ -4,11 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Medical Notes | MedAcademy</title>
+<title>MedAcademy | Medical Learning Center</title>
+
+<meta name="description"
+content="MedAcademy - Medical notes, subjects, quizzes and student learning resources.">
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 html{
@@ -16,85 +26,582 @@ html{
 }
 
 body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f9fb;
-    color:#18323a;
+    font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:#f5f9fb;
+    color:#17343b;
+    line-height:1.6;
 }
 
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --primary:#087f8c;
+    --primary-dark:#05616b;
+    --secondary:#12a5a8;
+    --dark:#12343b;
+    --text:#17343b;
+    --muted:#60777d;
+    --light:#eef8fa;
+    --white:#ffffff;
+    --border:#dce9ec;
+    --shadow:0 10px 35px rgba(12,60,70,.08);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-    background:#087f8c;
-    color:white;
-    padding:18px 6%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid var(--border);
+
+    padding:15px 6%;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    flex-wrap:wrap;
+
+    gap:25px;
 }
 
 .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
     font-size:25px;
-    font-weight:bold;
+    font-weight:800;
+
+    color:var(--primary);
+
+    text-decoration:none;
+}
+
+.logo-icon{
+    width:43px;
+    height:43px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--light);
+    border-radius:12px;
+
+    font-size:24px;
 }
 
 nav{
     display:flex;
-    gap:18px;
+    align-items:center;
+    gap:8px;
     flex-wrap:wrap;
 }
 
 nav a{
-    color:white;
+    color:#31535a;
     text-decoration:none;
-    font-weight:bold;
+
+    font-weight:600;
+    font-size:15px;
+
+    padding:9px 13px;
+    border-radius:8px;
+
+    transition:.2s;
 }
 
 nav a:hover{
-    text-decoration:underline;
+    background:var(--light);
+    color:var(--primary);
 }
 
+.nav-button{
+    background:var(--primary) !important;
+    color:white !important;
+}
+
+.nav-button:hover{
+    background:var(--primary-dark) !important;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
-    background:linear-gradient(135deg,#087f8c,#12a5a8);
+    position:relative;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #075f69 0%,
+        #087f8c 45%,
+        #12a5a8 100%
+    );
+
     color:white;
+
+    padding:
+    90px 20px
+    100px;
+
     text-align:center;
-    padding:55px 20px;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border:70px solid rgba(255,255,255,.06);
+    border-radius:50%;
+
+    top:-220px;
+    left:-160px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border:60px solid rgba(255,255,255,.05);
+    border-radius:50%;
+
+    right:-170px;
+    bottom:-200px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:850px;
+    margin:auto;
+}
+
+.hero-badge{
+    display:inline-block;
+
+    background:rgba(255,255,255,.13);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    padding:7px 15px;
+    border-radius:30px;
+
+    font-size:13px;
+    font-weight:700;
+
+    margin-bottom:20px;
 }
 
 .hero h1{
-    margin:0 0 10px;
-    font-size:38px;
+    font-size:52px;
+    line-height:1.15;
+
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#d8ffff;
 }
 
 .hero p{
-    margin:0;
-    font-size:17px;
+    max-width:680px;
+    margin:0 auto 30px;
+
+    font-size:18px;
+
+    color:#e7ffff;
 }
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+
+    text-decoration:none;
+
+    padding:13px 22px;
+
+    border-radius:10px;
+
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.btn-primary{
+    background:white;
+    color:var(--primary);
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.5);
+    color:white;
+    background:rgba(255,255,255,.08);
+}
+
+.btn-outline:hover{
+    background:rgba(255,255,255,.16);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
-    max-width:1150px;
+    width:min(1180px,92%);
     margin:auto;
-    padding:40px 20px;
 }
 
-.section-title{
+
+/* =========================
+   QUICK STATS
+========================= */
+
+.quick-stats{
+    position:relative;
+    z-index:5;
+
+    margin-top:-40px;
+
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:18px;
+}
+
+.stat-card{
+    background:white;
+
+    padding:23px;
+
+    border-radius:15px;
+
+    box-shadow:var(--shadow);
+
     text-align:center;
-    margin:35px 0 25px;
+
+    border:1px solid var(--border);
+}
+
+.stat-icon{
+    font-size:25px;
+    margin-bottom:5px;
+}
+
+.stat-card strong{
+    display:block;
+
+    font-size:25px;
+
+    color:var(--primary);
+}
+
+.stat-card span{
+    color:var(--muted);
+    font-size:14px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    padding:75px 0;
+}
+
+.section-heading{
+    text-align:center;
+
+    max-width:700px;
+
+    margin:
+    0 auto 40px;
+}
+
+.section-heading .label{
+    color:var(--primary);
+
+    font-size:13px;
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    margin-bottom:8px;
+}
+
+.section-heading h2{
+    font-size:32px;
+
+    color:var(--dark);
+
+    margin-bottom:10px;
+}
+
+.section-heading p{
+    color:var(--muted);
+}
+
+
+/* =========================
+   SUBJECTS
+========================= */
+
+.subject-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.subject-card{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:.25s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.subject-card::after{
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+
+    background:var(--light);
+
+    right:-45px;
+    bottom:-45px;
+}
+
+.subject-card:hover{
+    transform:translateY(-5px);
+
+    border-color:#b9dfe3;
+
+    box-shadow:
+    0 15px 40px
+    rgba(8,127,140,.13);
+}
+
+.subject-icon{
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--light);
+
+    border-radius:14px;
+
+    font-size:27px;
+
+    margin-bottom:17px;
+}
+
+.subject-card h3{
+    color:var(--dark);
+
+    font-size:20px;
+
+    margin-bottom:7px;
+}
+
+.subject-card p{
+    color:var(--muted);
+
+    font-size:14px;
+
+    margin-bottom:15px;
+}
+
+.subject-link{
+    color:var(--primary);
+
+    font-size:14px;
+
+    font-weight:800;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    background:white;
+
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+}
+
+.feature-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.feature-card{
+    padding:27px;
+
+    background:#f8fcfd;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+}
+
+.feature-card .icon{
+    font-size:29px;
+
+    margin-bottom:12px;
+}
+
+.feature-card h3{
+    margin-bottom:7px;
+
+    color:var(--dark);
+}
+
+.feature-card p{
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section{
+    padding:70px 0;
 }
 
 .search-box{
+    max-width:850px;
+
+    margin:auto;
+
     background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px #00000012;
-    margin-bottom:35px;
+
+    padding:28px;
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
 }
 
-.search-box input{
+.search-title{
+    text-align:center;
+
+    margin-bottom:20px;
+}
+
+.search-title h2{
+    color:var(--dark);
+
+    margin-bottom:5px;
+}
+
+.search-title p{
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+.search-input{
+    position:relative;
+}
+
+.search-input input{
     width:100%;
-    padding:15px;
-    border:1px solid #ccdadd;
-    border-radius:10px;
+
+    padding:16px 18px;
+
+    border:1px solid #cddfe3;
+
+    border-radius:11px;
+
+    outline:none;
+
     font-size:16px;
+
+    color:var(--text);
+}
+
+.search-input input:focus{
+    border-color:var(--primary);
+
+    box-shadow:
+    0 0 0 3px
+    rgba(8,127,140,.08);
 }
 
 .search-results{
@@ -102,377 +609,1103 @@ nav a:hover{
 }
 
 .search-result{
-    background:#eef8fa;
-    padding:12px;
-    margin:7px 0;
-    border-radius:8px;
+    padding:13px 15px;
+
+    margin-top:8px;
+
+    border-radius:10px;
+
+    background:var(--light);
+
+    border:1px solid #d9eef0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
 }
 
 .search-result button{
     border:0;
-    background:none;
-    color:#087f8c;
-    font-weight:bold;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:7px 12px;
+
+    border-radius:7px;
+
     cursor:pointer;
-    font-size:15px;
+
+    font-weight:700;
 }
 
-.topic-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-}
 
-.topic-card{
-    background:white;
-    padding:22px;
-    border-radius:14px;
-    box-shadow:0 5px 18px #00000010;
-    cursor:pointer;
-    transition:.2s;
-}
+/* =========================
+   STUDENT QUESTIONS
+========================= */
 
-.topic-card:hover{
-    transform:translateY(-4px);
-}
-
-.topic-card h3{
-    color:#087f8c;
-    margin-top:0;
-}
-
-.topic-card p{
-    color:#50656b;
-}
-
-.notes{
-    background:white;
-    padding:30px;
-    border-radius:16px;
-    box-shadow:0 5px 20px #00000012;
-    margin-top:35px;
-}
-
-.notes h2{
-    color:#087f8c;
-}
-
-.notes h3{
-    color:#075f69;
-    margin-top:28px;
-}
-
-.notes p,
-.notes li{
-    line-height:1.7;
-}
-
-.notes ul{
-    padding-left:25px;
-}
-
-.mcq{
-    background:#f1f8fa;
-    padding:18px;
-    border-radius:12px;
-    margin-top:18px;
-}
-
-.mcq button{
-    display:block;
-    width:100%;
-    text-align:left;
-    padding:11px;
-    margin:7px 0;
-    border:1px solid #cbdde0;
-    background:white;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.mcq button:hover{
-    background:#e8f6f8;
-}
-
-.answer{
-    margin-top:10px;
-    font-weight:bold;
-}
-
-/* COVERAGE CHECKER */
-
-.coverage{
-    background:white;
-    padding:28px;
-    border-radius:16px;
-    box-shadow:0 5px 20px #00000012;
-    margin-top:45px;
-}
-
-.coverage h2{
-    text-align:center;
-    color:#087f8c;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-    margin:25px 0;
-}
-
-.stat{
+.questions-section{
     background:#eef8fa;
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
+
+    padding:75px 0;
 }
 
-.stat strong{
-    display:block;
-    font-size:30px;
-    color:#087f8c;
+.question-layout{
+    display:grid;
+
+    grid-template-columns:
+    380px 1fr;
+
+    gap:25px;
+
+    align-items:start;
 }
 
-.check-buttons{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
+.question-form{
+    background:white;
+
+    padding:27px;
+
+    border-radius:17px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+}
+
+.question-form h3{
+    color:var(--dark);
+
+    margin-bottom:7px;
+}
+
+.question-form p{
+    color:var(--muted);
+
+    font-size:14px;
+
     margin-bottom:20px;
 }
 
-.check-buttons button{
-    border:0;
-    padding:12px 18px;
+.form-group{
+    margin-bottom:14px;
+}
+
+.form-group label{
+    display:block;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+
+    padding:12px 13px;
+
+    border:1px solid #cfdee1;
+
     border-radius:9px;
-    background:#087f8c;
+
+    outline:none;
+
+    font-family:inherit;
+
+    font-size:14px;
+}
+
+.form-group textarea{
+    min-height:120px;
+
+    resize:vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:var(--primary);
+}
+
+.submit-question{
+    width:100%;
+
+    border:0;
+
+    background:var(--primary);
+
     color:white;
+
+    padding:13px;
+
+    border-radius:9px;
+
     cursor:pointer;
-    font-weight:bold;
+
+    font-weight:800;
+
+    font-size:14px;
 }
 
-.check-buttons button:hover{
-    opacity:.9;
+.submit-question:hover{
+    background:var(--primary-dark);
 }
 
-.topic-list{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-    gap:8px;
+.question-list{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:13px;
 }
 
-.list-item{
-    padding:10px 12px;
+.question-card{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    box-shadow:
+    0 5px 20px
+    rgba(10,60,70,.05);
+}
+
+.question-header{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:9px;
+}
+
+.student-name{
+    font-weight:800;
+
+    color:var(--primary);
+}
+
+.question-date{
+    color:#8a9da1;
+
+    font-size:12px;
+}
+
+.question-text{
+    color:var(--text);
+
+    font-size:15px;
+}
+
+.pending{
+    display:inline-block;
+
+    margin-top:12px;
+
+    padding:4px 9px;
+
+    border-radius:20px;
+
+    background:#fff5df;
+
+    color:#9a6900;
+
+    font-size:11px;
+
+    font-weight:800;
+}
+
+.admin-answer{
+    margin-top:15px;
+
+    padding:14px;
+
+    background:#eef8fa;
+
+    border-left:4px solid var(--primary);
+
     border-radius:8px;
-    background:#f1f7f8;
 }
 
-.added{
-    border-left:5px solid #087f8c;
+.admin-answer strong{
+    color:var(--primary);
+
+    font-size:13px;
 }
 
-.missing{
-    border-left:5px solid #c62828;
+.admin-answer p{
+    color:#405c62;
+
+    font-size:14px;
+
+    margin-top:3px;
 }
 
-.hidden{
-    display:none;
+.no-questions{
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    border:1px solid var(--border);
+
+    text-align:center;
+
+    color:var(--muted);
 }
 
-.copy-btn{
-    background:#18323a !important;
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    margin:70px 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        #075f69,
+        #087f8c
+    );
+
+    color:white;
+
+    border-radius:22px;
+
+    padding:55px 30px;
+
+    text-align:center;
 }
+
+.cta h2{
+    font-size:30px;
+
+    margin-bottom:10px;
+}
+
+.cta p{
+    color:#d9ffff;
+
+    max-width:600px;
+
+    margin:0 auto 22px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    background:#12343b;
+    background:#102f35;
+
     color:white;
-    text-align:center;
-    padding:30px 20px;
-    margin-top:40px;
+
+    padding:45px 20px 25px;
 }
 
-@media(max-width:600px){
+.footer-content{
+    width:min(1180px,92%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    2fr 1fr 1fr;
+
+    gap:35px;
+
+    padding-bottom:30px;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.1);
+}
+
+.footer-brand h3{
+    font-size:22px;
+
+    margin-bottom:8px;
+}
+
+.footer-brand p{
+    color:#a9c0c5;
+
+    max-width:450px;
+
+    font-size:14px;
+}
+
+.footer-column h4{
+    margin-bottom:12px;
+}
+
+.footer-column a{
+    display:block;
+
+    color:#a9c0c5;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    margin:7px 0;
+}
+
+.footer-column a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    width:min(1180px,92%);
+
+    margin:20px auto 0;
+
+    text-align:center;
+
+    color:#91aeb3;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .subject-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .feature-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .question-layout{
+        grid-template-columns:1fr;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+
+@media(max-width:650px){
 
     header{
+        position:relative;
+
         flex-direction:column;
-        gap:15px;
-        text-align:center;
+
+        padding:15px 4%;
+
+        gap:12px;
     }
 
     nav{
         justify-content:center;
     }
 
-    .hero h1{
-        font-size:30px;
+    nav a{
+        font-size:13px;
+
+        padding:7px 9px;
     }
 
-    .notes{
+    .hero{
+        padding:65px 18px 75px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .quick-stats{
+        grid-template-columns:1fr;
+
+        margin-top:20px;
+    }
+
+    .section{
+        padding:55px 0;
+    }
+
+    .section-heading h2{
+        font-size:27px;
+    }
+
+    .subject-grid{
+        grid-template-columns:1fr;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+    }
+
+    .search-box{
         padding:20px;
     }
 
+    .cta{
+        padding:40px 20px;
+    }
+
+    .cta h2{
+        font-size:25px;
+    }
 }
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
-<div class="logo">
-🩺 MedAcademy
-</div>
+<a href="index.html" class="logo">
+
+<span class="logo-icon">🩺</span>
+
+<span>MedAcademy</span>
+
+</a>
+
 
 <nav>
+
 <a href="index.html">Home</a>
+
 <a href="notes.html">Notes</a>
+
 <a href="quiz.html">Quiz</a>
+
+<a href="#questions">Questions</a>
+
+<a href="notes.html" class="nav-button">
+Start Learning
+</a>
+
 </nav>
 
 </header>
 
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-<h1>📚 Medical Notes</h1>
+<div class="hero-content">
+
+<div class="hero-badge">
+MEDICAL LEARNING PLATFORM
+</div>
+
+<h1>
+Learn Medicine.<br>
+<span>Build Your Knowledge.</span>
+</h1>
 
 <p>
-Medical topics, notes and MCQs
+A simple and organized medical learning platform
+for students to explore subjects, study important
+topics, practice MCQs and ask questions.
 </p>
+
+
+<div class="hero-buttons">
+
+<a href="notes.html" class="btn btn-primary">
+📚 Explore Medical Notes
+</a>
+
+<a href="quiz.html" class="btn btn-outline">
+📝 Take a Quiz
+</a>
+
+</div>
+
+</div>
 
 </section>
 
 
+
+<!-- =========================
+     QUICK STATS
+========================= -->
+
 <div class="container">
 
+<div class="quick-stats">
 
-<!-- SEARCH -->
+<div class="stat-card">
+
+<div class="stat-icon">📚</div>
+
+<strong>Medical Notes</strong>
+
+<span>Organized study material</span>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">📝</div>
+
+<strong>MCQ Practice</strong>
+
+<span>Test your knowledge</span>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">💬</div>
+
+<strong>Student Questions</strong>
+
+<span>Learn through questions</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+     SUBJECTS
+========================= -->
+
+<section class="section" id="subjects">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="label">
+Explore
+</div>
+
+<h2>
+Medical Subjects
+</h2>
+
+<p>
+Study your medical subjects in an organized,
+simple and student-friendly environment.
+</p>
+
+</div>
+
+
+<div class="subject-grid">
+
+
+<a href="notes.html#anatomy" class="subject-card">
+
+<div class="subject-icon">
+🦴
+</div>
+
+<h3>Anatomy</h3>
+
+<p>
+Study the structure of the human body,
+organs, systems and anatomical relationships.
+</p>
+
+<span class="subject-link">
+Explore Anatomy →
+</span>
+
+</a>
+
+
+
+<a href="notes.html#physiology" class="subject-card">
+
+<div class="subject-icon">
+🫀
+</div>
+
+<h3>Physiology</h3>
+
+<p>
+Understand the normal functions of organs
+and body systems.
+</p>
+
+<span class="subject-link">
+Explore Physiology →
+</span>
+
+</a>
+
+
+
+<a href="notes.html#pharmacology" class="subject-card">
+
+<div class="subject-icon">
+💊
+</div>
+
+<h3>Pharmacology</h3>
+
+<p>
+Learn about drugs, mechanisms, effects,
+interactions and clinical concepts.
+</p>
+
+<span class="subject-link">
+Explore Pharmacology →
+</span>
+
+</a>
+
+
+
+<a href="notes.html#pathology" class="subject-card">
+
+<div class="subject-icon">
+🔬
+</div>
+
+<h3>Pathology</h3>
+
+<p>
+Understand disease processes, cellular injury,
+inflammation and pathological changes.
+</p>
+
+<span class="subject-link">
+Explore Pathology →
+</span>
+
+</a>
+
+
+
+<a href="notes.html#microbiology" class="subject-card">
+
+<div class="subject-icon">
+🦠
+</div>
+
+<h3>Microbiology</h3>
+
+<p>
+Study microorganisms, infections,
+bacteria, viruses, fungi and parasites.
+</p>
+
+<span class="subject-link">
+Explore Microbiology →
+</span>
+
+</a>
+
+
+
+<a href="notes.html#medicine" class="subject-card">
+
+<div class="subject-icon">
+🩺
+</div>
+
+<h3>Medicine</h3>
+
+<p>
+Explore common diseases, clinical concepts,
+diagnosis and general medical knowledge.
+</p>
+
+<span class="subject-link">
+Explore Medicine →
+</span>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="section features">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="label">
+Learn Better
+</div>
+
+<h2>
+Everything in One Place
+</h2>
+
+<p>
+MedAcademy is designed to keep medical learning
+simple, organized and accessible.
+</p>
+
+</div>
+
+
+<div class="feature-grid">
+
+
+<div class="feature-card">
+
+<div class="icon">📖</div>
+
+<h3>Organized Notes</h3>
+
+<p>
+Topics will be arranged subject-wise so students
+can quickly find the material they need.
+</p>
+
+</div>
+
+
+<div class="feature-card">
+
+<div class="icon">📝</div>
+
+<h3>MCQ Practice</h3>
+
+<p>
+Practice important questions and check your
+understanding of medical concepts.
+</p>
+
+</div>
+
+
+<div class="feature-card">
+
+<div class="icon">💬</div>
+
+<h3>Student Community</h3>
+
+<p>
+Students can submit questions and learn from
+questions asked by other students.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<section class="search-section">
+
+<div class="container">
 
 <div class="search-box">
 
-<h2>🔎 Search Topics</h2>
+<div class="search-title">
+
+<h2>🔎 Find a Medical Topic</h2>
+
+<p>
+Search through the topics available on MedAcademy.
+</p>
+
+</div>
+
+
+<div class="search-input">
 
 <input
 type="text"
 id="searchBox"
-placeholder="Search any topic..."
-oninput="searchTopics()"
+placeholder="Example: Heart, Kidney, Diabetes..."
+autocomplete="off"
 >
+
+</div>
+
 
 <div id="searchResults"></div>
 
 </div>
 
-
-<!-- TOPICS -->
-
-<div class="section-title">
-
-<h2>📖 Available Topics</h2>
-
-<p>Click a topic to open its notes.</p>
-
 </div>
-
-<div id="topicGrid" class="topic-grid"></div>
-
-
-<!-- NOTES -->
-
-<div id="notesArea" class="notes hidden">
-
-<h2 id="noteTitle"></h2>
-
-<div id="noteContent"></div>
-
-</div>
-
-
-<!-- =========================
-     TOPIC COVERAGE CHECKER
-========================= -->
-
-<section class="coverage">
-
-<h2>📊 Topic Coverage Checker</h2>
-
-<p style="text-align:center;">
-Check which topics from your master topic list
-have been added to the website.
-</p>
-
-
-<div class="stats">
-
-<div class="stat">
-<strong id="totalCount">0</strong>
-Total Topics
-</div>
-
-<div class="stat">
-<strong id="addedCount">0</strong>
-Added Topics
-</div>
-
-<div class="stat">
-<strong id="missingCount">0</strong>
-Missing Topics
-</div>
-
-</div>
-
-
-<div class="check-buttons">
-
-<button onclick="showAddedTopics()">
-✅ Show Added
-</button>
-
-<button onclick="showMissingTopics()">
-❌ Show Missing
-</button>
-
-<button onclick="showAllTopics()">
-📋 Show All
-</button>
-
-<button class="copy-btn" onclick="copyMissingTopics()">
-📋 Copy Missing Topics
-</button>
-
-</div>
-
-
-<input
-type="text"
-id="coverageSearch"
-placeholder="Search in coverage list..."
-oninput="searchCoverage()"
-style="
-width:100%;
-padding:14px;
-border:1px solid #ccdadd;
-border-radius:10px;
-font-size:16px;
-margin-bottom:20px;
-">
-
-
-<div id="coverageList" class="topic-list"></div>
 
 </section>
 
 
+
+<!-- =========================
+     STUDENT QUESTIONS
+========================= -->
+
+<section class="questions-section" id="questions">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<div class="label">
+Student Community
+</div>
+
+<h2>
+💬 Student Questions
+</h2>
+
+<p>
+Ask a medical study question. Questions submitted
+by students can appear here for everyone to learn from.
+</p>
+
 </div>
 
 
+<div class="question-layout">
+
+
+<!-- FORM -->
+
+<div class="question-form">
+
+<h3>Ask a Question</h3>
+
+<p>
+Can't find your question in our notes?
+Submit it here.
+</p>
+
+
+<div class="form-group">
+
+<label for="studentName">
+Your Name
+</label>
+
+<input
+type="text"
+id="studentName"
+placeholder="Enter your name"
+maxlength="40"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="studentQuestion">
+Your Question
+</label>
+
+<textarea
+id="studentQuestion"
+placeholder="Write your medical study question..."
+maxlength="500"
+></textarea>
+
+</div>
+
+
+<button
+class="submit-question"
+onclick="submitQuestion()"
+>
+Submit Question
+</button>
+
+
+<div
+id="questionMessage"
+style="
+margin-top:12px;
+font-size:13px;
+font-weight:700;
+">
+</div>
+
+</div>
+
+
+
+<!-- QUESTION LIST -->
+
+<div>
+
+<div
+id="questionList"
+class="question-list">
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<div class="container">
+
+<section class="cta">
+
+<h2>
+Ready to Start Learning?
+</h2>
+
+<p>
+Explore medical notes, study important topics
+and test your knowledge with MCQs.
+</p>
+
+<a
+href="notes.html"
+class="btn btn-primary"
+>
+Open Medical Notes
+</a>
+
+</section>
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-<p>© 2026 MedAcademy</p>
+<div class="footer-content">
 
-<p>Medical Learning Platform</p>
+
+<div class="footer-brand">
+
+<h3>🩺 MedAcademy</h3>
+
+<p>
+A medical learning platform designed to make
+medical education simple, organized and accessible
+for students.
+</p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>Learning</h4>
+
+<a href="notes.html">
+Medical Notes
+</a>
+
+<a href="quiz.html">
+Medical Quiz
+</a>
+
+<a href="#subjects">
+Subjects
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>Community</h4>
+
+<a href="#questions">
+Student Questions
+</a>
+
+<a href="notes.html">
+Topics
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 MedAcademy
+<br>
+Medical Learning Platform
+
+</div>
 
 </footer>
 
@@ -481,41 +1714,37 @@ margin-bottom:20px;
 <script>
 
 /* =====================================================
-   MASTER TOPIC LIST
-   =====================================================
+   TOPIC DATABASE FOR HOMEPAGE SEARCH
+===================================================== */
 
-   IMPORTANT:
+const topics = [
 
-   Put your COMPLETE 1000-topic list inside this array.
-
-   Example:
-
-   const allTopics = [
-       "Heart",
-       "Kidney",
-       "Liver",
-       ...
-   ];
-
-   The checker compares this list with websiteTopics.
-*/
-
-
-const allTopics = [
-
-"Heart",
-"Kidney",
-"Liver",
-"Brain",
-"Cranial Nerves",
+/* Anatomy */
 
 "Anatomy",
-"Physiology",
-"Pharmacology",
-"Pathology",
-"Microbiology",
-"Medicine",
+"Heart",
+"Brain",
+"Kidney",
+"Liver",
+"Cranial Nerves",
+"Respiratory System",
+"Nervous System",
+"Endocrine System",
+"Digestive System",
+"Urinary System",
 
+/* Physiology */
+
+"Physiology",
+"Cardiovascular Physiology",
+"Respiratory Physiology",
+"Renal Physiology",
+"Neurophysiology",
+"Endocrine Physiology",
+
+/* Pharmacology */
+
+"Pharmacology",
 "Adrenergic Drugs",
 "Adrenergic Blockers",
 "Cholinergic Drugs",
@@ -529,827 +1758,91 @@ const allTopics = [
 "Clinical Pharmacology",
 "Endocrine Pharmacology",
 "Gastrointestinal Pharmacology",
-
-"Inflammation",
-"Fever",
-"Common Cold",
-"Flu",
-"Cough",
-"Headache",
-"Migraine",
-"Anemia",
-"Thrombosis",
-"Osteoporosis",
-"Kidney Stones",
-"UTI",
-"Heart Failure",
-"Pneumonia",
-"Tuberculosis",
-"Hepatitis",
-"Gastritis",
-"Gout",
-
-"Cell Injury",
 "Dose Response",
 "Drugs Affecting Blood",
 "Drugs Affecting Uterus",
-"Clinical Pharmacology",
-"Respiratory System",
-"Nervous System",
-"Endocrine System",
-"Digestive System",
-"Urinary System",
-"Blood Pressure"
 
-];
+/* Pathology */
 
-
-/* =====================================================
-   WEBSITE TOPICS
-   These are topics currently available on this page.
-===================================================== */
-
-
-const websiteTopics = [
-
-"Heart",
-"Kidney",
-"Liver",
-"Brain",
-"Cranial Nerves",
-
-"Anatomy",
-"Physiology",
-"Pharmacology",
 "Pathology",
-"Microbiology",
-"Medicine",
-
-"Adrenergic Drugs",
-"Adrenergic Blockers",
-"Cholinergic Drugs",
-"Drug Receptors",
-"Drug Interactions",
-"Adverse Drug Reactions",
-"Autonomic Nervous System",
-"Antimicrobial Pharmacology",
-"Cardiovascular Pharmacology",
-"CNS Pharmacology",
-"Clinical Pharmacology",
-"Endocrine Pharmacology",
-"Gastrointestinal Pharmacology",
-
+"Cell Injury",
 "Inflammation",
+"Thrombosis",
+"Anemia",
+
+/* Microbiology */
+
+"Microbiology",
+"Bacteria",
+"Viruses",
+"Fungi",
+"Protozoa",
+"Helminths",
+"Tuberculosis",
+
+/* Medicine */
+
+"Medicine",
 "Fever",
 "Common Cold",
 "Flu",
 "Cough",
 "Headache",
 "Migraine",
-"Anemia",
-"Thrombosis",
-"Osteoporosis",
+"Diabetes",
+"Hypertension",
+"Asthma",
+"Kidney Disease",
 "Kidney Stones",
 "UTI",
 "Heart Failure",
 "Pneumonia",
-"Tuberculosis",
 "Hepatitis",
 "Gastritis",
 "Gout",
-
-"Cell Injury",
-"Dose Response",
-"Drugs Affecting Blood",
-"Drugs Affecting Uterus",
-"Respiratory System",
-"Nervous System",
-"Endocrine System",
-"Digestive System",
-"Urinary System",
+"Osteoporosis",
+"Stroke",
+"ECG",
 "Blood Pressure"
 
 ];
-
-
-/* =====================================================
-   NOTES DATA
-===================================================== */
-
-
-const topicData = {
-
-"Heart":{
-
-title:"❤️ Heart",
-
-content:`
-
-<h3>Overview</h3>
-
-<p>
-The heart is a muscular organ that pumps blood
-throughout the body.
-</p>
-
-<h3>Chambers</h3>
-
-<ul>
-<li>Right atrium</li>
-<li>Right ventricle</li>
-<li>Left atrium</li>
-<li>Left ventricle</li>
-</ul>
-
-<h3>Valves</h3>
-
-<ul>
-<li>Tricuspid valve</li>
-<li>Pulmonary valve</li>
-<li>Mitral valve</li>
-<li>Aortic valve</li>
-</ul>
-
-<h3>Function</h3>
-
-<p>
-The right side mainly receives and pumps deoxygenated
-blood toward the lungs. The left side receives
-oxygenated blood and pumps it into systemic circulation.
-</p>
-
-<div class="mcq">
-
-<b>MCQ</b>
-
-<p>
-Which chamber pumps oxygenated blood into systemic
-circulation?
-</p>
-
-<button onclick="check(this,false)">
-A. Right atrium
-</button>
-
-<button onclick="check(this,false)">
-B. Right ventricle
-</button>
-
-<button onclick="check(this,false)">
-C. Left atrium
-</button>
-
-<button onclick="check(this,true)">
-D. Left ventricle
-</button>
-
-<div class="answer"></div>
-
-</div>
-
-`
-
-},
-
-
-"Kidney":{
-
-title:"🫘 Kidney",
-
-content:`
-
-<h3>Overview</h3>
-
-<p>
-The kidneys filter blood and help regulate fluid,
-electrolytes and acid-base balance.
-</p>
-
-<h3>Functions</h3>
-
-<ul>
-<li>Urine formation</li>
-<li>Waste removal</li>
-<li>Electrolyte regulation</li>
-<li>Acid-base regulation</li>
-<li>Blood pressure regulation</li>
-</ul>
-
-<h3>Functional Unit</h3>
-
-<p>
-The functional unit of the kidney is the nephron.
-</p>
-
-<div class="mcq">
-
-<b>MCQ</b>
-
-<p>
-What is the functional unit of the kidney?
-</p>
-
-<button onclick="check(this,false)">
-A. Neuron
-</button>
-
-<button onclick="check(this,true)">
-B. Nephron
-</button>
-
-<button onclick="check(this,false)">
-C. Alveolus
-</button>
-
-<button onclick="check(this,false)">
-D. Sarcomere
-</button>
-
-<div class="answer"></div>
-
-</div>
-
-`
-
-},
-
-
-"Liver":{
-
-title:"🧬 Liver",
-
-content:`
-
-<h3>Overview</h3>
-
-<p>
-The liver performs important metabolic, synthetic,
-storage and detoxification functions.
-</p>
-
-<h3>Major Functions</h3>
-
-<ul>
-<li>Metabolism of nutrients</li>
-<li>Bile production</li>
-<li>Drug metabolism</li>
-<li>Glycogen storage</li>
-<li>Protein synthesis</li>
-<li>Detoxification</li>
-</ul>
-
-`
-
-},
-
-
-"Brain":{
-
-title:"🧠 Brain",
-
-content:`
-
-<h3>Overview</h3>
-
-<p>
-The brain is the major control center of the nervous
-system.
-</p>
-
-<h3>Major Parts</h3>
-
-<ul>
-<li>Cerebrum</li>
-<li>Cerebellum</li>
-<li>Brainstem</li>
-</ul>
-
-<h3>Cerebrum</h3>
-
-<p>
-The cerebrum is involved in consciousness, thinking,
-memory, sensation and voluntary movement.
-</p>
-
-<h3>Cerebellum</h3>
-
-<p>
-The cerebellum is important for coordination,
-balance and motor control.
-</p>
-
-`
-
-},
-
-
-"Anatomy":{
-
-title:"🦴 Anatomy",
-
-content:`
-
-<h3>Definition</h3>
-
-<p>
-Anatomy is the study of the structure of the body.
-</p>
-
-<h3>Major Areas</h3>
-
-<ul>
-<li>Gross anatomy</li>
-<li>Microscopic anatomy</li>
-<li>Developmental anatomy</li>
-<li>Neuroanatomy</li>
-<li>Surface anatomy</li>
-</ul>
-
-`
-
-},
-
-
-"Physiology":{
-
-title:"🫀 Physiology",
-
-content:`
-
-<h3>Definition</h3>
-
-<p>
-Physiology is the study of normal functions of living
-organisms and their organs.
-</p>
-
-<h3>Major Systems</h3>
-
-<ul>
-<li>Cardiovascular system</li>
-<li>Respiratory system</li>
-<li>Nervous system</li>
-<li>Digestive system</li>
-<li>Urinary system</li>
-<li>Endocrine system</li>
-</ul>
-
-`
-
-},
-
-
-"Pharmacology":{
-
-title:"💊 Pharmacology",
-
-content:`
-
-<h3>Definition</h3>
-
-<p>
-Pharmacology is the study of drugs and their effects
-on living organisms.
-</p>
-
-<h3>Major Areas</h3>
-
-<ul>
-<li>Pharmacokinetics</li>
-<li>Pharmacodynamics</li>
-<li>Clinical pharmacology</li>
-<li>Pharmacotherapy</li>
-<li>Toxicology</li>
-</ul>
-
-`
-
-},
-
-
-"Pathology":{
-
-title:"🔬 Pathology",
-
-content:`
-
-<h3>Definition</h3>
-
-<p>
-Pathology studies disease processes and the structural
-and functional changes associated with disease.
-</p>
-
-<h3>Major Areas</h3>
-
-<ul>
-<li>General pathology</li>
-<li>Systemic pathology</li>
-<li>Hematology</li>
-<li>Cytopathology</li>
-</ul>
-
-`
-
-},
-
-
-"Microbiology":{
-
-title:"🦠 Microbiology",
-
-content:`
-
-<h3>Definition</h3>
-
-<p>
-Microbiology is the study of microorganisms.
-</p>
-
-<h3>Major Groups</h3>
-
-<ul>
-<li>Bacteria</li>
-<li>Viruses</li>
-<li>Fungi</li>
-<li>Protozoa</li>
-<li>Helminths</li>
-</ul>
-
-`
-
-},
-
-
-"Medicine":{
-
-title:"🩺 Medicine",
-
-content:`
-
-<h3>Overview</h3>
-
-<p>
-Medicine focuses on prevention, diagnosis and treatment
-of diseases using clinical and non-surgical approaches.
-</p>
-
-<h3>Major Areas</h3>
-
-<ul>
-<li>Cardiology</li>
-<li>Neurology</li>
-<li>Endocrinology</li>
-<li>Gastroenterology</li>
-<li>Nephrology</li>
-<li>Respiratory medicine</li>
-</ul>
-
-`
-
-},
-
-
-"Diabetes":{
-
-title:"🩸 Diabetes Mellitus",
-
-content:`
-
-<h3>Definition</h3>
-
-<p>
-Diabetes mellitus is a group of metabolic disorders
-characterized by elevated blood glucose levels.
-</p>
-
-<h3>Common Symptoms</h3>
-
-<ul>
-<li>Increased thirst</li>
-<li>Frequent urination</li>
-<li>Increased hunger</li>
-<li>Fatigue</li>
-<li>Blurred vision</li>
-</ul>
-
-<h3>Major Types</h3>
-
-<ul>
-<li>Type 1 diabetes</li>
-<li>Type 2 diabetes</li>
-<li>Gestational diabetes</li>
-</ul>
-
-`
-
-},
-
-
-"Hypertension":{
-
-title:"🩸 Hypertension",
-
-content:`
-
-<h3>Definition</h3>
-
-<p>
-Hypertension is persistently elevated arterial blood
-pressure.
-</p>
-
-<h3>Risk Factors</h3>
-
-<ul>
-<li>Obesity</li>
-<li>High salt intake</li>
-<li>Physical inactivity</li>
-<li>Smoking</li>
-<li>Family history</li>
-</ul>
-
-<h3>Possible Complications</h3>
-
-<ul>
-<li>Stroke</li>
-<li>Heart disease</li>
-<li>Kidney disease</li>
-<li>Retinopathy</li>
-</ul>
-
-`
-
-},
-
-
-"Asthma":{
-
-title:"🫁 Asthma",
-
-content:`
-
-<h3>Definition</h3>
-
-<p>
-Asthma is a chronic inflammatory airway disorder
-associated with variable respiratory symptoms and
-airflow limitation.
-</p>
-
-<h3>Common Symptoms</h3>
-
-<ul>
-<li>Wheezing</li>
-<li>Cough</li>
-<li>Shortness of breath</li>
-<li>Chest tightness</li>
-</ul>
-
-`
-
-},
-
-
-"ECG":{
-
-title:"❤️ ECG",
-
-content:`
-
-<h3>Definition</h3>
-
-<p>
-An electrocardiogram records the electrical activity
-of the heart.
-</p>
-
-<h3>Main Components</h3>
-
-<ul>
-<li>P wave</li>
-<li>QRS complex</li>
-<li>T wave</li>
-</ul>
-
-<h3>Basic Interpretation</h3>
-
-<p>
-The P wave represents atrial depolarization.
-The QRS complex represents ventricular depolarization.
-The T wave represents ventricular repolarization.
-</p>
-
-`
-
-},
-
-
-"Stroke":{
-
-title:"🧠 Stroke",
-
-content:`
-
-<h3>Definition</h3>
-
-<p>
-Stroke occurs when blood flow to part of the brain is
-interrupted or when a blood vessel in the brain ruptures.
-</p>
-
-<h3>Main Types</h3>
-
-<ul>
-<li>Ischemic stroke</li>
-<li>Hemorrhagic stroke</li>
-</ul>
-
-<h3>Warning Signs</h3>
-
-<ul>
-<li>Sudden facial weakness</li>
-<li>Sudden arm weakness</li>
-<li>Speech difficulty</li>
-<li>Sudden confusion</li>
-<li>Sudden vision problems</li>
-</ul>
-
-<p>
-Suspected stroke requires urgent medical assessment.
-</p>
-
-`
-
-}
-
-};
-
-
-/* =====================================================
-   GENERIC NOTES
-===================================================== */
-
-
-websiteTopics.forEach(function(topic){
-
-    if(!topicData[topic]){
-
-        topicData[topic]={
-
-            title:"📚 "+topic,
-
-            content:`
-
-            <h3>Introduction</h3>
-
-            <p>
-            This section contains study information
-            about <b>${topic}</b>.
-            </p>
-
-            <h3>Important Points</h3>
-
-            <ul>
-
-            <li>Understand the definition of ${topic}.</li>
-
-            <li>Study its important concepts and terminology.</li>
-
-            <li>Learn its clinical or academic importance.</li>
-
-            <li>Review related diseases, mechanisms or
-            applications where applicable.</li>
-
-            </ul>
-
-            <h3>Further Study</h3>
-
-            <p>
-            Detailed MBBS-level notes, diagrams, clinical
-            cases and additional MCQs can be added to this
-            topic later.
-            </p>
-
-            `
-
-        };
-
-    }
-
-});
-
-
-/* =====================================================
-   DISPLAY TOPICS
-===================================================== */
-
-
-const topicGrid =
-document.getElementById("topicGrid");
-
-
-websiteTopics.forEach(function(topic){
-
-    const card =
-    document.createElement("div");
-
-    card.className="topic-card";
-
-    card.id=
-    "topic-"+topic.replace(/\s+/g,"-");
-
-
-    card.innerHTML=`
-
-    <h3>${topicData[topic].title}</h3>
-
-    <p>
-    Click to open notes.
-    </p>
-
-    `;
-
-
-    card.onclick=function(){
-
-        openTopic(topic);
-
-    };
-
-
-    topicGrid.appendChild(card);
-
-});
-
-
-/* =====================================================
-   OPEN TOPIC
-===================================================== */
-
-
-function openTopic(topic){
-
-    const data=topicData[topic];
-
-    if(!data){
-
-        return;
-
-    }
-
-
-    document.getElementById("notesArea")
-    .classList.remove("hidden");
-
-
-    document.getElementById("noteTitle")
-    .innerHTML=data.title;
-
-
-    document.getElementById("noteContent")
-    .innerHTML=data.content;
-
-
-    document.getElementById("notesArea")
-    .scrollIntoView({
-
-        behavior:"smooth"
-
-    });
-
-}
 
 
 /* =====================================================
    SEARCH
 ===================================================== */
 
+const searchBox =
+document.getElementById("searchBox");
+
+const searchResults =
+document.getElementById("searchResults");
+
+
+searchBox.addEventListener(
+"input",
+searchTopics
+);
+
 
 function searchTopics(){
 
-    const value=
-    document.getElementById("searchBox")
-    .value
+    const value =
+    searchBox.value
     .trim()
     .toLowerCase();
 
 
-    const results=
-    document.getElementById("searchResults");
-
-    results.innerHTML="";
+    searchResults.innerHTML="";
 
 
     if(value===""){
-
         return;
-
     }
 
 
-    const matches=
-    websiteTopics.filter(function(topic){
+    const matches =
+    topics.filter(function(topic){
 
         return topic
         .toLowerCase()
@@ -1360,259 +1853,336 @@ function searchTopics(){
 
     if(matches.length===0){
 
-        results.innerHTML=
-        "<div class='search-result'>❌ No topic found.</div>";
+        searchResults.innerHTML=`
+
+        <div class="search-result">
+
+        <span>
+        ❌ No matching topic found.
+        </span>
+
+        <a
+        href="#questions"
+        style="
+        color:#087f8c;
+        font-weight:700;
+        text-decoration:none;
+        "
+        >
+        Ask a Question
+        </a>
+
+        </div>
+
+        `;
+
+        return;
+    }
+
+
+    matches.slice(0,10).forEach(function(topic){
+
+        const result =
+        document.createElement("div");
+
+        result.className="search-result";
+
+
+        result.innerHTML=`
+
+        <span>
+        📚 ${escapeHTML(topic)}
+        </span>
+
+        <button
+        onclick="openTopic('${escapeJS(topic)}')"
+        >
+        Open
+        </button>
+
+        `;
+
+
+        searchResults.appendChild(result);
+
+    });
+
+}
+
+
+/* =====================================================
+   OPEN TOPIC
+===================================================== */
+
+function openTopic(topic){
+
+    /*
+       Notes will later be organized
+       subject-wise inside notes.html.
+    */
+
+    window.location.href =
+    "notes.html?topic="
+    +
+    encodeURIComponent(topic);
+
+}
+
+
+/* =====================================================
+   STUDENT QUESTIONS
+===================================================== */
+
+const QUESTION_KEY =
+"medacademy_student_questions";
+
+
+function getQuestions(){
+
+    try{
+
+        return JSON.parse(
+            localStorage.getItem(QUESTION_KEY)
+        ) || [];
+
+    }catch(error){
+
+        return [];
+
+    }
+
+}
+
+
+function saveQuestions(questions){
+
+    localStorage.setItem(
+        QUESTION_KEY,
+        JSON.stringify(questions)
+    );
+
+}
+
+
+function submitQuestion(){
+
+    const name =
+    document.getElementById("studentName")
+    .value
+    .trim();
+
+
+    const question =
+    document.getElementById("studentQuestion")
+    .value
+    .trim();
+
+
+    const message =
+    document.getElementById("questionMessage");
+
+
+    message.style.color="#c62828";
+
+
+    if(name===""){
+
+        message.textContent =
+        "Please enter your name.";
 
         return;
 
     }
 
 
-    matches.forEach(function(topic){
+    if(question===""){
 
-        const div=
-        document.createElement("div");
-
-        div.className="search-result";
-
-
-        const button=
-        document.createElement("button");
-
-        button.textContent=
-        "📚 "+topic;
-
-
-        button.onclick=function(){
-
-            openTopic(topic);
-
-        };
-
-
-        div.appendChild(button);
-
-        results.appendChild(div);
-
-    });
-
-}
-
-
-/* =====================================================
-   MCQ
-===================================================== */
-
-
-function check(button,correct){
-
-    const parent=
-    button.parentElement;
-
-    const answer=
-    parent.querySelector(".answer");
-
-
-    if(correct){
-
-        answer.textContent=
-        "✅ Correct answer!";
-
-    }else{
-
-        answer.textContent=
-        "❌ Incorrect answer. Try again.";
-
-    }
-
-}
-
-
-/* =====================================================
-   COVERAGE CHECKER
-===================================================== */
-
-
-function normalize(text){
-
-    return text
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g," ");
-
-}
-
-
-function getAddedTopics(){
-
-    const websiteSet=
-    new Set(
-        websiteTopics.map(normalize)
-    );
-
-
-    return allTopics.filter(function(topic){
-
-        return websiteSet.has(
-            normalize(topic)
-        );
-
-    });
-
-}
-
-
-function getMissingTopics(){
-
-    const websiteSet=
-    new Set(
-        websiteTopics.map(normalize)
-    );
-
-
-    return allTopics.filter(function(topic){
-
-        return !websiteSet.has(
-            normalize(topic)
-        );
-
-    });
-
-}
-
-
-/* =====================================================
-   UPDATE STATISTICS
-===================================================== */
-
-
-function updateStats(){
-
-    const added=
-    getAddedTopics();
-
-    const missing=
-    getMissingTopics();
-
-
-    document.getElementById("totalCount")
-    .textContent=
-    allTopics.length;
-
-
-    document.getElementById("addedCount")
-    .textContent=
-    added.length;
-
-
-    document.getElementById("missingCount")
-    .textContent=
-    missing.length;
-
-
-    showAllTopics();
-
-}
-
-
-/* =====================================================
-   SHOW ALL
-===================================================== */
-
-
-function showAllTopics(){
-
-    displayCoverageList(
-        allTopics,
-        "all"
-    );
-
-}
-
-
-/* =====================================================
-   SHOW ADDED
-===================================================== */
-
-
-function showAddedTopics(){
-
-    displayCoverageList(
-        getAddedTopics(),
-        "added"
-    );
-
-}
-
-
-/* =====================================================
-   SHOW MISSING
-===================================================== */
-
-
-function showMissingTopics(){
-
-    displayCoverageList(
-        getMissingTopics(),
-        "missing"
-    );
-
-}
-
-
-/* =====================================================
-   DISPLAY COVERAGE
-===================================================== */
-
-
-function displayCoverageList(list,type){
-
-    const container=
-    document.getElementById("coverageList");
-
-    container.innerHTML="";
-
-
-    if(list.length===0){
-
-        container.innerHTML=
-        "<div class='list-item'>No topics found.</div>";
+        message.textContent =
+        "Please write your question.";
 
         return;
 
     }
 
 
-    list.forEach(function(topic,index){
+    if(question.length<5){
 
-        const div=
+        message.textContent =
+        "Please write a little more detail.";
+
+        return;
+
+    }
+
+
+    const questions =
+    getQuestions();
+
+
+    const newQuestion={
+
+        id:Date.now(),
+
+        name:name,
+
+        question:question,
+
+        date:new Date()
+        .toLocaleDateString(
+            "en-GB",
+            {
+                day:"2-digit",
+                month:"short",
+                year:"numeric"
+            }
+        ),
+
+        status:"Pending",
+
+        answer:""
+
+    };
+
+
+    questions.unshift(newQuestion);
+
+
+    saveQuestions(questions);
+
+
+    document.getElementById("studentName")
+    .value="";
+
+
+    document.getElementById("studentQuestion")
+    .value="";
+
+
+    message.style.color="#087f8c";
+
+    message.textContent =
+    "✓ Your question has been submitted.";
+
+
+    displayQuestions();
+
+}
+
+
+/* =====================================================
+   DISPLAY QUESTIONS
+===================================================== */
+
+function displayQuestions(){
+
+    const list =
+    document.getElementById("questionList");
+
+
+    const questions =
+    getQuestions();
+
+
+    list.innerHTML="";
+
+
+    if(questions.length===0){
+
+        list.innerHTML=`
+
+        <div class="no-questions">
+
+        <div style="font-size:35px;margin-bottom:10px;">
+        💬
+        </div>
+
+        <strong>
+        No student questions yet.
+        </strong>
+
+        <p style="margin-top:5px;">
+        Be the first student to ask a question.
+        </p>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    questions.forEach(function(item){
+
+        const card =
         document.createElement("div");
 
-        div.className=
-        "list-item "+
-        (type==="missing"
-        ?"missing"
-        :"added");
+        card.className="question-card";
 
 
-        div.textContent=
-        (index+1)+". "+topic;
+        let answerHTML="";
 
 
-        if(type!=="missing"){
+        if(item.answer){
 
-            div.style.cursor="pointer";
+            answerHTML=`
 
-            div.onclick=function(){
+            <div class="admin-answer">
 
-                openTopic(topic);
+            <strong>
+            🩺 MedAcademy Answer
+            </strong>
 
-            };
+            <p>
+            ${escapeHTML(item.answer)}
+            </p>
+
+            </div>
+
+            `;
+
+        }else{
+
+            answerHTML=`
+
+            <span class="pending">
+            ⏳ Answer Pending
+            </span>
+
+            `;
 
         }
 
 
-        container.appendChild(div);
+        card.innerHTML=`
+
+        <div class="question-header">
+
+        <span class="student-name">
+        👤 ${escapeHTML(item.name)}
+        </span>
+
+        <span class="question-date">
+        ${escapeHTML(item.date)}
+        </span>
+
+        </div>
+
+
+        <div class="question-text">
+
+        ❓ ${escapeHTML(item.question)}
+
+        </div>
+
+
+        ${answerHTML}
+
+        `;
+
+
+        list.appendChild(card);
 
     });
 
@@ -1620,88 +2190,35 @@ function displayCoverageList(list,type){
 
 
 /* =====================================================
-   COVERAGE SEARCH
+   SECURITY HELPERS
 ===================================================== */
 
+function escapeHTML(text){
 
-function searchCoverage(){
+    return String(text)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
-    const value=
-    document.getElementById("coverageSearch")
-    .value
-    .trim()
-    .toLowerCase();
-
-
-    const list=
-    allTopics.filter(function(topic){
-
-        return topic
-        .toLowerCase()
-        .includes(value);
-
-    });
+}
 
 
-    displayCoverageList(
-        list,
-        "all"
-    );
+function escapeJS(text){
+
+    return String(text)
+    .replace(/\\/g,"\\\\")
+    .replace(/'/g,"\\'");
 
 }
 
 
 /* =====================================================
-   COPY MISSING TOPICS
+   LOAD
 ===================================================== */
 
-
-function copyMissingTopics(){
-
-    const missing=
-    getMissingTopics();
-
-
-    if(missing.length===0){
-
-        alert(
-        "🎉 All topics have been added!"
-        );
-
-        return;
-
-    }
-
-
-    const text=
-    missing.join("\n");
-
-
-    navigator.clipboard
-    .writeText(text)
-    .then(function(){
-
-        alert(
-        "✅ Missing topics copied!"
-        );
-
-    })
-    .catch(function(){
-
-        alert(
-        "Please copy the missing topics manually."
-        );
-
-    });
-
-}
-
-
-/* =====================================================
-   START
-===================================================== */
-
-updateStats();
+displayQuestions();
 
 </script>
 
