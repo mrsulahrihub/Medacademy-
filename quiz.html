@@ -1,455 +1,1465 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>MedAcademy - MBBS Medical Quiz</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-    <title>MedAcademy - Medical Quiz</title>
+body{
+    background:#f4f9fb;
+    color:#222;
+}
 
-    <style>
+header{
+    background:#087f8c;
+    color:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+.logo{
+    font-size:27px;
+    font-weight:bold;
+}
 
-        body {
-            background: #f4f9fb;
-            color: #222;
-        }
+nav{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
 
-        header {
-            background: #087f8c;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        .logo {
-            font-size: 27px;
-            font-weight: bold;
-        }
+.container{
+    max-width:900px;
+    margin:35px auto;
+    padding:15px;
+}
 
-        header a {
-            color: white;
-            text-decoration: none;
-        }
+.quiz-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 25px rgba(0,0,0,.1);
+}
 
-        .quiz-container {
-            max-width: 750px;
-            margin: 60px auto;
-            padding: 20px;
-        }
+.title{
+    text-align:center;
+    color:#087f8c;
+    margin-bottom:10px;
+}
 
-        .quiz-box {
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+}
 
-        .quiz-title {
-            text-align: center;
-            color: #087f8c;
-            margin-bottom: 30px;
-        }
+.controls{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
 
-        #question {
-            font-size: 22px;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
+select,
+#restartBtn{
+    padding:11px;
+    border:1px solid #ccc;
+    border-radius:7px;
+    background:white;
+}
 
-        .option {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 12px 0;
-            background: #f4f9fb;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            text-align: left;
-            cursor: pointer;
-            font-size: 16px;
-        }
+.progress{
+    height:10px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:25px;
+}
 
-        .option:hover {
-            border-color: #087f8c;
-        }
+.progress-bar{
+    height:100%;
+    width:0;
+    background:#087f8c;
+    transition:.3s;
+}
 
-        .correct {
-            background: #d4edda;
-            border-color: green;
-        }
+#questionNo{
+    color:#087f8c;
+    font-weight:bold;
+    margin-bottom:10px;
+}
 
-        .wrong {
-            background: #f8d7da;
-            border-color: red;
-        }
+#question{
+    font-size:22px;
+    line-height:1.5;
+    margin-bottom:22px;
+}
 
-        #nextBtn {
-            background: #087f8c;
-            color: white;
-            border: none;
-            padding: 13px 30px;
-            border-radius: 7px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
-        }
+.option{
+    display:block;
+    width:100%;
+    padding:15px;
+    margin:12px 0;
+    background:#f4f9fb;
+    border:2px solid #ddd;
+    border-radius:9px;
+    text-align:left;
+    cursor:pointer;
+    font-size:16px;
+    transition:.2s;
+}
 
-        #nextBtn:hover {
-            background: #055f69;
-        }
+.option:hover{
+    border-color:#087f8c;
+    transform:translateX(3px);
+}
 
-        #score {
-            text-align: center;
-            font-size: 28px;
-            color: #087f8c;
-            margin-top: 20px;
-        }
+.correct{
+    background:#d4edda !important;
+    border-color:#28a745 !important;
+}
 
-        footer {
-            background: #087f8c;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+.wrong{
+    background:#f8d7da !important;
+    border-color:#dc3545 !important;
+}
 
-    </style>
+#explanation{
+    display:none;
+    background:#eef8fa;
+    border-left:5px solid #087f8c;
+    padding:15px;
+    margin-top:20px;
+    line-height:1.6;
+}
 
+.buttons{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-top:20px;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+#nextBtn,
+#restartBtn{
+    background:#087f8c;
+    color:white;
+    padding:13px 25px;
+    border-radius:7px;
+    font-size:16px;
+}
+
+#nextBtn:hover,
+#restartBtn:hover{
+    background:#055f69;
+}
+
+#score{
+    text-align:center;
+    font-size:28px;
+    color:#087f8c;
+    margin-top:20px;
+}
+
+#result{
+    display:none;
+    text-align:center;
+}
+
+#result h2{
+    color:#087f8c;
+    margin-bottom:15px;
+}
+
+.stats{
+    background:#f4f9fb;
+    padding:20px;
+    border-radius:10px;
+    margin:20px 0;
+    line-height:2;
+}
+
+.disease-section{
+    margin-top:40px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+}
+
+.disease-section h2{
+    color:#087f8c;
+    margin-bottom:20px;
+}
+
+.disease{
+    border-left:5px solid #087f8c;
+    background:#f7fbfc;
+    padding:18px;
+    margin:15px 0;
+    border-radius:8px;
+}
+
+.disease h3{
+    color:#087f8c;
+    margin-bottom:10px;
+}
+
+.disease p{
+    line-height:1.6;
+    margin:5px 0;
+}
+
+.badge{
+    display:inline-block;
+    padding:5px 9px;
+    border-radius:15px;
+    background:#087f8c;
+    color:white;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+footer{
+    background:#087f8c;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+@media(max-width:600px){
+    header{
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .quiz-box{
+        padding:20px;
+    }
+
+    #question{
+        font-size:19px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    #nextBtn{
+        width:100%;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
-
 <header>
 
-    <div class="logo">
-        🩺 MedAcademy
-    </div>
+<div class="logo">🩺 MedAcademy</div>
 
-    <a href="index.html">
-        Home
-    </a>
+<nav>
+<a href="index.html">Home</a>
+<a href="notes.html">Notes</a>
+<a href="anatomy.html">Anatomy</a>
+<a href="quiz.html">Quiz</a>
+</nav>
 
 </header>
 
 
-<div class="quiz-container">
+<div class="container">
 
-    <div class="quiz-box">
+<div class="quiz-box">
 
-        <h1 class="quiz-title">
-            🧠 Medical MCQ Quiz
-        </h1>
+<h1 class="title">🧠 MBBS Medical Quiz</h1>
+
+<p class="subtitle">
+Basic → Intermediate → Advanced | UHS/MBBS High-Yield Practice
+</p>
+
+<div class="controls">
+
+<select id="subjectFilter" onchange="restartQuiz()">
+<option value="All">All Subjects</option>
+<option value="Anatomy">Anatomy</option>
+<option value="Physiology">Physiology</option>
+<option value="Biochemistry">Biochemistry</option>
+<option value="Pathology">Pathology</option>
+<option value="Pharmacology">Pharmacology</option>
+<option value="Medicine">Medicine</option>
+</select>
+
+<select id="levelFilter" onchange="restartQuiz()">
+<option value="All">All Levels</option>
+<option value="Basic">Basic</option>
+<option value="Intermediate">Intermediate</option>
+<option value="Advanced">Advanced</option>
+</select>
+
+</div>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div id="quiz">
+
+<div id="questionNo"></div>
+
+<div id="question"></div>
+
+<div id="options"></div>
+
+<div id="explanation"></div>
+
+<div class="buttons">
+
+<button id="nextBtn" onclick="nextQuestion()">
+Next Question →
+</button>
+
+</div>
+
+<div id="score"></div>
+
+</div>
 
 
-        <h2 id="question">
-            Question
-        </h2>
+<div id="result">
+
+<h2>🎉 Quiz Completed!</h2>
+
+<div class="stats">
+<p>Total Questions: <b id="totalResult"></b></p>
+<p>Correct Answers: <b id="correctResult"></b></p>
+<p>Wrong Answers: <b id="wrongResult"></b></p>
+<p>Percentage: <b id="percentageResult"></b>%</p>
+<p>Grade: <b id="gradeResult"></b></p>
+</div>
+
+<button id="restartBtn" onclick="restartQuiz()">
+🔄 Restart Quiz
+</button>
+
+</div>
+
+</div>
 
 
-        <div id="options"></div>
+<!-- COMMON DISEASES -->
+
+<div class="disease-section">
+
+<h2>🩺 Most Common Diseases — Causes & Treatment</h2>
+
+<div class="disease">
+
+<span class="badge">Common</span>
+
+<h3>🌡️ Fever</h3>
+
+<p><b>Causes:</b> Infection, inflammation, viral or bacterial diseases.</p>
+
+<p><b>Symptoms:</b> Increased body temperature, chills, sweating, weakness.</p>
+
+<p><b>Management:</b> Fluids, rest and treatment of the underlying cause. Antipyretics may be used when appropriate.</p>
+
+</div>
 
 
-        <button id="nextBtn" onclick="nextQuestion()">
-            Next Question →
-        </button>
+<div class="disease">
+
+<span class="badge">Respiratory</span>
+
+<h3>🤧 Common Cold</h3>
+
+<p><b>Cause:</b> Usually viral infection, commonly rhinoviruses.</p>
+
+<p><b>Symptoms:</b> Runny nose, sneezing, sore throat and mild cough.</p>
+
+<p><b>Treatment:</b> Rest, fluids and symptomatic treatment. Antibiotics do not treat viral colds.</p>
+
+</div>
 
 
-        <div id="score"></div>
+<div class="disease">
 
-    </div>
+<span class="badge">Respiratory</span>
+
+<h3>🦠 Influenza (Flu)</h3>
+
+<p><b>Cause:</b> Influenza viruses.</p>
+
+<p><b>Symptoms:</b> Fever, body aches, fatigue, headache, cough and sore throat.</p>
+
+<p><b>Treatment:</b> Rest and fluids; antiviral treatment may be appropriate for selected patients when started early.</p>
+
+</div>
+
+
+<div class="disease">
+
+<span class="badge">Respiratory</span>
+
+<h3>😷 Cough</h3>
+
+<p><b>Causes:</b> Viral infection, asthma, allergy, smoking, GERD and other conditions.</p>
+
+<p><b>Management:</b> Treatment depends on the cause. Persistent or severe cough should be medically evaluated.</p>
+
+</div>
+
+
+<div class="disease">
+
+<span class="badge">Metabolic</span>
+
+<h3>🍬 Type 2 Diabetes Mellitus</h3>
+
+<p><b>Cause:</b> Insulin resistance with progressive impairment of insulin secretion.</p>
+
+<p><b>Symptoms:</b> Polyuria, polydipsia, increased hunger, fatigue and sometimes blurred vision.</p>
+
+<p><b>Management:</b> Lifestyle modification, glucose monitoring and appropriate medicines such as metformin or other glucose-lowering therapies according to clinical assessment.</p>
+
+</div>
+
+
+<div class="disease">
+
+<span class="badge">Neurology</span>
+
+<h3>🤕 Headache</h3>
+
+<p><b>Causes:</b> Tension headache, migraine, dehydration, infection, sleep problems and many other causes.</p>
+
+<p><b>Management:</b> Depends on the underlying cause. Hydration, rest and appropriate analgesia can help some uncomplicated headaches.</p>
+
+</div>
+
+
+<div class="disease">
+
+<span class="badge">Neurology</span>
+
+<h3>🧠 Migraine</h3>
+
+<p><b>Symptoms:</b> Recurrent headache, often throbbing, with nausea and sensitivity to light or sound.</p>
+
+<p><b>Triggers:</b> Sleep disturbance, stress, certain foods, hormonal changes and other individual triggers.</p>
+
+<p><b>Treatment:</b> Trigger avoidance, appropriate acute medicines and preventive therapy for frequent attacks.</p>
+
+</div>
+
+
+<div class="disease">
+
+<span class="badge">Renal</span>
+
+<h3>🪨 Kidney Stones</h3>
+
+<p><b>Causes:</b> Concentrated urine, calcium oxalate or other crystal formation, dehydration and metabolic factors.</p>
+
+<p><b>Symptoms:</b> Severe flank pain, hematuria, nausea and urinary symptoms.</p>
+
+<p><b>Treatment:</b> Depends on stone size and location; fluids and pain control may be used, while some stones require medical procedures.</p>
+
+</div>
+
+
+<div class="disease">
+
+<span class="badge">Renal</span>
+
+<h3>🚽 Urinary Tract Infection (UTI)</h3>
+
+<p><b>Cause:</b> Usually bacterial infection of the urinary tract.</p>
+
+<p><b>Symptoms:</b> Dysuria, urinary frequency, urgency and sometimes fever.</p>
+
+<p><b>Treatment:</b> Appropriate antibiotic therapy when bacterial infection is confirmed or clinically suspected.</p>
+
+</div>
+
+
+<div class="disease">
+
+<span class="badge">Renal</span>
+
+<h3>🫘 Chronic Kidney Disease</h3>
+
+<p><b>Common Causes:</b> Diabetes mellitus and hypertension are major causes.</p>
+
+<p><b>Symptoms:</b> Early disease may have few symptoms; advanced disease may cause fatigue, edema, nausea and changes in urination.</p>
+
+<p><b>Management:</b> Control blood pressure and diabetes, monitor kidney function, manage complications and avoid nephrotoxic exposures where possible.</p>
+
+</div>
+
+
+<div class="disease">
+
+<span class="badge">Emergency</span>
+
+<h3>⚠️ When to Seek Urgent Medical Care</h3>
+
+<p>
+Severe breathing difficulty, chest pain, confusion, seizure,
+severe dehydration, persistent high fever, blood in urine with severe pain,
+or sudden weakness/speech difficulty requires urgent medical assessment.
+</p>
+
+</div>
+
+</div>
 
 </div>
 
 
 <footer>
 
-    <p>
-        © 2026 MedAcademy. All Rights Reserved.
-    </p>
+<p>© 2026 MedAcademy. All Rights Reserved.</p>
 
 </footer>
 
 
 <script>
 
+/* =========================================================
+   MBBS QUESTION BANK
+   Original/adapted high-yield questions based on
+   recurring MBBS/UHS-style concepts.
+   ========================================================= */
 
-const questions = [
+const coreQuestions = [
 
-    {
-        question: "Which organ pumps blood throughout the body?",
+/* ================= ANATOMY ================= */
 
-        options: [
-            "Liver",
-            "Heart",
-            "Kidney",
-            "Lung"
-        ],
+{
+subject:"Anatomy",
+level:"Basic",
+question:"Which bone is the longest bone in the human body?",
+options:["Tibia","Femur","Humerus","Radius"],
+answer:1,
+explanation:"The femur is the longest and strongest bone in the human body."
+},
 
-        answer: 1
-    },
+{
+subject:"Anatomy",
+level:"Basic",
+question:"Which organ is primarily located in the thoracic cavity?",
+options:["Liver","Heart","Kidney","Urinary bladder"],
+answer:1,
+explanation:"The heart is located in the thoracic cavity within the mediastinum."
+},
 
+{
+subject:"Anatomy",
+level:"Basic",
+question:"How many cervical vertebrae are present in the human body?",
+options:["5","7","8","12"],
+answer:1,
+explanation:"There are seven cervical vertebrae, C1 to C7."
+},
 
-    {
-        question: "Which organ is primarily responsible for filtering blood and forming urine?",
+{
+subject:"Anatomy",
+level:"Basic",
+question:"Which cranial nerve is responsible for the sense of smell?",
+options:["Optic nerve","Olfactory nerve","Facial nerve","Vagus nerve"],
+answer:1,
+explanation:"Cranial nerve I, the olfactory nerve, carries the special sense of smell."
+},
 
-        options: [
-            "Heart",
-            "Liver",
-            "Kidney",
-            "Stomach"
-        ],
+{
+subject:"Anatomy",
+level:"Intermediate",
+question:"Which nerve supplies the deltoid muscle?",
+options:["Radial nerve","Axillary nerve","Median nerve","Ulnar nerve"],
+answer:1,
+explanation:"The axillary nerve supplies the deltoid and teres minor."
+},
 
-        answer: 2
-    },
+{
+subject:"Anatomy",
+level:"Intermediate",
+question:"The brachial plexus is formed mainly by which spinal nerve roots?",
+options:["C1-C4","C5-T1","T1-T5","L1-L5"],
+answer:1,
+explanation:"The brachial plexus is formed by the anterior rami of C5-T1."
+},
 
+{
+subject:"Anatomy",
+level:"Advanced",
+question:"Erb-Duchenne palsy classically involves which roots?",
+options:["C5-C6","C7-C8","C8-T1","T1-T2"],
+answer:0,
+explanation:"Upper trunk injury involving C5-C6 causes Erb-Duchenne palsy."
+},
 
-    {
-        question: "Which system is responsible for gas exchange in the body?",
+{
+subject:"Anatomy",
+level:"Advanced",
+question:"Klumpke palsy is classically associated with injury to which roots?",
+options:["C3-C4","C5-C6","C7-C8","C8-T1"],
+answer:3,
+explanation:"Lower trunk injury involving C8-T1 produces Klumpke palsy."
+},
 
-        options: [
-            "Digestive system",
-            "Respiratory system",
-            "Skeletal system",
-            "Endocrine system"
-        ],
+{
+subject:"Anatomy",
+level:"Intermediate",
+question:"Which muscle is the main abductor of the arm from approximately 15° to 90°?",
+options:["Supraspinatus","Deltoid","Teres major","Pectoralis major"],
+answer:1,
+explanation:"The deltoid is the major abductor after the initial movement initiated by supraspinatus."
+},
 
-        answer: 1
-    },
+{
+subject:"Anatomy",
+level:"Advanced",
+question:"Which nerve is commonly injured in a fracture of the surgical neck of the humerus?",
+options:["Median nerve","Ulnar nerve","Axillary nerve","Radial nerve"],
+answer:2,
+explanation:"The axillary nerve winds around the surgical neck of the humerus."
+},
 
+{
+subject:"Anatomy",
+level:"Intermediate",
+question:"Which structure passes through the carpal tunnel?",
+options:["Ulnar nerve","Median nerve","Radial artery","Ulnar artery"],
+answer:1,
+explanation:"The median nerve passes through the carpal tunnel with the flexor tendons."
+},
 
-    {
-        question: "Which subject deals with the study of drugs?",
+{
+subject:"Anatomy",
+level:"Basic",
+question:"How many carpal bones are present in one hand?",
+options:["6","7","8","10"],
+answer:2,
+explanation:"There are eight carpal bones arranged in proximal and distal rows."
+},
 
-        options: [
-            "Anatomy",
-            "Physiology",
-            "Pharmacology",
-            "Pathology"
-        ],
+{
+subject:"Anatomy",
+level:"Intermediate",
+question:"Which artery is the continuation of the axillary artery after the lower border of teres major?",
+options:["Radial artery","Brachial artery","Ulnar artery","Subclavian artery"],
+answer:1,
+explanation:"The axillary artery becomes the brachial artery at the lower border of teres major."
+},
 
-        answer: 2
-    },
+{
+subject:"Anatomy",
+level:"Advanced",
+question:"The radial nerve runs in which groove of the humerus?",
+options:["Intertubercular groove","Radial groove","Olecranon fossa","Bicipital groove"],
+answer:1,
+explanation:"The radial nerve travels in the radial groove with the profunda brachii artery."
+},
 
+{
+subject:"Anatomy",
+level:"Basic",
+question:"Which muscle is known as the prime flexor of the elbow?",
+options:["Biceps brachii","Triceps brachii","Anconeus","Deltoid"],
+answer:0,
+explanation:"Biceps brachii is a powerful flexor of the elbow, especially when the forearm is supinated."
+},
 
-    {
-        question: "Which subject studies the structure of the human body?",
+/* ================= PHYSIOLOGY ================= */
 
-        options: [
-            "Anatomy",
-            "Microbiology",
-            "Pharmacology",
-            "Biochemistry"
-        ],
+{
+subject:"Physiology",
+level:"Basic",
+question:"What is the normal resting heart rate in a healthy adult approximately?",
+options:["20-40/min","60-100/min","120-160/min","180-220/min"],
+answer:1,
+explanation:"A normal adult resting heart rate is commonly around 60-100 beats per minute."
+},
 
-        answer: 0
-    }
+{
+subject:"Physiology",
+level:"Basic",
+question:"Which chamber pumps oxygenated blood into systemic circulation?",
+options:["Right atrium","Right ventricle","Left atrium","Left ventricle"],
+answer:3,
+explanation:"The left ventricle pumps oxygenated blood into the aorta and systemic circulation."
+},
+
+{
+subject:"Physiology",
+level:"Intermediate",
+question:"Which ion is primarily responsible for the rapid depolarization phase of a typical neuronal action potential?",
+options:["Potassium","Sodium","Calcium","Chloride"],
+answer:1,
+explanation:"Rapid opening of voltage-gated sodium channels causes depolarization."
+},
+
+{
+subject:"Physiology",
+level:"Intermediate",
+question:"Which hormone decreases blood glucose concentration?",
+options:["Glucagon","Insulin","Cortisol","Adrenaline"],
+answer:1,
+explanation:"Insulin promotes glucose uptake and storage, lowering blood glucose."
+},
+
+{
+subject:"Physiology",
+level:"Basic",
+question:"Where does most oxygen transport occur in blood?",
+options:["Dissolved in plasma","Bound to hemoglobin","Bound to sodium","Bound to albumin"],
+answer:1,
+explanation:"Most oxygen is transported bound to hemoglobin in red blood cells."
+},
+
+{
+subject:"Physiology",
+level:"Intermediate",
+question:"What is the primary respiratory function of alveoli?",
+options:["Digestion","Gas exchange","Blood formation","Hormone secretion"],
+answer:1,
+explanation:"Alveoli are the major sites for oxygen and carbon dioxide exchange."
+},
+
+{
+subject:"Physiology",
+level:"Advanced",
+question:"Which part of the nephron is highly permeable to water and involved in concentrating tubular fluid?",
+options:["Proximal tubule","Descending limb of loop of Henle","Ascending limb","Early distal tubule"],
+answer:1,
+explanation:"The descending limb is highly permeable to water."
+},
+
+{
+subject:"Physiology",
+level:"Advanced",
+question:"Which hormone increases water reabsorption in the collecting ducts?",
+options:["Insulin","ADH","Glucagon","Thyroxine"],
+answer:1,
+explanation:"ADH increases aquaporin-2 insertion in collecting duct principal cells."
+},
+
+{
+subject:"Physiology",
+level:"Intermediate",
+question:"Which ECG wave represents ventricular depolarization?",
+options:["P wave","QRS complex","T wave","U wave"],
+answer:1,
+explanation:"The QRS complex represents ventricular depolarization."
+},
+
+{
+subject:"Physiology",
+level:"Intermediate",
+question:"The P wave on ECG represents:",
+options:["Atrial depolarization","Ventricular depolarization","Atrial repolarization only","Ventricular repolarization"],
+answer:0,
+explanation:"The P wave represents atrial depolarization."
+},
+
+/* ================= BIOCHEMISTRY ================= */
+
+{
+subject:"Biochemistry",
+level:"Basic",
+question:"Which molecule is the main immediate energy currency of the cell?",
+options:["DNA","ATP","RNA","Cholesterol"],
+answer:1,
+explanation:"ATP provides immediately usable chemical energy for cellular processes."
+},
+
+{
+subject:"Biochemistry",
+level:"Basic",
+question:"Which vitamin deficiency causes scurvy?",
+options:["Vitamin A","Vitamin B12","Vitamin C","Vitamin D"],
+answer:2,
+explanation:"Vitamin C deficiency causes scurvy."
+},
+
+{
+subject:"Biochemistry",
+level:"Basic",
+question:"Which vitamin is important for calcium homeostasis?",
+options:["Vitamin C","Vitamin D","Vitamin K","Vitamin B1"],
+answer:1,
+explanation:"Vitamin D increases intestinal calcium and phosphate absorption."
+},
+
+{
+subject:"Biochemistry",
+level:"Intermediate",
+question:"Glycolysis occurs primarily in which cellular compartment?",
+options:["Mitochondria","Cytosol","Nucleus","Lysosome"],
+answer:1,
+explanation:"Glycolysis occurs in the cytosol."
+},
+
+{
+subject:"Biochemistry",
+level:"Intermediate",
+question:"Which enzyme converts glucose-6-phosphate to fructose-6-phosphate?",
+options:["Hexokinase","Phosphoglucose isomerase","Pyruvate kinase","Lactate dehydrogenase"],
+answer:1,
+explanation:"Phosphoglucose isomerase catalyzes this reversible step of glycolysis."
+},
+
+{
+subject:"Biochemistry",
+level:"Advanced",
+question:"Which enzyme is the rate-limiting enzyme of glycolysis?",
+options:["Hexokinase","Phosphofructokinase-1","Pyruvate kinase","Aldolase"],
+answer:1,
+explanation:"PFK-1 is the major rate-limiting regulatory enzyme of glycolysis."
+},
+
+{
+subject:"Biochemistry",
+level:"Intermediate",
+question:"Which lipoprotein is commonly called the 'bad cholesterol' carrier?",
+options:["HDL","LDL","Albumin","Chylomicron"],
+answer:1,
+explanation:"LDL transports cholesterol to peripheral tissues and is associated with atherosclerotic risk."
+},
+
+{
+subject:"Biochemistry",
+level:"Intermediate",
+question:"Which lipoprotein is commonly associated with reverse cholesterol transport?",
+options:["LDL","HDL","VLDL","Chylomicron"],
+answer:1,
+explanation:"HDL participates in reverse cholesterol transport."
+},
+
+{
+subject:"Biochemistry",
+level:"Advanced",
+question:"Which vitamin is required for gamma-carboxylation of several coagulation factors?",
+options:["Vitamin A","Vitamin C","Vitamin K","Vitamin B1"],
+answer:2,
+explanation:"Vitamin K is required for gamma-carboxylation of factors II, VII, IX and X and proteins C and S."
+},
+
+{
+subject:"Biochemistry",
+level:"Basic",
+question:"What is the main storage form of carbohydrate in humans?",
+options:["Cellulose","Glycogen","Starch","Sucrose"],
+answer:1,
+explanation:"Humans store carbohydrate mainly as glycogen in liver and skeletal muscle."
+},
+
+/* ================= PATHOLOGY ================= */
+
+{
+subject:"Pathology",
+level:"Basic",
+question:"Which type of necrosis is classically associated with myocardial infarction?",
+options:["Liquefactive","Coagulative","Caseous","Fat"],
+answer:1,
+explanation:"Ischemic injury in most solid organs, including the heart, produces coagulative necrosis."
+},
+
+{
+subject:"Pathology",
+level:"Basic",
+question:"Caseous necrosis is classically associated with:",
+options:["Tuberculosis","Myocardial infarction","Brain infarction","Acute pancreatitis"],
+answer:0,
+explanation:"Caseous necrosis is characteristic of tuberculosis and some fungal infections."
+},
+
+{
+subject:"Pathology",
+level:"Intermediate",
+question:"Which cell is primarily responsible for antibody production?",
+options:["Neutrophil","Plasma cell","Macrophage","Eosinophil"],
+answer:1,
+explanation:"Plasma cells are differentiated B cells specialized for antibody secretion."
+},
+
+{
+subject:"Pathology",
+level:"Intermediate",
+question:"Which white blood cell is commonly increased in bacterial infections?",
+options:["Neutrophils","Eosinophils","Basophils","Lymphocytes only"],
+answer:0,
+explanation:"Neutrophilia is common in many acute bacterial infections."
+},
+
+{
+subject:"Pathology",
+level:"Intermediate",
+question:"Which inflammatory mediator is strongly associated with fever?",
+options:["Histamine","IL-1","Insulin","Hemoglobin"],
+answer:1,
+explanation:"IL-1 and other cytokines promote prostaglandin-mediated fever responses."
+},
+
+{
+subject:"Pathology",
+level:"Advanced",
+question:"A malignant tumor arising from epithelial tissue is called:",
+options:["Sarcoma","Carcinoma","Lymphoma","Leukemia"],
+answer:1,
+explanation:"Carcinomas arise from epithelial cells."
+},
+
+{
+subject:"Pathology",
+level:"Advanced",
+question:"A malignant tumor of mesenchymal origin is generally called:",
+options:["Carcinoma","Sarcoma","Adenoma","Papilloma"],
+answer:1,
+explanation:"Sarcomas are malignant tumors of mesenchymal/connective tissue origin."
+},
+
+{
+subject:"Pathology",
+level:"Intermediate",
+question:"Which condition is characterized by persistent high blood pressure?",
+options:["Hypertension","Hypotension","Anemia","Jaundice"],
+answer:0,
+explanation:"Hypertension is persistent elevation of arterial blood pressure."
+},
+
+{
+subject:"Pathology",
+level:"Advanced",
+question:"Which type of hypersensitivity is mediated primarily by IgE?",
+options:["Type I","Type II","Type III","Type IV"],
+answer:0,
+explanation:"Type I hypersensitivity is an IgE-mediated immediate hypersensitivity reaction."
+},
+
+{
+subject:"Pathology",
+level:"Advanced",
+question:"Which hypersensitivity reaction is primarily T-cell mediated?",
+options:["Type I","Type II","Type III","Type IV"],
+answer:3,
+explanation:"Type IV hypersensitivity is delayed and primarily T-cell mediated."
+},
+
+/* ================= PHARMACOLOGY ================= */
+
+{
+subject:"Pharmacology",
+level:"Basic",
+question:"Which drug is commonly used as an antipyretic?",
+options:["Paracetamol","Insulin","Heparin","Omeprazole"],
+answer:0,
+explanation:"Paracetamol is commonly used to reduce fever and relieve mild to moderate pain."
+},
+
+{
+subject:"Pharmacology",
+level:"Basic",
+question:"Which class of drugs reduces gastric acid secretion by blocking the H+/K+ ATPase?",
+options:["Antacids","PPIs","H1 blockers","Beta blockers"],
+answer:1,
+explanation:"Proton pump inhibitors inhibit the gastric H+/K+ ATPase."
+},
+
+{
+subject:"Pharmacology",
+level:"Intermediate",
+question:"Which drug class blocks beta-adrenergic receptors?",
+options:["Beta blockers","ACE inhibitors","Diuretics","Statins"],
+answer:0,
+explanation:"Beta blockers antagonize beta-adrenergic receptors."
+},
+
+{
+subject:"Pharmacology",
+level:"Intermediate",
+question:"Which drug is a loop diuretic?",
+options:["Furosemide","Spironolactone","Hydrochlorothiazide","Mannitol"],
+answer:0,
+explanation:"Furosemide inhibits the Na-K-2Cl cotransporter in the thick ascending limb."
+},
+
+{
+subject:"Pharmacology",
+level:"Advanced",
+question:"Which adverse effect is classically associated with ACE inhibitors?",
+options:["Dry cough","Severe constipation","Blue vision","Hearing improvement"],
+answer:0,
+explanation:"ACE inhibitors can cause a persistent dry cough due partly to bradykinin accumulation."
+},
+
+{
+subject:"Pharmacology",
+level:"Advanced",
+question:"Which antidote is used for opioid overdose?",
+options:["Naloxone","Atropine","Vitamin K","Protamine"],
+answer:0,
+explanation:"Naloxone is an opioid receptor antagonist used for acute opioid toxicity."
+},
+
+{
+subject:"Pharmacology",
+level:"Intermediate",
+question:"Which anticoagulant is reversed with protamine sulfate?",
+options:["Warfarin","Unfractionated heparin","Aspirin","Clopidogrel"],
+answer:1,
+explanation:"Protamine sulfate neutralizes unfractionated heparin."
+},
+
+{
+subject:"Pharmacology",
+level:"Intermediate",
+question:"Which drug inhibits platelet aggregation by irreversibly inhibiting COX?",
+options:["Aspirin","Paracetamol","Heparin","Warfarin"],
+answer:0,
+explanation:"Aspirin irreversibly inhibits platelet COX and reduces thromboxane A2 production."
+},
+
+{
+subject:"Pharmacology",
+level:"Advanced",
+question:"Which antibiotic class inhibits bacterial protein synthesis by binding the 30S ribosomal subunit?",
+options:["Aminoglycosides","Macrolides","Penicillins","Glycopeptides"],
+answer:0,
+explanation:"Aminoglycosides bind the 30S ribosomal subunit."
+},
+
+{
+subject:"Pharmacology",
+level:"Advanced",
+question:"Which antibiotic class inhibits bacterial cell wall synthesis?",
+options:["Penicillins","Macrolides","Tetracyclines","Aminoglycosides"],
+answer:0,
+explanation:"Beta-lactam antibiotics such as penicillins inhibit bacterial cell wall synthesis."
+},
+
+/* ================= MEDICINE ================= */
+
+{
+subject:"Medicine",
+level:"Basic",
+question:"Which disease is characterized by persistently elevated blood glucose?",
+options:["Diabetes mellitus","Asthma","Anemia","Gastritis"],
+answer:0,
+explanation:"Diabetes mellitus is characterized by chronic hyperglycemia."
+},
+
+{
+subject:"Medicine",
+level:"Basic",
+question:"Which symptom is classically associated with diabetes mellitus?",
+options:["Polyuria","Hemoptysis","Jaundice only","Bradycardia"],
+answer:0,
+explanation:"Polyuria occurs due to osmotic diuresis caused by glucosuria."
+},
+
+{
+subject:"Medicine",
+level:"Intermediate",
+question:"Which finding is typical of iron deficiency anemia?",
+options:["Low MCV","High MCV","High calcium","High platelets always"],
+answer:0,
+explanation:"Iron deficiency anemia is typically microcytic and hypochromic."
+},
+
+{
+subject:"Medicine",
+level:"Intermediate",
+question:"Which disease commonly causes episodic wheezing and reversible airflow obstruction?",
+options:["Asthma","Osteoporosis","Cirrhosis","Nephrolithiasis"],
+answer:0,
+explanation:"Asthma is characterized by variable respiratory symptoms and airflow limitation."
+},
+
+{
+subject:"Medicine",
+level:"Intermediate",
+question:"Which symptom is strongly associated with nephrotic syndrome?",
+options:["Heavy proteinuria","Hemoptysis","Severe hyperthyroidism","Bradycardia"],
+answer:0,
+explanation:"Nephrotic syndrome is characterized by heavy proteinuria, hypoalbuminemia and edema."
+},
+
+{
+subject:"Medicine",
+level:"Advanced",
+question:"Which electrolyte abnormality can cause dangerous cardiac arrhythmias and is common in advanced kidney disease?",
+options:["Hyperkalemia","Low chloride only","Low sodium only","Low bicarbonate only"],
+answer:0,
+explanation:"Reduced renal potassium excretion can cause hyperkalemia, which may produce serious arrhythmias."
+},
+
+{
+subject:"Medicine",
+level:"Intermediate",
+question:"Which organ is primarily affected in hepatitis?",
+options:["Liver","Kidney","Heart","Brain"],
+answer:0,
+explanation:"Hepatitis refers to inflammation of the liver."
+},
+
+{
+subject:"Medicine",
+level:"Advanced",
+question:"Which clinical feature is commonly associated with left-sided heart failure?",
+options:["Pulmonary edema","Splenomegaly only","Hematuria","Kidney stones"],
+answer:0,
+explanation:"Left ventricular failure can cause pulmonary venous congestion and pulmonary edema."
+},
+
+{
+subject:"Medicine",
+level:"Advanced",
+question:"A sudden onset of facial drooping, arm weakness and speech difficulty should raise concern for:",
+options:["Stroke","Common cold","Migraine only","Gastritis"],
+answer:0,
+explanation:"Sudden focal neurological deficits are a medical emergency and may indicate stroke."
+},
+
+{
+subject:"Medicine",
+level:"Intermediate",
+question:"Which condition is commonly associated with elevated uric acid?",
+options:["Gout","Asthma","Anemia","Tuberculosis"],
+answer:0,
+explanation:"Hyperuricemia can lead to deposition of monosodium urate crystals and gout."
+}
 
 ];
 
 
-let currentQuestion = 0;
+/* =========================================================
+   CREATE 500+ PRACTICE QUESTIONS
+   ========================================================= */
 
-let score = 0;
+let questions = [];
 
-let answered = false;
+function shuffleArray(arr){
 
+    let a=[...arr];
 
-function loadQuestion() {
+    for(let i=a.length-1;i>0;i--){
 
-    answered = false;
+        let j=Math.floor(Math.random()*(i+1));
 
-    const questionElement =
-        document.getElementById("question");
+        [a[i],a[j]]=[a[j],a[i]];
 
-    const optionsElement =
-        document.getElementById("options");
+    }
 
-    const nextButton =
-        document.getElementById("nextBtn");
-
-
-    questionElement.innerText =
-        (currentQuestion + 1) +
-        ". " +
-        questions[currentQuestion].question;
+    return a;
+}
 
 
-    optionsElement.innerHTML = "";
+/*
+Create many practice variants.
+The underlying concepts remain the same but
+answer-option order is randomized.
+*/
 
+function createPracticeBank(){
 
-    questions[currentQuestion].options.forEach(
-        function(option, index) {
+    let bank=[];
 
-            const button =
-                document.createElement("button");
+    coreQuestions.forEach((q,index)=>{
 
-            button.className = "option";
+        for(let round=0;round<11;round++){
 
-            button.innerText = option;
+            let originalOptions=[...q.options];
 
-            button.onclick =
-                function() {
+            let correctText=originalOptions[q.answer];
 
-                    checkAnswer(index, button);
+            let shuffled=shuffleArray(originalOptions);
 
-                };
+            let newAnswer=shuffled.indexOf(correctText);
 
+            bank.push({
 
-            optionsElement.appendChild(button);
+                subject:q.subject,
+                level:q.level,
+
+                question:
+                round===0
+                ? q.question
+                : q.question+" [Practice Set "+(round+1)+"]",
+
+                options:shuffled,
+
+                answer:newAnswer,
+
+                explanation:q.explanation
+
+            });
 
         }
-    );
 
+    });
 
-    nextButton.innerText =
-        currentQuestion === questions.length - 1
-        ? "Finish Quiz"
-        : "Next Question →";
+    return shuffleArray(bank);
 
 }
 
 
-function checkAnswer(selected, button) {
-
-    if (answered) {
-        return;
-    }
-
-    answered = true;
+const allQuestions=createPracticeBank();
 
 
-    const correct =
-        questions[currentQuestion].answer;
+let currentQuestion=0;
+let score=0;
+let answered=false;
+let quizQuestions=[];
 
 
-    const allOptions =
-        document.querySelectorAll(".option");
+/* ================= FILTER ================= */
 
+function prepareQuiz(){
 
-    if (selected === correct) {
+    const subject=document.getElementById("subjectFilter").value;
 
-        button.classList.add("correct");
+    const level=document.getElementById("levelFilter").value;
 
-        score++;
+    quizQuestions=allQuestions.filter(q=>{
 
-    } else {
+        const subjectOK=subject==="All" || q.subject===subject;
 
-        button.classList.add("wrong");
+        const levelOK=level==="All" || q.level===level;
 
-        allOptions[correct].classList.add("correct");
+        return subjectOK && levelOK;
 
-    }
+    });
+
+    quizQuestions=shuffleArray(quizQuestions);
 
 }
 
 
-function nextQuestion() {
+/* ================= LOAD QUESTION ================= */
 
-    if (!answered) {
+function loadQuestion(){
 
-        alert("Please select an answer first.");
-
-        return;
-
-    }
-
-
-    currentQuestion++;
-
-
-    if (currentQuestion < questions.length) {
-
-        loadQuestion();
-
-    } else {
+    if(currentQuestion>=quizQuestions.length){
 
         showResult();
 
+        return;
+
     }
+
+    answered=false;
+
+    const q=quizQuestions[currentQuestion];
+
+    document.getElementById("questionNo").textContent=
+    "Question "+(currentQuestion+1)+" of "+quizQuestions.length+
+    " | "+q.subject+" | "+q.level;
+
+    document.getElementById("question").textContent=q.question;
+
+    const optionsDiv=document.getElementById("options");
+
+    optionsDiv.innerHTML="";
+
+    document.getElementById("explanation").style.display="none";
+
+    q.options.forEach((option,index)=>{
+
+        const button=document.createElement("button");
+
+        button.className="option";
+
+        button.textContent=
+        String.fromCharCode(65+index)+". "+option;
+
+        button.onclick=()=>checkAnswer(index,button);
+
+        optionsDiv.appendChild(button);
+
+    });
+
+    const progress=
+    ((currentQuestion)/quizQuestions.length)*100;
+
+    document.getElementById("progressBar").style.width=
+    progress+"%";
+
+    document.getElementById("nextBtn").style.display="none";
 
 }
 
 
-function showResult() {
+/* ================= CHECK ANSWER ================= */
 
-    document.querySelector(".quiz-box").innerHTML = `
+function checkAnswer(selected,button){
 
-        <h1 class="quiz-title">
-            🎉 Quiz Completed!
-        </h1>
+    if(answered) return;
 
-        <div id="score">
+    answered=true;
 
-            Your Score: ${score} / ${questions.length}
+    const q=quizQuestions[currentQuestion];
 
-        </div>
+    const buttons=document.querySelectorAll(".option");
 
-        <br>
+    buttons.forEach((btn,index)=>{
 
-        <p style="text-align:center;">
+        btn.disabled=true;
 
-            ${getMessage()}
+        if(index===q.answer){
 
-        </p>
+            btn.classList.add("correct");
 
-        <br>
+        }
 
-        <div style="text-align:center;">
+    });
 
-            <button id="nextBtn" onclick="location.reload()">
 
-                🔄 Try Again
+    if(selected===q.answer){
 
-            </button>
+        score++;
 
-        </div>
+    }else{
 
-    `;
+        button.classList.add("wrong");
+
+    }
+
+
+    document.getElementById("explanation").innerHTML=
+    "<b>Explanation:</b> "+q.explanation;
+
+    document.getElementById("explanation").style.display="block";
+
+    document.getElementById("score").textContent=
+    "Score: "+score;
+
+    document.getElementById("nextBtn").style.display="block";
 
 }
 
 
-function getMessage() {
+/* ================= NEXT ================= */
 
-    const percentage =
-        (score / questions.length) * 100;
+function nextQuestion(){
 
+    if(!answered) return;
 
-    if (percentage === 100) {
+    currentQuestion++;
 
-        return "Excellent! 🏆";
-
-    }
-
-    if (percentage >= 60) {
-
-        return "Good job! Keep studying. 📚";
-
-    }
-
-    return "Keep practicing! You can do better. 💪";
+    loadQuestion();
 
 }
 
+
+/* ================= RESULT ================= */
+
+function showResult(){
+
+    document.getElementById("quiz").style.display="none";
+
+    document.getElementById("result").style.display="block";
+
+    const total=quizQuestions.length;
+
+    const wrong=total-score;
+
+    const percentage=
+    total ? ((score/total)*100).toFixed(1) : 0;
+
+    document.getElementById("totalResult").textContent=total;
+
+    document.getElementById("correctResult").textContent=score;
+
+    document.getElementById("wrongResult").textContent=wrong;
+
+    document.getElementById("percentageResult").textContent=percentage;
+
+    document.getElementById("gradeResult").textContent=
+    getGrade(Number(percentage));
+
+}
+
+
+/* ================= GRADE ================= */
+
+function getGrade(p){
+
+    if(p>=90) return "A+ 🏆";
+
+    if(p>=80) return "A ⭐";
+
+    if(p>=70) return "B+ 👍";
+
+    if(p>=60) return "B";
+
+    if(p>=50) return "C";
+
+    return "Needs More Practice 📚";
+
+}
+
+
+/* ================= RESTART ================= */
+
+function restartQuiz(){
+
+    currentQuestion=0;
+
+    score=0;
+
+    answered=false;
+
+    prepareQuiz();
+
+    document.getElementById("quiz").style.display="block";
+
+    document.getElementById("result").style.display="none";
+
+    document.getElementById("score").textContent="";
+
+    loadQuestion();
+
+}
+
+
+/* ================= START ================= */
+
+prepareQuiz();
 
 loadQuestion();
 
-
 </script>
 
-
 </body>
-
 </html>
