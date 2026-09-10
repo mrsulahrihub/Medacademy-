@@ -6,19 +6,11 @@
 
 <title>MedAcademy | Medical Learning Center</title>
 
-<meta name="description"
-content="MedAcademy - Medical notes, subjects, quizzes and student learning resources.">
-
 <style>
-
-/* =========================
-   RESET
-========================= */
-
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -26,84 +18,39 @@ html{
 }
 
 body{
-    font-family:
-    Inter,
-    Arial,
-    Helvetica,
-    sans-serif;
-
-    background:#f5f9fb;
-    color:#17343b;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f9fa;
+    color:#222;
     line-height:1.6;
 }
 
-
-/* =========================
-   VARIABLES
-========================= */
-
-:root{
-    --primary:#087f8c;
-    --primary-dark:#05616b;
-    --secondary:#12a5a8;
-    --dark:#12343b;
-    --text:#17343b;
-    --muted:#60777d;
-    --light:#eef8fa;
-    --white:#ffffff;
-    --border:#dce9ec;
-    --shadow:0 10px 35px rgba(12,60,70,.08);
-}
-
-
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
+    background:#ffffff;
+    border-bottom:1px solid #dcebed;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
 
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(12px);
-
-    border-bottom:1px solid var(--border);
-
-    padding:15px 6%;
-
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-
-    gap:25px;
+    justify-content:space-between;
+    gap:20px;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
-    font-size:25px;
-    font-weight:800;
-
-    color:var(--primary);
-
     text-decoration:none;
-}
-
-.logo-icon{
-    width:43px;
-    height:43px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:var(--light);
-    border-radius:12px;
-
+    color:#087f8c;
     font-size:24px;
+    font-weight:800;
+    white-space:nowrap;
 }
 
 nav{
@@ -114,893 +61,474 @@ nav{
 }
 
 nav a{
-    color:#31535a;
     text-decoration:none;
-
-    font-weight:600;
-    font-size:15px;
-
+    color:#333;
     padding:9px 13px;
     border-radius:8px;
-
-    transition:.2s;
+    font-weight:600;
+    transition:.3s;
 }
 
 nav a:hover{
-    background:var(--light);
-    color:var(--primary);
+    color:#087f8c;
+    background:#e8f6f7;
 }
 
 .nav-button{
-    background:var(--primary) !important;
+    background:#087f8c !important;
     color:white !important;
 }
 
 .nav-button:hover{
-    background:var(--primary-dark) !important;
+    background:#066d78 !important;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero{
-    position:relative;
-    overflow:hidden;
-
-    background:
-    linear-gradient(
-        135deg,
-        #075f69 0%,
-        #087f8c 45%,
-        #12a5a8 100%
-    );
-
-    color:white;
-
-    padding:
-    90px 20px
-    100px;
-
-    text-align:center;
-}
-
-.hero::before{
-    content:"";
-    position:absolute;
-
-    width:420px;
-    height:420px;
-
-    border:70px solid rgba(255,255,255,.06);
-    border-radius:50%;
-
-    top:-220px;
-    left:-160px;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-
-    width:350px;
-    height:350px;
-
-    border:60px solid rgba(255,255,255,.05);
-    border-radius:50%;
-
-    right:-170px;
-    bottom:-200px;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-
-    max-width:850px;
+    max-width:1200px;
     margin:auto;
-}
-
-.hero-badge{
-    display:inline-block;
-
-    background:rgba(255,255,255,.13);
-
-    border:1px solid rgba(255,255,255,.2);
-
-    padding:7px 15px;
-    border-radius:30px;
-
-    font-size:13px;
-    font-weight:700;
-
-    margin-bottom:20px;
+    padding:80px 20px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:50px;
 }
 
 .hero h1{
     font-size:52px;
     line-height:1.15;
-
-    margin-bottom:18px;
+    color:#073b40;
+    margin-bottom:20px;
 }
 
 .hero h1 span{
-    color:#d8ffff;
+    color:#087f8c;
 }
 
 .hero p{
-    max-width:680px;
-    margin:0 auto 30px;
-
     font-size:18px;
-
-    color:#e7ffff;
+    color:#5c6b70;
+    max-width:650px;
+    margin-bottom:30px;
 }
 
 .hero-buttons{
     display:flex;
-    justify-content:center;
-    gap:12px;
+    gap:14px;
     flex-wrap:wrap;
 }
 
 .btn{
     display:inline-block;
-
     text-decoration:none;
-
     padding:13px 22px;
-
     border-radius:10px;
-
     font-weight:700;
-
-    transition:.2s;
+    transition:.3s;
 }
 
 .btn-primary{
-    background:white;
-    color:var(--primary);
+    background:#087f8c;
+    color:#fff;
 }
 
 .btn-primary:hover{
+    background:#066d78;
     transform:translateY(-2px);
 }
 
-.btn-outline{
-    border:1px solid rgba(255,255,255,.5);
-    color:white;
-    background:rgba(255,255,255,.08);
+.btn-secondary{
+    background:#fff;
+    color:#087f8c;
+    border:2px solid #087f8c;
 }
 
-.btn-outline:hover{
-    background:rgba(255,255,255,.16);
+.btn-secondary:hover{
+    background:#e8f6f7;
 }
 
+/* HERO CARD */
 
-/* =========================
-   CONTAINER
-========================= */
-
-.container{
-    width:min(1180px,92%);
-    margin:auto;
+.hero-card{
+    background:linear-gradient(145deg,#087f8c,#0ca0ad);
+    color:#fff;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 20px 45px rgba(8,127,140,.25);
 }
 
-
-/* =========================
-   QUICK STATS
-========================= */
-
-.quick-stats{
-    position:relative;
-    z-index:5;
-
-    margin-top:-40px;
-
-    display:grid;
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:18px;
-}
-
-.stat-card{
-    background:white;
-
-    padding:23px;
-
-    border-radius:15px;
-
-    box-shadow:var(--shadow);
-
-    text-align:center;
-
-    border:1px solid var(--border);
-}
-
-.stat-icon{
-    font-size:25px;
-    margin-bottom:5px;
-}
-
-.stat-card strong{
-    display:block;
-
-    font-size:25px;
-
-    color:var(--primary);
-}
-
-.stat-card span{
-    color:var(--muted);
-    font-size:14px;
-}
-
-
-/* =========================
-   SECTION
-========================= */
-
-.section{
-    padding:75px 0;
-}
-
-.section-heading{
-    text-align:center;
-
-    max-width:700px;
-
-    margin:
-    0 auto 40px;
-}
-
-.section-heading .label{
-    color:var(--primary);
-
-    font-size:13px;
-    font-weight:800;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
-
-    margin-bottom:8px;
-}
-
-.section-heading h2{
-    font-size:32px;
-
-    color:var(--dark);
-
-    margin-bottom:10px;
-}
-
-.section-heading p{
-    color:var(--muted);
-}
-
-
-/* =========================
-   SUBJECTS
-========================= */
-
-.subject-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:20px;
-}
-
-.subject-card{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:17px;
-
-    padding:25px;
-
-    box-shadow:var(--shadow);
-
-    text-decoration:none;
-
-    color:inherit;
-
-    transition:.25s;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.subject-card::after{
-    content:"";
-
-    position:absolute;
-
-    width:100px;
-    height:100px;
-
-    border-radius:50%;
-
-    background:var(--light);
-
-    right:-45px;
-    bottom:-45px;
-}
-
-.subject-card:hover{
-    transform:translateY(-5px);
-
-    border-color:#b9dfe3;
-
-    box-shadow:
-    0 15px 40px
-    rgba(8,127,140,.13);
-}
-
-.subject-icon{
-    width:52px;
-    height:52px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:var(--light);
-
-    border-radius:14px;
-
-    font-size:27px;
-
-    margin-bottom:17px;
-}
-
-.subject-card h3{
-    color:var(--dark);
-
-    font-size:20px;
-
-    margin-bottom:7px;
-}
-
-.subject-card p{
-    color:var(--muted);
-
-    font-size:14px;
-
+.hero-icon{
+    font-size:65px;
     margin-bottom:15px;
 }
 
-.subject-link{
-    color:var(--primary);
-
-    font-size:14px;
-
-    font-weight:800;
+.hero-card h2{
+    font-size:28px;
+    margin-bottom:10px;
 }
 
-
-/* =========================
-   FEATURES
-========================= */
-
-.features{
-    background:white;
-
-    border-top:1px solid var(--border);
-    border-bottom:1px solid var(--border);
+.hero-card p{
+    color:#e9ffff;
+    margin-bottom:0;
 }
 
-.feature-grid{
+/* ================= STATS ================= */
+
+.stats{
+    max-width:1100px;
+    margin:0 auto 60px;
+    padding:0 20px;
     display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
-.feature-card{
-    padding:27px;
-
-    background:#f8fcfd;
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
+.stat{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    border:1px solid #e0eeee;
+    box-shadow:0 5px 18px rgba(0,0,0,.04);
 }
 
-.feature-card .icon{
-    font-size:29px;
+.stat h3{
+    color:#087f8c;
+    font-size:30px;
+}
 
+.stat p{
+    color:#68777b;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:34px;
+    color:#073b40;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#6c7b7e;
+}
+
+/* ================= SUBJECTS ================= */
+
+.subject-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.subject-card{
+    background:#fff;
+    padding:28px;
+    border-radius:18px;
+    border:1px solid #dcebed;
+    transition:.3s;
+    text-decoration:none;
+    color:#222;
+    display:block;
+}
+
+.subject-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    border-color:#9ddde2;
+}
+
+.subject-icon{
+    font-size:40px;
     margin-bottom:12px;
 }
 
-.feature-card h3{
-    margin-bottom:7px;
-
-    color:var(--dark);
+.subject-card h3{
+    color:#087f8c;
+    font-size:22px;
+    margin-bottom:8px;
 }
 
-.feature-card p{
-    color:var(--muted);
-
-    font-size:14px;
+.subject-card p{
+    color:#68777b;
 }
 
+/* ================= FEATURES ================= */
 
-/* =========================
-   SEARCH
-========================= */
-
-.search-section{
-    padding:70px 0;
+.feature-section{
+    background:#eaf7f8;
 }
+
+.feature-grid{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.feature{
+    background:#fff;
+    padding:28px;
+    border-radius:18px;
+    text-align:center;
+}
+
+.feature-icon{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.feature h3{
+    color:#073b40;
+    margin-bottom:8px;
+}
+
+.feature p{
+    color:#68777b;
+}
+
+/* ================= SEARCH ================= */
 
 .search-box{
     max-width:850px;
-
     margin:auto;
-
-    background:white;
-
-    padding:28px;
-
-    border-radius:18px;
-
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow);
+    display:flex;
+    gap:10px;
 }
 
-.search-title{
-    text-align:center;
-
-    margin-bottom:20px;
-}
-
-.search-title h2{
-    color:var(--dark);
-
-    margin-bottom:5px;
-}
-
-.search-title p{
-    color:var(--muted);
-
-    font-size:14px;
-}
-
-.search-input{
-    position:relative;
-}
-
-.search-input input{
-    width:100%;
-
-    padding:16px 18px;
-
-    border:1px solid #cddfe3;
-
-    border-radius:11px;
-
+.search-box input{
+    flex:1;
+    padding:15px 18px;
+    border:2px solid #cfe3e5;
+    border-radius:10px;
     outline:none;
-
     font-size:16px;
-
-    color:var(--text);
 }
 
-.search-input input:focus{
-    border-color:var(--primary);
-
-    box-shadow:
-    0 0 0 3px
-    rgba(8,127,140,.08);
+.search-box input:focus{
+    border-color:#087f8c;
 }
 
-.search-results{
-    margin-top:15px;
+.search-box button{
+    border:none;
+    background:#087f8c;
+    color:white;
+    padding:0 25px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.search-box button:hover{
+    background:#066d78;
+}
+
+#searchResults{
+    max-width:850px;
+    margin:25px auto 0;
 }
 
 .search-result{
-    padding:13px 15px;
+    background:#fff;
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:10px;
+    border:1px solid #dcebed;
+}
 
-    margin-top:8px;
+.search-result h3{
+    color:#087f8c;
+}
 
+.search-result p{
+    color:#667477;
+}
+
+/* ================= QUESTIONS ================= */
+
+.question-section{
+    background:#fff;
+}
+
+.question-box{
+    max-width:850px;
+    margin:auto;
+    background:#f4f9fa;
+    padding:25px;
+    border-radius:18px;
+    border:1px solid #dcebed;
+}
+
+.question-box textarea{
+    width:100%;
+    min-height:120px;
+    resize:vertical;
+    padding:15px;
+    border:2px solid #d5e5e7;
     border-radius:10px;
-
-    background:var(--light);
-
-    border:1px solid #d9eef0;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
+    outline:none;
+    font-family:inherit;
+    font-size:16px;
 }
 
-.search-result button{
-    border:0;
+.question-box textarea:focus{
+    border-color:#087f8c;
+}
 
-    background:var(--primary);
-
-    color:white;
-
-    padding:7px 12px;
-
-    border-radius:7px;
-
+.question-box button{
+    margin-top:12px;
+    padding:12px 22px;
+    border:none;
+    border-radius:9px;
+    background:#087f8c;
+    color:#fff;
+    font-weight:bold;
     cursor:pointer;
-
-    font-weight:700;
 }
 
-
-/* =========================
-   STUDENT QUESTIONS
-========================= */
-
-.questions-section{
-    background:#eef8fa;
-
-    padding:75px 0;
+.answer-box{
+    margin-top:20px;
+    background:#fff;
+    padding:20px;
+    border-radius:12px;
+    border-left:5px solid #087f8c;
+    display:none;
 }
 
-.question-layout{
-    display:grid;
-
-    grid-template-columns:
-    380px 1fr;
-
-    gap:25px;
-
-    align-items:start;
-}
-
-.question-form{
-    background:white;
-
-    padding:27px;
-
-    border-radius:17px;
-
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow);
-}
-
-.question-form h3{
-    color:var(--dark);
-
+.answer-box h3{
+    color:#087f8c;
     margin-bottom:7px;
 }
 
-.question-form p{
-    color:var(--muted);
-
-    font-size:14px;
-
-    margin-bottom:20px;
-}
-
-.form-group{
-    margin-bottom:14px;
-}
-
-.form-group label{
-    display:block;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    margin-bottom:6px;
-}
-
-.form-group input,
-.form-group textarea{
-    width:100%;
-
-    padding:12px 13px;
-
-    border:1px solid #cfdee1;
-
-    border-radius:9px;
-
-    outline:none;
-
-    font-family:inherit;
-
-    font-size:14px;
-}
-
-.form-group textarea{
-    min-height:120px;
-
-    resize:vertical;
-}
-
-.form-group input:focus,
-.form-group textarea:focus{
-    border-color:var(--primary);
-}
-
-.submit-question{
-    width:100%;
-
-    border:0;
-
-    background:var(--primary);
-
-    color:white;
-
-    padding:13px;
-
-    border-radius:9px;
-
-    cursor:pointer;
-
-    font-weight:800;
-
-    font-size:14px;
-}
-
-.submit-question:hover{
-    background:var(--primary-dark);
-}
-
-.question-list{
-    display:flex;
-
-    flex-direction:column;
-
-    gap:13px;
-}
-
-.question-card{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:15px;
-
-    padding:20px;
-
-    box-shadow:
-    0 5px 20px
-    rgba(10,60,70,.05);
-}
-
-.question-header{
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:15px;
-
-    margin-bottom:9px;
-}
-
-.student-name{
-    font-weight:800;
-
-    color:var(--primary);
-}
-
-.question-date{
-    color:#8a9da1;
-
-    font-size:12px;
-}
-
-.question-text{
-    color:var(--text);
-
-    font-size:15px;
-}
-
-.pending{
-    display:inline-block;
-
-    margin-top:12px;
-
-    padding:4px 9px;
-
-    border-radius:20px;
-
-    background:#fff5df;
-
-    color:#9a6900;
-
-    font-size:11px;
-
-    font-weight:800;
-}
-
-.admin-answer{
-    margin-top:15px;
-
-    padding:14px;
-
-    background:#eef8fa;
-
-    border-left:4px solid var(--primary);
-
-    border-radius:8px;
-}
-
-.admin-answer strong{
-    color:var(--primary);
-
-    font-size:13px;
-}
-
-.admin-answer p{
-    color:#405c62;
-
-    font-size:14px;
-
-    margin-top:3px;
-}
-
-.no-questions{
-    background:white;
-
-    padding:35px;
-
-    border-radius:15px;
-
-    border:1px solid var(--border);
-
-    text-align:center;
-
-    color:var(--muted);
-}
-
-
-/* =========================
-   CTA
-========================= */
+/* ================= CTA ================= */
 
 .cta{
-    margin:70px 0;
-
-    background:
-    linear-gradient(
-        135deg,
-        #075f69,
-        #087f8c
-    );
-
-    color:white;
-
-    border-radius:22px;
-
-    padding:55px 30px;
-
+    max-width:1100px;
+    margin:60px auto;
+    padding:55px 25px;
+    background:linear-gradient(135deg,#087f8c,#075f68);
+    color:#fff;
+    border-radius:25px;
     text-align:center;
 }
 
 .cta h2{
-    font-size:30px;
-
-    margin-bottom:10px;
+    font-size:35px;
+    margin-bottom:12px;
 }
 
 .cta p{
-    color:#d9ffff;
-
-    max-width:600px;
-
-    margin:0 auto 22px;
+    margin-bottom:25px;
+    color:#e8ffff;
 }
 
+.cta .btn{
+    background:#fff;
+    color:#087f8c;
+}
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer{
-    background:#102f35;
-
-    color:white;
-
-    padding:45px 20px 25px;
+    background:#073b40;
+    color:#d9f1f2;
+    margin-top:60px;
 }
 
 .footer-content{
-    width:min(1180px,92%);
-
+    max-width:1200px;
     margin:auto;
-
+    padding:50px 20px;
     display:grid;
-
-    grid-template-columns:
-    2fr 1fr 1fr;
-
-    gap:35px;
-
-    padding-bottom:30px;
-
-    border-bottom:
-    1px solid
-    rgba(255,255,255,.1);
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:40px;
 }
 
 .footer-brand h3{
-    font-size:22px;
-
-    margin-bottom:8px;
+    color:#fff;
+    font-size:25px;
+    margin-bottom:12px;
 }
 
 .footer-brand p{
-    color:#a9c0c5;
-
-    max-width:450px;
-
-    font-size:14px;
+    color:#b9d6d8;
 }
 
 .footer-column h4{
-    margin-bottom:12px;
+    color:#fff;
+    margin-bottom:15px;
 }
 
 .footer-column a{
     display:block;
-
-    color:#a9c0c5;
-
+    color:#b9d6d8;
     text-decoration:none;
-
-    font-size:14px;
-
-    margin:7px 0;
+    margin-bottom:8px;
 }
 
 .footer-column a:hover{
-    color:white;
+    color:#fff;
+}
+
+.contact-info{
+    margin-bottom:8px;
+}
+
+.contact-info strong{
+    color:#fff;
 }
 
 .footer-bottom{
-    width:min(1180px,92%);
-
-    margin:20px auto 0;
-
+    border-top:1px solid rgba(255,255,255,.12);
     text-align:center;
-
-    color:#91aeb3;
-
-    font-size:13px;
+    padding:20px;
+    color:#aacacc;
 }
 
+.made-by{
+    color:#fff;
+    font-weight:800;
+}
 
-/* =========================
-   MOBILE
-========================= */
+.contact-number{
+    color:#9de8ed;
+    font-weight:700;
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:900px){
 
+    .hero{
+        grid-template-columns:1fr;
+        padding-top:55px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
     .subject-grid{
-        grid-template-columns:
-        repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .feature-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .question-layout{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
     }
 
     .footer-content{
@@ -1008,17 +536,10 @@ footer{
     }
 }
 
-
 @media(max-width:650px){
 
-    header{
-        position:relative;
-
+    .navbar{
         flex-direction:column;
-
-        padding:15px 4%;
-
-        gap:12px;
     }
 
     nav{
@@ -1026,35 +547,24 @@ footer{
     }
 
     nav a{
-        font-size:13px;
-
         padding:7px 9px;
+        font-size:14px;
     }
 
     .hero{
-        padding:65px 18px 75px;
+        padding:45px 18px;
     }
 
     .hero h1{
-        font-size:36px;
+        font-size:35px;
     }
 
     .hero p{
-        font-size:15px;
+        font-size:16px;
     }
 
-    .quick-stats{
+    .stats{
         grid-template-columns:1fr;
-
-        margin-top:20px;
-    }
-
-    .section{
-        padding:55px 0;
-    }
-
-    .section-heading h2{
-        font-size:27px;
     }
 
     .subject-grid{
@@ -1065,385 +575,303 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .footer-content{
-        grid-template-columns:1fr;
+    .search-box{
+        flex-direction:column;
     }
 
-    .search-box{
-        padding:20px;
+    .search-box button{
+        padding:13px;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+        text-align:center;
     }
 
     .cta{
-        padding:40px 20px;
+        margin:35px 15px;
     }
 
     .cta h2{
-        font-size:25px;
+        font-size:28px;
     }
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
+<!-- ================= HEADER ================= -->
 
 <header>
+<div class="navbar">
 
-<a href="index.html" class="logo">
+    <a href="index.html" class="logo">🩺 MedAcademy</a>
 
-<span class="logo-icon">🩺</span>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="notes.html">Notes</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="#questions">Questions</a>
+        <a href="notes.html" class="nav-button">Start Learning</a>
+    </nav>
 
-<span>MedAcademy</span>
-
-</a>
-
-
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="notes.html">Notes</a>
-
-<a href="quiz.html">Quiz</a>
-
-<a href="#questions">Questions</a>
-
-<a href="notes.html" class="nav-button">
-Start Learning
-</a>
-
-</nav>
-
+</div>
 </header>
 
 
-
-<!-- =========================
-     HERO
-========================= -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-<div class="hero-content">
+<div>
 
-<div class="hero-badge">
-MEDICAL LEARNING PLATFORM
-</div>
+    <h1>
+        Learn Medicine.<br>
+        <span>Build Your Knowledge.</span>
+    </h1>
 
-<h1>
-Learn Medicine.<br>
-<span>Build Your Knowledge.</span>
-</h1>
+    <p>
+        MedAcademy is a medical learning platform designed to help
+        students understand medical subjects, revise important concepts,
+        practice MCQs and improve their medical knowledge.
+    </p>
 
-<p>
-A simple and organized medical learning platform
-for students to explore subjects, study important
-topics, practice MCQs and ask questions.
-</p>
+    <div class="hero-buttons">
+        <a href="notes.html" class="btn btn-primary">
+            📚 Explore Medical Notes
+        </a>
 
-
-<div class="hero-buttons">
-
-<a href="notes.html" class="btn btn-primary">
-📚 Explore Medical Notes
-</a>
-
-<a href="quiz.html" class="btn btn-outline">
-📝 Take a Quiz
-</a>
+        <a href="quiz.html" class="btn btn-secondary">
+            📝 Take Medical Quiz
+        </a>
+    </div>
 
 </div>
+
+
+<div class="hero-card">
+
+    <div class="hero-icon">🩺</div>
+
+    <h2>Medical Learning Made Simple</h2>
+
+    <p>
+        Study important medical concepts in a simple,
+        organized and student-friendly way.
+    </p>
 
 </div>
 
 </section>
 
 
+<!-- ================= STATS ================= -->
 
-<!-- =========================
-     QUICK STATS
-========================= -->
+<section class="stats">
 
-<div class="container">
-
-<div class="quick-stats">
-
-<div class="stat-card">
-
-<div class="stat-icon">📚</div>
-
-<strong>Medical Notes</strong>
-
-<span>Organized study material</span>
-
+<div class="stat">
+    <h3>1000+</h3>
+    <p>Medical Topics</p>
 </div>
 
-
-<div class="stat-card">
-
-<div class="stat-icon">📝</div>
-
-<strong>MCQ Practice</strong>
-
-<span>Test your knowledge</span>
-
+<div class="stat">
+    <h3>500+</h3>
+    <p>Medical Questions</p>
 </div>
 
-
-<div class="stat-card">
-
-<div class="stat-icon">💬</div>
-
-<strong>Student Questions</strong>
-
-<span>Learn through questions</span>
-
+<div class="stat">
+    <h3>24/7</h3>
+    <p>Learning Access</p>
 </div>
 
-</div>
-
-</div>
+</section>
 
 
+<!-- ================= SUBJECTS ================= -->
 
-<!-- =========================
-     SUBJECTS
-========================= -->
+<section class="section">
 
-<section class="section" id="subjects">
+<div class="section-title">
 
-<div class="container">
+    <h2>Medical Subjects</h2>
 
-<div class="section-heading">
-
-<div class="label">
-Explore
-</div>
-
-<h2>
-Medical Subjects
-</h2>
-
-<p>
-Study your medical subjects in an organized,
-simple and student-friendly environment.
-</p>
+    <p>
+        Explore important medical subjects and improve your concepts.
+    </p>
 
 </div>
 
 
 <div class="subject-grid">
 
-
 <a href="notes.html#anatomy" class="subject-card">
 
-<div class="subject-icon">
-🦴
-</div>
+    <div class="subject-icon">🫀</div>
 
-<h3>Anatomy</h3>
+    <h3>Anatomy</h3>
 
-<p>
-Study the structure of the human body,
-organs, systems and anatomical relationships.
-</p>
-
-<span class="subject-link">
-Explore Anatomy →
-</span>
+    <p>
+        Study the structure of the human body, organs,
+        systems and anatomical relationships.
+    </p>
 
 </a>
-
 
 
 <a href="notes.html#physiology" class="subject-card">
 
-<div class="subject-icon">
-🫀
-</div>
+    <div class="subject-icon">🫁</div>
 
-<h3>Physiology</h3>
+    <h3>Physiology</h3>
 
-<p>
-Understand the normal functions of organs
-and body systems.
-</p>
-
-<span class="subject-link">
-Explore Physiology →
-</span>
+    <p>
+        Understand normal body functions and physiological processes.
+    </p>
 
 </a>
-
 
 
 <a href="notes.html#pharmacology" class="subject-card">
 
-<div class="subject-icon">
-💊
-</div>
+    <div class="subject-icon">💊</div>
 
-<h3>Pharmacology</h3>
+    <h3>Pharmacology</h3>
 
-<p>
-Learn about drugs, mechanisms, effects,
-interactions and clinical concepts.
-</p>
-
-<span class="subject-link">
-Explore Pharmacology →
-</span>
+    <p>
+        Learn drugs, mechanisms of action, indications,
+        adverse effects and important drug interactions.
+    </p>
 
 </a>
-
 
 
 <a href="notes.html#pathology" class="subject-card">
 
-<div class="subject-icon">
-🔬
-</div>
+    <div class="subject-icon">🔬</div>
 
-<h3>Pathology</h3>
+    <h3>Pathology</h3>
 
-<p>
-Understand disease processes, cellular injury,
-inflammation and pathological changes.
-</p>
-
-<span class="subject-link">
-Explore Pathology →
-</span>
+    <p>
+        Learn disease mechanisms, cellular changes,
+        inflammation and pathological processes.
+    </p>
 
 </a>
-
 
 
 <a href="notes.html#microbiology" class="subject-card">
 
-<div class="subject-icon">
-🦠
-</div>
+    <div class="subject-icon">🦠</div>
 
-<h3>Microbiology</h3>
+    <h3>Microbiology</h3>
 
-<p>
-Study microorganisms, infections,
-bacteria, viruses, fungi and parasites.
-</p>
-
-<span class="subject-link">
-Explore Microbiology →
-</span>
+    <p>
+        Study bacteria, viruses, fungi, parasites,
+        infections and laboratory diagnosis.
+    </p>
 
 </a>
-
 
 
 <a href="notes.html#medicine" class="subject-card">
 
-<div class="subject-icon">
-🩺
-</div>
+    <div class="subject-icon">🏥</div>
 
-<h3>Medicine</h3>
+    <h3>Medicine</h3>
 
-<p>
-Explore common diseases, clinical concepts,
-diagnosis and general medical knowledge.
-</p>
-
-<span class="subject-link">
-Explore Medicine →
-</span>
+    <p>
+        Explore common diseases, clinical conditions,
+        diagnosis and basic management concepts.
+    </p>
 
 </a>
 
-
-</div>
-
 </div>
 
 </section>
 
 
+<!-- ================= FEATURES ================= -->
 
-<!-- =========================
-     FEATURES
-========================= -->
-
-<section class="section features">
-
-<div class="container">
-
-<div class="section-heading">
-
-<div class="label">
-Learn Better
-</div>
-
-<h2>
-Everything in One Place
-</h2>
-
-<p>
-MedAcademy is designed to keep medical learning
-simple, organized and accessible.
-</p>
-
-</div>
-
+<section class="feature-section">
 
 <div class="feature-grid">
 
+<div class="feature">
 
-<div class="feature-card">
+    <div class="feature-icon">📚</div>
 
-<div class="icon">📖</div>
+    <h3>Medical Notes</h3>
 
-<h3>Organized Notes</h3>
-
-<p>
-Topics will be arranged subject-wise so students
-can quickly find the material they need.
-</p>
+    <p>
+        Easy-to-understand notes for medical students.
+    </p>
 
 </div>
 
 
-<div class="feature-card">
+<div class="feature">
 
-<div class="icon">📝</div>
+    <div class="feature-icon">📝</div>
 
-<h3>MCQ Practice</h3>
+    <h3>Medical Quiz</h3>
 
-<p>
-Practice important questions and check your
-understanding of medical concepts.
-</p>
+    <p>
+        Test your knowledge with medical MCQs.
+    </p>
+
+</div>
+
+
+<div class="feature">
+
+    <div class="feature-icon">🔎</div>
+
+    <h3>Quick Search</h3>
+
+    <p>
+        Quickly find medical topics and questions.
+    </p>
 
 </div>
 
 
-<div class="feature-card">
+<div class="feature">
 
-<div class="icon">💬</div>
+    <div class="feature-icon">💡</div>
 
-<h3>Student Community</h3>
+    <h3>Simple Learning</h3>
 
-<p>
-Students can submit questions and learn from
-questions asked by other students.
-</p>
+    <p>
+        Medical concepts explained in a student-friendly way.
+    </p>
 
 </div>
 
+
+<div class="feature">
+
+    <div class="feature-icon">📱</div>
+
+    <h3>Mobile Friendly</h3>
+
+    <p>
+        Learn comfortably from your mobile phone.
+    </p>
+
+</div>
+
+
+<div class="feature">
+
+    <div class="feature-icon">🎓</div>
+
+    <h3>Student Focused</h3>
+
+    <p>
+        Designed to support medical students in their studies.
+    </p>
 
 </div>
 
@@ -1452,155 +880,73 @@ questions asked by other students.
 </section>
 
 
+<!-- ================= SEARCH ================= -->
 
-<!-- =========================
-     SEARCH
-========================= -->
+<section class="section">
 
-<section class="search-section">
+<div class="section-title">
 
-<div class="container">
+    <h2>🔎 Search Medical Knowledge</h2>
 
-<div class="search-box">
-
-<div class="search-title">
-
-<h2>🔎 Find a Medical Topic</h2>
-
-<p>
-Search through the topics available on MedAcademy.
-</p>
+    <p>
+        Search for a medical topic or question.
+    </p>
 
 </div>
 
 
-<div class="search-input">
+<div class="search-box">
 
-<input
-type="text"
-id="searchBox"
-placeholder="Example: Heart, Kidney, Diabetes..."
-autocomplete="off"
->
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="Example: Blood pressure, Heart rate, Diabetes..."
+    >
+
+    <button onclick="searchMedical()">
+        Search
+    </button>
 
 </div>
 
 
 <div id="searchResults"></div>
 
-</div>
-
-</div>
-
 </section>
 
 
+<!-- ================= QUESTIONS ================= -->
 
-<!-- =========================
-     STUDENT QUESTIONS
-========================= -->
+<section class="section question-section" id="questions">
 
-<section class="questions-section" id="questions">
+<div class="section-title">
 
-<div class="container">
+    <h2>💬 Student Questions</h2>
 
-
-<div class="section-heading">
-
-<div class="label">
-Student Community
-</div>
-
-<h2>
-💬 Student Questions
-</h2>
-
-<p>
-Ask a medical study question. Questions submitted
-by students can appear here for everyone to learn from.
-</p>
+    <p>
+        Ask a medical question and find a quick answer.
+    </p>
 
 </div>
 
 
-<div class="question-layout">
-
-
-<!-- FORM -->
-
-<div class="question-form">
-
-<h3>Ask a Question</h3>
-
-<p>
-Can't find your question in our notes?
-Submit it here.
-</p>
-
-
-<div class="form-group">
-
-<label for="studentName">
-Your Name
-</label>
-
-<input
-type="text"
-id="studentName"
-placeholder="Enter your name"
-maxlength="40"
->
-
-</div>
-
-
-<div class="form-group">
-
-<label for="studentQuestion">
-Your Question
-</label>
+<div class="question-box">
 
 <textarea
-id="studentQuestion"
-placeholder="Write your medical study question..."
-maxlength="500"
+    id="studentQuestion"
+    placeholder="Write your medical question here..."
 ></textarea>
 
-</div>
-
-
-<button
-class="submit-question"
-onclick="submitQuestion()"
->
-Submit Question
+<button onclick="answerQuestion()">
+    Submit Question
 </button>
 
 
-<div
-id="questionMessage"
-style="
-margin-top:12px;
-font-size:13px;
-font-weight:700;
-">
-</div>
+<div id="answerBox" class="answer-box">
 
-</div>
+    <h3>📖 MedAcademy Answer</h3>
 
-
-
-<!-- QUESTION LIST -->
-
-<div>
-
-<div
-id="questionList"
-class="question-list">
-</div>
-
-</div>
-
+    <p id="answerText"></p>
 
 </div>
 
@@ -1609,616 +955,348 @@ class="question-list">
 </section>
 
 
-
-<!-- =========================
-     CTA
-========================= -->
-
-<div class="container">
+<!-- ================= CTA ================= -->
 
 <section class="cta">
 
-<h2>
-Ready to Start Learning?
-</h2>
+    <h2>Start Your Medical Learning Journey</h2>
 
-<p>
-Explore medical notes, study important topics
-and test your knowledge with MCQs.
-</p>
+    <p>
+        Study medical topics, practice questions and improve
+        your knowledge with MedAcademy.
+    </p>
 
-<a
-href="notes.html"
-class="btn btn-primary"
->
-Open Medical Notes
-</a>
+    <a href="notes.html" class="btn">
+        Start Learning →
+    </a>
 
 </section>
 
-</div>
 
-
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
 <div class="footer-content">
 
+    <div class="footer-brand">
 
-<div class="footer-brand">
+        <h3>🩺 MedAcademy</h3>
 
-<h3>🩺 MedAcademy</h3>
+        <p>
+            A student-friendly medical learning platform
+            for notes, questions, quizzes and medical knowledge.
+        </p>
 
-<p>
-A medical learning platform designed to make
-medical education simple, organized and accessible
-for students.
-</p>
-
-</div>
+    </div>
 
 
-<div class="footer-column">
+    <div class="footer-column">
 
-<h4>Learning</h4>
+        <h4>Quick Links</h4>
 
-<a href="notes.html">
-Medical Notes
-</a>
+        <a href="index.html">Home</a>
 
-<a href="quiz.html">
-Medical Quiz
-</a>
+        <a href="notes.html">Medical Notes</a>
 
-<a href="#subjects">
-Subjects
-</a>
+        <a href="quiz.html">Medical Quiz</a>
 
-</div>
+        <a href="#questions">Student Questions</a>
+
+    </div>
 
 
-<div class="footer-column">
+    <div class="footer-column">
 
-<h4>Community</h4>
+        <h4>Contact</h4>
 
-<a href="#questions">
-Student Questions
-</a>
+        <p class="contact-info">
+            Made by <strong>MR.SULHARI</strong>
+        </p>
 
-<a href="notes.html">
-Topics
-</a>
+        <p class="contact-info">
+            📞 <strong>+923099100546</strong>
+        </p>
 
-</div>
-
+    </div>
 
 </div>
 
 
 <div class="footer-bottom">
 
-© 2026 MedAcademy
-<br>
-Medical Learning Platform
+    <p>
+        © 2026 MedAcademy. All Rights Reserved.
+    </p>
+
+    <p>
+        Made by
+        <span class="made-by">MR.SULHARI</span>
+        |
+        Contact:
+        <span class="contact-number">+923099100546</span>
+    </p>
 
 </div>
 
 </footer>
 
 
-
 <script>
 
-/* =====================================================
-   TOPIC DATABASE FOR HOMEPAGE SEARCH
-===================================================== */
+/* ================= MEDICAL SEARCH DATA ================= */
 
-const topics = [
+const medicalData = [
 
-/* Anatomy */
+{
+    title:"Normal Body Temperature",
+    text:"Normal adult body temperature is approximately 37°C, with normal variation depending on measurement site and individual factors."
+},
 
-"Anatomy",
-"Heart",
-"Brain",
-"Kidney",
-"Liver",
-"Cranial Nerves",
-"Respiratory System",
-"Nervous System",
-"Endocrine System",
-"Digestive System",
-"Urinary System",
+{
+    title:"Normal Blood Pressure",
+    text:"A commonly used normal adult blood pressure reference is around 120/80 mmHg. Blood pressure varies between individuals and circumstances."
+},
 
-/* Physiology */
+{
+    title:"Normal Heart Rate",
+    text:"Normal resting heart rate for most adults is approximately 60–100 beats per minute."
+},
 
-"Physiology",
-"Cardiovascular Physiology",
-"Respiratory Physiology",
-"Renal Physiology",
-"Neurophysiology",
-"Endocrine Physiology",
+{
+    title:"Normal Respiratory Rate",
+    text:"Normal resting respiratory rate for an adult is approximately 12–20 breaths per minute."
+},
 
-/* Pharmacology */
+{
+    title:"Normal Blood Glucose",
+    text:"Normal fasting blood glucose is generally about 70–99 mg/dL in adults."
+},
 
-"Pharmacology",
-"Adrenergic Drugs",
-"Adrenergic Blockers",
-"Cholinergic Drugs",
-"Drug Receptors",
-"Drug Interactions",
-"Adverse Drug Reactions",
-"Autonomic Nervous System",
-"Antimicrobial Pharmacology",
-"Cardiovascular Pharmacology",
-"CNS Pharmacology",
-"Clinical Pharmacology",
-"Endocrine Pharmacology",
-"Gastrointestinal Pharmacology",
-"Dose Response",
-"Drugs Affecting Blood",
-"Drugs Affecting Uterus",
+{
+    title:"Diabetes Mellitus",
+    text:"Diabetes mellitus is a metabolic disorder characterized by persistently elevated blood glucose levels."
+},
 
-/* Pathology */
+{
+    title:"Hypertension",
+    text:"Hypertension means persistently elevated blood pressure and is an important risk factor for cardiovascular and kidney disease."
+},
 
-"Pathology",
-"Cell Injury",
-"Inflammation",
-"Thrombosis",
-"Anemia",
+{
+    title:"Anemia",
+    text:"Anemia is a condition in which the blood has a reduced hemoglobin concentration or reduced oxygen-carrying capacity."
+},
 
-/* Microbiology */
+{
+    title:"Osteoporosis",
+    text:"Osteoporosis is a disease characterized by reduced bone strength and increased risk of fractures."
+},
 
-"Microbiology",
-"Bacteria",
-"Viruses",
-"Fungi",
-"Protozoa",
-"Helminths",
-"Tuberculosis",
+{
+    title:"Migraine",
+    text:"Migraine is a neurological disorder commonly associated with recurrent headache attacks and may include nausea and sensitivity to light or sound."
+},
 
-/* Medicine */
+{
+    title:"Thrombosis",
+    text:"Thrombosis is the formation of a blood clot within a blood vessel."
+},
 
-"Medicine",
-"Fever",
-"Common Cold",
-"Flu",
-"Cough",
-"Headache",
-"Migraine",
-"Diabetes",
-"Hypertension",
-"Asthma",
-"Kidney Disease",
-"Kidney Stones",
-"UTI",
-"Heart Failure",
-"Pneumonia",
-"Hepatitis",
-"Gastritis",
-"Gout",
-"Osteoporosis",
-"Stroke",
-"ECG",
-"Blood Pressure"
+{
+    title:"ECG",
+    text:"Electrocardiography records the electrical activity of the heart and is commonly used to evaluate heart rhythm and other cardiac abnormalities."
+},
+
+{
+    title:"Heart",
+    text:"The heart is a muscular organ that pumps blood throughout the body."
+},
+
+{
+    title:"Lungs",
+    text:"The lungs are the primary organs of respiration and are responsible for gas exchange between air and blood."
+},
+
+{
+    title:"Kidney",
+    text:"The kidneys filter blood, regulate fluid and electrolyte balance, and produce urine."
+},
+
+{
+    title:"Liver",
+    text:"The liver performs many functions including metabolism, detoxification, bile production and protein synthesis."
+},
+
+{
+    title:"Neuron",
+    text:"A neuron is a specialized cell that transmits electrical and chemical signals in the nervous system."
+},
+
+{
+    title:"Insulin",
+    text:"Insulin is a hormone produced by pancreatic beta cells that helps regulate blood glucose."
+},
+
+{
+    title:"Hemoglobin",
+    text:"Hemoglobin is the oxygen-carrying protein found inside red blood cells."
+},
+
+{
+    title:"Platelets",
+    text:"Platelets are blood components that play an important role in hemostasis and blood clot formation."
+
+}
 
 ];
 
 
-/* =====================================================
-   SEARCH
-===================================================== */
+/* ================= SEARCH ================= */
 
-const searchBox =
-document.getElementById("searchBox");
+function searchMedical(){
 
-const searchResults =
-document.getElementById("searchResults");
+    const input =
+        document.getElementById("searchBox")
+        .value
+        .trim()
+        .toLowerCase();
 
+    const results =
+        document.getElementById("searchResults");
 
-searchBox.addEventListener(
-"input",
-searchTopics
-);
+    results.innerHTML = "";
 
+    if(!input){
 
-function searchTopics(){
-
-    const value =
-    searchBox.value
-    .trim()
-    .toLowerCase();
-
-
-    searchResults.innerHTML="";
-
-
-    if(value===""){
-        return;
-    }
-
-
-    const matches =
-    topics.filter(function(topic){
-
-        return topic
-        .toLowerCase()
-        .includes(value);
-
-    });
-
-
-    if(matches.length===0){
-
-        searchResults.innerHTML=`
-
-        <div class="search-result">
-
-        <span>
-        ❌ No matching topic found.
-        </span>
-
-        <a
-        href="#questions"
-        style="
-        color:#087f8c;
-        font-weight:700;
-        text-decoration:none;
-        "
-        >
-        Ask a Question
-        </a>
-
-        </div>
-
-        `;
+        results.innerHTML =
+        `<div class="search-result">
+            <p>Please enter a medical topic or question.</p>
+        </div>`;
 
         return;
     }
 
+    const matches = medicalData.filter(item =>
 
-    matches.slice(0,10).forEach(function(topic){
+        item.title.toLowerCase().includes(input) ||
+        item.text.toLowerCase().includes(input)
 
-        const result =
-        document.createElement("div");
-
-        result.className="search-result";
-
-
-        result.innerHTML=`
-
-        <span>
-        📚 ${escapeHTML(topic)}
-        </span>
-
-        <button
-        onclick="openTopic('${escapeJS(topic)}')"
-        >
-        Open
-        </button>
-
-        `;
-
-
-        searchResults.appendChild(result);
-
-    });
-
-}
-
-
-/* =====================================================
-   OPEN TOPIC
-===================================================== */
-
-function openTopic(topic){
-
-    /*
-       Notes will later be organized
-       subject-wise inside notes.html.
-    */
-
-    window.location.href =
-    "notes.html?topic="
-    +
-    encodeURIComponent(topic);
-
-}
-
-
-/* =====================================================
-   STUDENT QUESTIONS
-===================================================== */
-
-const QUESTION_KEY =
-"medacademy_student_questions";
-
-
-function getQuestions(){
-
-    try{
-
-        return JSON.parse(
-            localStorage.getItem(QUESTION_KEY)
-        ) || [];
-
-    }catch(error){
-
-        return [];
-
-    }
-
-}
-
-
-function saveQuestions(questions){
-
-    localStorage.setItem(
-        QUESTION_KEY,
-        JSON.stringify(questions)
     );
 
-}
+    if(matches.length === 0){
 
-
-function submitQuestion(){
-
-    const name =
-    document.getElementById("studentName")
-    .value
-    .trim();
-
-
-    const question =
-    document.getElementById("studentQuestion")
-    .value
-    .trim();
-
-
-    const message =
-    document.getElementById("questionMessage");
-
-
-    message.style.color="#c62828";
-
-
-    if(name===""){
-
-        message.textContent =
-        "Please enter your name.";
+        results.innerHTML =
+        `<div class="search-result">
+            <h3>No result found</h3>
+            <p>
+                We could not find this topic on the homepage.
+                Try searching another medical term.
+            </p>
+        </div>`;
 
         return;
-
     }
 
+    matches.forEach(item => {
 
-    if(question===""){
-
-        message.textContent =
-        "Please write your question.";
-
-        return;
-
-    }
-
-
-    if(question.length<5){
-
-        message.textContent =
-        "Please write a little more detail.";
-
-        return;
-
-    }
-
-
-    const questions =
-    getQuestions();
-
-
-    const newQuestion={
-
-        id:Date.now(),
-
-        name:name,
-
-        question:question,
-
-        date:new Date()
-        .toLocaleDateString(
-            "en-GB",
-            {
-                day:"2-digit",
-                month:"short",
-                year:"numeric"
-            }
-        ),
-
-        status:"Pending",
-
-        answer:""
-
-    };
-
-
-    questions.unshift(newQuestion);
-
-
-    saveQuestions(questions);
-
-
-    document.getElementById("studentName")
-    .value="";
-
-
-    document.getElementById("studentQuestion")
-    .value="";
-
-
-    message.style.color="#087f8c";
-
-    message.textContent =
-    "✓ Your question has been submitted.";
-
-
-    displayQuestions();
-
-}
-
-
-/* =====================================================
-   DISPLAY QUESTIONS
-===================================================== */
-
-function displayQuestions(){
-
-    const list =
-    document.getElementById("questionList");
-
-
-    const questions =
-    getQuestions();
-
-
-    list.innerHTML="";
-
-
-    if(questions.length===0){
-
-        list.innerHTML=`
-
-        <div class="no-questions">
-
-        <div style="font-size:35px;margin-bottom:10px;">
-        💬
-        </div>
-
-        <strong>
-        No student questions yet.
-        </strong>
-
-        <p style="margin-top:5px;">
-        Be the first student to ask a question.
-        </p>
-
-        </div>
-
+        results.innerHTML += `
+            <div class="search-result">
+                <h3>${item.title}</h3>
+                <p>${item.text}</p>
+            </div>
         `;
 
-        return;
+    });
 
+}
+
+
+/* ================= ENTER KEY SEARCH ================= */
+
+document
+.getElementById("searchBox")
+.addEventListener("keypress", function(event){
+
+    if(event.key === "Enter"){
+        searchMedical();
+    }
+
+});
+
+
+/* ================= STUDENT QUESTION ================= */
+
+function answerQuestion(){
+
+    const question =
+        document
+        .getElementById("studentQuestion")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const answerBox =
+        document.getElementById("answerBox");
+
+    const answerText =
+        document.getElementById("answerText");
+
+    if(!question){
+
+        answerBox.style.display = "block";
+
+        answerText.textContent =
+        "Please write your medical question first.";
+
+        return;
     }
 
 
-    questions.forEach(function(item){
-
-        const card =
-        document.createElement("div");
-
-        card.className="question-card";
+    let matched = null;
 
 
-        let answerHTML="";
+    for(const item of medicalData){
 
+        const words =
+            item.title
+            .toLowerCase()
+            .split(" ");
 
-        if(item.answer){
+        const found =
+            words.some(word =>
+                word.length > 3 &&
+                question.includes(word)
+            );
 
-            answerHTML=`
+        if(found){
 
-            <div class="admin-answer">
-
-            <strong>
-            🩺 MedAcademy Answer
-            </strong>
-
-            <p>
-            ${escapeHTML(item.answer)}
-            </p>
-
-            </div>
-
-            `;
-
-        }else{
-
-            answerHTML=`
-
-            <span class="pending">
-            ⏳ Answer Pending
-            </span>
-
-            `;
+            matched = item;
+            break;
 
         }
 
-
-        card.innerHTML=`
-
-        <div class="question-header">
-
-        <span class="student-name">
-        👤 ${escapeHTML(item.name)}
-        </span>
-
-        <span class="question-date">
-        ${escapeHTML(item.date)}
-        </span>
-
-        </div>
+    }
 
 
-        <div class="question-text">
-
-        ❓ ${escapeHTML(item.question)}
-
-        </div>
+    answerBox.style.display = "block";
 
 
-        ${answerHTML}
+    if(matched){
 
-        `;
+        answerText.innerHTML =
+        `<strong>${matched.title}:</strong>
+        ${matched.text}`;
 
+    }
+    else{
 
-        list.appendChild(card);
+        answerText.textContent =
+        "Thank you for your question. This question has been received. Please check the Medical Notes and Quiz sections for related information.";
 
-    });
+    }
 
 }
-
-
-/* =====================================================
-   SECURITY HELPERS
-===================================================== */
-
-function escapeHTML(text){
-
-    return String(text)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-function escapeJS(text){
-
-    return String(text)
-    .replace(/\\/g,"\\\\")
-    .replace(/'/g,"\\'");
-
-}
-
-
-/* =====================================================
-   LOAD
-===================================================== */
-
-displayQuestions();
 
 </script>
 
