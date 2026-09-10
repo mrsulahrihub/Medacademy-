@@ -1,1264 +1,843 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MedAcademy | Medical Student Study Platform</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f8fb;
-    color:#222;
-    line-height:1.6;
-}
-
-a{
-    text-decoration:none;
-}
-
-header{
-    background:#0d6efd;
-    color:white;
-    padding:16px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-.logo{
-    font-size:25px;
-    font-weight:bold;
-}
-
-nav{
-    display:flex;
-    gap:22px;
-    flex-wrap:wrap;
-}
-
-nav a{
-    color:white;
-    font-size:16px;
-}
-
-nav a:hover{
-    text-decoration:underline;
-}
-
-.hero{
-    min-height:480px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:60px 20px;
-    background:white;
-}
-
-.hero-content{
-    max-width:850px;
-}
-
-.hero h1{
-    font-size:48px;
-    color:#0d6efd;
-    margin-bottom:15px;
-}
-
-.hero h2{
-    font-size:28px;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:18px;
-    color:#666;
-    margin-bottom:30px;
-}
-
-.btn{
-    display:inline-block;
-    padding:13px 24px;
-    border-radius:9px;
-    margin:5px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.primary-btn{
-    background:#0d6efd;
-    color:white;
-}
-
-.primary-btn:hover{
-    background:#084298;
-}
-
-.secondary-btn{
-    border:2px solid #0d6efd;
-    color:#0d6efd;
-    background:white;
-}
-
-.secondary-btn:hover{
-    background:#0d6efd;
-    color:white;
-}
-
-.section{
-    padding:60px 7%;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.section-title h2{
-    font-size:32px;
-    color:#0d6efd;
-}
-
-.section-title p{
-    color:#666;
-}
-
-.quick-container,
-.subject-container,
-.topic-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.quick-card,
-.subject-card,
-.topic-card{
-    background:white;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.quick-card{
-    padding:25px;
-}
-
-.subject-card{
-    padding:30px;
-}
-
-.topic-card{
-    padding:22px;
-}
-
-.quick-card:hover,
-.subject-card:hover,
-.topic-card:hover{
-    transform:translateY(-5px);
-}
-
-.quick-card .icon{
-    font-size:40px;
-    margin-bottom:10px;
-}
-
-.subject-icon{
-    font-size:45px;
-    margin-bottom:10px;
-}
-
-.topic-icon{
-    font-size:35px;
-    margin-bottom:8px;
-}
-
-.quick-card h3,
-.subject-card h3,
-.topic-card h3{
-    color:#0d6efd;
-    margin-bottom:10px;
-}
-
-.quick-card p,
-.subject-card p{
-    color:#666;
-    margin-bottom:15px;
-}
-
-/* SEARCH */
-
-.search-area{
-    background:white;
-    padding:55px 20px;
-    text-align:center;
-}
-
-.search-area h2{
-    color:#0d6efd;
-    margin-bottom:10px;
-    font-size:30px;
-}
-
-.search-area p{
-    color:#666;
-    margin-bottom:20px;
-}
-
-.search-box{
-    width:90%;
-    max-width:700px;
-    padding:16px;
-    border:2px solid #0d6efd;
-    border-radius:12px;
-    font-size:17px;
-    outline:none;
-}
-
-.search-results{
-    width:90%;
-    max-width:700px;
-    margin:15px auto;
-    text-align:left;
-}
-
-.search-result{
-    background:#f4f8fb;
-    padding:14px;
-    margin:8px 0;
-    border-radius:10px;
-    border-left:4px solid #0d6efd;
-}
-
-.search-result a{
-    color:#0d6efd;
-    font-weight:bold;
-}
-
-/* SUGGESTIONS */
-
-.suggestion-section{
-    padding:60px 7%;
-}
-
-.suggestion-box,
-.ask-box{
-    max-width:850px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-}
-
-.suggestion-box h2,
-.ask-box h2{
-    color:#0d6efd;
-    text-align:center;
-    margin-bottom:10px;
-}
-
-.suggestion-box p,
-.ask-box .intro{
-    text-align:center;
-    color:#666;
-    margin-bottom:20px;
-}
-
-.suggestion-input,
-.question-input{
-    width:100%;
-    padding:14px;
-    border:2px solid #ddd;
-    border-radius:10px;
-    font-size:16px;
-    outline:none;
-}
-
-.suggestion-input:focus,
-.question-input:focus{
-    border-color:#0d6efd;
-}
-
-.suggestion-list{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:18px;
-}
-
-.suggestion{
-    background:#eef6ff;
-    color:#0d6efd;
-    border:1px solid #b9d7ff;
-    padding:9px 13px;
-    border-radius:20px;
-    cursor:pointer;
-}
-
-.suggestion:hover{
-    background:#0d6efd;
-    color:white;
-}
-
-/* ASK QUESTION */
-
-.ask-section{
-    padding:60px 7%;
-    background:#eef7ff;
-}
-
-.question-input{
-    min-height:130px;
-    resize:vertical;
-    font-family:Arial,sans-serif;
-}
-
-.ask-btn{
-    width:100%;
-    background:#0d6efd;
-    color:white;
-    border:none;
-    padding:14px;
-    border-radius:9px;
-    margin-top:12px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.ask-btn:disabled{
-    opacity:.6;
-}
-
-.answer-box{
-    display:none;
-    margin-top:20px;
-    background:#f4f9ff;
-    border-left:5px solid #0d6efd;
-    padding:20px;
-    border-radius:10px;
-}
-
-.answer-box h3{
-    color:#0d6efd;
-    margin-bottom:10px;
-}
-
-.answer-text{
-    white-space:pre-line;
-}
-
-/* AI */
-
-.ai-section{
-    padding:60px 7%;
-}
-
-.ai-box{
-    max-width:900px;
-    margin:auto;
-    background:white;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
-}
-
-.ai-header{
-    background:#0d6efd;
-    color:white;
-    padding:18px;
-    font-size:20px;
-    font-weight:bold;
-}
-
-.ai-status{
-    font-size:12px;
-    font-weight:normal;
-    margin-top:3px;
-    opacity:.9;
-}
-
-.chat-area{
-    height:430px;
-    overflow-y:auto;
-    padding:20px;
-    background:#f7fbff;
-}
-
-.message{
-    max-width:82%;
-    padding:12px 15px;
-    border-radius:14px;
-    margin-bottom:12px;
-    white-space:pre-line;
-    overflow-wrap:anywhere;
-}
-
-.ai-message{
-    background:#e7f1ff;
-    border-bottom-left-radius:3px;
-}
-
-.user-message{
-    background:#0d6efd;
-    color:white;
-    margin-left:auto;
-    border-bottom-right-radius:3px;
-}
-
-.typing{
-    opacity:.75;
-    font-style:italic;
-}
-
-.chat-input-area{
-    display:flex;
-    gap:8px;
-    padding:15px;
-    border-top:1px solid #ddd;
-}
-
-.chat-input{
-    flex:1;
-    padding:13px;
-    border:2px solid #ddd;
-    border-radius:9px;
-    outline:none;
-}
-
-.chat-send{
-    background:#0d6efd;
-    color:white;
-    border:none;
-    padding:0 20px;
-    border-radius:9px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.chat-send:disabled{
-    opacity:.6;
-}
-
-.ai-tools{
-    display:flex;
-    gap:8px;
-    padding:0 15px 15px;
-    background:white;
-    flex-wrap:wrap;
-}
-
-.ai-tool{
-    border:1px solid #cfe2ff;
-    background:#f4f9ff;
-    color:#0d6efd;
-    padding:8px 12px;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-/* ABOUT */
-
-.about{
-    max-width:900px;
-    margin:auto;
-    background:white;
-    padding:35px;
-    border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-    text-align:center;
-}
-
-.about p{
-    color:#555;
-}
-
-/* FOOTER */
-
-footer{
-    background:#0d6efd;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
-}
-
-footer p{
-    margin:5px;
-}
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-    header{
-        flex-direction:column;
-        gap:12px;
-    }
-
-    nav{
-        justify-content:center;
-        gap:12px;
-    }
-
-    .hero h1{
-        font-size:36px;
-    }
-
-    .hero h2{
-        font-size:23px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .section{
-        padding:45px 5%;
-    }
-
-    .message{
-        max-width:92%;
-    }
-
-    .chat-input-area{
-        flex-direction:column;
-    }
-
-    .chat-send{
-        padding:12px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">
-🩺 MedAcademy
-</div>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="#subjects">Subjects</a>
-<a href="#topics">Topics</a>
-<a href="notes.html">Notes</a>
-<a href="quiz.html">Quiz</a>
-<a href="#ask">Ask Question</a>
-</nav>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>🩺 MedAcademy</h1>
-
-<h2>Your Medical Student Study Platform</h2>
-
-<p>
-Study medical subjects, read notes, practice MCQs
-and ask questions with MedAcademy AI.
-</p>
-
-<a href="notes.html" class="btn primary-btn">
-📚 Explore Notes
-</a>
-
-<a href="quiz.html" class="btn secondary-btn">
-📝 Take Medical Quiz
-</a>
-
-<a href="#ai" class="btn secondary-btn">
-🤖 Ask AI
-</a>
-
-</div>
-
-</section>
-
-
-<!-- QUICK ACCESS -->
-
-<section class="section">
-
-<div class="section-title">
-
-<h2>⚡ Quick Access</h2>
-
-<p>Start your medical study quickly.</p>
-
-</div>
-
-<div class="quick-container">
-
-<div class="quick-card">
-
-<div class="icon">📚</div>
-
-<h3>Medical Notes</h3>
-
-<p>
-Quick and easy medical study notes.
-</p>
-
-<a href="notes.html" class="btn primary-btn">
-Open Notes
-</a>
-
-</div>
-
-
-<div class="quick-card">
-
-<div class="icon">📝</div>
-
-<h3>Medical Quiz</h3>
-
-<p>
-Test your knowledge with medical MCQs.
-</p>
-
-<a href="quiz.html" class="btn primary-btn">
-Start Quiz
-</a>
-
-</div>
-
-
-<div class="quick-card">
-
-<div class="icon">❤️</div>
-
-<h3>Heart</h3>
-
-<p>
-Study heart anatomy and blood flow.
-</p>
-
-<a href="heart.html" class="btn primary-btn">
-Study Heart
-</a>
-
-</div>
-
-
-<div class="quick-card">
-
-<div class="icon">🧠</div>
-
-<h3>Brain</h3>
-
-<p>
-Learn major parts and functions of brain.
-</p>
-
-<a href="brain.html" class="btn primary-btn">
-Study Brain
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SEARCH -->
-
-<section class="search-area">
-
-<h2>
-🔎 Search Medical Topics
-</h2>
-
-<p>
-Search any topic available on MedAcademy.
-</p>
-
-<input
-type="text"
-class="search-box"
-id="searchBox"
-placeholder="Search Heart, Brain, Kidney, Drugs..."
-oninput="searchTopics()"
->
-
-<div id="searchResults" class="search-results"></div>
-
-</section>
-
-
-<!-- SUBJECTS -->
-
-<section class="section" id="subjects">
-
-<div class="section-title">
-
-<h2>📚 Medical Subjects</h2>
-
-<p>
-Choose a subject and start studying.
-</p>
-
-</div>
-
-
-<div class="subject-container">
-
-
-<div class="subject-card">
-
-<div class="subject-icon">🦴</div>
-
-<h3>Anatomy</h3>
-
-<p>
-Study the structure of the human body.
-</p>
-
-<a href="anatomy.html" class="btn primary-btn">
-Study Anatomy
-</a>
-
-</div>
-
-
-<div class="subject-card">
-
-<div class="subject-icon">🫀</div>
-
-<h3>Physiology</h3>
-
-<p>
-Learn how the human body functions.
-</p>
-
-<a href="physiology.html" class="btn primary-btn">
-Study Physiology
-</a>
-
-</div>
-
-
-<div class="subject-card">
-
-<div class="subject-icon">💊</div>
-
-<h3>Pharmacology</h3>
-
-<p>
-Learn drugs, actions and adverse effects.
-</p>
-
-<a href="pharmacology.html" class="btn primary-btn">
-Study Pharmacology
-</a>
-
-</div>
-
-
-<div class="subject-card">
-
-<div class="subject-icon">🔬</div>
-
-<h3>Pathology</h3>
-
-<p>
-Study diseases and pathological changes.
-</p>
-
-<a href="pathology.html" class="btn primary-btn">
-Study Pathology
-</a>
-
-</div>
-
-
-<div class="subject-card">
-
-<div class="subject-icon">🦠</div>
-
-<h3>Microbiology</h3>
-
-<p>
-Study bacteria, viruses and microorganisms.
-</p>
-
-<a href="microbiology.html" class="btn primary-btn">
-Study Microbiology
-</a>
-
-</div>
-
-
-<div class="subject-card">
-
-<div class="subject-icon">🩺</div>
-
-<h3>Medicine</h3>
-
-<p>
-Explore common clinical medical topics.
-</p>
-
-<a href="notes.html" class="btn primary-btn">
-Explore Medicine
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- TOPICS -->
-
-<section class="section" id="topics">
-
-<div class="section-title">
-
-<h2>📖 Medical Topics</h2>
-
-<p>
-Explore medical study topics.
-</p>
-
-</div>
-
-
-<div class="topic-container">
-
-
-<div class="topic-card">
-<div class="topic-icon">💊</div>
-<h3>Adrenergic Blockers</h3>
-<a href="adrenergic-blockers.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">💊</div>
-<h3>Adrenergic Drugs</h3>
-<a href="adrenergic-drugs.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">⚠️</div>
-<h3>Adverse Drug Reactions</h3>
-<a href="adverse-drug-reactions.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">🦠</div>
-<h3>Antimicrobial Pharmacology</h3>
-<a href="antimicrobial-pharmacology.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">🧠</div>
-<h3>Autonomic Nervous System</h3>
-<a href="autonomic-nervous-system.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">❤️</div>
-<h3>Cardiovascular Pharmacology</h3>
-<a href="cardiovascular-pharmacology.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">🔬</div>
-<h3>Cell Injury</h3>
-<a href="cell-injury.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">💊</div>
-<h3>Cholinergic Drugs</h3>
-<a href="cholinergic-drugs.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">🩺</div>
-<h3>Clinical Pharmacology</h3>
-<a href="clinical-pharmacology.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">🧠</div>
-<h3>CNS Pharmacology</h3>
-<a href="cns-pharmacology.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">💊</div>
-<h3>Dose Response</h3>
-<a href="dose-response.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">⚕️</div>
-<h3>Drug Interactions</h3>
-<a href="drug-interactions.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">🔬</div>
-<h3>Drug Receptors</h3>
-<a href="drug-receptors.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">🩸</div>
-<h3>Drugs Affecting Blood</h3>
-<a href="drugs-affecting-blood.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">💊</div>
-<h3>Drugs Affecting Uterus</h3>
-<a href="drugs-affecting-uterus.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">🧪</div>
-<h3>Endocrine Pharmacology</h3>
-<a href="endocrine-pharmacology.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">🫃</div>
-<h3>Gastrointestinal Pharmacology</h3>
-<a href="gastrointestinal-pharmacology.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-
-<div class="topic-card">
-<div class="topic-icon">🔥</div>
-<h3>Inflammation</h3>
-<a href="inflammation.html" class="btn primary-btn">Study Now →</a>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SUGGESTIONS -->
-
-<section class="suggestion-section">
-
-<div class="suggestion-box">
-
-<h2>
-💡 Student Suggestions
-</h2>
-
-<p>
-Type a topic and get quick suggestions.
-</p>
-
-<input
-class="suggestion-input"
-id="suggestionInput"
-placeholder="Example: heart, kidney, diabetes..."
-oninput="showSuggestions()"
->
-
-<div id="suggestionList" class="suggestion-list"></div>
-
-</div>
-
-</section>
-
-
-<!-- ASK QUESTION -->
-
-<section class="ask-section" id="ask">
-
-<div class="ask-box">
-
-<h2>
-❓ Ask Your Question
-</h2>
-
-<p class="intro">
-Ask any medical or educational question.
-</p>
-
-<textarea
-id="studentQuestion"
-class="question-input"
-placeholder="Example: What is the function of the vagus nerve?"
-></textarea>
-
-<button
-class="ask-btn"
-id="askBtn"
-onclick="answerStudentQuestion()"
->
-🤖 Get AI Answer
-</button>
-
-<div id="answerBox" class="answer-box">
-
-<h3>
-🩺 MedAcademy AI Answer
-</h3>
-
-<div id="answerText" class="answer-text"></div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- AI CHAT -->
-
-<section class="ai-section" id="ai">
-
-<div class="ai-box">
-
-<div class="ai-header">
-
-🤖 MedAcademy AI
-
-<div class="ai-status" id="aiStatus">
-Checking AI connection...
-</div>
-
-</div>
-
-
-<div class="chat-area" id="chatArea">
-
-<div class="message ai-message">
-
-👋 Hello! I am MedAcademy AI.
-
-You can ask me medical, MBBS study, anatomy, physiology, pharmacology, pathology, microbiology or general educational questions.
-
-I can explain difficult topics in simple English or Roman Urdu.
-
-</div>
-
-</div>
-
-
-<div class="ai-tools">
-
-<button class="ai-tool"
-onclick="usePrompt('Explain this topic in simple Roman Urdu: ')">
-🇵🇰 Roman Urdu
-</button>
-
-<button class="ai-tool"
-onclick="usePrompt('Explain this topic at MBBS level with key points: ')">
-🎓 MBBS Mode
-</button>
-
-<button class="ai-tool"
-onclick="clearChat()">
-🗑️ Clear Chat
-</button>
-
-</div>
-
-
-<div class="chat-input-area">
-
-<input
-type="text"
-id="chatInput"
-class="chat-input"
-placeholder="Ask MedAcademy AI anything..."
-onkeydown="handleEnter(event)"
->
-
-<button
-class="chat-send"
-id="chatSend"
-onclick="sendAI()">
-Send
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="section">
-
-<div class="section-title">
-
-<h2>
-ℹ️ About MedAcademy
-</h2>
-
-</div>
-
-<div class="about">
-
-<p>
-MedAcademy is a medical study website designed to help students
-access subjects, notes, quizzes and AI-powered explanations in one place.
-</p>
-
-<br>
-
-<p>
-Our goal is to make medical learning simple, organized and easy to revise.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<p>🩺 <strong>MedAcademy</strong></p>
-
-<p>
-Medical Student Study Platform
-</p>
-
-<p>
-<strong>Made by MR. SULHAHRI</strong>
-</p>
-
-<p>
-© 2026 MedAcademy. All Rights Reserved.
-</p>
-
-</footer>
-
-
 <script>
 
-/* =========================
-   TOPICS DATABASE
-========================= */
-
 const topics = [
-
-{name:"Heart",link:"heart.html"},
-{name:"Kidney",link:"kidney.html"},
-{name:"Liver",link:"liver.html"},
-{name:"Brain",link:"brain.html"},
-{name:"Cranial Nerves",link:"cranial-nerves.html"},
-{name:"Anatomy",link:"anatomy.html"},
-{name:"Physiology",link:"physiology.html"},
-{name:"Pharmacology",link:"pharmacology.html"},
-{name:"Pathology",link:"pathology.html"},
-{name:"Microbiology",link:"microbiology.html"},
-{name:"Medicine",link:"notes.html"},
-
-{name:"Adrenergic Blockers",link:"adrenergic-blockers.html"},
-{name:"Adrenergic Drugs",link:"adrenergic-drugs.html"},
-{name:"Adverse Drug Reactions",link:"adverse-drug-reactions.html"},
-{name:"Antimicrobial Pharmacology",link:"antimicrobial-pharmacology.html"},
-{name:"Autonomic Nervous System",link:"autonomic-nervous-system.html"},
-{name:"Cardiovascular Pharmacology",link:"cardiovascular-pharmacology.html"},
-{name:"Cell Injury",link:"cell-injury.html"},
-{name:"Cholinergic Drugs",link:"cholinergic-drugs.html"},
-{name:"Clinical Pharmacology",link:"clinical-pharmacology.html"},
-{name:"CNS Pharmacology",link:"cns-pharmacology.html"},
-{name:"Dose Response",link:"dose-response.html"},
-{name:"Drug Interactions",link:"drug-interactions.html"},
-{name:"Drug Receptors",link:"drug-receptors.html"},
-{name:"Drugs Affecting Blood",link:"drugs-affecting-blood.html"},
-{name:"Drugs Affecting Uterus",link:"drugs-affecting-uterus.html"},
-{name:"Endocrine Pharmacology",link:"endocrine-pharmacology.html"},
-{name:"Gastrointestinal Pharmacology",link:"gastrointestinal-pharmacology.html"},
-{name:"Inflammation",link:"inflammation.html"},
-
-{name:"Fever",link:"notes.html"},
-{name:"Common Cold",link:"notes.html"},
-{name:"Flu",link:"notes.html"},
-{name:"Cough",link:"notes.html"},
-{name:"Diabetes",link:"notes.html"},
-{name:"Headache",link:"notes.html"},
-{name:"Migraine",link:"notes.html"},
-{name:"Kidney Disease",link:"kidney.html"},
-{name:"Kidney Stones",link:"kidney.html"},
-{name:"UTI",link:"kidney.html"},
-{name:"Hypertension",link:"notes.html"},
-{name:"Asthma",link:"notes.html"},
-{name:"Anemia",link:"notes.html"},
-{name:"Tuberculosis",link:"notes.html"},
-{name:"Pneumonia",link:"notes.html"},
-{name:"Hepatitis",link:"notes.html"},
-{name:"Gastritis",link:"notes.html"},
-{name:"Gout",link:"notes.html"},
-{name:"Osteoporosis",link:"notes.html"},
-{name:"Thrombosis",link:"notes.html"},
-{name:"Stroke",link:"notes.html"},
-{name:"Heart Failure",link:"heart.html"},
-{name:"ECG",link:"heart.html"},
-{name:"Blood Pressure",link:"notes.html"},
-{name:"Respiratory System",link:"physiology.html"},
-{name:"Nervous System",link:"anatomy.html"},
-{name:"Endocrine System",link:"physiology.html"},
-{name:"Digestive System",link:"anatomy.html"},
-{name:"Urinary System",link:"kidney.html"}
-
+    "Heart",
+    "Kidney",
+    "Liver",
+    "Brain",
+    "Cranial Nerves",
+    "Anatomy",
+    "Physiology",
+    "Pharmacology",
+    "Pathology",
+    "Microbiology",
+    "Medicine",
+    "Adrenergic Blockers",
+    "Adrenergic Drugs",
+    "Adverse Drug Reactions",
+    "Antimicrobial Pharmacology",
+    "Autonomic Nervous System",
+    "Cardiovascular Pharmacology",
+    "Cell Injury",
+    "Cholinergic Drugs",
+    "Clinical Pharmacology",
+    "CNS Pharmacology",
+    "Dose Response",
+    "Drug Interactions",
+    "Drug Receptors",
+    "Drugs Affecting Blood",
+    "Drugs Affecting Uterus",
+    "Endocrine Pharmacology",
+    "Gastrointestinal Pharmacology",
+    "Inflammation",
+    "Fever",
+    "Common Cold",
+    "Flu",
+    "Cough",
+    "Diabetes",
+    "Headache",
+    "Migraine",
+    "Kidney Disease",
+    "Kidney Stones",
+    "UTI",
+    "Hypertension",
+    "Asthma",
+    "Anemia",
+    "Tuberculosis",
+    "Pneumonia",
+    "Hepatitis",
+    "Gastritis",
+    "Gout",
+    "Osteoporosis",
+    "Thrombosis",
+    "Stroke",
+    "Heart Failure",
+    "ECG",
+    "Blood Pressure",
+    "Respiratory System",
+    "Nervous System",
+    "Endocrine System",
+    "Digestive System",
+    "Urinary System"
 ];
 
 
-/* =========================
-   SEARCH
-========================= */
+/* ================================
+   TOPIC INFORMATION
+================================ */
+
+const topicAnswers = {
+
+"heart": `
+❤️ HEART
+
+The heart is a muscular organ that pumps blood throughout the body.
+
+Main functions:
+• Pumps oxygenated blood to tissues
+• Pumps deoxygenated blood to lungs
+• Maintains circulation
+• Helps maintain blood pressure
+
+Four chambers:
+• Right atrium
+• Right ventricle
+• Left atrium
+• Left ventricle
+
+Major valves:
+• Tricuspid valve
+• Pulmonary valve
+• Mitral valve
+• Aortic valve
+`,
+
+"kidney": `
+🫘 KIDNEY
+
+The kidneys are paired organs of the urinary system.
+
+Main functions:
+• Filter blood
+• Remove metabolic waste
+• Produce urine
+• Maintain fluid balance
+• Maintain electrolyte balance
+• Help regulate blood pressure
+
+Functional unit:
+Nephron
+`,
+
+"brain": `
+🧠 BRAIN
+
+The brain is the main organ of the central nervous system.
+
+Major parts:
+• Cerebrum
+• Cerebellum
+• Brainstem
+• Diencephalon
+
+Functions include:
+• Thinking
+• Memory
+• Sensation
+• Movement
+• Coordination
+• Regulation of many body functions
+`,
+
+"liver": `
+🫀 LIVER
+
+The liver is a large metabolic organ.
+
+Important functions:
+• Metabolism of nutrients
+• Detoxification
+• Bile production
+• Protein synthesis
+• Glycogen storage
+• Storage of vitamins and minerals
+`,
+
+"anatomy": `
+🦴 ANATOMY
+
+Anatomy is the study of the structure of the human body.
+
+Major areas:
+• Gross anatomy
+• Microscopic anatomy
+• Developmental anatomy
+• Neuroanatomy
+• Surface anatomy
+`,
+
+"physiology": `
+🫀 PHYSIOLOGY
+
+Physiology is the study of how the human body normally functions.
+
+Major areas:
+• Cardiovascular physiology
+• Respiratory physiology
+• Renal physiology
+• Nervous system physiology
+• Endocrine physiology
+• Gastrointestinal physiology
+`,
+
+"pharmacology": `
+💊 PHARMACOLOGY
+
+Pharmacology is the study of drugs and their effects on living organisms.
+
+Major concepts:
+• Pharmacokinetics
+• Pharmacodynamics
+• Drug receptors
+• Dose response
+• Drug interactions
+• Adverse drug reactions
+`,
+
+"pathology": `
+🔬 PATHOLOGY
+
+Pathology is the study of disease and the structural and functional changes caused by disease.
+
+Major areas:
+• Cell injury
+• Inflammation
+• Neoplasia
+• Hemodynamic disorders
+• Genetic disorders
+`,
+
+"microbiology": `
+🦠 MICROBIOLOGY
+
+Microbiology is the study of microorganisms.
+
+Major groups:
+• Bacteria
+• Viruses
+• Fungi
+• Parasites
+
+It is important for understanding infectious diseases and their diagnosis.
+`,
+
+"fever": `
+🌡️ FEVER
+
+Fever is an elevation of body temperature caused by an increase in the body's temperature set point.
+
+Common causes:
+• Infections
+• Inflammatory conditions
+• Some medications
+• Other medical conditions
+
+Management depends on the underlying cause.
+`,
+
+"diabetes": `
+🩸 DIABETES
+
+Diabetes mellitus is a group of disorders characterized by elevated blood glucose.
+
+Major types:
+• Type 1 diabetes
+• Type 2 diabetes
+• Gestational diabetes
+
+Common symptoms:
+• Increased thirst
+• Frequent urination
+• Increased hunger
+• Fatigue
+• Weight changes
+`,
+
+"hypertension": `
+❤️ HYPERTENSION
+
+Hypertension means persistently elevated blood pressure.
+
+Long-term uncontrolled hypertension can affect:
+• Heart
+• Brain
+• Kidneys
+• Eyes
+• Blood vessels
+
+Lifestyle modification and appropriate medical management are important.
+`,
+
+"migraine": `
+🧠 MIGRAINE
+
+Migraine is a neurological disorder characterized by recurrent headache attacks.
+
+Possible features:
+• Pulsating headache
+• Nausea
+• Vomiting
+• Sensitivity to light
+• Sensitivity to sound
+
+Some people experience an aura before the headache.
+`,
+
+"thrombosis": `
+🩸 THROMBOSIS
+
+Thrombosis is the formation of a blood clot within a blood vessel.
+
+Important types:
+• Arterial thrombosis
+• Venous thrombosis
+
+A thrombus can obstruct blood flow and may cause serious complications.
+`,
+
+"osteoporosis": `
+🦴 OSTEOPOROSIS
+
+Osteoporosis is a condition characterized by reduced bone strength and increased fracture risk.
+
+Risk factors include:
+• Increasing age
+• Low bone mineral density
+• Hormonal changes
+• Low calcium or vitamin D
+• Certain medications
+`,
+
+"ecg": `
+❤️ ECG
+
+ECG stands for Electrocardiogram.
+
+It records the electrical activity of the heart.
+
+An ECG can provide information about:
+• Heart rate
+• Rhythm
+• Conduction
+• Some abnormalities of the heart
+`,
+
+"stroke": `
+🧠 STROKE
+
+A stroke occurs when blood flow to part of the brain is interrupted or when a blood vessel in the brain bleeds.
+
+Major types:
+• Ischemic stroke
+• Hemorrhagic stroke
+
+Common warning signs include sudden:
+• Weakness
+• Facial drooping
+• Speech difficulty
+• Vision problems
+• Loss of coordination
+`,
+
+"asthma": `
+🫁 ASTHMA
+
+Asthma is a chronic inflammatory disease of the airways characterized by variable respiratory symptoms and airflow limitation.
+
+Common symptoms:
+• Wheezing
+• Cough
+• Shortness of breath
+• Chest tightness
+`,
+
+"anemia": `
+🩸 ANEMIA
+
+Anemia is a condition in which the blood has reduced oxygen-carrying capacity, commonly due to reduced hemoglobin.
+
+Common causes:
+• Iron deficiency
+• Blood loss
+• Vitamin deficiencies
+• Chronic diseases
+• Genetic disorders
+`,
+
+"cough": `
+🫁 COUGH
+
+Cough is a protective reflex that helps clear the airways.
+
+Possible causes include:
+• Respiratory infections
+• Asthma
+• Allergies
+• Gastroesophageal reflux
+• Smoking
+`,
+
+"kidney stones": `
+🫘 KIDNEY STONES
+
+Kidney stones are solid deposits that form within the urinary tract.
+
+Common symptoms:
+• Severe flank pain
+• Pain radiating toward the groin
+• Blood in urine
+• Nausea or vomiting
+
+Treatment depends on stone size, location and clinical condition.
+`,
+
+"uti": `
+🦠 UTI
+
+UTI stands for Urinary Tract Infection.
+
+It can affect:
+• Urethra
+• Bladder
+• Ureters
+• Kidneys
+
+Common symptoms:
+• Burning during urination
+• Frequent urination
+• Urgency
+• Lower abdominal discomfort
+`,
+
+"adrenergic drugs": `
+💊 ADRENERGIC DRUGS
+
+Adrenergic drugs act on receptors influenced by the sympathetic nervous system.
+
+Important receptors:
+• Alpha-1
+• Alpha-2
+• Beta-1
+• Beta-2
+• Beta-3
+
+They can affect heart rate, blood vessels, bronchi and other organs.
+`,
+
+"adrenergic blockers": `
+💊 ADRENERGIC BLOCKERS
+
+Adrenergic blockers reduce the effects of adrenergic stimulation.
+
+Examples of groups:
+• Alpha blockers
+• Beta blockers
+
+Their effects depend on which receptor is blocked.
+`,
+
+"cholinergic drugs": `
+💊 CHOLINERGIC DRUGS
+
+Cholinergic drugs produce effects similar to acetylcholine or increase cholinergic activity.
+
+They may affect:
+• Heart
+• Smooth muscle
+• Glands
+• Eye
+• Gastrointestinal tract
+`,
+
+"drug receptors": `
+🔬 DRUG RECEPTORS
+
+Drug receptors are biological structures with which drugs interact to produce effects.
+
+Common receptor families include:
+• G-protein coupled receptors
+• Ion channels
+• Enzyme-linked receptors
+• Intracellular receptors
+`,
+
+"drug interactions": `
+⚕️ DRUG INTERACTIONS
+
+A drug interaction occurs when one drug changes the effect of another drug or substance.
+
+Interactions can be:
+• Pharmacokinetic
+• Pharmacodynamic
+
+They may increase toxicity or reduce therapeutic effects.
+`,
+
+"adverse drug reactions": `
+⚠️ ADVERSE DRUG REACTIONS
+
+An adverse drug reaction is an unwanted and harmful response associated with a medicine used at normal doses.
+
+Examples include:
+• Allergic reactions
+• Gastrointestinal effects
+• Liver injury
+• Kidney injury
+• Central nervous system effects
+`,
+
+"autonomic nervous system": `
+🧠 AUTONOMIC NERVOUS SYSTEM
+
+The autonomic nervous system regulates involuntary body functions.
+
+Main divisions:
+• Sympathetic nervous system
+• Parasympathetic nervous system
+
+It influences:
+• Heart
+• Blood vessels
+• Lungs
+• Gastrointestinal tract
+• Glands
+`,
+
+"inflammation": `
+🔥 INFLAMMATION
+
+Inflammation is a protective response of living tissue to injury or harmful stimuli.
+
+Cardinal signs:
+• Redness
+• Heat
+• Swelling
+• Pain
+• Loss of function
+
+Inflammation can be acute or chronic.
+`
+
+};
+
+
+/* ================================
+   FIND TOPIC
+================================ */
+
+function findTopic(question){
+
+    const q =
+    question
+    .toLowerCase()
+    .replace(/[?.,!]/g," ");
+
+    const keys =
+    Object.keys(topicAnswers);
+
+    for(const key of keys){
+
+        if(q.includes(key)){
+            return key;
+        }
+
+    }
+
+    return null;
+
+}
+
+
+/* ================================
+   AI RESPONSE
+================================ */
+
+function getAIReply(question){
+
+    const topic =
+    findTopic(question);
+
+
+    /* Topic found */
+
+    if(topic){
+
+        return topicAnswers[topic];
+
+    }
+
+
+    /* Search partial topic */
+
+    const found =
+    topics.find(topic =>
+        question
+        .toLowerCase()
+        .includes(
+            topic.toLowerCase()
+        )
+    );
+
+
+    if(found){
+
+        const key =
+        found.toLowerCase();
+
+        if(topicAnswers[key]){
+
+            return topicAnswers[key];
+
+        }
+
+        return `
+📚 ${found}
+
+This topic is available on MedAcademy.
+
+Please open the topic page from the Topics section to study its complete notes.
+`;
+
+    }
+
+
+    /* Greetings */
+
+    const q =
+    question.toLowerCase();
+
+
+    if(
+        q.includes("hello") ||
+        q.includes("hi") ||
+        q.includes("assalam")
+    ){
+
+        return `
+👋 Hello!
+
+I am MedAcademy AI.
+
+I can answer questions related to the medical topics available on this website.
+
+Try asking:
+
+• What is heart?
+• What is kidney?
+• Explain pharmacology
+• What is thrombosis?
+• What is ECG?
+• Explain hypertension
+`;
+
+    }
+
+
+    /* Not available */
+
+    return `
+❌ Sorry!
+
+I can only answer questions related to the topics currently available on the MedAcademy website.
+
+Please ask about one of these topics:
+
+❤️ Heart
+🧠 Brain
+🫘 Kidney
+🫀 Liver
+🦴 Anatomy
+🫁 Physiology
+💊 Pharmacology
+🔬 Pathology
+🦠 Microbiology
+🩸 Diabetes
+❤️ Hypertension
+🧠 Migraine
+🩸 Thrombosis
+🧠 Stroke
+❤️ ECG
+🔥 Inflammation
+💊 Adrenergic Drugs
+💊 Cholinergic Drugs
+⚕️ Drug Interactions
+
+Use the Search Topics box to find more.
+`;
+
+}
+
+
+/* ================================
+   CHAT
+================================ */
+
+function sendAI(){
+
+    const input =
+    document.getElementById("chatInput");
+
+    const question =
+    input.value.trim();
+
+
+    if(!question){
+        return;
+    }
+
+
+    addMessage(
+        question,
+        "user-message"
+    );
+
+
+    input.value="";
+
+
+    setTimeout(()=>{
+
+        const answer =
+        getAIReply(question);
+
+
+        addMessage(
+            answer,
+            "ai-message"
+        );
+
+    },500);
+
+}
+
+
+/* ================================
+   ADD MESSAGE
+================================ */
+
+function addMessage(text,type){
+
+    const chat =
+    document.getElementById("chatArea");
+
+
+    const message =
+    document.createElement("div");
+
+
+    message.className =
+    "message "+type;
+
+
+    message.textContent =
+    text;
+
+
+    chat.appendChild(message);
+
+
+    chat.scrollTop =
+    chat.scrollHeight;
+
+}
+
+
+/* ================================
+   ENTER
+================================ */
+
+function handleEnter(event){
+
+    if(
+        event.key==="Enter" &&
+        !event.shiftKey
+    ){
+
+        event.preventDefault();
+
+        sendAI();
+
+    }
+
+}
+
+
+/* ================================
+   CLEAR CHAT
+================================ */
+
+function clearChat(){
+
+    document.getElementById("chatArea")
+    .innerHTML=`
+    <div class="message ai-message">
+    👋 Chat cleared.
+
+    Ask me about a MedAcademy topic.
+    </div>
+    `;
+
+}
+
+
+/* ================================
+   PROMPT
+================================ */
+
+function usePrompt(text){
+
+    const input =
+    document.getElementById("chatInput");
+
+    input.value=text;
+
+    input.focus();
+
+}
+
+
+/* ================================
+   ASK QUESTION
+================================ */
+
+function answerStudentQuestion(){
+
+    const input =
+    document.getElementById("studentQuestion");
+
+    const question =
+    input.value.trim();
+
+
+    const box =
+    document.getElementById("answerBox");
+
+    const answer =
+    document.getElementById("answerText");
+
+
+    if(!question){
+
+        box.style.display="block";
+
+        answer.textContent=
+        "Please enter your question.";
+
+        return;
+
+    }
+
+
+    box.style.display="block";
+
+
+    answer.textContent=
+    "🤖 Thinking...";
+
+
+    setTimeout(()=>{
+
+        answer.textContent =
+        getAIReply(question);
+
+    },500);
+
+}
+
+
+/* ================================
+   SEARCH TOPICS
+================================ */
 
 function searchTopics(){
 
@@ -1268,56 +847,64 @@ function searchTopics(){
     .toLowerCase()
     .trim();
 
+
     const results =
     document.getElementById("searchResults");
 
+
     results.innerHTML="";
+
 
     if(!input){
         return;
     }
 
+
     const matches =
     topics.filter(topic =>
-        topic.name.toLowerCase().includes(input)
+        topic
+        .toLowerCase()
+        .includes(input)
     );
+
 
     if(matches.length===0){
 
-        results.innerHTML =
-        `<div class="search-result">
+        results.innerHTML=`
+        <div class="search-result">
         ❌ No topic found.
-        </div>`;
+        </div>
+        `;
 
         return;
+
     }
 
-    matches.forEach(topic => {
+
+    matches.forEach(topic=>{
 
         const div =
         document.createElement("div");
 
-        div.className="search-result";
+        div.className=
+        "search-result";
 
-        const strong =
-        document.createElement("strong");
-
-        strong.textContent="📖 "+topic.name;
-
-        const br =
-        document.createElement("br");
-
-        const link =
-        document.createElement("a");
-
-        link.href=topic.link;
-
-        link.textContent=
-        "Study "+topic.name+" →";
-
-        div.appendChild(strong);
-        div.appendChild(br);
-        div.appendChild(link);
+        div.innerHTML=
+        `📖 <strong>${topic}</strong>
+        <br>
+        <button
+        onclick="askTopic('${topic.replace(/'/g,"\\'")}')"
+        style="
+        margin-top:8px;
+        padding:8px 14px;
+        border:0;
+        border-radius:7px;
+        background:#0d6efd;
+        color:white;
+        cursor:pointer;
+        ">
+        Ask AI →
+        </button>`;
 
         results.appendChild(div);
 
@@ -1326,22 +913,51 @@ function searchTopics(){
 }
 
 
-/* =========================
+/* ================================
+   ASK TOPIC FROM SEARCH
+================================ */
+
+function askTopic(topic){
+
+    document
+    .getElementById("chatInput")
+    .value =
+    "Explain "+topic;
+
+    document
+    .getElementById("ai")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+    setTimeout(()=>{
+        sendAI();
+    },500);
+
+}
+
+
+/* ================================
    SUGGESTIONS
-========================= */
+================================ */
 
 function showSuggestions(){
 
     const input =
-    document.getElementById("suggestionInput")
+    document
+    .getElementById("suggestionInput")
     .value
     .toLowerCase()
     .trim();
 
+
     const list =
-    document.getElementById("suggestionList");
+    document
+    .getElementById("suggestionList");
+
 
     list.innerHTML="";
+
 
     const popular=[
         "Heart",
@@ -1354,37 +970,38 @@ function showSuggestions(){
         "Pathology"
     ];
 
-    let matches;
 
-    if(input){
+    const matches =
+    input
+    ?
+    topics
+    .filter(topic =>
+        topic
+        .toLowerCase()
+        .includes(input)
+    )
+    .slice(0,10)
+    :
+    popular;
 
-        matches =
-        topics
-        .filter(topic =>
-            topic.name.toLowerCase().includes(input)
-        )
-        .slice(0,10)
-        .map(topic=>topic.name);
 
-    }else{
-
-        matches=popular;
-
-    }
-
-    [...new Set(matches)].forEach(name=>{
+    matches.forEach(topic=>{
 
         const item =
         document.createElement("div");
 
-        item.className="suggestion";
+        item.className=
+        "suggestion";
 
-        item.textContent="🔎 "+name;
+        item.textContent=
+        "🔎 "+topic;
+
 
         item.onclick=()=>{
 
-            document.getElementById("searchBox")
-            .value=name;
+            document
+            .getElementById("searchBox")
+            .value=topic;
 
             searchTopics();
 
@@ -1396,6 +1013,7 @@ function showSuggestions(){
 
         };
 
+
         list.appendChild(item);
 
     });
@@ -1403,359 +1021,10 @@ function showSuggestions(){
 }
 
 
-/* =========================
-   AI VARIABLES
-========================= */
-
-let chatHistory=[];
-
-let busy=false;
-
-
-/* =========================
-   SEND QUESTION TO BACKEND
-========================= */
-
-async function askBackend(message){
-
-    const response =
-    await fetch("/api/ask",{
-
-        method:"POST",
-
-        headers:{
-            "Content-Type":"application/json"
-        },
-
-        body:JSON.stringify({
-
-            message:message,
-
-            history:
-            chatHistory.slice(-12)
-
-        })
-
-    });
-
-
-    const data =
-    await response.json();
-
-
-    if(!response.ok){
-
-        throw new Error(
-            data.error ||
-            "AI request failed."
-        );
-
-    }
-
-
-    return data.answer;
-
-}
-
-
-/* =========================
-   AI CHAT
-========================= */
-
-async function sendAI(){
-
-    if(busy){
-        return;
-    }
-
-    const input =
-    document.getElementById("chatInput");
-
-    const text =
-    input.value.trim();
-
-    if(!text){
-        return;
-    }
-
-
-    addMessage(
-        text,
-        "user-message"
-    );
-
-
-    input.value="";
-
-    busy=true;
-
-    setBusy(true);
-
-
-    const typing =
-    addMessage(
-        "🤖 Thinking...",
-        "ai-message typing"
-    );
-
-
-    try{
-
-        const answer =
-        await askBackend(text);
-
-
-        typing.remove();
-
-
-        addMessage(
-            answer,
-            "ai-message"
-        );
-
-
-        chatHistory.push(
-            {
-                role:"user",
-                content:text
-            },
-            {
-                role:"assistant",
-                content:answer
-            }
-        );
-
-
-    }catch(error){
-
-        typing.remove();
-
-
-        addMessage(
-
-            "⚠️ AI connection error.\n\n"+
-            error.message+
-            "\n\nPlease make sure the MedAcademy backend is running and your API key is configured.",
-
-            "ai-message"
-
-        );
-
-    }finally{
-
-        busy=false;
-
-        setBusy(false);
-
-    }
-
-}
-
-
-/* =========================
-   ADD MESSAGE
-========================= */
-
-function addMessage(text,cls){
-
-    const chat =
-    document.getElementById("chatArea");
-
-    const message =
-    document.createElement("div");
-
-    message.className =
-    "message "+cls;
-
-    message.textContent=text;
-
-    chat.appendChild(message);
-
-    chat.scrollTop =
-    chat.scrollHeight;
-
-    return message;
-
-}
-
-
-/* =========================
-   BUSY STATE
-========================= */
-
-function setBusy(value){
-
-    document.getElementById("chatSend")
-    .disabled=value;
-
-    document.getElementById("chatInput")
-    .disabled=value;
-
-}
-
-
-/* =========================
-   ENTER KEY
-========================= */
-
-function handleEnter(event){
-
-    if(event.key==="Enter"){
-
-        event.preventDefault();
-
-        sendAI();
-
-    }
-
-}
-
-
-/* =========================
-   PROMPT BUTTONS
-========================= */
-
-function usePrompt(prefix){
-
-    const input =
-    document.getElementById("chatInput");
-
-    input.value=prefix;
-
-    input.focus();
-
-}
-
-
-/* =========================
-   CLEAR CHAT
-========================= */
-
-function clearChat(){
-
-    chatHistory=[];
-
-    document.getElementById("chatArea")
-    .innerHTML=
-    `<div class="message ai-message">
-    👋 Chat cleared. Ask me a new question.
-    </div>`;
-
-}
-
-
-/* =========================
-   ASK QUESTION BOX
-========================= */
-
-async function answerStudentQuestion(){
-
-    const q =
-    document.getElementById("studentQuestion")
-    .value
-    .trim();
-
-    const box =
-    document.getElementById("answerBox");
-
-    const text =
-    document.getElementById("answerText");
-
-    const btn =
-    document.getElementById("askBtn");
-
-
-    if(!q){
-
-        box.style.display="block";
-
-        text.textContent=
-        "Please type your question first.";
-
-        return;
-
-    }
-
-
-    box.style.display="block";
-
-    text.textContent=
-    "🤖 Thinking...";
-
-    btn.disabled=true;
-
-
-    try{
-
-        const answer =
-        await askBackend(q);
-
-        text.textContent=answer;
-
-    }catch(error){
-
-        text.textContent=
-        "⚠️ "+error.message+
-        "\n\nPlease check that the backend is running and the API key is configured.";
-
-    }finally{
-
-        btn.disabled=false;
-
-    }
-
-}
-
-
-/* =========================
-   AI CONNECTION CHECK
-========================= */
-
-async function checkAI(){
-
-    const status =
-    document.getElementById("aiStatus");
-
-    try{
-
-        const response =
-        await fetch("/api/health");
-
-        const data =
-        await response.json();
-
-
-        if(data.ok){
-
-            status.textContent=
-            "🟢 AI Online";
-
-        }else{
-
-            status.textContent=
-            "🔴 AI API Key Missing";
-
-        }
-
-    }catch(error){
-
-        status.textContent=
-        "🔴 Start MedAcademy Server";
-
-    }
-
-}
-
-
-/* =========================
+/* ================================
    START
-========================= */
+================================ */
 
 showSuggestions();
 
-checkAI();
-
 </script>
-
-</body>
-</html>
