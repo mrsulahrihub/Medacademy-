@@ -1,11 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Upper Limb Anatomy | MedAcademy</title>
@@ -22,10 +20,10 @@ body{
     font-family:Arial,sans-serif;
     background:#f4f8fb;
     color:#222;
-    line-height:1.6;
+    line-height:1.7;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
     background:#0d6efd;
@@ -34,6 +32,9 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
@@ -44,11 +45,13 @@ header{
 nav{
     display:flex;
     gap:20px;
+    flex-wrap:wrap;
 }
 
 nav a{
     color:white;
     text-decoration:none;
+    font-weight:500;
 }
 
 nav a:hover{
@@ -56,16 +59,16 @@ nav a:hover{
 }
 
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
     background:white;
     text-align:center;
-    padding:55px 20px;
+    padding:60px 20px;
 }
 
 .hero h1{
-    font-size:40px;
+    font-size:42px;
     color:#0d6efd;
     margin-bottom:12px;
 }
@@ -75,62 +78,103 @@ nav a:hover{
     font-size:18px;
 }
 
+.badge{
+    display:inline-block;
+    background:#eaf3ff;
+    color:#0d6efd;
+    padding:7px 15px;
+    border-radius:20px;
+    margin-top:15px;
+    font-weight:bold;
+}
 
-/* CONTAINER */
+
+/* ================= CONTAINER ================= */
 
 .container{
-    width:90%;
-    max-width:1100px;
+    width:92%;
+    max-width:1150px;
     margin:40px auto;
 }
 
 
-/* SECTION */
+/* ================= STUDY SECTION ================= */
 
 .study-section{
     background:white;
-    margin-bottom:25px;
-    padding:30px;
+    margin-bottom:28px;
+    padding:32px;
     border-radius:15px;
     box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
 .study-section h2{
     color:#0d6efd;
-    margin-bottom:15px;
+    margin-bottom:18px;
+    font-size:27px;
 }
 
 .study-section h3{
-    margin-top:18px;
-    margin-bottom:8px;
+    color:#333;
+    margin-top:22px;
+    margin-bottom:10px;
 }
 
 .study-section p{
     color:#555;
+    margin-bottom:12px;
 }
 
-.study-section ul{
+.study-section ul,
+.study-section ol{
     margin-left:25px;
     color:#555;
 }
 
 .study-section li{
-    margin-bottom:7px;
+    margin-bottom:8px;
 }
 
 
-/* TABLE */
+/* ================= IMAGES ================= */
+
+.anatomy-image{
+    width:100%;
+    max-width:850px;
+    display:block;
+    margin:25px auto;
+    border-radius:12px;
+    border:1px solid #ddd;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.image-caption{
+    text-align:center;
+    color:#777;
+    font-size:14px;
+    margin-top:-15px;
+    margin-bottom:20px;
+}
+
+
+/* ================= TABLE ================= */
+
+.table-wrapper{
+    overflow-x:auto;
+}
 
 table{
     width:100%;
     border-collapse:collapse;
     margin-top:15px;
+    min-width:600px;
 }
 
 th,td{
     border:1px solid #ddd;
     padding:12px;
     text-align:left;
+    vertical-align:top;
 }
 
 th{
@@ -143,27 +187,88 @@ tr:nth-child(even){
 }
 
 
-/* REVISION */
+/* ================= IMPORTANT BOX ================= */
 
-.revision{
+.high-yield{
     background:#eaf3ff;
     border-left:5px solid #0d6efd;
+    padding:18px;
+    margin-top:18px;
+    border-radius:8px;
 }
 
-.revision ul{
-    margin-top:10px;
+.clinical{
+    background:#fff3f3;
+    border-left:5px solid #dc3545;
+    padding:18px;
+    margin-top:18px;
+    border-radius:8px;
 }
-
-
-/* EXAM */
 
 .exam{
     background:#fff8e1;
     border-left:5px solid #f0ad00;
+    padding:25px;
+}
+
+.success{
+    background:#effaf1;
+    border-left:5px solid #198754;
+    padding:20px;
+    border-radius:8px;
 }
 
 
-/* BUTTON */
+/* ================= MCQ ================= */
+
+.mcq{
+    background:#fafafa;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:20px;
+    margin:18px 0;
+}
+
+.mcq-question{
+    font-weight:bold;
+    color:#222;
+    margin-bottom:10px;
+}
+
+.answer{
+    background:#eaf7ee;
+    color:#146c2e;
+    border-left:4px solid #198754;
+    padding:10px 15px;
+    margin-top:12px;
+    border-radius:5px;
+}
+
+
+/* ================= SEQ ================= */
+
+.seq{
+    background:#fafafa;
+    border:1px solid #ddd;
+    padding:20px;
+    margin:18px 0;
+    border-radius:10px;
+}
+
+.seq h4{
+    color:#0d6efd;
+    margin-bottom:8px;
+}
+
+.seq-answer{
+    margin-top:12px;
+    background:#f1f6ff;
+    padding:15px;
+    border-radius:7px;
+}
+
+
+/* ================= BUTTONS ================= */
 
 .buttons{
     text-align:center;
@@ -172,7 +277,7 @@ tr:nth-child(even){
 
 .btn{
     display:inline-block;
-    padding:12px 22px;
+    padding:13px 23px;
     margin:5px;
     border-radius:8px;
     text-decoration:none;
@@ -196,18 +301,18 @@ tr:nth-child(even){
 }
 
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     background:#0d6efd;
     color:white;
     text-align:center;
-    padding:25px;
+    padding:28px;
     margin-top:50px;
 }
 
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
@@ -217,6 +322,7 @@ footer{
     }
 
     nav{
+        justify-content:center;
         gap:12px;
     }
 
@@ -226,6 +332,10 @@ footer{
 
     .study-section{
         padding:22px;
+    }
+
+    .study-section h2{
+        font-size:23px;
     }
 
     table{
@@ -242,7 +352,7 @@ footer{
 <body>
 
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -253,11 +363,8 @@ footer{
 <nav>
 
 <a href="index.html">Home</a>
-
 <a href="notes.html">Notes</a>
-
 <a href="anatomy.html">Anatomy</a>
-
 <a href="quiz.html">Quiz</a>
 
 </nav>
@@ -265,15 +372,19 @@ footer{
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
 <h1>💪 Upper Limb Anatomy</h1>
 
 <p>
-Complete high-yield notes for medical students.
+Complete MBBS-level high-yield notes, clinical anatomy, MCQs and SEQs.
 </p>
+
+<div class="badge">
+First Professional MBBS • Anatomy
+</div>
 
 </section>
 
@@ -281,386 +392,1746 @@ Complete high-yield notes for medical students.
 <div class="container">
 
 
+<!-- ===================================================== -->
 <!-- INTRODUCTION -->
+<!-- ===================================================== -->
 
 <section class="study-section">
 
-<h2>📖 Introduction</h2>
+<h2>📖 1. Introduction</h2>
 
 <p>
-The upper limb is attached to the trunk through the shoulder region.
-It is mainly responsible for movement, positioning of the hand and
-performing fine motor activities.
+The upper limb is a highly mobile part of the human body. It is
+attached to the axial skeleton mainly through the clavicle at the
+sternoclavicular joint.
 </p>
 
 <p>
-The major regions of the upper limb are the shoulder, arm, forearm
-and hand.
+The upper limb is divided into the following major regions:
 </p>
+
+<ol>
+
+<li>Pectoral region</li>
+<li>Shoulder region</li>
+<li>Axilla</li>
+<li>Arm</li>
+<li>Cubital fossa</li>
+<li>Forearm</li>
+<li>Wrist</li>
+<li>Hand</li>
+
+</ol>
+
+<div class="high-yield">
+
+<strong>MBBS High-Yield:</strong>
+
+<p>
+The upper limb is designed mainly for positioning the hand in space,
+grasping objects and performing precise movements.
+</p>
+
+</div>
 
 </section>
 
 
+<!-- ===================================================== -->
 <!-- BONES -->
+<!-- ===================================================== -->
 
 <section class="study-section">
 
-<h2>🦴 1. Bones of Upper Limb</h2>
+<h2>🦴 2. Bones of Upper Limb</h2>
 
-<p>
-The bones of the upper limb provide support and allow movement.
+<img
+class="anatomy-image"
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Upper_Limb_Bones.svg"
+alt="Bones of upper limb">
+
+<p class="image-caption">
+Upper limb bones: clavicle, scapula, humerus, radius, ulna,
+carpals, metacarpals and phalanges.
 </p>
+
+<h3>Major Bones</h3>
 
 <ul>
 
 <li>Clavicle</li>
-
 <li>Scapula</li>
-
 <li>Humerus</li>
-
 <li>Radius</li>
-
 <li>Ulna</li>
-
-<li>Carpal bones</li>
-
-<li>Metacarpal bones</li>
-
-<li>Phalanges</li>
+<li>8 carpal bones</li>
+<li>5 metacarpals</li>
+<li>14 phalanges</li>
 
 </ul>
 
 
-<h3>Important Bones</h3>
+<h3>Important Osteological Landmarks</h3>
+
+<div class="table-wrapper">
 
 <table>
 
 <tr>
 <th>Bone</th>
-<th>Important Point</th>
+<th>Important Landmark</th>
+<th>Clinical Importance</th>
 </tr>
 
 <tr>
 <td>Clavicle</td>
-<td>Connects the upper limb to the axial skeleton.</td>
+<td>Conoid tubercle, trapezoid line, sternal and acromial ends</td>
+<td>Commonly fractured bone</td>
 </tr>
 
 <tr>
 <td>Scapula</td>
-<td>Flat triangular bone of the shoulder region.</td>
+<td>Spine, acromion, coracoid process, glenoid cavity</td>
+<td>Winging of scapula may occur with long thoracic nerve injury</td>
 </tr>
 
 <tr>
 <td>Humerus</td>
-<td>Main bone of the arm.</td>
+<td>Surgical neck, radial groove, medial and lateral epicondyles</td>
+<td>Important sites of nerve injury</td>
 </tr>
 
 <tr>
 <td>Radius</td>
-<td>Located on the lateral side of the forearm in anatomical position.</td>
+<td>Head, neck, radial tuberosity, styloid process</td>
+<td>Colles fracture and radial head injuries</td>
 </tr>
 
 <tr>
 <td>Ulna</td>
-<td>Located on the medial side of the forearm in anatomical position.</td>
+<td>Olecranon, coronoid process, trochlear notch</td>
+<td>Forms major part of elbow articulation</td>
 </tr>
 
 </table>
 
+</div>
+
+
+<div class="clinical">
+
+<strong>Clinical Correlation:</strong>
+
+<p>
+Fracture of the surgical neck of humerus may damage the axillary
+nerve and posterior circumflex humeral vessels.
+</p>
+
+</div>
+
 </section>
 
 
-<!-- MUSCLES -->
+<!-- ===================================================== -->
+<!-- PECTORAL REGION -->
+<!-- ===================================================== -->
 
 <section class="study-section">
 
-<h2>💪 2. Muscles of Upper Limb</h2>
+<h2>🫁 3. Pectoral Region</h2>
 
 <p>
-The muscles of the upper limb produce movements of the shoulder,
-arm, forearm and hand.
+The pectoral region contains muscles connecting the upper limb with
+the thoracic wall.
 </p>
 
-<h3>Major Muscles</h3>
+<h3>Important Muscles</h3>
 
 <ul>
 
-<li>Deltoid</li>
-
-<li>Biceps brachii</li>
-
-<li>Triceps brachii</li>
-
-<li>Brachialis</li>
-
-<li>Coracobrachialis</li>
-
-<li>Flexor muscles of forearm</li>
-
-<li>Extensor muscles of forearm</li>
+<li>Pectoralis major</li>
+<li>Pectoralis minor</li>
+<li>Subclavius</li>
+<li>Serratus anterior</li>
 
 </ul>
 
 
-<h3>Important Functions</h3>
+<h3>Pectoralis Major</h3>
+
+<ul>
+
+<li>Large fan-shaped muscle of anterior chest wall.</li>
+
+<li>Acts mainly on the shoulder joint.</li>
+
+<li>Adducts and medially rotates the arm.</li>
+
+<li>Clavicular head helps flex the arm.</li>
+
+<li>Innervated by medial and lateral pectoral nerves.</li>
+
+</ul>
+
+
+<h3>Serratus Anterior</h3>
+
+<ul>
+
+<li>Arises from upper ribs.</li>
+
+<li>Inserts on medial border of scapula.</li>
+
+<li>Protracts the scapula.</li>
+
+<li>Helps in upward rotation of scapula.</li>
+
+<li>Supplied by long thoracic nerve.</li>
+
+</ul>
+
+<div class="clinical">
+
+<strong>Important Clinical Point:</strong>
+
+<p>
+Long thoracic nerve injury causes weakness of serratus anterior
+and may produce <strong>winging of scapula</strong>.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- AXILLA -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>🩸 4. Axilla</h2>
+
+<p>
+The axilla is a pyramidal space between the upper limb and thoracic
+wall. It provides a passage for major nerves, vessels and lymphatics.
+</p>
+
+<h3>Boundaries of Axilla</h3>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Boundary</th>
+<th>Structures</th>
+</tr>
+
+<tr>
+<td>Anterior wall</td>
+<td>Pectoralis major, pectoralis minor and clavipectoral fascia</td>
+</tr>
+
+<tr>
+<td>Posterior wall</td>
+<td>Subscapularis, teres major and latissimus dorsi</td>
+</tr>
+
+<tr>
+<td>Medial wall</td>
+<td>Thoracic wall and serratus anterior</td>
+</tr>
+
+<tr>
+<td>Lateral wall</td>
+<td>Intertubercular sulcus of humerus</td>
+</tr>
+
+<tr>
+<td>Apex</td>
+<td>Clavicle, first rib and superior border of scapula</td>
+</tr>
+
+<tr>
+<td>Base</td>
+<td>Skin and axillary fascia</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Contents of Axilla</h3>
+
+<ul>
+
+<li>Axillary artery and branches</li>
+
+<li>Axillary vein</li>
+
+<li>Cords and branches of brachial plexus</li>
+
+<li>Axillary lymph nodes</li>
+
+<li>Fat and connective tissue</li>
+
+</ul>
+
+<div class="high-yield">
+
+<strong>Exam Favourite:</strong>
+
+<p>
+Know the boundaries and contents of axilla. Axilla and brachial
+plexus are repeatedly tested in MBBS anatomy examinations.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- AXILLARY ARTERY -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>🩸 5. Axillary Artery</h2>
+
+<p>
+The axillary artery is the continuation of the subclavian artery.
+It becomes the brachial artery at the inferior border of teres major.
+</p>
+
+<h3>Three Parts</h3>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Part</th>
+<th>Location</th>
+<th>Branches</th>
+</tr>
+
+<tr>
+<td>1st part</td>
+<td>Between lateral border of first rib and medial border of pectoralis minor</td>
+<td>Superior thoracic artery</td>
+</tr>
+
+<tr>
+<td>2nd part</td>
+<td>Behind pectoralis minor</td>
+<td>Thoracoacromial and lateral thoracic arteries</td>
+</tr>
+
+<tr>
+<td>3rd part</td>
+<td>From lateral border of pectoralis minor to inferior border of teres major</td>
+<td>Subscapular, anterior circumflex humeral and posterior circumflex humeral arteries</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="high-yield">
+
+<strong>Mnemonic:</strong>
+
+<p>
+<strong>1 - 2 - 3</strong> parts of axillary artery have
+<strong>1 - 2 - 3</strong> major branches respectively.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- BRACHIAL PLEXUS -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>🧠 6. Brachial Plexus</h2>
+
+<img
+class="anatomy-image"
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Brachial_plexus_2.svg"
+alt="Brachial plexus">
+
+<p class="image-caption">
+Anterior view of the brachial plexus showing roots, trunks,
+divisions, cords and terminal branches.
+</p>
+
+<p>
+The brachial plexus supplies the upper limb. It is formed mainly
+by the anterior rami of spinal nerves C5-T1.
+</p>
+
+<h3>Organization</h3>
+
+<p>
+
+<strong>Roots → Trunks → Divisions → Cords → Branches</strong>
+
+</p>
+
+<h3>Roots</h3>
+
+<p>
+C5, C6, C7, C8 and T1
+</p>
+
+<h3>Trunks</h3>
+
+<ul>
+
+<li>Upper trunk = C5 + C6</li>
+<li>Middle trunk = C7</li>
+<li>Lower trunk = C8 + T1</li>
+
+</ul>
+
+<h3>Divisions</h3>
+
+<ul>
+
+<li>Each trunk divides into anterior and posterior divisions.</li>
+
+</ul>
+
+<h3>Cords</h3>
+
+<ul>
+
+<li>Lateral cord</li>
+<li>Medial cord</li>
+<li>Posterior cord</li>
+
+</ul>
+
+
+<h3>Major Terminal Branches</h3>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Nerve</th>
+<th>Roots</th>
+<th>Main Motor Association</th>
+</tr>
+
+<tr>
+<td>Musculocutaneous</td>
+<td>C5-C7</td>
+<td>Anterior compartment of arm</td>
+</tr>
+
+<tr>
+<td>Axillary</td>
+<td>C5-C6</td>
+<td>Deltoid and teres minor</td>
+</tr>
+
+<tr>
+<td>Radial</td>
+<td>C5-T1</td>
+<td>Extensors of arm and forearm</td>
+</tr>
+
+<tr>
+<td>Median</td>
+<td>C5-T1</td>
+<td>Most anterior forearm muscles and thenar muscles</td>
+</tr>
+
+<tr>
+<td>Ulnar</td>
+<td>C8-T1</td>
+<td>Many intrinsic muscles of hand</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- BRACHIAL PLEXUS CLINICAL -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>🚑 7. Clinical Anatomy of Brachial Plexus</h2>
+
+<h3>Erb-Duchenne Palsy</h3>
+
+<p>
+Usually associated with an upper trunk lesion involving C5-C6.
+</p>
+
+<p>
+Typical posture is classically described as the
+<strong>"waiter's tip"</strong> position.
+</p>
+
+<h3>Klumpke Palsy</h3>
+
+<p>
+Lower trunk lesion involving mainly C8-T1 can produce weakness of
+intrinsic hand muscles and may result in a claw-hand posture.
+</p>
+
+<h3>Long Thoracic Nerve Injury</h3>
+
+<p>
+Produces weakness of serratus anterior and winging of scapula.
+</p>
+
+<div class="clinical">
+
+<strong>MBBS Clinical Question:</strong>
+
+<p>
+A patient develops winging of the scapula after an injury. Which
+nerve is most likely damaged?
+</p>
+
+<p>
+<strong>Answer:</strong> Long thoracic nerve.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SHOULDER -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>🦴 8. Shoulder Joint</h2>
+
+<p>
+The shoulder joint is a synovial ball-and-socket joint between the
+head of humerus and glenoid cavity of scapula.
+</p>
+
+<h3>Movements</h3>
+
+<ul>
+
+<li>Flexion</li>
+<li>Extension</li>
+<li>Abduction</li>
+<li>Adduction</li>
+<li>Medial rotation</li>
+<li>Lateral rotation</li>
+<li>Circumduction</li>
+
+</ul>
+
+
+<h3>Rotator Cuff Muscles</h3>
+
+<p>
+
+<strong>SITS</strong>
+
+</p>
+
+<ul>
+
+<li>Supraspinatus</li>
+<li>Infraspinatus</li>
+<li>Teres minor</li>
+<li>Subscapularis</li>
+
+</ul>
+
+<div class="high-yield">
+
+<strong>Important:</strong>
+
+<p>
+Supraspinatus initiates the first approximately 15° of abduction.
+Deltoid is the major abductor after the initial phase.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- ARM -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>💪 9. Arm Compartments</h2>
+
+<h3>Anterior Compartment</h3>
+
+<ul>
+
+<li>Biceps brachii</li>
+<li>Brachialis</li>
+<li>Coracobrachialis</li>
+
+</ul>
+
+<p>
+The musculocutaneous nerve is the major nerve of the anterior
+compartment.
+</p>
+
+<h3>Posterior Compartment</h3>
+
+<ul>
+
+<li>Triceps brachii</li>
+<li>Anconeus</li>
+
+</ul>
+
+<p>
+The radial nerve supplies the major muscles of the posterior arm.
+</p>
+
+
+<div class="table-wrapper">
 
 <table>
 
 <tr>
 <th>Muscle</th>
 <th>Main Action</th>
-</tr>
-
-<tr>
-<td>Deltoid</td>
-<td>Mainly abducts the arm.</td>
+<th>Nerve</th>
 </tr>
 
 <tr>
 <td>Biceps brachii</td>
-<td>Flexes the elbow and assists supination.</td>
-</tr>
-
-<tr>
-<td>Triceps brachii</td>
-<td>Extends the elbow.</td>
+<td>Elbow flexion and supination</td>
+<td>Musculocutaneous</td>
 </tr>
 
 <tr>
 <td>Brachialis</td>
-<td>Important flexor of the elbow.</td>
+<td>Powerful elbow flexion</td>
+<td>Musculocutaneous mainly</td>
+</tr>
+
+<tr>
+<td>Coracobrachialis</td>
+<td>Flexion and adduction of arm</td>
+<td>Musculocutaneous</td>
+</tr>
+
+<tr>
+<td>Triceps brachii</td>
+<td>Elbow extension</td>
+<td>Radial</td>
 </tr>
 
 </table>
 
+</div>
+
 </section>
 
 
-<!-- NERVES -->
+<!-- ===================================================== -->
+<!-- CUBITAL FOSSA -->
+<!-- ===================================================== -->
 
 <section class="study-section">
 
-<h2>🧠 3. Nerves of Upper Limb</h2>
+<h2>🩺 10. Cubital Fossa</h2>
 
 <p>
-The major nerves supplying the upper limb arise from the brachial
-plexus.
+Cubital fossa is a triangular depression on the anterior aspect of
+the elbow.
 </p>
+
+<h3>Boundaries</h3>
 
 <ul>
 
-<li>Musculocutaneous nerve</li>
+<li>Lateral: brachioradialis</li>
+<li>Medial: pronator teres</li>
+<li>Superior: imaginary line between epicondyles</li>
 
-<li>Axillary nerve</li>
+</ul>
 
-<li>Radial nerve</li>
+<h3>Important Contents</h3>
+
+<p>
+
+<strong>From lateral to medial:</strong>
+
+</p>
+
+<p>
+Radial nerve → Biceps tendon → Brachial artery → Median nerve
+</p>
+
+<div class="high-yield">
+
+<strong>Clinical Importance:</strong>
+
+<p>
+The median cubital vein lies superficially in the cubital region
+and is commonly used for venipuncture.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- FOREARM -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>💪 11. Forearm</h2>
+
+<h3>Anterior Compartment</h3>
+
+<p>
+Mainly responsible for flexion and pronation.
+</p>
+
+<h3>Posterior Compartment</h3>
+
+<p>
+Mainly responsible for extension and supination.
+</p>
+
+<h3>Important Nerves</h3>
+
+<ul>
 
 <li>Median nerve</li>
-
+<li>Anterior interosseous nerve</li>
 <li>Ulnar nerve</li>
+<li>Radial nerve and its deep branch</li>
+
+</ul>
+
+<h3>Important Clinical Conditions</h3>
+
+<ul>
+
+<li>Carpal tunnel syndrome</li>
+<li>Pronator syndrome</li>
+<li>Compartment syndrome</li>
+<li>Colles fracture</li>
+<li>Smith fracture</li>
+
+</ul>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- HAND -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>✋ 12. Hand</h2>
+
+<h3>Carpal Bones</h3>
+
+<p>
+
+<strong>Proximal row:</strong>
+
+Scaphoid, Lunate, Triquetrum, Pisiform
+
+</p>
+
+<p>
+
+<strong>Distal row:</strong>
+
+Trapezium, Trapezoid, Capitate, Hamate
+
+</p>
+
+<div class="high-yield">
+
+<strong>Mnemonic:</strong>
+
+<p>
+Some Lovers Try Positions That They Can't Handle
+</p>
+
+</div>
+
+
+<h3>Thenar Muscles</h3>
+
+<ul>
+
+<li>Abductor pollicis brevis</li>
+<li>Flexor pollicis brevis</li>
+<li>Opponens pollicis</li>
 
 </ul>
 
 
-<h3>Important Nerve Functions</h3>
+<h3>Hypothenar Muscles</h3>
+
+<ul>
+
+<li>Abductor digiti minimi</li>
+<li>Flexor digiti minimi</li>
+<li>Opponens digiti minimi</li>
+
+</ul>
+
+
+<h3>Carpal Tunnel</h3>
+
+<p>
+The carpal tunnel contains the median nerve and long flexor tendons
+of the fingers and thumb.
+</p>
+
+<div class="clinical">
+
+<strong>Carpal Tunnel Syndrome:</strong>
+
+<p>
+Compression of the median nerve can cause pain, tingling and
+numbness in its sensory distribution and weakness of thenar muscles.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- ARTERIES -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>🩸 13. Arterial Supply</h2>
+
+<p>
+
+<strong>Main sequence:</strong>
+
+</p>
+
+<p>
+Subclavian → Axillary → Brachial → Radial + Ulnar
+</p>
+
+<h3>Brachial Artery</h3>
+
+<p>
+The brachial artery is the continuation of the axillary artery
+below the lower border of teres major.
+</p>
+
+<p>
+It usually terminates in the cubital fossa by dividing into radial
+and ulnar arteries.
+</p>
+
+<h3>Important Branches</h3>
+
+<ul>
+
+<li>Profunda brachii artery</li>
+<li>Superior ulnar collateral artery</li>
+<li>Inferior ulnar collateral artery</li>
+<li>Radial artery</li>
+<li>Ulnar artery</li>
+
+</ul>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- VEINS -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>🩸 14. Venous Drainage</h2>
+
+<h3>Superficial Veins</h3>
+
+<ul>
+
+<li>Cephalic vein</li>
+<li>Basilic vein</li>
+<li>Median cubital vein</li>
+
+</ul>
+
+<h3>Deep Veins</h3>
+
+<p>
+Deep veins generally accompany arteries and are called venae
+comitantes.
+</p>
+
+<div class="high-yield">
+
+<strong>Exam Point:</strong>
+
+<p>
+The median cubital vein is clinically important for venipuncture.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- LYMPHATICS -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>🧬 15. Lymphatic Drainage</h2>
+
+<p>
+Lymph from the upper limb ultimately drains mainly toward axillary
+lymph nodes.
+</p>
+
+<h3>Important Axillary Groups</h3>
+
+<ul>
+
+<li>Pectoral/anterior</li>
+<li>Subscapular/posterior</li>
+<li>Humeral/lateral</li>
+<li>Central</li>
+<li>Apical</li>
+
+</ul>
+
+<p>
+The axillary nodes are clinically important in infections and
+malignancy involving the upper limb and breast.
+</p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- FRACTURES -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>🚑 16. Important Clinical Fractures</h2>
+
+<div class="table-wrapper">
+
+<table>
+
+<tr>
+<th>Condition</th>
+<th>Important Point</th>
+</tr>
+
+<tr>
+<td>Clavicle fracture</td>
+<td>Common fracture; middle third is frequently involved.</td>
+</tr>
+
+<tr>
+<td>Surgical neck fracture</td>
+<td>May injure axillary nerve.</td>
+</tr>
+
+<tr>
+<td>Midshaft humerus fracture</td>
+<td>May injure radial nerve in radial groove.</td>
+</tr>
+
+<tr>
+<td>Supracondylar fracture</td>
+<td>Can threaten brachial artery and median nerve.</td>
+</tr>
+
+<tr>
+<td>Colles fracture</td>
+<td>Distal radius fracture with characteristic dorsal displacement.</td>
+</tr>
+
+<tr>
+<td>Scaphoid fracture</td>
+<td>Important because of risk of avascular necrosis.</td>
+</tr>
+
+<tr>
+<td>Bennett fracture</td>
+<td>Fracture-dislocation involving base of first metacarpal.</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- NERVE INJURIES -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>🧠 17. Important Nerve Injuries</h2>
+
+<div class="table-wrapper">
 
 <table>
 
 <tr>
 <th>Nerve</th>
-<th>Important Association</th>
-</tr>
-
-<tr>
-<td>Musculocutaneous</td>
-<td>Supplies major muscles of the anterior arm.</td>
+<th>Typical Injury</th>
+<th>Clinical Finding</th>
 </tr>
 
 <tr>
 <td>Axillary</td>
-<td>Associated with the deltoid region.</td>
+<td>Surgical neck fracture</td>
+<td>Weak shoulder abduction, deltoid weakness</td>
 </tr>
 
 <tr>
 <td>Radial</td>
-<td>Major nerve of the posterior arm and forearm.</td>
+<td>Midshaft humerus injury</td>
+<td>Wrist drop</td>
 </tr>
 
 <tr>
 <td>Median</td>
-<td>Important nerve of the anterior forearm and hand.</td>
+<td>Carpal tunnel / forearm injuries</td>
+<td>Thenar weakness and sensory symptoms</td>
 </tr>
 
 <tr>
 <td>Ulnar</td>
-<td>Important nerve supplying intrinsic muscles of the hand.</td>
+<td>Medial epicondyle injury</td>
+<td>Weak intrinsic hand muscles, clawing</td>
+</tr>
+
+<tr>
+<td>Long thoracic</td>
+<td>Chest/axillary trauma</td>
+<td>Winging of scapula</td>
 </tr>
 
 </table>
 
-</section>
-
-
-<!-- ARTERIES -->
-
-<section class="study-section">
-
-<h2>🩸 4. Arteries</h2>
-
-<p>
-The main arterial supply of the upper limb is derived from the
-subclavian artery.
-</p>
-
-<ul>
-
-<li>Subclavian artery</li>
-
-<li>Axillary artery</li>
-
-<li>Brachial artery</li>
-
-<li>Radial artery</li>
-
-<li>Ulnar artery</li>
-
-</ul>
-
-<h3>Basic Continuity</h3>
-
-<p>
-
-Subclavian artery → Axillary artery →
-Brachial artery → Radial and Ulnar arteries
-
-</p>
+</div>
 
 </section>
 
 
-<!-- VEINS -->
-
-<section class="study-section">
-
-<h2>🩸 5. Veins</h2>
-
-<p>
-The upper limb contains superficial and deep venous systems.
-</p>
-
-<ul>
-
-<li>Cephalic vein</li>
-
-<li>Basilic vein</li>
-
-<li>Median cubital vein</li>
-
-</ul>
-
-<h3>Clinical Importance</h3>
-
-<p>
-The median cubital vein is commonly used for venipuncture because
-of its accessibility in the cubital region.
-</p>
-
-</section>
-
-
-<!-- JOINTS -->
-
-<section class="study-section">
-
-<h2>🦴 6. Major Joints</h2>
-
-<table>
-
-<tr>
-<th>Joint</th>
-<th>Important Feature</th>
-</tr>
-
-<tr>
-<td>Shoulder joint</td>
-<td>Connects the humerus with the scapula.</td>
-</tr>
-
-<tr>
-<td>Elbow joint</td>
-<td>Allows major flexion and extension movements.</td>
-</tr>
-
-<tr>
-<td>Wrist joint</td>
-<td>Connects the forearm with the hand.</td>
-</tr>
-
-</table>
-
-</section>
-
-
-<!-- EXAM POINTS -->
+<!-- ===================================================== -->
+<!-- PAST PAPER BASED -->
+<!-- ===================================================== -->
 
 <section class="study-section exam">
 
-<h2>⭐ Important Exam Points</h2>
+<h2>📚 18. MBBS Past-Paper Based High-Yield Questions</h2>
 
-<ul>
+<p>
+The following questions are adapted from recurring UHS/RMU-style
+upper-limb examination themes. They are paraphrased for study use.
+</p>
 
-<li>Know the bones of the upper limb in sequence.</li>
+<div class="seq">
 
-<li>Remember the five major terminal nerves of the brachial plexus.</li>
+<h4>Q1. Describe the axillary artery.</h4>
 
-<li>Know the major actions of biceps, triceps and deltoid.</li>
+<div class="seq-answer">
 
-<li>Remember the arterial sequence from subclavian to radial and ulnar arteries.</li>
+<strong>Answer:</strong>
 
-<li>Know the superficial veins used clinically.</li>
+<p>
+The axillary artery is the continuation of the subclavian artery
+from the lateral border of the first rib. It is divided into three
+parts by pectoralis minor and becomes the brachial artery at the
+lower border of teres major.
+</p>
 
-</ul>
+<p>
+Its branches are distributed according to its three parts:
+1, 2 and 3 branches respectively.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="seq">
+
+<h4>Q2. Describe the relation of the brachial plexus to the axillary artery.</h4>
+
+<div class="seq-answer">
+
+<strong>Answer:</strong>
+
+<p>
+The cords of the brachial plexus are named according to their
+relationship with the second part of the axillary artery:
+lateral cord, medial cord and posterior cord.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="seq">
+
+<h4>Q3. Describe the brachial plexus under roots, trunks, divisions and cords.</h4>
+
+<div class="seq-answer">
+
+<strong>Answer:</strong>
+
+<p>
+Roots: C5-T1</p>
+<p>
+Trunks: Upper, middle and lower</p>
+<p>
+Divisions: Anterior and posterior</p>
+<p>
+Cords: Lateral, medial and posterior</p>
+
+</div>
+
+</div>
+
+
+<div class="seq">
+
+<h4>Q4. What is Erb-Duchenne palsy?</h4>
+
+<div class="seq-answer">
+
+<strong>Answer:</strong>
+
+<p>
+It is classically associated with an upper trunk lesion of the
+brachial plexus involving C5-C6. It produces weakness of muscles
+supplied by affected nerves and the classical waiter's-tip posture.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="seq">
+
+<h4>Q5. What is Klumpke palsy?</h4>
+
+<div class="seq-answer">
+
+<strong>Answer:</strong>
+
+<p>
+It is associated with lower trunk involvement, mainly C8-T1, and
+may cause weakness of intrinsic muscles of the hand with a claw-hand
+deformity.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="seq">
+
+<h4>Q6. Describe the boundaries and contents of cubital fossa.</h4>
+
+<div class="seq-answer">
+
+<strong>Answer:</strong>
+
+<p>
+Boundaries include brachioradialis laterally, pronator teres
+medially and an imaginary line between the epicondyles superiorly.
+Important contents include the radial nerve, biceps tendon, brachial
+artery and median nerve.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="seq">
+
+<h4>Q7. Name the rotator cuff muscles.</h4>
+
+<div class="seq-answer">
+
+<strong>Answer:</strong>
+
+<p>
+Supraspinatus, infraspinatus, teres minor and subscapularis —
+remembered by SITS.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="seq">
+
+<h4>Q8. Explain winging of scapula.</h4>
+
+<div class="seq-answer">
+
+<strong>Answer:</strong>
+
+<p>
+Winging of scapula commonly results from paralysis of serratus
+anterior following injury to the long thoracic nerve.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="seq">
+
+<h4>Q9. Describe the superficial veins of upper limb.</h4>
+
+<div class="seq-answer">
+
+<strong>Answer:</strong>
+
+<p>
+The main superficial veins are cephalic and basilic veins, with the
+median cubital vein connecting them in the cubital region.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="seq">
+
+<h4>Q10. What is the clinical importance of the anatomical snuffbox?</h4>
+
+<div class="seq-answer">
+
+<strong>Answer:</strong>
+
+<p>
+It is an important surface landmark. The radial artery passes
+through it, and tenderness here after a fall may suggest scaphoid
+fracture.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- QUICK REVISION -->
+<!-- ===================================================== -->
+<!-- MCQS -->
+<!-- ===================================================== -->
+
+<section class="study-section">
+
+<h2>📝 19. MBBS-Level MCQs</h2>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+1. The axillary artery becomes the brachial artery at:
+</div>
+
+<p>A. Lower border of pectoralis minor</p>
+<p>B. Upper border of teres major</p>
+<p>C. Lower border of teres major</p>
+<p>D. Surgical neck of humerus</p>
+
+<div class="answer">
+<strong>Answer: C — Lower border of teres major</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+2. Which nerve is most closely associated with the surgical neck of humerus?
+</div>
+
+<p>A. Radial nerve</p>
+<p>B. Axillary nerve</p>
+<p>C. Median nerve</p>
+<p>D. Ulnar nerve</p>
+
+<div class="answer">
+<strong>Answer: B — Axillary nerve</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+3. Winging of scapula is classically associated with injury to:
+</div>
+
+<p>A. Axillary nerve</p>
+<p>B. Radial nerve</p>
+<p>C. Long thoracic nerve</p>
+<p>D. Musculocutaneous nerve</p>
+
+<div class="answer">
+<strong>Answer: C — Long thoracic nerve</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+4. The roots of the brachial plexus are:
+</div>
+
+<p>A. C1-C4</p>
+<p>B. C5-T1</p>
+<p>C. C6-T2</p>
+<p>D. C4-T2</p>
+
+<div class="answer">
+<strong>Answer: B — C5-T1</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+5. The upper trunk of brachial plexus is formed by:
+</div>
+
+<p>A. C5-C6</p>
+<p>B. C6-C7</p>
+<p>C. C7-C8</p>
+<p>D. C8-T1</p>
+
+<div class="answer">
+<strong>Answer: A — C5-C6</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+6. Which nerve supplies the deltoid muscle?
+</div>
+
+<p>A. Radial</p>
+<p>B. Axillary</p>
+<p>C. Median</p>
+<p>D. Ulnar</p>
+
+<div class="answer">
+<strong>Answer: B — Axillary nerve</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+7. Which muscle initiates abduction of the arm?
+</div>
+
+<p>A. Deltoid</p>
+<p>B. Teres major</p>
+<p>C. Supraspinatus</p>
+<p>D. Subscapularis</p>
+
+<div class="answer">
+<strong>Answer: C — Supraspinatus</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+8. Which nerve is commonly injured in a midshaft fracture of humerus?
+</div>
+
+<p>A. Median</p>
+<p>B. Ulnar</p>
+<p>C. Axillary</p>
+<p>D. Radial</p>
+
+<div class="answer">
+<strong>Answer: D — Radial nerve</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+9. Which vein is commonly used for venipuncture?
+</div>
+
+<p>A. Cephalic vein</p>
+<p>B. Basilic vein</p>
+<p>C. Median cubital vein</p>
+<p>D. Axillary vein</p>
+
+<div class="answer">
+<strong>Answer: C — Median cubital vein</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+10. Which nerve passes through the carpal tunnel?
+</div>
+
+<p>A. Ulnar</p>
+<p>B. Radial</p>
+<p>C. Median</p>
+<p>D. Axillary</p>
+
+<div class="answer">
+<strong>Answer: C — Median nerve</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+11. Which of the following is NOT a rotator cuff muscle?
+</div>
+
+<p>A. Supraspinatus</p>
+<p>B. Infraspinatus</p>
+<p>C. Teres major</p>
+<p>D. Subscapularis</p>
+
+<div class="answer">
+<strong>Answer: C — Teres major</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+12. The posterior cord of brachial plexus gives rise to:
+</div>
+
+<p>A. Median and ulnar nerves</p>
+<p>B. Axillary and radial nerves</p>
+<p>C. Musculocutaneous and median nerves</p>
+<p>D. Ulnar and musculocutaneous nerves</p>
+
+<div class="answer">
+<strong>Answer: B — Axillary and radial nerves</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+13. The main nerve of the posterior compartment of arm is:
+</div>
+
+<p>A. Median</p>
+<p>B. Ulnar</p>
+<p>C. Radial</p>
+<p>D. Musculocutaneous</p>
+
+<div class="answer">
+<strong>Answer: C — Radial nerve</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+14. Which muscle is mainly responsible for elbow extension?
+</div>
+
+<p>A. Biceps brachii</p>
+<p>B. Brachialis</p>
+<p>C. Triceps brachii</p>
+<p>D. Coracobrachialis</p>
+
+<div class="answer">
+<strong>Answer: C — Triceps brachii</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+15. Which nerve supplies the anterior compartment of arm?
+</div>
+
+<p>A. Musculocutaneous</p>
+<p>B. Radial</p>
+<p>C. Ulnar</p>
+<p>D. Median</p>
+
+<div class="answer">
+<strong>Answer: A — Musculocutaneous nerve</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+16. Which artery is the continuation of the axillary artery?
+</div>
+
+<p>A. Radial</p>
+<p>B. Ulnar</p>
+<p>C. Brachial</p>
+<p>D. Subclavian</p>
+
+<div class="answer">
+<strong>Answer: C — Brachial artery</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+17. A patient with wrist drop most likely has injury to:
+</div>
+
+<p>A. Median nerve</p>
+<p>B. Radial nerve</p>
+<p>C. Ulnar nerve</p>
+<p>D. Axillary nerve</p>
+
+<div class="answer">
+<strong>Answer: B — Radial nerve</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+18. Which carpal bone is most commonly associated with avascular necrosis after fracture?
+</div>
+
+<p>A. Pisiform</p>
+<p>B. Hamate</p>
+<p>C. Scaphoid</p>
+<p>D. Trapezium</p>
+
+<div class="answer">
+<strong>Answer: C — Scaphoid</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+19. Which nerve is most likely affected in medial epicondyle injury?
+</div>
+
+<p>A. Radial</p>
+<p>B. Axillary</p>
+<p>C. Median</p>
+<p>D. Ulnar</p>
+
+<div class="answer">
+<strong>Answer: D — Ulnar nerve</strong>
+</div>
+
+</div>
+
+
+<div class="mcq">
+
+<div class="mcq-question">
+20. Which structure is found in the cubital fossa?
+</div>
+
+<p>A. Brachial artery</p>
+<p>B. Axillary artery</p>
+<p>C. Subclavian artery</p>
+<p>D. Posterior circumflex humeral artery</p>
+
+<div class="answer">
+<strong>Answer: A — Brachial artery</strong>
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- RAPID REVISION -->
+<!-- ===================================================== -->
 
 <section class="study-section revision">
 
-<h2>⚡ Quick Revision</h2>
+<h2>⚡ 20. Rapid Revision — One Page</h2>
 
 <ul>
 
-<li>
-Upper limb bones → Clavicle, Scapula, Humerus, Radius, Ulna,
-Carpals, Metacarpals, Phalanges
-</li>
+<li><strong>Upper limb bones:</strong> Clavicle → Scapula → Humerus → Radius/Ulna → Carpals → Metacarpals → Phalanges</li>
 
-<li>
-Major nerves → Musculocutaneous, Axillary, Radial, Median, Ulnar
-</li>
+<li><strong>Brachial plexus:</strong> C5-T1</li>
 
-<li>
-Main artery sequence → Subclavian → Axillary → Brachial →
-Radial/Ulnar
-</li>
+<li><strong>Trunks:</strong> Upper, Middle, Lower</li>
 
-<li>
-Major superficial veins → Cephalic, Basilic, Median cubital
-</li>
+<li><strong>Cords:</strong> Lateral, Medial, Posterior</li>
 
-<li>
-Major joints → Shoulder, Elbow, Wrist
-</li>
+<li><strong>Terminal nerves:</strong> Musculocutaneous, Axillary, Radial, Median, Ulnar</li>
+
+<li><strong>Rotator cuff:</strong> SITS</li>
+
+<li><strong>Winging of scapula:</strong> Long thoracic nerve</li>
+
+<li><strong>Surgical neck fracture:</strong> Axillary nerve</li>
+
+<li><strong>Midshaft humerus:</strong> Radial nerve</li>
+
+<li><strong>Medial epicondyle:</strong> Ulnar nerve</li>
+
+<li><strong>Carpal tunnel:</strong> Median nerve</li>
+
+<li><strong>Venipuncture:</strong> Median cubital vein</li>
+
+<li><strong>Arterial sequence:</strong> Subclavian → Axillary → Brachial → Radial/Ulnar</li>
+
+<li><strong>Anterior arm:</strong> Musculocutaneous nerve</li>
+
+<li><strong>Posterior arm:</strong> Radial nerve</li>
 
 </ul>
 
 </section>
 
 
+<!-- ===================================================== -->
+<!-- EXAM STRATEGY -->
+<!-- ===================================================== -->
+
+<section class="study-section success">
+
+<h2>🎯 MBBS Exam Strategy</h2>
+
+<p>
+For Upper Limb Anatomy, focus especially on:
+</p>
+
+<ol>
+
+<li>Axilla — boundaries and contents</li>
+
+<li>Axillary artery — parts, relations and branches</li>
+
+<li>Brachial plexus — complete organization</li>
+
+<li>Clinical nerve injuries</li>
+
+<li>Rotator cuff and shoulder joint</li>
+
+<li>Cubital fossa</li>
+
+<li>Carpal tunnel</li>
+
+<li>Important fractures</li>
+
+<li>Muscle attachments, actions and nerve supply</li>
+
+<li>Surface anatomy and clinical correlations</li>
+
+</ol>
+
+</section>
+
+
+<!-- ===================================================== -->
 <!-- BUTTONS -->
+<!-- ===================================================== -->
 
 <div class="buttons">
 
@@ -678,13 +2149,13 @@ Major joints → Shoulder, Elbow, Wrist
 </div>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
 <p>🩺 <strong>MedAcademy</strong></p>
 
-<p>Upper Limb Anatomy</p>
+<p>Upper Limb Anatomy — MBBS First Professional</p>
 
 <p>© 2026 MedAcademy</p>
 
@@ -694,4 +2165,3 @@ Major joints → Shoulder, Elbow, Wrist
 </body>
 
 </html>
-```
